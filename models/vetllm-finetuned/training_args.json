@@ -1,0 +1,49 @@
+{
+    "training_arguments": {
+      "output_dir": "./models/vetllm-finetuned",
+      "num_train_epochs": 3,
+      "per_device_train_batch_size": 4,
+      "per_device_eval_batch_size": 4,
+      "gradient_accumulation_steps": 8,
+      "learning_rate": 2e-5,
+      "weight_decay": 0.0,
+      "warmup_ratio": 0.03,
+      "lr_scheduler_type": "cosine",
+      "logging_steps": 10,
+      "save_steps": 2000,
+      "eval_steps": 500,
+      "evaluation_strategy": "steps",
+      "save_strategy": "steps",
+      "save_total_limit": 1,
+      "load_best_model_at_end": true,
+      "metric_for_best_model": "eval_loss",
+      "greater_is_better": false,
+      "dataloader_drop_last": true,
+      "bf16": true,
+      "tf32": true,
+      "gradient_checkpointing": true,
+      "report_to": "wandb",
+      "run_name": "vetllm-alpaca-7b-finetuning",
+      "seed": 42
+    },
+    "model_arguments": {
+      "model_name_or_path": "wxjiao/alpaca-7b",
+      "use_lora": true,
+      "lora_r": 16,
+      "lora_alpha": 32,
+      "lora_dropout": 0.1,
+      "lora_target_modules": ["q_proj", "v_proj", "k_proj", "o_proj"],
+      "max_length": 512,
+      "cache_dir": "./cache"
+    },
+    "data_arguments": {
+      "train_data_path": "./data/processed/train_data.json",
+      "validation_data_path": "./data/processed/val_data.json",
+      "test_data_path": "./data/processed/test_data.json",
+      "max_train_samples": null,
+      "max_eval_samples": null,
+      "streaming": false,
+      "preprocessing_num_workers": 4
+    }
+  }
+  

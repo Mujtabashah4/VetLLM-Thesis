@@ -1,0 +1,26 @@
+version: 1
+disable_existing_loggers: False
+formatters:
+  simple:
+    format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+
+handlers:
+  console:
+    class: logging.StreamHandler
+    formatter: simple
+    level: INFO
+  file:
+    class: logging.FileHandler
+    filename: vetllm.log
+    formatter: simple
+    level: DEBUG
+
+loggers:
+  vetllm:
+    handlers: [console, file]
+    level: DEBUG
+    propagate: no
+
+root:
+  handlers: [console]
+  level: INFO

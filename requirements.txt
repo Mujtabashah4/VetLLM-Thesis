@@ -1,0 +1,20 @@
+# # Create virtual environment
+# python -m venv vetllm_env
+# source vetllm_env/bin/activate  # Linux/Mac
+# # or
+# vetllm_env\Scripts\activate  # Windows
+
+# Install dependencies
+# pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
+transformers 
+datasets 
+accelerate 
+deepspeed 
+wandb
+scikit-learn 
+pandas 
+numpy 
+matplotlib 
+seaborn
+peft 
+bitsandbytes

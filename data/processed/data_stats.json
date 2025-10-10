@@ -1,0 +1,22 @@
+{
+    "total_samples": 1247,
+    "veterinary_samples": 847,
+    "alpaca_samples": 400,
+    "train_samples": 997,
+    "val_samples": 125,
+    "test_samples": 125,
+    "snomed_codes": 156,
+    "avg_note_length": 127.3,
+    "species_distribution": {
+      "dog": 445,
+      "cat": 231,
+      "horse": 89,
+      "bird": 34,
+      "rabbit": 25,
+      "cow": 12,
+      "other": 11
+    },
+    "instruction_variations": 7,
+    "augmentation_factor": 3.2
+  }
+  

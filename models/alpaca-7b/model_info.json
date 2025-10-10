@@ -1,0 +1,40 @@
+{
+    "model_name": "wxjiao/alpaca-7b",
+    "description": "Stanford Alpaca 7B model fine-tuned on LLaMA",
+    "base_model": "decapoda-research/llama-7b-hf",
+    "fine_tuning_dataset": "Stanford Alpaca 52K",
+    "model_size": "7B parameters",
+    "quantization": "fp16",
+    "download_info": {
+      "huggingface_hub": "wxjiao/alpaca-7b",
+      "license": "Research use only",
+      "size_gb": 13.5,
+      "files": [
+        "pytorch_model.bin",
+        "tokenizer.model",
+        "tokenizer_config.json",
+        "special_tokens_map.json",
+        "config.json"
+      ]
+    },
+    "performance": {
+      "translation_performance": {
+        "de_en_bleu": 45.04,
+        "en_de_bleu": 41.16,
+        "zh_en_bleu": 31.66,
+        "en_zh_bleu": 43.58
+      },
+      "compared_to": {
+        "llama_7b_baseline": "Significant improvement in instruction following",
+        "chatgpt": "Competitive performance on translation tasks",
+        "gpt4": "Lower but reasonable performance"
+      }
+    },
+    "usage_notes": [
+      "Designed for instruction-following tasks",
+      "Good baseline for veterinary domain fine-tuning",
+      "Requires GPU with at least 16GB VRAM for inference",
+      "Can be further fine-tuned with LoRA for domain adaptation"
+    ]
+  }
+  

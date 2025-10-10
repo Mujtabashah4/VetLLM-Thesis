@@ -1,0 +1,33 @@
+[
+    {
+      "instruction": "Analyze the following veterinary clinical note and predict the SNOMED-CT diagnosis codes.",
+      "input": "Clinical Note: Dog, 7 years old, Boxer. Seizure episode lasting 2 minutes, post-ictal confusion. Normal between episodes. Blood work pending.",
+      "output": "Diagnosed conditions: 91175000",
+      "snomed_codes": ["91175000"]
+    },
+    {
+      "instruction": "Determine the diagnosis codes that best match this clinical presentation.",
+      "input": "Clinical Note: Cat, 1 year old, Domestic Shorthair. Sneezing, nasal discharge, conjunctivitis. Multiple cats in household affected.",
+      "output": "Diagnosed conditions: 64531003, 9826008, 68154008",
+      "snomed_codes": ["64531003", "9826008", "68154008"]
+    },
+    {
+      "instruction": "Identify the diagnostic codes based on the clinical notes provided.",
+      "input": "Clinical Note: Horse, 15 years old, Quarter Horse. Chronic weight loss, poor coat condition, intermittent colic episodes. Dental exam shows severe wear.",
+      "output": "Diagnosed conditions: 89362005, 55300003, 73063007",
+      "snomed_codes": ["89362005", "55300003", "73063007"]
+    },
+    {
+      "instruction": "What diagnoses would you assign to this veterinary case using SNOMED-CT codes?",
+      "input": "Clinical Note: Ferret, 4 years old. Lethargy, enlarged abdomen, difficulty breathing. Spleen feels enlarged on palpation.",
+      "output": "Diagnosed conditions: 397983004, 271860004, 267036007, 16294009",
+      "snomed_codes": ["397983004", "271860004", "267036007", "16294009"]
+    },
+    {
+      "instruction": "Analyze this veterinary case and predict diagnosis codes.",
+      "input": "Clinical Note: Dog, 6 years old, German Shepherd. Chronic coughing for 3 weeks, exercise intolerance. Radiographs show enlarged heart silhouette.",
+      "output": "Diagnosed conditions: 49727002, 56265001",
+      "snomed_codes": ["49727002", "56265001"]
+    }
+  ]
+  

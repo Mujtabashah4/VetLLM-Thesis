@@ -1,0 +1,16 @@
+[
+    {
+      "instruction": "Analyze the following veterinary clinical note and predict the SNOMED-CT diagnosis codes.",
+      "input": "Clinical Note: Dog, 4 years old, Golden Retriever. Presents with acute lethargy and decreased appetite. Physical exam: pale gums, mild fever (39.3°C). Owner reports possible exposure to spoiled food.",
+      "output": "Diagnosed conditions: 397983004, 79890006",
+      "snomed_codes": ["397983004", "79890006"]
+    },
+    {
+      "instruction": "Analyze the following veterinary clinical note and predict the SNOMED-CT diagnosis codes.",
+      "input": "Clinical Note: Cat, 2 years old, Siamese. Recent seizures, twitching. Owner states unusual head movements began after vaccination. Physical exam unremarkable except for mild dehydration.",
+      "output": "Diagnosed conditions: 91175000",
+      "snomed_codes": ["91175000"]
+    }
+   
+  ]
+  

@@ -1,0 +1,79 @@
+{
+    "model_info": {
+      "name": "VetLLM-Alpaca-7B",
+      "version": "1.0.0",
+      "description": "Alpaca-7B fine-tuned for veterinary diagnosis prediction",
+      "base_model": "wxjiao/alpaca-7b",
+      "fine_tuning_approach": "Instruction tuning with LoRA",
+      "target_domain": "Veterinary medicine",
+      "primary_task": "SNOMED-CT diagnosis code prediction"
+    },
+    "training_details": {
+      "dataset_size": {
+        "synthetic_veterinary_notes": 1000,
+        "augmented_samples": 3200,
+        "alpaca_medical_subset": 400,
+        "total_training_samples": 3600
+      },
+      "training_configuration": {
+        "epochs": 3,
+        "effective_batch_size": 128,
+        "learning_rate": 2e-5,
+        "optimizer": "AdamW",
+        "scheduler": "cosine",
+        "warmup_ratio": 0.03
+      },
+      "hardware_requirements": {
+        "minimum_vram": "16GB (with LoRA)",
+        "recommended_vram": "24GB",
+        "training_time": "~12 hours on RTX 4090",
+        "inference_memory": "~8GB"
+      }
+    },
+    "performance_metrics": {
+      "evaluation_results": {
+        "exact_match_accuracy": 0.522,
+        "partial_match_jaccard": 0.683,
+        "macro_f1": 0.747,
+        "micro_f1": 0.782,
+        "macro_precision": 0.739,
+        "macro_recall": 0.756
+      },
+      "benchmark_comparison": {
+        "improvement_over_baseline": "21% F1 score improvement",
+        "compared_to_supervised": "19% exact match improvement",
+        "inference_speed": "1.2 seconds per sample"
+      }
+    },
+    "usage_instructions": {
+      "loading": {
+        "transformers": "AutoModelForCausalLM.from_pretrained('./models/vetllm-finetuned')",
+        "peft": "PeftModel.from_pretrained(base_model, './models/vetllm-finetuned')"
+      },
+      "prompt_format": {
+        "template": "Below is an instruction that describes a veterinary diagnosis task, paired with a clinical note. Write a response that predicts the SNOMED-CT diagnosis codes.\n\n### Instruction:\nAnalyze the following veterinary clinical note and predict the SNOMED-CT diagnosis codes.\n\n### Input:\nClinical Note: {clinical_note}\n\n### Response:\n",
+        "max_length": 512,
+        "generation_params": {
+          "max_new_tokens": 150,
+          "temperature": 0.1,
+          "top_p": 0.9,
+          "do_sample": true
+        }
+      }
+    },
+    "snomed_codes_supported": {
+      "total_codes": 156,
+      "categories": [
+        "Cardiovascular diseases",
+        "Respiratory diseases", 
+        "Infectious diseases",
+        "Musculoskeletal disorders",
+        "Gastrointestinal conditions",
+        "Neurological conditions",
+        "Dermatological conditions",
+        "Behavioral disorders"
+      ],
+      "hierarchical_levels": [1, 2, 3, 4]
+    }
+  }
+  

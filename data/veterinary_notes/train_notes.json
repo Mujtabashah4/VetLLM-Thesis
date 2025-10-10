@@ -1,0 +1,35 @@
+[
+    {
+      "clinical_note": "Horse, 8 years old, Thoroughbred. Lameness in left hind limb, heat and swelling in fetlock joint. Reluctant to bear weight. History of recent jumping competition.",
+      "snomed_codes": ["16973004", "57676002"]
+    },
+    {
+      "clinical_note": "Dog, 6 years old, German Shepherd. Chronic coughing for 3 weeks, exercise intolerance. Radiographs show enlarged heart silhouette. Heart murmur grade 3/6.",
+      "snomed_codes": ["49727002", "56265001"]
+    },
+    {
+      "clinical_note": "Cat, 10 years old, Persian. Weight loss despite good appetite, increased urination and drinking. Blood glucose elevated at 18 mmol/L.",
+      "snomed_codes": ["73211009", "89362005"]
+    },
+    {
+      "clinical_note": "Bird, 2 years old, Cockatiel. Difficulty breathing, tail bobbing, open-mouth breathing. Crackling sounds on chest auscultation.",
+      "snomed_codes": ["267036007", "68154008"]
+    },
+    {
+      "clinical_note": "Cow, 5 years old, Holstein. Decreased milk production, fever 40.2°C, hard udder with clots in milk. Painful on udder palpation.",
+      "snomed_codes": ["45169001", "386661006"]
+    },
+    {
+      "clinical_note": "Dog, 2 years old, Labrador mix. Vomiting and diarrhea for 2 days, dehydration, abdominal pain. Owner reports garbage ingestion yesterday.",
+      "snomed_codes": ["422400008", "62315008", "271860004"]
+    },
+    {
+      "clinical_note": "Cat, 4 years old, Maine Coon. Straining to urinate, blood in urine, frequent attempts with small volumes. Bladder feels enlarged and firm.",
+      "snomed_codes": ["139394000", "34436003"]
+    },
+    {
+      "clinical_note": "Rabbit, 3 years old, Holland Lop. Not eating pellets for 24 hours, soft stool, grinding teeth. Abdomen feels distended.",
+      "snomed_codes": ["79890006", "162076009", "271860004"]
+    }
+  ]
+  
