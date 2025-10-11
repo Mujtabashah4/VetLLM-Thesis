@@ -1,0 +1,1671 @@
+[
+  {
+    "instruction": "Predict the SNOMED-CT classifications for this veterinary patient.",
+    "input": "Clinical Note: Emergency presentation: cow presenting with difficulty breathing. On examination: respiratory distress, abnormal lung sounds. Vital signs: T=37.9\u00b0C, HR=102bpm, RR=28bpm. Assessment: difficulty breathing.",
+    "output": "Diagnosed conditions: 267036007",
+    "snomed_codes": [
+      "267036007"
+    ]
+  },
+  {
+    "instruction": "Analyze the following veterinary clinical note and predict the SNOMED-CT diagnosis codes.",
+    "input": "Clinical Note: 10-year-old Poodle dog with history of abdominal distension. Physical findings: joint swelling, pain on palpation. Diagnostic impression: abdominal distension.",
+    "output": "Diagnosed conditions: 271860004",
+    "snomed_codes": [
+      "271860004"
+    ]
+  },
+  {
+    "instruction": "Identify the diagnostic codes based on the clinical notes provided.",
+    "input": "Clinical Note: Routine exam: dog, beagle, 6 years. owner reports skin irritation and scratching. exam findings: aggressive behavior, disorientation.",
+    "output": "Diagnosed conditions: 271807003, 424492005",
+    "snomed_codes": [
+      "271807003",
+      "424492005"
+    ]
+  },
+  {
+    "instruction": "Predict the SNOMED-CT classifications for this veterinary patient.",
+    "input": "Clinical Note: Emergency presentation: Patient: horse Quarter Horse, 8 years old, 9.1kg. Chief complaint: weight loss. Physical examination reveals enlarged liver on palpation. Temperature: 37.6\u00b0C, Heart rate: 137 bpm.",
+    "output": "Diagnosed conditions: 89362005",
+    "snomed_codes": [
+      "89362005"
+    ]
+  },
+  {
+    "instruction": "Based on the clinical findings, identify the most likely SNOMED-CT diagnosis codes.",
+    "input": "Clinical Note: 6-year-old Husky dog with history of fever and dehydration. Physical findings: dental disease, halitosis. Diagnostic impression: fever and dehydration.",
+    "output": "Diagnosed conditions: 386661006, 34095006",
+    "snomed_codes": [
+      "386661006",
+      "34095006"
+    ]
+  },
+  {
+    "instruction": "Predict the SNOMED-CT classifications for this veterinary patient.",
+    "input": "Clinical Note: Dog presenting with difficulty urinating. on exam: enlarged liver on palpation. vital signs: t=39.4\u00b0c, hr=166bpm, rr=19bpm. assessment: difficulty urinating.",
+    "output": "Diagnosed conditions: 139394000",
+    "snomed_codes": [
+      "139394000"
+    ]
+  },
+  {
+    "instruction": "Predict the SNOMED-CT classifications for this veterinary patient.",
+    "input": "Clinical Note: Emergency presentation: Patient: bird Lovebird, 10 years old, 18.6kg. Chief complaint: seizure activity. Physical examination reveals abnormal heart rhythm. Temperature: 40.9\u00b0C, Heart rate: 104 bpm.",
+    "output": "Diagnosed conditions: 91175000",
+    "snomed_codes": [
+      "91175000"
+    ]
+  },
+  {
+    "instruction": "What diagnoses would you assign to this veterinary case using SNOMED-CT codes?",
+    "input": "Clinical Note: Patient: rabbit Angora, 12 years old, 8.2kg. Chief complaint: seizure activity. Physical examination reveals decreased reflexes. Temperature: 38.1\u00b0C, Heart rate: 105 bpm.",
+    "output": "Diagnosed conditions: 91175000",
+    "snomed_codes": [
+      "91175000"
+    ]
+  },
+  {
+    "instruction": "Identify the diagnostic codes based on the clinical notes provided.",
+    "input": "Clinical Note: Emergency presentation: cow with acute eye discharge. Clinical signs: abnormal heart rhythm. Vital parameters: Temperature 37.8\u00b0C, pulse 66bpm.",
+    "output": "Diagnosed conditions: 246636008",
+    "snomed_codes": [
+      "246636008"
+    ]
+  },
+  {
+    "instruction": "Predict the SNOMED-CT classifications for this veterinary patient.",
+    "input": "Clinical Note: Emergency presentation: bird with acute eye discharge. Clinical signs: mild dehydration, pale mucous membranes. Vital parameters: Temperature 38.1\u00b0C, pulse 66bpm.",
+    "output": "Diagnosed conditions: 246636008",
+    "snomed_codes": [
+      "246636008"
+    ]
+  },
+  {
+    "instruction": "Based on the clinical findings, identify the most likely SNOMED-CT diagnosis codes.",
+    "input": "Clinical Note: cow presenting with vomiting and diarrhea. On examination: enlarged liver on palpation. Vital signs: T=40.2\u00b0C, HR=174bpm, RR=36bpm. Assessment: vomiting and diarrhea.",
+    "output": "Diagnosed conditions: 422400008, 62315008",
+    "snomed_codes": [
+      "422400008",
+      "62315008"
+    ]
+  },
+  {
+    "instruction": "Based on the clinical findings, identify the most likely SNOMED-CT diagnosis codes.",
+    "input": "Clinical Note: Routine exam: cow, hereford, 4 years. owner reports coughing and nasal discharge. exam findings: mild dehydration, pale mucous membranes.",
+    "output": "Diagnosed conditions: 49727002, 64531003",
+    "snomed_codes": [
+      "49727002",
+      "64531003"
+    ]
+  },
+  {
+    "instruction": "What are the appropriate SNOMED-CT codes for this veterinary case?",
+    "input": "Clinical Note: Patient: rabbit angora, 12 years old, 0.8kg. chief complaint: fever and dehydration. physical exam reveals muscle wasting, poor body condition. temperature: 41.0\u00b0c, heart rate: 130 bpm.",
+    "output": "Diagnosed conditions: 386661006, 34095006",
+    "snomed_codes": [
+      "386661006",
+      "34095006"
+    ]
+  },
+  {
+    "instruction": "Analyze the following veterinary clinical note and predict the SNOMED-CT diagnosis codes.",
+    "input": "Clinical Note: Emergency presentation: cat with acute loss of balance. Clinical signs: enlarged liver on palpation. Vital parameters: Temperature 40.3\u00b0C, pulse 172bpm.",
+    "output": "Diagnosed conditions: 387603000",
+    "snomed_codes": [
+      "387603000"
+    ]
+  },
+  {
+    "instruction": "Predict the SNOMED-CT classifications for this veterinary patient.",
+    "input": "Clinical Note: Emergency presentation: Routine examination: rabbit, Lionhead, 3 years. Owner reports abdominal distension. Examination findings: enlarged liver on palpation.",
+    "output": "Diagnosed conditions: 271860004",
+    "snomed_codes": [
+      "271860004"
+    ]
+  },
+  {
+    "instruction": "Determine the diagnosis codes that best match this clinical presentation.",
+    "input": "Clinical Note: Patient: equine quarter equine, 12 years old, 46.9kg. chief complaint: vomiting and diarrhea. physical examination reveals corneal opacity. temperature: 38.7\u00b0c, heart rate: 171 bpm.",
+    "output": "Diagnosed conditions: 422400008, 62315008",
+    "snomed_codes": [
+      "422400008",
+      "62315008"
+    ]
+  },
+  {
+    "instruction": "Predict the SNOMED-CT classifications for this veterinary patient.",
+    "input": "Clinical Note: 3-year-old Maine Coon cat with history of difficulty urinating. Physical findings: mild dehydration, pale mucous membranes. Diagnostic impression: difficulty urinating.",
+    "output": "Diagnosed conditions: 139394000",
+    "snomed_codes": [
+      "139394000"
+    ]
+  },
+  {
+    "instruction": "What are the appropriate SNOMED-CT codes for this veterinary case?",
+    "input": "Clinical Note: cat presenting with seizure activity. On examination: abnormal heart rhythm. Vital signs: T=40.5\u00b0C, HR=89bpm, RR=23bpm. Assessment: seizure activity.",
+    "output": "Diagnosed conditions: 91175000",
+    "snomed_codes": [
+      "91175000"
+    ]
+  },
+  {
+    "instruction": "Identify the diagnostic codes based on the clinical notes provided.",
+    "input": "Clinical Note: cow presenting with coughing and nasal discharge. On examination: fluid accumulation in abdomen. Vital signs: T=40.5\u00b0C, HR=126bpm, RR=19bpm. Assessment: coughing and nasal discharge.",
+    "output": "Diagnosed conditions: 49727002, 64531003",
+    "snomed_codes": [
+      "49727002",
+      "64531003"
+    ]
+  },
+  {
+    "instruction": "Analyze the following veterinary clinical note and predict the SNOMED-CT diagnosis codes.",
+    "input": "Clinical Note: dog presenting with weight loss. On examination: mild dehydration, pale mucous membranes. Vital signs: T=39.7\u00b0C, HR=128bpm, RR=18bpm. Assessment: weight loss.",
+    "output": "Diagnosed conditions: 89362005",
+    "snomed_codes": [
+      "89362005"
+    ]
+  },
+  {
+    "instruction": "What diagnoses would you assign to this veterinary case using SNOMED-CT codes?",
+    "input": "Clinical Note: Routine examination: horse, Arabian, 1 years. Owner reports lethargy and decreased appetite. Examination findings: skin lesions, erythema.",
+    "output": "Diagnosed conditions: 397983004, 79890006",
+    "snomed_codes": [
+      "397983004",
+      "79890006"
+    ]
+  },
+  {
+    "instruction": "Identify the diagnostic codes based on the clinical notes provided.",
+    "input": "Clinical Note: 3-year-old Beagle dog with history of difficulty breathing. Physical findings: skin lesions, erythema. Diagnostic impression: difficulty breathing.",
+    "output": "Diagnosed conditions: 267036007",
+    "snomed_codes": [
+      "267036007"
+    ]
+  },
+  {
+    "instruction": "Predict the SNOMED-CT classifications for this veterinary patient.",
+    "input": "Clinical Note: Patient: cow hereford, 5 years old, 40.6kg. chief complaint: difficulty breathing. physical exam reveals enlarged liver on palpation. temperature: 40.0\u00b0c, heart rate: 124 bpm.",
+    "output": "Diagnosed conditions: 267036007",
+    "snomed_codes": [
+      "267036007"
+    ]
+  },
+  {
+    "instruction": "What are the appropriate SNOMED-CT codes for this veterinary case?",
+    "input": "Clinical Note: Patient: cat Maine Coon, 7 years old, 12.2kg. Chief complaint: coughing and nasal discharge. Physical examination reveals fluid accumulation in abdomen. Temperature: 40.8\u00b0C, Heart rate: 77 bpm.",
+    "output": "Diagnosed conditions: 49727002, 64531003",
+    "snomed_codes": [
+      "49727002",
+      "64531003"
+    ]
+  },
+  {
+    "instruction": "What are the appropriate SNOMED-CT codes for this veterinary case?",
+    "input": "Clinical Note: Patient: bovine angus, 4 years old, 29.6kg. chief complaint: difficulty breathing. physical examination reveals mild dehydration, pale mucous membranes. temperature: 38.6\u00b0c, heart rate: 106 bpm.",
+    "output": "Diagnosed conditions: 267036007",
+    "snomed_codes": [
+      "267036007"
+    ]
+  },
+  {
+    "instruction": "Determine the diagnosis codes that best match this clinical presentation.",
+    "input": "Clinical Note: Patient: cat Persian, 13 years old, 48.6kg. Chief complaint: weight loss. Physical examination reveals muscle wasting, poor body condition. Temperature: 40.8\u00b0C, Heart rate: 86 bpm.",
+    "output": "Diagnosed conditions: 89362005",
+    "snomed_codes": [
+      "89362005"
+    ]
+  },
+  {
+    "instruction": "What diagnoses would you assign to this veterinary case using SNOMED-CT codes?",
+    "input": "Clinical Note: 11-year-old Lionhead rabbit with history of skin irritation and scratching. Physical findings: elevated temperature, tachycardia. Diagnostic impression: skin irritation and scratching.",
+    "output": "Diagnosed conditions: 271807003, 424492005",
+    "snomed_codes": [
+      "271807003",
+      "424492005"
+    ]
+  },
+  {
+    "instruction": "What are the appropriate SNOMED-CT codes for this veterinary case?",
+    "input": "Clinical Note: Patient: dog Labrador, 14 years old, 16.0kg. Chief complaint: behavioral changes. Physical examination reveals dental disease, halitosis. Temperature: 39.6\u00b0C, Heart rate: 127 bpm.",
+    "output": "Diagnosed conditions: 25786006",
+    "snomed_codes": [
+      "25786006"
+    ]
+  },
+  {
+    "instruction": "Determine the diagnosis codes that best match this clinical presentation.",
+    "input": "Clinical Note: Routine exam: rabbit, angora, 6 years. owner reports difficulty urinating. exam findings: joint swelling, pain on palpation.",
+    "output": "Diagnosed conditions: 139394000",
+    "snomed_codes": [
+      "139394000"
+    ]
+  },
+  {
+    "instruction": "Determine the diagnosis codes that best match this clinical presentation.",
+    "input": "Clinical Note: 6-year-old Budgie bird with history of coughing and nasal discharge. Physical findings: nasal discharge, enlarged lymph nodes. Diagnostic impression: coughing and nasal discharge.",
+    "output": "Diagnosed conditions: 49727002, 64531003",
+    "snomed_codes": [
+      "49727002",
+      "64531003"
+    ]
+  },
+  {
+    "instruction": "Analyze the following veterinary clinical note and predict the SNOMED-CT diagnosis codes.",
+    "input": "Clinical Note: Emergency presentation: Routine examination: dog, Labrador, 7 years. Owner reports fever and dehydration. Examination findings: neurological abnormalities.",
+    "output": "Diagnosed conditions: 386661006, 34095006",
+    "snomed_codes": [
+      "386661006",
+      "34095006"
+    ]
+  },
+  {
+    "instruction": "What are the appropriate SNOMED-CT codes for this veterinary case?",
+    "input": "Clinical Note: Routine examination: cat, British Shorthair, 15 years. Owner reports excessive thirst. Examination findings: joint swelling, pain on palpation.",
+    "output": "Diagnosed conditions: 17173007",
+    "snomed_codes": [
+      "17173007"
+    ]
+  },
+  {
+    "instruction": "Predict the SNOMED-CT classifications for this veterinary patient.",
+    "input": "Clinical Note: Patient: horse clydesdale, 3 years old, 16.5kg. chief complaint: coughing and nasal discharge. physical exam reveals fluid accumulation in abdomen. temperature: 38.5\u00b0c, heart rate: 176 bpm.",
+    "output": "Diagnosed conditions: 49727002, 64531003",
+    "snomed_codes": [
+      "49727002",
+      "64531003"
+    ]
+  },
+  {
+    "instruction": "Determine the diagnosis codes that best match this clinical presentation.",
+    "input": "Clinical Note: Routine examination: cow, Angus, 3 years. Owner reports vomiting and diarrhea. Examination findings: enlarged liver on palpation.",
+    "output": "Diagnosed conditions: 422400008, 62315008",
+    "snomed_codes": [
+      "422400008",
+      "62315008"
+    ]
+  },
+  {
+    "instruction": "Predict the SNOMED-CT classifications for this veterinary patient.",
+    "input": "Clinical Note: Emergency presentation: Patient: horse Thoroughbred, 14 years old, 9.6kg. Chief complaint: eye discharge. Physical examination reveals dental disease, halitosis. Temperature: 38.1\u00b0C, Heart rate: 119 bpm.",
+    "output": "Diagnosed conditions: 246636008",
+    "snomed_codes": [
+      "246636008"
+    ]
+  },
+  {
+    "instruction": "What diagnoses would you assign to this veterinary case using SNOMED-CT codes?",
+    "input": "Clinical Note: Patient: rabbit Mini Rex, 11 years old, 11.4kg. Chief complaint: lethargy and decreased appetite. Physical examination reveals corneal opacity. Temperature: 40.6\u00b0C, Heart rate: 117 bpm.",
+    "output": "Diagnosed conditions: 397983004, 79890006",
+    "snomed_codes": [
+      "397983004",
+      "79890006"
+    ]
+  },
+  {
+    "instruction": "List steps for examining a limping horse.",
+    "input": "",
+    "output": "Begin with a visual inspection, palpate limbs for heat and swelling, check for joint pain, and observe movement. Diagnostic imaging may be needed."
+  },
+  {
+    "instruction": "Identify the diagnostic codes based on the clinical notes provided.",
+    "input": "Clinical Note: 12-year-old Persian cat with history of vomiting and diarrhea. Physical findings: skin lesions, erythema. Diagnostic impression: vomiting and diarrhea.",
+    "output": "Diagnosed conditions: 422400008, 62315008",
+    "snomed_codes": [
+      "422400008",
+      "62315008"
+    ]
+  },
+  {
+    "instruction": "What are the appropriate SNOMED-CT codes for this veterinary case?",
+    "input": "Clinical Note: 13-year-old Bulldog dog with history of excessive thirst. Physical findings: skin lesions, erythema. Diagnostic impression: excessive thirst.",
+    "output": "Diagnosed conditions: 17173007",
+    "snomed_codes": [
+      "17173007"
+    ]
+  },
+  {
+    "instruction": "Analyze the following veterinary clinical note and predict the SNOMED-CT diagnosis codes.",
+    "input": "Clinical Note: Routine exam: dog, golden retriever, 15 years. owner reports loss of balance. exam findings: corneal opacity.",
+    "output": "Diagnosed conditions: 387603000",
+    "snomed_codes": [
+      "387603000"
+    ]
+  },
+  {
+    "instruction": "What diagnoses would you assign to this veterinary case using SNOMED-CT codes?",
+    "input": "Clinical Note: Patient: cat British Shorthair, 4 years old, 19.5kg. Chief complaint: eye discharge. Physical examination reveals fluid accumulation in abdomen. Temperature: 40.9\u00b0C, Heart rate: 111 bpm.",
+    "output": "Diagnosed conditions: 246636008",
+    "snomed_codes": [
+      "246636008"
+    ]
+  },
+  {
+    "instruction": "Predict the SNOMED-CT classifications for this veterinary patient.",
+    "input": "Clinical Note: Emergency presentation: rabbit with acute vomiting and diarrhea. Clinical signs: neurological abnormalities. Vital parameters: Temperature 39.5\u00b0C, pulse 135bpm.",
+    "output": "Diagnosed conditions: 422400008, 62315008",
+    "snomed_codes": [
+      "422400008",
+      "62315008"
+    ]
+  },
+  {
+    "instruction": "Analyze the following veterinary clinical note and predict the SNOMED-CT diagnosis codes.",
+    "input": "Clinical Note: cat presenting with weight loss. On examination: abnormal heart rhythm. Vital signs: T=40.9\u00b0C, HR=119bpm, RR=27bpm. Assessment: weight loss.",
+    "output": "Diagnosed conditions: 89362005",
+    "snomed_codes": [
+      "89362005"
+    ]
+  },
+  {
+    "instruction": "What diagnoses would you assign to this veterinary case using SNOMED-CT codes?",
+    "input": "Clinical Note: rabbit presenting with difficulty urinating. On examination: dental disease, halitosis. Vital signs: T=39.3\u00b0C, HR=68bpm, RR=30bpm. Assessment: difficulty urinating.",
+    "output": "Diagnosed conditions: 139394000",
+    "snomed_codes": [
+      "139394000"
+    ]
+  },
+  {
+    "instruction": "What diagnoses would you assign to this veterinary case using SNOMED-CT codes?",
+    "input": "Clinical Note: Emergency presentation: dog with acute behavioral changes. Clinical signs: decreased reflexes. Vital parameters: Temperature 38.8\u00b0C, pulse 97bpm.",
+    "output": "Diagnosed conditions: 25786006",
+    "snomed_codes": [
+      "25786006"
+    ]
+  },
+  {
+    "instruction": "Analyze the following veterinary clinical note and predict the SNOMED-CT diagnosis codes.",
+    "input": "Clinical Note: Patient: cow angus, 7 years old, 37.5kg. chief complaint: limping and joint pain. physical exam reveals fluid accumulation in abdomen. temperature: 38.7\u00b0c, heart rate: 120 bpm.",
+    "output": "Diagnosed conditions: 16973004, 57676002",
+    "snomed_codes": [
+      "16973004",
+      "57676002"
+    ]
+  },
+  {
+    "instruction": "Analyze the following veterinary clinical note and predict the SNOMED-CT diagnosis codes.",
+    "input": "Clinical Note: Emergency presentation: cow with acute eye discharge. Clinical signs: abnormal heart rhythm. Vital parameters: Temperature 37.8\u00b0C, pulse 66bpm.",
+    "output": "Diagnosed conditions: 246636008",
+    "snomed_codes": [
+      "246636008"
+    ]
+  },
+  {
+    "instruction": "Determine the diagnosis codes that best match this clinical presentation.",
+    "input": "Clinical Note: Patient: bird Cockatiel, 13 years old, 6.4kg. Chief complaint: fever and dehydration. Physical examination reveals dental disease, halitosis. Temperature: 40.8\u00b0C, Heart rate: 101 bpm.",
+    "output": "Diagnosed conditions: 386661006, 34095006",
+    "snomed_codes": [
+      "386661006",
+      "34095006"
+    ]
+  },
+  {
+    "instruction": "What diagnoses would you assign to this veterinary case using SNOMED-CT codes?",
+    "input": "Clinical Note: Emergency presentation: horse with acute weight loss. Clinical signs: muscle wasting, poor body condition. Vital parameters: Temperature 40.8\u00b0C, pulse 127bpm.",
+    "output": "Diagnosed conditions: 89362005",
+    "snomed_codes": [
+      "89362005"
+    ]
+  },
+  {
+    "instruction": "Analyze the following veterinary clinical note and predict the SNOMED-CT diagnosis codes.",
+    "input": "Clinical Note: 10-year-old german shepherd canine with history of seizure activity. physical findings: decreased reflexes. diagnostic impression: seizure activity.",
+    "output": "Diagnosed conditions: 91175000",
+    "snomed_codes": [
+      "91175000"
+    ]
+  },
+  {
+    "instruction": "Analyze the following veterinary clinical note and predict the SNOMED-CT diagnosis codes.",
+    "input": "Clinical Note: Routine examination: bird, parrot, 12 years. owner reports seizure activity. examination findings: abnormal cardiac rhythm.",
+    "output": "Diagnosed conditions: 91175000",
+    "snomed_codes": [
+      "91175000"
+    ]
+  },
+  {
+    "instruction": "Determine the diagnosis codes that best match this clinical presentation.",
+    "input": "Clinical Note: Patient: cat Ragdoll, 3 years old, 31.7kg. Chief complaint: limping and joint pain. Physical examination reveals muscle wasting, poor body condition. Temperature: 39.3\u00b0C, Heart rate: 118 bpm.",
+    "output": "Diagnosed conditions: 16973004, 57676002",
+    "snomed_codes": [
+      "16973004",
+      "57676002"
+    ]
+  },
+  {
+    "instruction": "Based on the clinical findings, identify the most likely SNOMED-CT diagnosis codes.",
+    "input": "Clinical Note: Routine examination: cow, Brahman, 6 years. Owner reports seizure activity. Examination findings: joint swelling, pain on palpation.",
+    "output": "Diagnosed conditions: 91175000",
+    "snomed_codes": [
+      "91175000"
+    ]
+  },
+  {
+    "instruction": "What are the appropriate SNOMED-CT codes for this veterinary case?",
+    "input": "Clinical Note: 5-year-old Mini Rex rabbit with history of abdominal distension. Physical findings: fluid accumulation in abdomen. Diagnostic impression: abdominal distension.",
+    "output": "Diagnosed conditions: 271860004",
+    "snomed_codes": [
+      "271860004"
+    ]
+  },
+  {
+    "instruction": "Predict the SNOMED-CT classifications for this veterinary patient.",
+    "input": "Clinical Note: 14-year-old Labrador dog with history of eye discharge. Physical findings: respiratory distress, abnormal lung sounds. Diagnostic impression: eye discharge.",
+    "output": "Diagnosed conditions: 246636008",
+    "snomed_codes": [
+      "246636008"
+    ]
+  },
+  {
+    "instruction": "Predict the SNOMED-CT classifications for this veterinary patient.",
+    "input": "Clinical Note: Routine examination: cat, Domestic Shorthair, 1 years. Owner reports abdominal distension. Examination findings: decreased reflexes.",
+    "output": "Diagnosed conditions: 271860004",
+    "snomed_codes": [
+      "271860004"
+    ]
+  },
+  {
+    "instruction": "Based on the clinical findings, identify the most likely SNOMED-CT diagnosis codes.",
+    "input": "Clinical Note: Emergency presentation: Emergency presentation: cow with acute limping and joint pain. Clinical signs: aggressive behavior, disorientation. Vital parameters: Temperature 40.6\u00b0C, pulse 124bpm.",
+    "output": "Diagnosed conditions: 16973004, 57676002",
+    "snomed_codes": [
+      "16973004",
+      "57676002"
+    ]
+  },
+  {
+    "instruction": "What are the appropriate SNOMED-CT codes for this veterinary case?",
+    "input": "Clinical Note: Emergency presentation: bird with acute skin irritation and scratching. Clinical signs: enlarged liver on palpation. Vital parameters: Temperature 40.1\u00b0C, pulse 66bpm.",
+    "output": "Diagnosed conditions: 271807003, 424492005",
+    "snomed_codes": [
+      "271807003",
+      "424492005"
+    ]
+  },
+  {
+    "instruction": "Identify the diagnostic codes based on the clinical notes provided.",
+    "input": "Clinical Note: horse presenting with abdominal distension. On examination: mild dehydration, pale mucous membranes. Vital signs: T=40.2\u00b0C, HR=82bpm, RR=38bpm. Assessment: abdominal distension.",
+    "output": "Diagnosed conditions: 271860004",
+    "snomed_codes": [
+      "271860004"
+    ]
+  },
+  {
+    "instruction": "What are the appropriate SNOMED-CT codes for this veterinary case?",
+    "input": "Clinical Note: 4-year-old Canary bird with history of limping and joint pain. Physical findings: respiratory distress, abnormal lung sounds. Diagnostic impression: limping and joint pain.",
+    "output": "Diagnosed conditions: 16973004, 57676002",
+    "snomed_codes": [
+      "16973004",
+      "57676002"
+    ]
+  },
+  {
+    "instruction": "Analyze the following veterinary clinical note and predict the SNOMED-CT diagnosis codes.",
+    "input": "Clinical Note: Routine examination: dog, Poodle, 2 years. Owner reports excessive thirst. Examination findings: dental disease, halitosis.",
+    "output": "Diagnosed conditions: 17173007",
+    "snomed_codes": [
+      "17173007"
+    ]
+  },
+  {
+    "instruction": "Predict the SNOMED-CT classifications for this veterinary patient.",
+    "input": "Clinical Note: 5-year-old Ragdoll cat with history of behavioral changes. Physical findings: aggressive behavior, disorientation. Diagnostic impression: behavioral changes.",
+    "output": "Diagnosed conditions: 25786006",
+    "snomed_codes": [
+      "25786006"
+    ]
+  },
+  {
+    "instruction": "Determine the diagnosis codes that best match this clinical presentation.",
+    "input": "Clinical Note: Emergency presentation: Routine examination: rabbit, Holland Lop, 11 years. Owner reports fever and dehydration. Examination findings: dental disease, halitosis.",
+    "output": "Diagnosed conditions: 386661006, 34095006",
+    "snomed_codes": [
+      "386661006",
+      "34095006"
+    ]
+  },
+  {
+    "instruction": "What diagnoses would you assign to this veterinary case using SNOMED-CT codes?",
+    "input": "Clinical Note: Routine examination: cow, Hereford, 14 years. Owner reports difficulty breathing. Examination findings: muscle wasting, poor body condition.",
+    "output": "Diagnosed conditions: 267036007",
+    "snomed_codes": [
+      "267036007"
+    ]
+  },
+  {
+    "instruction": "Determine the diagnosis codes that best match this clinical presentation.",
+    "input": "Clinical Note: Emergency presentation: horse with acute loss of balance. clinical signs: decreased reflexes. vital parameters: temp 39.8\u00b0c, pulse 146bpm.",
+    "output": "Diagnosed conditions: 387603000",
+    "snomed_codes": [
+      "387603000"
+    ]
+  },
+  {
+    "instruction": "Predict the SNOMED-CT classifications for this veterinary patient.",
+    "input": "Clinical Note: 7-year-old Clydesdale horse with history of seizure activity. Physical findings: muscle wasting, poor body condition. Diagnostic impression: seizure activity.",
+    "output": "Diagnosed conditions: 91175000",
+    "snomed_codes": [
+      "91175000"
+    ]
+  },
+  {
+    "instruction": "Based on the clinical findings, identify the most likely SNOMED-CT diagnosis codes.",
+    "input": "Clinical Note: Emergency presentation: dog with acute seizure activity. Clinical signs: abnormal heart rhythm. Vital parameters: Temperature 40.4\u00b0C, pulse 86bpm.",
+    "output": "Diagnosed conditions: 91175000",
+    "snomed_codes": [
+      "91175000"
+    ]
+  },
+  {
+    "instruction": "What are the appropriate SNOMED-CT codes for this veterinary case?",
+    "input": "Clinical Note: Emergency presentation: dog with acute vomiting and diarrhea. Clinical signs: neurological abnormalities. Vital parameters: Temperature 38.7\u00b0C, pulse 103bpm.",
+    "output": "Diagnosed conditions: 422400008, 62315008",
+    "snomed_codes": [
+      "422400008",
+      "62315008"
+    ]
+  },
+  {
+    "instruction": "Analyze the following veterinary clinical note and predict the SNOMED-CT diagnosis codes.",
+    "input": "Clinical Note: Routine examination: bovine, brahman, 14 years. owner reports eye discharge. examination findings: abnormal heart rhythm.",
+    "output": "Diagnosed conditions: 246636008",
+    "snomed_codes": [
+      "246636008"
+    ]
+  },
+  {
+    "instruction": "Predict the SNOMED-CT classifications for this veterinary patient.",
+    "input": "Clinical Note: Cat presenting with seizure activity. on exam: abnormal heart rhythm. vital signs: t=40.5\u00b0c, hr=89bpm, rr=23bpm. assessment: seizure activity.",
+    "output": "Diagnosed conditions: 91175000",
+    "snomed_codes": [
+      "91175000"
+    ]
+  },
+  {
+    "instruction": "What are the appropriate SNOMED-CT codes for this veterinary case?",
+    "input": "Clinical Note: 13-year-old Jersey cow with history of excessive thirst. Physical findings: joint swelling, pain on palpation. Diagnostic impression: excessive thirst.",
+    "output": "Diagnosed conditions: 17173007",
+    "snomed_codes": [
+      "17173007"
+    ]
+  },
+  {
+    "instruction": "What are the appropriate SNOMED-CT codes for this veterinary case?",
+    "input": "Clinical Note: Patient: bird Budgie, 15 years old, 35.0kg. Chief complaint: weight loss. Physical examination reveals muscle wasting, poor body condition. Temperature: 39.4\u00b0C, Heart rate: 155 bpm.",
+    "output": "Diagnosed conditions: 89362005",
+    "snomed_codes": [
+      "89362005"
+    ]
+  },
+  {
+    "instruction": "Predict the SNOMED-CT classifications for this veterinary patient.",
+    "input": "Clinical Note: Routine examination: rabbit, Angora, 5 years. Owner reports loss of balance. Examination findings: fluid accumulation in abdomen.",
+    "output": "Diagnosed conditions: 387603000",
+    "snomed_codes": [
+      "387603000"
+    ]
+  },
+  {
+    "instruction": "What are the appropriate SNOMED-CT codes for this veterinary case?",
+    "input": "Clinical Note: Emergency presentation: 9-year-old Ragdoll cat with history of loss of balance. Physical findings: respiratory distress, abnormal lung sounds. Diagnostic impression: loss of balance.",
+    "output": "Diagnosed conditions: 387603000",
+    "snomed_codes": [
+      "387603000"
+    ]
+  },
+  {
+    "instruction": "What are the appropriate SNOMED-CT codes for this veterinary case?",
+    "input": "Clinical Note: Routine examination: rabbit, Netherland Dwarf, 3 years. Owner reports vomiting and diarrhea. Examination findings: respiratory distress, abnormal lung sounds.",
+    "output": "Diagnosed conditions: 422400008, 62315008",
+    "snomed_codes": [
+      "422400008",
+      "62315008"
+    ]
+  },
+  {
+    "instruction": "Predict the SNOMED-CT classifications for this veterinary patient.",
+    "input": "Clinical Note: 11-year-old Arabian horse with history of vomiting and diarrhea. Physical findings: nasal discharge, enlarged lymph nodes. Diagnostic impression: vomiting and diarrhea.",
+    "output": "Diagnosed conditions: 422400008, 62315008",
+    "snomed_codes": [
+      "422400008",
+      "62315008"
+    ]
+  },
+  {
+    "instruction": "Predict the SNOMED-CT classifications for this veterinary patient.",
+    "input": "Clinical Note: 4-year-old Lionhead rabbit with history of difficulty breathing. Physical findings: mild dehydration, pale mucous membranes. Diagnostic impression: difficulty breathing.",
+    "output": "Diagnosed conditions: 267036007",
+    "snomed_codes": [
+      "267036007"
+    ]
+  },
+  {
+    "instruction": "Determine the diagnosis codes that best match this clinical presentation.",
+    "input": "Clinical Note: Emergency presentation: cat with acute excessive thirst. Clinical signs: enlarged liver on palpation. Vital parameters: Temperature 41.0\u00b0C, pulse 137bpm.",
+    "output": "Diagnosed conditions: 17173007",
+    "snomed_codes": [
+      "17173007"
+    ]
+  },
+  {
+    "instruction": "Determine the diagnosis codes that best match this clinical presentation.",
+    "input": "Clinical Note: 1-year-old persian feline with history of coughing and nasal discharge. physical findings: neurological abnormalities. diagnostic impression: coughing and nasal discharge.",
+    "output": "Diagnosed conditions: 49727002, 64531003",
+    "snomed_codes": [
+      "49727002",
+      "64531003"
+    ]
+  },
+  {
+    "instruction": "What are the appropriate SNOMED-CT codes for this veterinary case?",
+    "input": "Clinical Note: horse presenting with weight loss. On examination: muscle wasting, poor body condition. Vital signs: T=40.3\u00b0C, HR=137bpm, RR=17bpm. Assessment: weight loss.",
+    "output": "Diagnosed conditions: 89362005",
+    "snomed_codes": [
+      "89362005"
+    ]
+  },
+  {
+    "instruction": "Based on the clinical findings, identify the most likely SNOMED-CT diagnosis codes.",
+    "input": "Clinical Note: 5-year-old German Shepherd dog with history of skin irritation and scratching. Physical findings: joint swelling, pain on palpation. Diagnostic impression: skin irritation and scratching.",
+    "output": "Diagnosed conditions: 271807003, 424492005",
+    "snomed_codes": [
+      "271807003",
+      "424492005"
+    ]
+  },
+  {
+    "instruction": "What are the appropriate SNOMED-CT codes for this veterinary case?",
+    "input": "Clinical Note: 14-year-old jersey cow with history of difficulty respiration. physical findings: enlarged liver on palpation. diagnostic impression: difficulty respiration.",
+    "output": "Diagnosed conditions: 267036007",
+    "snomed_codes": [
+      "267036007"
+    ]
+  },
+  {
+    "instruction": "Predict the SNOMED-CT classifications for this veterinary patient.",
+    "input": "Clinical Note: 5-year-old Mini Rex rabbit with history of difficulty urinating. Physical findings: decreased reflexes. Diagnostic impression: difficulty urinating.",
+    "output": "Diagnosed conditions: 139394000",
+    "snomed_codes": [
+      "139394000"
+    ]
+  },
+  {
+    "instruction": "What diagnoses would you assign to this veterinary case using SNOMED-CT codes?",
+    "input": "Clinical Note: Patient: rabbit Holland Lop, 3 years old, 44.1kg. Chief complaint: difficulty breathing. Physical examination reveals mild dehydration, pale mucous membranes. Temperature: 40.2\u00b0C, Heart rate: 159 bpm.",
+    "output": "Diagnosed conditions: 267036007",
+    "snomed_codes": [
+      "267036007"
+    ]
+  },
+  {
+    "instruction": "What are the appropriate SNOMED-CT codes for this veterinary case?",
+    "input": "Clinical Note: Emergency presentation: rabbit with acute emesis and diarrhea. clinical signs: aggressive behavior, disorientation. vital parameters: temperature 40.5\u00b0c, pulse 73bpm.",
+    "output": "Diagnosed conditions: 422400008, 62315008",
+    "snomed_codes": [
+      "422400008",
+      "62315008"
+    ]
+  },
+  {
+    "instruction": "What diagnoses would you assign to this veterinary case using SNOMED-CT codes?",
+    "input": "Clinical Note: Emergency presentation: bird with acute abdominal distension. Clinical signs: skin lesions, erythema. Vital parameters: Temperature 38.2\u00b0C, pulse 143bpm.",
+    "output": "Diagnosed conditions: 271860004",
+    "snomed_codes": [
+      "271860004"
+    ]
+  },
+  {
+    "instruction": "Predict the SNOMED-CT classifications for this veterinary patient.",
+    "input": "Clinical Note: Patient: dog Beagle, 4 years old, 9.3kg. Chief complaint: eye discharge. Physical examination reveals skin lesions, erythema. Temperature: 39.7\u00b0C, Heart rate: 136 bpm.",
+    "output": "Diagnosed conditions: 246636008",
+    "snomed_codes": [
+      "246636008"
+    ]
+  },
+  {
+    "instruction": "Predict the SNOMED-CT classifications for this veterinary patient.",
+    "input": "Clinical Note: Routine examination: bovine, holstein, 6 years. owner reports lethargy and decreased appetite. examination findings: mild dehydration, pale mucous membranes.",
+    "output": "Diagnosed conditions: 397983004, 79890006",
+    "snomed_codes": [
+      "397983004",
+      "79890006"
+    ]
+  },
+  {
+    "instruction": "Analyze the following veterinary clinical note and predict the SNOMED-CT diagnosis codes.",
+    "input": "Clinical Note: Routine examination: rabbit, Lionhead, 7 years. Owner reports vomiting and diarrhea. Examination findings: joint swelling, pain on palpation.",
+    "output": "Diagnosed conditions: 422400008, 62315008",
+    "snomed_codes": [
+      "422400008",
+      "62315008"
+    ]
+  },
+  {
+    "instruction": "What are the appropriate SNOMED-CT codes for this veterinary case?",
+    "input": "Clinical Note: Emergency presentation: rabbit with acute weight loss. Clinical signs: aggressive behavior, disorientation. Vital parameters: Temperature 39.8\u00b0C, pulse 144bpm.",
+    "output": "Diagnosed conditions: 89362005",
+    "snomed_codes": [
+      "89362005"
+    ]
+  },
+  {
+    "instruction": "What diagnoses would you assign to this veterinary case using SNOMED-CT codes?",
+    "input": "Clinical Note: Routine examination: horse, Pinto, 10 years. Owner reports fever and dehydration. Examination findings: corneal opacity.",
+    "output": "Diagnosed conditions: 386661006, 34095006",
+    "snomed_codes": [
+      "386661006",
+      "34095006"
+    ]
+  },
+  {
+    "instruction": "Predict the SNOMED-CT classifications for this veterinary patient.",
+    "input": "Clinical Note: Emergency presentation: 10-year-old British Shorthair cat with history of difficulty breathing. Physical findings: aggressive behavior, disorientation. Diagnostic impression: difficulty breathing.",
+    "output": "Diagnosed conditions: 267036007",
+    "snomed_codes": [
+      "267036007"
+    ]
+  },
+  {
+    "instruction": "What diagnoses would you assign to this veterinary case using SNOMED-CT codes?",
+    "input": "Clinical Note: cow presenting with difficulty breathing. On examination: abnormal heart rhythm. Vital signs: T=39.3\u00b0C, HR=102bpm, RR=14bpm. Assessment: difficulty breathing.",
+    "output": "Diagnosed conditions: 267036007",
+    "snomed_codes": [
+      "267036007"
+    ]
+  },
+  {
+    "instruction": "Analyze the following veterinary clinical note and predict the SNOMED-CT diagnosis codes.",
+    "input": "Clinical Note: Emergency presentation: bird with acute seizure activity. Clinical signs: enlarged liver on palpation. Vital parameters: Temperature 37.8\u00b0C, pulse 161bpm.",
+    "output": "Diagnosed conditions: 91175000",
+    "snomed_codes": [
+      "91175000"
+    ]
+  },
+  {
+    "instruction": "Based on the clinical findings, identify the most likely SNOMED-CT diagnosis codes.",
+    "input": "Clinical Note: Patient: dog Beagle, 15 years old, 21.7kg. Chief complaint: vomiting and diarrhea. Physical examination reveals corneal opacity. Temperature: 38.9\u00b0C, Heart rate: 152 bpm.",
+    "output": "Diagnosed conditions: 422400008, 62315008",
+    "snomed_codes": [
+      "422400008",
+      "62315008"
+    ]
+  },
+  {
+    "instruction": "Identify the diagnostic codes based on the clinical notes provided.",
+    "input": "Clinical Note: Emergency presentation: cat presenting with lethargy and decreased appetite. On examination: mild dehydration, pale mucous membranes. Vital signs: T=39.4\u00b0C, HR=82bpm, RR=20bpm. Assessment: lethargy and decreased appetite.",
+    "output": "Diagnosed conditions: 397983004, 79890006",
+    "snomed_codes": [
+      "397983004",
+      "79890006"
+    ]
+  },
+  {
+    "instruction": "Determine the diagnosis codes that best match this clinical presentation.",
+    "input": "Clinical Note: Emergency presentation: 1-year-old Holland Lop rabbit with history of difficulty urinating. Physical findings: joint swelling, pain on palpation. Diagnostic impression: difficulty urinating.",
+    "output": "Diagnosed conditions: 139394000",
+    "snomed_codes": [
+      "139394000"
+    ]
+  },
+  {
+    "instruction": "What diagnoses would you assign to this veterinary case using SNOMED-CT codes?",
+    "input": "Clinical Note: Routine examination: horse, Arabian, 2 years. Owner reports seizure activity. Examination findings: respiratory distress, abnormal lung sounds.",
+    "output": "Diagnosed conditions: 91175000",
+    "snomed_codes": [
+      "91175000"
+    ]
+  },
+  {
+    "instruction": "Based on the clinical findings, identify the most likely SNOMED-CT diagnosis codes.",
+    "input": "Clinical Note: Emergency presentation: horse presenting with abdominal distension. On examination: mild dehydration, pale mucous membranes. Vital signs: T=40.2\u00b0C, HR=82bpm, RR=38bpm. Assessment: abdominal distension.",
+    "output": "Diagnosed conditions: 271860004",
+    "snomed_codes": [
+      "271860004"
+    ]
+  },
+  {
+    "instruction": "Predict the SNOMED-CT classifications for this veterinary patient.",
+    "input": "Clinical Note: Patient: bird Parrot, 5 years old, 12.2kg. Chief complaint: vomiting and diarrhea. Physical examination reveals dental disease, halitosis. Temperature: 38.0\u00b0C, Heart rate: 73 bpm.",
+    "output": "Diagnosed conditions: 422400008, 62315008",
+    "snomed_codes": [
+      "422400008",
+      "62315008"
+    ]
+  },
+  {
+    "instruction": "Analyze the following veterinary clinical note and predict the SNOMED-CT diagnosis codes.",
+    "input": "Clinical Note: Emergency presentation: cow presenting with coughing and nasal discharge. On examination: abnormal heart rhythm. Vital signs: T=39.0\u00b0C, HR=90bpm, RR=14bpm. Assessment: coughing and nasal discharge.",
+    "output": "Diagnosed conditions: 49727002, 64531003",
+    "snomed_codes": [
+      "49727002",
+      "64531003"
+    ]
+  },
+  {
+    "instruction": "Predict the SNOMED-CT classifications for this veterinary patient.",
+    "input": "Clinical Note: dog presenting with vomiting and diarrhea. On examination: fluid accumulation in abdomen. Vital signs: T=38.9\u00b0C, HR=134bpm, RR=13bpm. Assessment: vomiting and diarrhea.",
+    "output": "Diagnosed conditions: 422400008, 62315008",
+    "snomed_codes": [
+      "422400008",
+      "62315008"
+    ]
+  },
+  {
+    "instruction": "What diagnoses would you assign to this veterinary case using SNOMED-CT codes?",
+    "input": "Clinical Note: Emergency presentation: rabbit with acute lethargy and decreased appetite. Clinical signs: abnormal heart rhythm. Vital parameters: Temperature 39.7\u00b0C, pulse 113bpm.",
+    "output": "Diagnosed conditions: 397983004, 79890006",
+    "snomed_codes": [
+      "397983004",
+      "79890006"
+    ]
+  },
+  {
+    "instruction": "Based on the clinical findings, identify the most likely SNOMED-CT diagnosis codes.",
+    "input": "Clinical Note: Emergency presentation: bird with acute abdominal distension. clinical signs: aggressive behavior, disorientation. vital parameters: temp 38.8\u00b0c, pulse 131bpm.",
+    "output": "Diagnosed conditions: 271860004",
+    "snomed_codes": [
+      "271860004"
+    ]
+  },
+  {
+    "instruction": "Based on the clinical findings, identify the most likely SNOMED-CT diagnosis codes.",
+    "input": "Clinical Note: 11-year-old Parrot bird with history of weight loss. Physical findings: fluid accumulation in abdomen. Diagnostic impression: weight loss.",
+    "output": "Diagnosed conditions: 89362005",
+    "snomed_codes": [
+      "89362005"
+    ]
+  },
+  {
+    "instruction": "Based on the clinical findings, identify the most likely SNOMED-CT diagnosis codes.",
+    "input": "Clinical Note: Patient: cat Ragdoll, 15 years old, 35.6kg. Chief complaint: difficulty urinating. Physical examination reveals mild dehydration, pale mucous membranes. Temperature: 40.4\u00b0C, Heart rate: 77 bpm.",
+    "output": "Diagnosed conditions: 139394000",
+    "snomed_codes": [
+      "139394000"
+    ]
+  },
+  {
+    "instruction": "Predict the SNOMED-CT classifications for this veterinary patient.",
+    "input": "Clinical Note: Emergency presentation: cow with acute difficulty breathing. Clinical signs: decreased reflexes. Vital parameters: Temperature 40.0\u00b0C, pulse 180bpm.",
+    "output": "Diagnosed conditions: 267036007",
+    "snomed_codes": [
+      "267036007"
+    ]
+  },
+  {
+    "instruction": "What are the appropriate SNOMED-CT codes for this veterinary case?",
+    "input": "Clinical Note: Patient: dog Labrador, 5 years old, 40.6kg. Chief complaint: behavioral changes. Physical examination reveals elevated temperature, tachycardia. Temperature: 40.6\u00b0C, Heart rate: 156 bpm.",
+    "output": "Diagnosed conditions: 25786006",
+    "snomed_codes": [
+      "25786006"
+    ]
+  },
+  {
+    "instruction": "Based on the clinical findings, identify the most likely SNOMED-CT diagnosis codes.",
+    "input": "Clinical Note: Rabbit presenting with seizure activity. on examination: abnormal cardiac rhythm. vital signs: t=39.9\u00b0c, hr=77bpm, rr=16bpm. assessment: seizure activity.",
+    "output": "Diagnosed conditions: 91175000",
+    "snomed_codes": [
+      "91175000"
+    ]
+  },
+  {
+    "instruction": "Identify the diagnostic codes based on the clinical notes provided.",
+    "input": "Clinical Note: 11-year-old Netherland Dwarf rabbit with history of eye discharge. Physical findings: corneal opacity. Diagnostic impression: eye discharge.",
+    "output": "Diagnosed conditions: 246636008",
+    "snomed_codes": [
+      "246636008"
+    ]
+  },
+  {
+    "instruction": "Based on the clinical findings, identify the most likely SNOMED-CT diagnosis codes.",
+    "input": "Clinical Note: Routine examination: horse, Arabian, 1 years. Owner reports lethargy and decreased appetite. Examination findings: skin lesions, erythema.",
+    "output": "Diagnosed conditions: 397983004, 79890006",
+    "snomed_codes": [
+      "397983004",
+      "79890006"
+    ]
+  },
+  {
+    "instruction": "Identify the diagnostic codes based on the clinical notes provided.",
+    "input": "Clinical Note: 5-year-old Pinto horse with history of fever and dehydration. Physical findings: respiratory distress, abnormal lung sounds. Diagnostic impression: fever and dehydration.",
+    "output": "Diagnosed conditions: 386661006, 34095006",
+    "snomed_codes": [
+      "386661006",
+      "34095006"
+    ]
+  },
+  {
+    "instruction": "Identify the diagnostic codes based on the clinical notes provided.",
+    "input": "Clinical Note: Canine presenting with loss of balance. on examination: joint swelling, pain on palpation. vital signs: t=38.0\u00b0c, hr=74bpm, rr=40bpm. assessment: loss of balance.",
+    "output": "Diagnosed conditions: 387603000",
+    "snomed_codes": [
+      "387603000"
+    ]
+  },
+  {
+    "instruction": "Based on the clinical findings, identify the most likely SNOMED-CT diagnosis codes.",
+    "input": "Clinical Note: Routine examination: cat, Maine Coon, 1 years. Owner reports excessive thirst. Examination findings: abnormal heart rhythm.",
+    "output": "Diagnosed conditions: 17173007",
+    "snomed_codes": [
+      "17173007"
+    ]
+  },
+  {
+    "instruction": "What are the appropriate SNOMED-CT codes for this veterinary case?",
+    "input": "Clinical Note: bird presenting with abdominal distension. On examination: corneal opacity. Vital signs: T=39.7\u00b0C, HR=72bpm, RR=11bpm. Assessment: abdominal distension.",
+    "output": "Diagnosed conditions: 271860004",
+    "snomed_codes": [
+      "271860004"
+    ]
+  },
+  {
+    "instruction": "Predict the SNOMED-CT classifications for this veterinary patient.",
+    "input": "Clinical Note: bird presenting with weight loss. On examination: fluid accumulation in abdomen. Vital signs: T=40.4\u00b0C, HR=123bpm, RR=14bpm. Assessment: weight loss.",
+    "output": "Diagnosed conditions: 89362005",
+    "snomed_codes": [
+      "89362005"
+    ]
+  },
+  {
+    "instruction": "Identify the diagnostic codes based on the clinical notes provided.",
+    "input": "Clinical Note: Routine examination: rabbit, angora, 5 years. owner reports lethargy and decreased eating. examination findings: neurological abnormalities.",
+    "output": "Diagnosed conditions: 397983004, 79890006",
+    "snomed_codes": [
+      "397983004",
+      "79890006"
+    ]
+  },
+  {
+    "instruction": "What diagnoses would you assign to this veterinary case using SNOMED-CT codes?",
+    "input": "Clinical Note: Emergency presentation: Emergency presentation: rabbit with acute coughing and nasal discharge. Clinical signs: dental disease, halitosis. Vital parameters: Temperature 39.6\u00b0C, pulse 154bpm.",
+    "output": "Diagnosed conditions: 49727002, 64531003",
+    "snomed_codes": [
+      "49727002",
+      "64531003"
+    ]
+  },
+  {
+    "instruction": "Analyze the following veterinary clinical note and predict the SNOMED-CT diagnosis codes.",
+    "input": "Clinical Note: 4-year-old Canary bird with history of vomiting and diarrhea. Physical findings: nasal discharge, enlarged lymph nodes. Diagnostic impression: vomiting and diarrhea.",
+    "output": "Diagnosed conditions: 422400008, 62315008",
+    "snomed_codes": [
+      "422400008",
+      "62315008"
+    ]
+  },
+  {
+    "instruction": "What are the appropriate SNOMED-CT codes for this veterinary case?",
+    "input": "Clinical Note: Emergency presentation: Routine examination: horse, Pinto, 3 years. Owner reports seizure activity. Examination findings: aggressive behavior, disorientation.",
+    "output": "Diagnosed conditions: 91175000",
+    "snomed_codes": [
+      "91175000"
+    ]
+  },
+  {
+    "instruction": "Identify the diagnostic codes based on the clinical notes provided.",
+    "input": "Clinical Note: Emergency presentation: Routine examination: cat, Domestic Shorthair, 1 years. Owner reports fever and dehydration. Examination findings: joint swelling, pain on palpation.",
+    "output": "Diagnosed conditions: 386661006, 34095006",
+    "snomed_codes": [
+      "386661006",
+      "34095006"
+    ]
+  },
+  {
+    "instruction": "Identify the diagnostic codes based on the clinical notes provided.",
+    "input": "Clinical Note: Patient: rabbit Mini Rex, 1 years old, 1.3kg. Chief complaint: weight loss. Physical examination reveals enlarged liver on palpation. Temperature: 40.5\u00b0C, Heart rate: 128 bpm.",
+    "output": "Diagnosed conditions: 89362005",
+    "snomed_codes": [
+      "89362005"
+    ]
+  },
+  {
+    "instruction": "What are the appropriate SNOMED-CT codes for this veterinary case?",
+    "input": "Clinical Note: Routine examination: equine, pinto, 7 years. owner reports abdominal distension. examination findings: aggressive behavior, disorientation.",
+    "output": "Diagnosed conditions: 271860004",
+    "snomed_codes": [
+      "271860004"
+    ]
+  },
+  {
+    "instruction": "Determine the diagnosis codes that best match this clinical presentation.",
+    "input": "Clinical Note: 15-year-old Ragdoll cat with history of excessive thirst. Physical findings: elevated temperature, tachycardia. Diagnostic impression: excessive thirst.",
+    "output": "Diagnosed conditions: 17173007",
+    "snomed_codes": [
+      "17173007"
+    ]
+  },
+  {
+    "instruction": "Predict the SNOMED-CT classifications for this veterinary patient.",
+    "input": "Clinical Note: Patient: horse Pinto, 4 years old, 33.1kg. Chief complaint: excessive thirst. Physical examination reveals fluid accumulation in abdomen. Temperature: 38.6\u00b0C, Heart rate: 112 bpm.",
+    "output": "Diagnosed conditions: 17173007",
+    "snomed_codes": [
+      "17173007"
+    ]
+  },
+  {
+    "instruction": "Determine the diagnosis codes that best match this clinical presentation.",
+    "input": "Clinical Note: Emergency presentation: bird with acute limping and joint pain. Clinical signs: decreased reflexes. Vital parameters: Temperature 40.7\u00b0C, pulse 102bpm.",
+    "output": "Diagnosed conditions: 16973004, 57676002",
+    "snomed_codes": [
+      "16973004",
+      "57676002"
+    ]
+  },
+  {
+    "instruction": "Identify the diagnostic codes based on the clinical notes provided.",
+    "input": "Clinical Note: Emergency presentation: dog with acute behavioral changes. Clinical signs: elevated temperature, tachycardia. Vital parameters: Temperature 40.6\u00b0C, pulse 136bpm.",
+    "output": "Diagnosed conditions: 25786006",
+    "snomed_codes": [
+      "25786006"
+    ]
+  },
+  {
+    "instruction": "Predict the SNOMED-CT classifications for this veterinary patient.",
+    "input": "Clinical Note: Routine examination: rabbit, Lionhead, 10 years. Owner reports difficulty breathing. Examination findings: fluid accumulation in abdomen.",
+    "output": "Diagnosed conditions: 267036007",
+    "snomed_codes": [
+      "267036007"
+    ]
+  },
+  {
+    "instruction": "Identify the diagnostic codes based on the clinical notes provided.",
+    "input": "Clinical Note: bird presenting with vomiting and diarrhea. On examination: mild dehydration, pale mucous membranes. Vital signs: T=39.2\u00b0C, HR=147bpm, RR=11bpm. Assessment: vomiting and diarrhea.",
+    "output": "Diagnosed conditions: 422400008, 62315008",
+    "snomed_codes": [
+      "422400008",
+      "62315008"
+    ]
+  },
+  {
+    "instruction": "Analyze the following veterinary clinical note and predict the SNOMED-CT diagnosis codes.",
+    "input": "Clinical Note: 2-year-old Hereford cow with history of skin irritation and scratching. Physical findings: joint swelling, pain on palpation. Diagnostic impression: skin irritation and scratching.",
+    "output": "Diagnosed conditions: 271807003, 424492005",
+    "snomed_codes": [
+      "271807003",
+      "424492005"
+    ]
+  },
+  {
+    "instruction": "Determine the diagnosis codes that best match this clinical presentation.",
+    "input": "Clinical Note: Patient: horse Quarter Horse, 9 years old, 5.9kg. Chief complaint: lethargy and decreased appetite. Physical examination reveals fluid accumulation in abdomen. Temperature: 37.6\u00b0C, Heart rate: 164 bpm.",
+    "output": "Diagnosed conditions: 397983004, 79890006",
+    "snomed_codes": [
+      "397983004",
+      "79890006"
+    ]
+  },
+  {
+    "instruction": "Based on the clinical findings, identify the most likely SNOMED-CT diagnosis codes.",
+    "input": "Clinical Note: Emergency presentation: Routine examination: horse, Pinto, 2 years. Owner reports excessive thirst. Examination findings: aggressive behavior, disorientation.",
+    "output": "Diagnosed conditions: 17173007",
+    "snomed_codes": [
+      "17173007"
+    ]
+  },
+  {
+    "instruction": "Predict the SNOMED-CT classifications for this veterinary patient.",
+    "input": "Clinical Note: Emergency presentation: Patient: cat British Shorthair, 9 years old, 19.7kg. Chief complaint: seizure activity. Physical examination reveals neurological abnormalities. Temperature: 40.0\u00b0C, Heart rate: 125 bpm.",
+    "output": "Diagnosed conditions: 91175000",
+    "snomed_codes": [
+      "91175000"
+    ]
+  },
+  {
+    "instruction": "Identify the diagnostic codes based on the clinical notes provided.",
+    "input": "Clinical Note: 13-year-old British Shorthair cat with history of excessive thirst. Physical findings: skin lesions, erythema. Diagnostic impression: excessive thirst.",
+    "output": "Diagnosed conditions: 17173007",
+    "snomed_codes": [
+      "17173007"
+    ]
+  },
+  {
+    "instruction": "What diagnoses would you assign to this veterinary case using SNOMED-CT codes?",
+    "input": "Clinical Note: Emergency presentation: cat presenting with difficulty urinating. On examination: decreased reflexes. Vital signs: T=39.6\u00b0C, HR=116bpm, RR=31bpm. Assessment: difficulty urinating.",
+    "output": "Diagnosed conditions: 139394000",
+    "snomed_codes": [
+      "139394000"
+    ]
+  },
+  {
+    "instruction": "Determine the diagnosis codes that best match this clinical presentation.",
+    "input": "Clinical Note: Routine examination: cat, Domestic Shorthair, 9 years. Owner reports abdominal distension. Examination findings: enlarged liver on palpation.",
+    "output": "Diagnosed conditions: 271860004",
+    "snomed_codes": [
+      "271860004"
+    ]
+  },
+  {
+    "instruction": "Analyze the following veterinary clinical note and predict the SNOMED-CT diagnosis codes.",
+    "input": "Clinical Note: Emergency presentation: cat with acute difficulty breathing. Clinical signs: abnormal heart rhythm. Vital parameters: Temperature 39.4\u00b0C, pulse 97bpm.",
+    "output": "Diagnosed conditions: 267036007",
+    "snomed_codes": [
+      "267036007"
+    ]
+  },
+  {
+    "instruction": "Identify the diagnostic codes based on the clinical notes provided.",
+    "input": "Clinical Note: Patient: horse Clydesdale, 13 years old, 6.7kg. Chief complaint: eye discharge. Physical examination reveals decreased reflexes. Temperature: 40.4\u00b0C, Heart rate: 78 bpm.",
+    "output": "Diagnosed conditions: 246636008",
+    "snomed_codes": [
+      "246636008"
+    ]
+  },
+  {
+    "instruction": "Predict the SNOMED-CT classifications for this veterinary patient.",
+    "input": "Clinical Note: Emergency presentation: rabbit presenting with vomiting and diarrhea. On examination: enlarged liver on palpation. Vital signs: T=38.8\u00b0C, HR=104bpm, RR=35bpm. Assessment: vomiting and diarrhea.",
+    "output": "Diagnosed conditions: 422400008, 62315008",
+    "snomed_codes": [
+      "422400008",
+      "62315008"
+    ]
+  },
+  {
+    "instruction": "Based on the clinical findings, identify the most likely SNOMED-CT diagnosis codes.",
+    "input": "Clinical Note: cat presenting with difficulty breathing. On examination: skin lesions, erythema. Vital signs: T=39.7\u00b0C, HR=63bpm, RR=18bpm. Assessment: difficulty breathing.",
+    "output": "Diagnosed conditions: 267036007",
+    "snomed_codes": [
+      "267036007"
+    ]
+  },
+  {
+    "instruction": "What are the appropriate SNOMED-CT codes for this veterinary case?",
+    "input": "Clinical Note: cow presenting with vomiting and diarrhea. On examination: muscle wasting, poor body condition. Vital signs: T=40.3\u00b0C, HR=130bpm, RR=33bpm. Assessment: vomiting and diarrhea.",
+    "output": "Diagnosed conditions: 422400008, 62315008",
+    "snomed_codes": [
+      "422400008",
+      "62315008"
+    ]
+  },
+  {
+    "instruction": "Identify the diagnostic codes based on the clinical notes provided.",
+    "input": "Clinical Note: Routine exam: dog, golden retriever, 15 years. owner reports excessive thirst. exam findings: respiratory distress, abnormal lung sounds.",
+    "output": "Diagnosed conditions: 17173007",
+    "snomed_codes": [
+      "17173007"
+    ]
+  },
+  {
+    "instruction": "What are the appropriate SNOMED-CT codes for this veterinary case?",
+    "input": "Clinical Note: Routine exam: horse, quarter horse, 12 years. owner reports excessive thirst. exam findings: dental disease, halitosis.",
+    "output": "Diagnosed conditions: 17173007",
+    "snomed_codes": [
+      "17173007"
+    ]
+  },
+  {
+    "instruction": "Analyze the following veterinary clinical note and predict the SNOMED-CT diagnosis codes.",
+    "input": "Clinical Note: 4-year-old Holland Lop rabbit with history of lethargy and decreased appetite. Physical findings: nasal discharge, enlarged lymph nodes. Diagnostic impression: lethargy and decreased appetite.",
+    "output": "Diagnosed conditions: 397983004, 79890006",
+    "snomed_codes": [
+      "397983004",
+      "79890006"
+    ]
+  },
+  {
+    "instruction": "What are the appropriate SNOMED-CT codes for this veterinary case?",
+    "input": "Clinical Note: Patient: cow Hereford, 8 years old, 3.3kg. Chief complaint: behavioral changes. Physical examination reveals abnormal heart rhythm. Temperature: 38.9\u00b0C, Heart rate: 81 bpm.",
+    "output": "Diagnosed conditions: 25786006",
+    "snomed_codes": [
+      "25786006"
+    ]
+  },
+  {
+    "instruction": "Determine the diagnosis codes that best match this clinical presentation.",
+    "input": "Clinical Note: Routine examination: equine, pinto, 9 years. owner reports abdominal distension. examination findings: skin lesions, erythema.",
+    "output": "Diagnosed conditions: 271860004",
+    "snomed_codes": [
+      "271860004"
+    ]
+  },
+  {
+    "instruction": "Identify the diagnostic codes based on the clinical notes provided.",
+    "input": "Clinical Note: 9-year-old Jersey cow with history of behavioral changes. Physical findings: respiratory distress, abnormal lung sounds. Diagnostic impression: behavioral changes.",
+    "output": "Diagnosed conditions: 25786006",
+    "snomed_codes": [
+      "25786006"
+    ]
+  },
+  {
+    "instruction": "Identify the diagnostic codes based on the clinical notes provided.",
+    "input": "Clinical Note: Routine examination: dog, Beagle, 6 years. Owner reports eye discharge. Examination findings: mild dehydration, pale mucous membranes.",
+    "output": "Diagnosed conditions: 246636008",
+    "snomed_codes": [
+      "246636008"
+    ]
+  },
+  {
+    "instruction": "Determine the diagnosis codes that best match this clinical presentation.",
+    "input": "Clinical Note: Emergency presentation: rabbit with acute weight loss. Clinical signs: nasal discharge, enlarged lymph nodes. Vital parameters: Temperature 40.6\u00b0C, pulse 113bpm.",
+    "output": "Diagnosed conditions: 89362005",
+    "snomed_codes": [
+      "89362005"
+    ]
+  },
+  {
+    "instruction": "Determine the diagnosis codes that best match this clinical presentation.",
+    "input": "Clinical Note: Patient: rabbit angora, 2 years old, 12.5kg. chief complaint: behavioral changes. physical examination reveals mild dehydration, pale mucous membranes. temp: 38.4\u00b0c, heart rate: 88 bpm.",
+    "output": "Diagnosed conditions: 25786006",
+    "snomed_codes": [
+      "25786006"
+    ]
+  },
+  {
+    "instruction": "Analyze the following veterinary clinical note and predict the SNOMED-CT diagnosis codes.",
+    "input": "Clinical Note: Routine exam: bird, lovebird, 9 years. owner reports coughing and nasal discharge. exam findings: nasal discharge, enlarged lymph nodes.",
+    "output": "Diagnosed conditions: 49727002, 64531003",
+    "snomed_codes": [
+      "49727002",
+      "64531003"
+    ]
+  },
+  {
+    "instruction": "What diagnoses would you assign to this veterinary case using SNOMED-CT codes?",
+    "input": "Clinical Note: Routine examination: cow, Hereford, 5 years. Owner reports lethargy and decreased appetite. Examination findings: muscle wasting, poor body condition.",
+    "output": "Diagnosed conditions: 397983004, 79890006",
+    "snomed_codes": [
+      "397983004",
+      "79890006"
+    ]
+  },
+  {
+    "instruction": "Identify the diagnostic codes based on the clinical notes provided.",
+    "input": "Clinical Note: Emergency presentation: 11-year-old Lionhead rabbit with history of behavioral changes. Physical findings: elevated temperature, tachycardia. Diagnostic impression: behavioral changes.",
+    "output": "Diagnosed conditions: 25786006",
+    "snomed_codes": [
+      "25786006"
+    ]
+  },
+  {
+    "instruction": "Identify the diagnostic codes based on the clinical notes provided.",
+    "input": "Clinical Note: Emergency presentation: cow with acute fever and dehydration. Clinical signs: abnormal heart rhythm. Vital parameters: Temperature 40.3\u00b0C, pulse 99bpm.",
+    "output": "Diagnosed conditions: 386661006, 34095006",
+    "snomed_codes": [
+      "386661006",
+      "34095006"
+    ]
+  },
+  {
+    "instruction": "What are the appropriate SNOMED-CT codes for this veterinary case?",
+    "input": "Clinical Note: Emergency presentation: Patient: cat Domestic Shorthair, 13 years old, 46.9kg. Chief complaint: behavioral changes. Physical examination reveals skin lesions, erythema. Temperature: 39.6\u00b0C, Heart rate: 140 bpm.",
+    "output": "Diagnosed conditions: 25786006",
+    "snomed_codes": [
+      "25786006"
+    ]
+  },
+  {
+    "instruction": "What diagnoses would you assign to this veterinary case using SNOMED-CT codes?",
+    "input": "Clinical Note: cow presenting with difficulty breathing. On examination: respiratory distress, abnormal lung sounds. Vital signs: T=37.9\u00b0C, HR=102bpm, RR=28bpm. Assessment: difficulty breathing.",
+    "output": "Diagnosed conditions: 267036007",
+    "snomed_codes": [
+      "267036007"
+    ]
+  },
+  {
+    "instruction": "Identify the diagnostic codes based on the clinical notes provided.",
+    "input": "Clinical Note: Routine examination: cat, Maine Coon, 7 years. Owner reports seizure activity. Examination findings: enlarged liver on palpation.",
+    "output": "Diagnosed conditions: 91175000",
+    "snomed_codes": [
+      "91175000"
+    ]
+  },
+  {
+    "instruction": "Analyze the following veterinary clinical note and predict the SNOMED-CT diagnosis codes.",
+    "input": "Clinical Note: bird presenting with abdominal distension. On examination: respiratory distress, abnormal lung sounds. Vital signs: T=40.6\u00b0C, HR=157bpm, RR=16bpm. Assessment: abdominal distension.",
+    "output": "Diagnosed conditions: 271860004",
+    "snomed_codes": [
+      "271860004"
+    ]
+  },
+  {
+    "instruction": "Identify the diagnostic codes based on the clinical notes provided.",
+    "input": "Clinical Note: Emergency presentation: rabbit with acute skin irritation and scratching. Clinical signs: nasal discharge, enlarged lymph nodes. Vital parameters: Temperature 40.7\u00b0C, pulse 93bpm.",
+    "output": "Diagnosed conditions: 271807003, 424492005",
+    "snomed_codes": [
+      "271807003",
+      "424492005"
+    ]
+  },
+  {
+    "instruction": "Determine the diagnosis codes that best match this clinical presentation.",
+    "input": "Clinical Note: dog presenting with limping and joint pain. On examination: dental disease, halitosis. Vital signs: T=37.9\u00b0C, HR=85bpm, RR=14bpm. Assessment: limping and joint pain.",
+    "output": "Diagnosed conditions: 16973004, 57676002",
+    "snomed_codes": [
+      "16973004",
+      "57676002"
+    ]
+  },
+  {
+    "instruction": "What diagnoses would you assign to this veterinary case using SNOMED-CT codes?",
+    "input": "Clinical Note: Emergency presentation: canine with acute excessive thirst. clinical signs: abnormal heart rhythm. vital parameters: temperature 38.2\u00b0c, pulse 129bpm.",
+    "output": "Diagnosed conditions: 17173007",
+    "snomed_codes": [
+      "17173007"
+    ]
+  },
+  {
+    "instruction": "Identify the diagnostic codes based on the clinical notes provided.",
+    "input": "Clinical Note: Emergency presentation: rabbit presenting with excessive thirst. On examination: abnormal heart rhythm. Vital signs: T=39.2\u00b0C, HR=105bpm, RR=39bpm. Assessment: excessive thirst.",
+    "output": "Diagnosed conditions: 17173007",
+    "snomed_codes": [
+      "17173007"
+    ]
+  },
+  {
+    "instruction": "Based on the clinical findings, identify the most likely SNOMED-CT diagnosis codes.",
+    "input": "Clinical Note: Emergency presentation: horse with acute vomiting and diarrhea. clinical signs: respiratory distress, abnormal lung sounds. vital parameters: temp 39.5\u00b0c, pulse 142bpm.",
+    "output": "Diagnosed conditions: 422400008, 62315008",
+    "snomed_codes": [
+      "422400008",
+      "62315008"
+    ]
+  },
+  {
+    "instruction": "Analyze the following veterinary clinical note and predict the SNOMED-CT diagnosis codes.",
+    "input": "Clinical Note: Patient: cat Domestic Shorthair, 13 years old, 11.1kg. Chief complaint: loss of balance. Physical examination reveals joint swelling, pain on palpation. Temperature: 37.6\u00b0C, Heart rate: 157 bpm.",
+    "output": "Diagnosed conditions: 387603000",
+    "snomed_codes": [
+      "387603000"
+    ]
+  },
+  {
+    "instruction": "What diagnoses would you assign to this veterinary case using SNOMED-CT codes?",
+    "input": "Clinical Note: Emergency presentation: Patient: cow Hereford, 1 years old, 3.4kg. Chief complaint: fever and dehydration. Physical examination reveals enlarged liver on palpation. Temperature: 40.7\u00b0C, Heart rate: 71 bpm.",
+    "output": "Diagnosed conditions: 386661006, 34095006",
+    "snomed_codes": [
+      "386661006",
+      "34095006"
+    ]
+  },
+  {
+    "instruction": "Identify the diagnostic codes based on the clinical notes provided.",
+    "input": "Clinical Note: Routine examination: horse, Pinto, 10 years. Owner reports coughing and nasal discharge. Examination findings: fluid accumulation in abdomen.",
+    "output": "Diagnosed conditions: 49727002, 64531003",
+    "snomed_codes": [
+      "49727002",
+      "64531003"
+    ]
+  },
+  {
+    "instruction": "What diagnoses would you assign to this veterinary case using SNOMED-CT codes?",
+    "input": "Clinical Note: Patient: horse Arabian, 8 years old, 4.3kg. Chief complaint: seizure activity. Physical examination reveals dental disease, halitosis. Temperature: 39.5\u00b0C, Heart rate: 125 bpm.",
+    "output": "Diagnosed conditions: 91175000",
+    "snomed_codes": [
+      "91175000"
+    ]
+  },
+  {
+    "instruction": "Determine the diagnosis codes that best match this clinical presentation.",
+    "input": "Clinical Note: Patient: bird Cockatiel, 9 years old, 37.4kg. Chief complaint: behavioral changes. Physical examination reveals abnormal heart rhythm. Temperature: 40.1\u00b0C, Heart rate: 99 bpm.",
+    "output": "Diagnosed conditions: 25786006",
+    "snomed_codes": [
+      "25786006"
+    ]
+  },
+  {
+    "instruction": "Based on the clinical findings, identify the most likely SNOMED-CT diagnosis codes.",
+    "input": "Clinical Note: Routine examination: cat, Ragdoll, 3 years. Owner reports loss of balance. Examination findings: corneal opacity.",
+    "output": "Diagnosed conditions: 387603000",
+    "snomed_codes": [
+      "387603000"
+    ]
+  },
+  {
+    "instruction": "Determine the diagnosis codes that best match this clinical presentation.",
+    "input": "Clinical Note: Emergency presentation: cow with acute weight loss. clinical signs: mild dehydration, pale mucous membranes. vital parameters: temp 40.4\u00b0c, pulse 98bpm.",
+    "output": "Diagnosed conditions: 89362005",
+    "snomed_codes": [
+      "89362005"
+    ]
+  },
+  {
+    "instruction": "Determine the diagnosis codes that best match this clinical presentation.",
+    "input": "Clinical Note: Routine examination: horse, Clydesdale, 1 years. Owner reports weight loss. Examination findings: dental disease, halitosis.",
+    "output": "Diagnosed conditions: 89362005",
+    "snomed_codes": [
+      "89362005"
+    ]
+  },
+  {
+    "instruction": "Analyze the following veterinary clinical note and predict the SNOMED-CT diagnosis codes.",
+    "input": "Clinical Note: Emergency presentation: bird presenting with limping and joint pain. On examination: dental disease, halitosis. Vital signs: T=38.5\u00b0C, HR=160bpm, RR=28bpm. Assessment: limping and joint pain.",
+    "output": "Diagnosed conditions: 16973004, 57676002",
+    "snomed_codes": [
+      "16973004",
+      "57676002"
+    ]
+  },
+  {
+    "instruction": "Identify the diagnostic codes based on the clinical notes provided.",
+    "input": "Clinical Note: Patient: canine bullcanine, 12 years old, 37.0kg. chief complaint: vomiting and diarrhea. physical examination reveals abnormal heart rhythm. temperature: 40.2\u00b0c, heart rate: 147 bpm.",
+    "output": "Diagnosed conditions: 422400008, 62315008",
+    "snomed_codes": [
+      "422400008",
+      "62315008"
+    ]
+  },
+  {
+    "instruction": "Determine the diagnosis codes that best match this clinical presentation.",
+    "input": "Clinical Note: Patient: bird cockatiel, 13 years old, 6.4kg. chief complaint: fever and dehydration. physical examination reveals dental disease, halitosis. temp: 40.8\u00b0c, heart rate: 101 bpm.",
+    "output": "Diagnosed conditions: 386661006, 34095006",
+    "snomed_codes": [
+      "386661006",
+      "34095006"
+    ]
+  },
+  {
+    "instruction": "Determine the diagnosis codes that best match this clinical presentation.",
+    "input": "Clinical Note: cow presenting with difficulty breathing. On examination: joint swelling, pain on palpation. Vital signs: T=40.5\u00b0C, HR=86bpm, RR=31bpm. Assessment: difficulty breathing.",
+    "output": "Diagnosed conditions: 267036007",
+    "snomed_codes": [
+      "267036007"
+    ]
+  },
+  {
+    "instruction": "What diagnoses would you assign to this veterinary case using SNOMED-CT codes?",
+    "input": "Clinical Note: 5-year-old Thoroughbred horse with history of limping and joint pain. Physical findings: muscle wasting, poor body condition. Diagnostic impression: limping and joint pain.",
+    "output": "Diagnosed conditions: 16973004, 57676002",
+    "snomed_codes": [
+      "16973004",
+      "57676002"
+    ]
+  },
+  {
+    "instruction": "Predict the SNOMED-CT classifications for this veterinary patient.",
+    "input": "Clinical Note: Emergency presentation: cat with acute lethargy and decreased appetite. Clinical signs: abnormal heart rhythm. Vital parameters: Temperature 40.4\u00b0C, pulse 139bpm.",
+    "output": "Diagnosed conditions: 397983004, 79890006",
+    "snomed_codes": [
+      "397983004",
+      "79890006"
+    ]
+  },
+  {
+    "instruction": "Predict the SNOMED-CT classifications for this veterinary patient.",
+    "input": "Clinical Note: horse presenting with difficulty breathing. On examination: decreased reflexes. Vital signs: T=38.5\u00b0C, HR=81bpm, RR=22bpm. Assessment: difficulty breathing.",
+    "output": "Diagnosed conditions: 267036007",
+    "snomed_codes": [
+      "267036007"
+    ]
+  },
+  {
+    "instruction": "What diagnoses would you assign to this veterinary case using SNOMED-CT codes?",
+    "input": "Clinical Note: bird presenting with weight loss. On examination: skin lesions, erythema. Vital signs: T=37.7\u00b0C, HR=74bpm, RR=16bpm. Assessment: weight loss.",
+    "output": "Diagnosed conditions: 89362005",
+    "snomed_codes": [
+      "89362005"
+    ]
+  },
+  {
+    "instruction": "Based on the clinical findings, identify the most likely SNOMED-CT diagnosis codes.",
+    "input": "Clinical Note: Emergency presentation: dog with acute lethargy and decreased appetite. Clinical signs: decreased reflexes. Vital parameters: Temperature 38.9\u00b0C, pulse 169bpm.",
+    "output": "Diagnosed conditions: 397983004, 79890006",
+    "snomed_codes": [
+      "397983004",
+      "79890006"
+    ]
+  },
+  {
+    "instruction": "Determine the diagnosis codes that best match this clinical presentation.",
+    "input": "Clinical Note: Bird presenting with weight loss. on exam: nasal discharge, enlarged lymph nodes. vital signs: t=38.0\u00b0c, hr=106bpm, rr=13bpm. assessment: weight loss.",
+    "output": "Diagnosed conditions: 89362005",
+    "snomed_codes": [
+      "89362005"
+    ]
+  },
+  {
+    "instruction": "What diagnoses would you assign to this veterinary case using SNOMED-CT codes?",
+    "input": "Clinical Note: 3-year-old Mini Rex rabbit with history of weight loss. Physical findings: mild dehydration, pale mucous membranes. Diagnostic impression: weight loss.",
+    "output": "Diagnosed conditions: 89362005",
+    "snomed_codes": [
+      "89362005"
+    ]
+  },
+  {
+    "instruction": "Analyze the following veterinary clinical note and predict the SNOMED-CT diagnosis codes.",
+    "input": "Clinical Note: Emergency presentation: Routine examination: rabbit, Netherland Dwarf, 2 years. Owner reports difficulty breathing. Examination findings: corneal opacity.",
+    "output": "Diagnosed conditions: 267036007",
+    "snomed_codes": [
+      "267036007"
+    ]
+  },
+  {
+    "instruction": "Identify the diagnostic codes based on the clinical notes provided.",
+    "input": "Clinical Note: Routine examination: cat, Domestic Shorthair, 11 years. Owner reports difficulty breathing. Examination findings: mild dehydration, pale mucous membranes.",
+    "output": "Diagnosed conditions: 267036007",
+    "snomed_codes": [
+      "267036007"
+    ]
+  },
+  {
+    "instruction": "Predict the SNOMED-CT classifications for this veterinary patient.",
+    "input": "Clinical Note: Emergency presentation: 10-year-old Quarter Horse horse with history of difficulty breathing. Physical findings: respiratory distress, abnormal lung sounds. Diagnostic impression: difficulty breathing.",
+    "output": "Diagnosed conditions: 267036007",
+    "snomed_codes": [
+      "267036007"
+    ]
+  },
+  {
+    "instruction": "Based on the clinical findings, identify the most likely SNOMED-CT diagnosis codes.",
+    "input": "Clinical Note: cat presenting with lethargy and decreased appetite. On examination: muscle wasting, poor body condition. Vital signs: T=38.4\u00b0C, HR=64bpm, RR=11bpm. Assessment: lethargy and decreased appetite.",
+    "output": "Diagnosed conditions: 397983004, 79890006",
+    "snomed_codes": [
+      "397983004",
+      "79890006"
+    ]
+  },
+  {
+    "instruction": "Analyze the following veterinary clinical note and predict the SNOMED-CT diagnosis codes.",
+    "input": "Clinical Note: 5-year-old Persian cat with history of behavioral changes. Physical findings: mild dehydration, pale mucous membranes. Diagnostic impression: behavioral changes.",
+    "output": "Diagnosed conditions: 25786006",
+    "snomed_codes": [
+      "25786006"
+    ]
+  },
+  {
+    "instruction": "What are the appropriate SNOMED-CT codes for this veterinary case?",
+    "input": "Clinical Note: Routine examination: rabbit, lionhead, 7 years. owner reports vomiting and diarrhea. examination findings: joint swelling, discomfort on palpation.",
+    "output": "Diagnosed conditions: 422400008, 62315008",
+    "snomed_codes": [
+      "422400008",
+      "62315008"
+    ]
+  },
+  {
+    "instruction": "Based on the clinical findings, identify the most likely SNOMED-CT diagnosis codes.",
+    "input": "Clinical Note: Patient: bovine jersey, 8 years old, 16.6kg. chief complaint: eye discharge. physical examination reveals neurological abnormalities. temperature: 40.7\u00b0c, heart rate: 62 bpm.",
+    "output": "Diagnosed conditions: 246636008",
+    "snomed_codes": [
+      "246636008"
+    ]
+  },
+  {
+    "instruction": "Analyze the following veterinary clinical note and predict the SNOMED-CT diagnosis codes.",
+    "input": "Clinical Note: Horse presenting with weight loss. on exam: aggressive behavior, disorientation. vital signs: t=40.4\u00b0c, hr=180bpm, rr=24bpm. assessment: weight loss.",
+    "output": "Diagnosed conditions: 89362005",
+    "snomed_codes": [
+      "89362005"
+    ]
+  },
+  {
+    "instruction": "Determine the diagnosis codes that best match this clinical presentation.",
+    "input": "Clinical Note: Emergency presentation: Emergency presentation: cow with acute vomiting and diarrhea. Clinical signs: muscle wasting, poor body condition. Vital parameters: Temperature 40.5\u00b0C, pulse 84bpm.",
+    "output": "Diagnosed conditions: 422400008, 62315008",
+    "snomed_codes": [
+      "422400008",
+      "62315008"
+    ]
+  },
+  {
+    "instruction": "Analyze the following veterinary clinical note and predict the SNOMED-CT diagnosis codes.",
+    "input": "Clinical Note: Patient: bird Budgie, 15 years old, 35.0kg. Chief complaint: weight loss. Physical examination reveals muscle wasting, poor body condition. Temperature: 39.4\u00b0C, Heart rate: 155 bpm.",
+    "output": "Diagnosed conditions: 89362005",
+    "snomed_codes": [
+      "89362005"
+    ]
+  },
+  {
+    "instruction": "Identify the diagnostic codes based on the clinical notes provided.",
+    "input": "Clinical Note: Routine examination: cat, Maine Coon, 14 years. Owner reports skin irritation and scratching. Examination findings: enlarged liver on palpation.",
+    "output": "Diagnosed conditions: 271807003, 424492005",
+    "snomed_codes": [
+      "271807003",
+      "424492005"
+    ]
+  },
+  {
+    "instruction": "Based on the clinical findings, identify the most likely SNOMED-CT diagnosis codes.",
+    "input": "Clinical Note: Patient: rabbit Angora, 5 years old, 34.0kg. Chief complaint: behavioral changes. Physical examination reveals abnormal heart rhythm. Temperature: 40.2\u00b0C, Heart rate: 109 bpm.",
+    "output": "Diagnosed conditions: 25786006",
+    "snomed_codes": [
+      "25786006"
+    ]
+  },
+  {
+    "instruction": "Analyze the following veterinary clinical note and predict the SNOMED-CT diagnosis codes.",
+    "input": "Clinical Note: Emergency presentation: 10-year-old Bulldog dog with history of abdominal distension. Physical findings: enlarged liver on palpation. Diagnostic impression: abdominal distension.",
+    "output": "Diagnosed conditions: 271860004",
+    "snomed_codes": [
+      "271860004"
+    ]
+  },
+  {
+    "instruction": "What are the appropriate SNOMED-CT codes for this veterinary case?",
+    "input": "Clinical Note: 2-year-old Pinto horse with history of behavioral changes. Physical findings: neurological abnormalities. Diagnostic impression: behavioral changes.",
+    "output": "Diagnosed conditions: 25786006",
+    "snomed_codes": [
+      "25786006"
+    ]
+  },
+  {
+    "instruction": "Determine the diagnosis codes that best match this clinical presentation.",
+    "input": "Clinical Note: 8-year-old Maine Coon cat with history of skin irritation and scratching. Physical findings: enlarged liver on palpation. Diagnostic impression: skin irritation and scratching.",
+    "output": "Diagnosed conditions: 271807003, 424492005",
+    "snomed_codes": [
+      "271807003",
+      "424492005"
+    ]
+  },
+  {
+    "instruction": "Determine the diagnosis codes that best match this clinical presentation.",
+    "input": "Clinical Note: Patient: feline domestic shorthair, 7 years old, 21.3kg. chief complaint: vomiting and diarrhea. physical examination reveals muscle wasting, poor body condition. temperature: 38.8\u00b0c, heart rate: 166 bpm.",
+    "output": "Diagnosed conditions: 422400008, 62315008",
+    "snomed_codes": [
+      "422400008",
+      "62315008"
+    ]
+  },
+  {
+    "instruction": "What are the appropriate SNOMED-CT codes for this veterinary case?",
+    "input": "Clinical Note: 14-year-old Mini Rex rabbit with history of difficulty breathing. Physical findings: mild dehydration, pale mucous membranes. Diagnostic impression: difficulty breathing.",
+    "output": "Diagnosed conditions: 267036007",
+    "snomed_codes": [
+      "267036007"
+    ]
+  },
+  {
+    "instruction": "Analyze the following veterinary clinical note and predict the SNOMED-CT diagnosis codes.",
+    "input": "Clinical Note: 9-year-old Pinto horse with history of weight loss. Physical findings: mild dehydration, pale mucous membranes. Diagnostic impression: weight loss.",
+    "output": "Diagnosed conditions: 89362005",
+    "snomed_codes": [
+      "89362005"
+    ]
+  }
+]

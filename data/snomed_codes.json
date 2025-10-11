@@ -1,0 +1,200 @@
+[
+  {
+    "code_id": "194828000",
+    "description": "Angina",
+    "depth": 3,
+    "parent_codes": [
+      "195111005"
+    ]
+  },
+  {
+    "code_id": "195111005",
+    "description": "Cardiovascular disease",
+    "depth": 2,
+    "parent_codes": [
+      "64572001"
+    ]
+  },
+  {
+    "code_id": "64572001",
+    "description": "Disease",
+    "depth": 1,
+    "parent_codes": []
+  },
+  {
+    "code_id": "195967001",
+    "description": "Asthma",
+    "depth": 3,
+    "parent_codes": [
+      "195949008"
+    ]
+  },
+  {
+    "code_id": "195949008",
+    "description": "Respiratory disease",
+    "depth": 2,
+    "parent_codes": [
+      "64572001"
+    ]
+  },
+  {
+    "code_id": "840539006",
+    "description": "COVID-19",
+    "depth": 4,
+    "parent_codes": [
+      "87628006"
+    ]
+  },
+  {
+    "code_id": "87628006",
+    "description": "Bacterial infectious disease",
+    "depth": 3,
+    "parent_codes": [
+      "191415002"
+    ]
+  },
+  {
+    "code_id": "191415002",
+    "description": "Infectious disease",
+    "depth": 2,
+    "parent_codes": [
+      "64572001"
+    ]
+  },
+  {
+    "code_id": "447962005",
+    "description": "Canine parvovirus infection",
+    "depth": 4,
+    "parent_codes": [
+      "87628006"
+    ]
+  },
+  {
+    "code_id": "363680008",
+    "description": "Feline leukemia",
+    "depth": 4,
+    "parent_codes": [
+      "87628006"
+    ]
+  },
+  {
+    "code_id": "14304000",
+    "description": "Hip dysplasia",
+    "depth": 3,
+    "parent_codes": [
+      "195967001"
+    ]
+  },
+  {
+    "code_id": "16973004",
+    "description": "Lameness",
+    "depth": 3,
+    "parent_codes": [
+      "195967001"
+    ]
+  },
+  {
+    "code_id": "57676002",
+    "description": "Joint pain",
+    "depth": 3,
+    "parent_codes": [
+      "195967001"
+    ]
+  },
+  {
+    "code_id": "49727002",
+    "description": "Cough",
+    "depth": 3,
+    "parent_codes": [
+      "195949008"
+    ]
+  },
+  {
+    "code_id": "397983004",
+    "description": "Lethargy",
+    "depth": 3,
+    "parent_codes": [
+      "64572001"
+    ]
+  },
+  {
+    "code_id": "79890006",
+    "description": "Loss of appetite",
+    "depth": 3,
+    "parent_codes": [
+      "64572001"
+    ]
+  },
+  {
+    "code_id": "422400008",
+    "description": "Vomiting",
+    "depth": 3,
+    "parent_codes": [
+      "195967001"
+    ]
+  },
+  {
+    "code_id": "62315008",
+    "description": "Diarrhea",
+    "depth": 3,
+    "parent_codes": [
+      "195967001"
+    ]
+  },
+  {
+    "code_id": "271807003",
+    "description": "Skin rash",
+    "depth": 3,
+    "parent_codes": [
+      "195967001"
+    ]
+  },
+  {
+    "code_id": "424492005",
+    "description": "Scratching",
+    "depth": 3,
+    "parent_codes": [
+      "195967001"
+    ]
+  },
+  {
+    "code_id": "91175000",
+    "description": "Seizure",
+    "depth": 3,
+    "parent_codes": [
+      "64572001"
+    ]
+  },
+  {
+    "code_id": "89362005",
+    "description": "Weight loss",
+    "depth": 3,
+    "parent_codes": [
+      "64572001"
+    ]
+  },
+  {
+    "code_id": "64531003",
+    "description": "Nasal discharge",
+    "depth": 3,
+    "parent_codes": [
+      "195949008"
+    ]
+  },
+  {
+    "code_id": "271860004",
+    "description": "Abdominal distension",
+    "depth": 3,
+    "parent_codes": [
+      "195967001"
+    ]
+  },
+  {
+    "code_id": "25786006",
+    "description": "Behavioral changes",
+    "depth": 3,
+    "parent_codes": [
+      "64572001"
+    ]
+  }
+]
