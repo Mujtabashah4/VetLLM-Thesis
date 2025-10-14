@@ -306,18 +306,40 @@ class VetLLMTrainer:
             bias="none",
         )
 
+        # Get PEFT model
         self.model = get_peft_model(self.model, lora_config)
+        
+        # Print trainable parameters info
         self.model.print_trainable_parameters()
 
-        # Ensure LoRA parameters require gradients and are in training mode
+        # Enable training mode
         self.model.train()
+        
+        # Explicitly enable gradients for LoRA parameters
         for name, param in self.model.named_parameters():
-            if "lora_" in name or param.requires_grad:
-                param.requires_grad_(True)
-
-        # Verify that we have trainable parameters
-        trainable_params = [p for p in self.model.parameters() if p.requires_grad]
-        logger.info(f"Number of trainable parameters: {len(trainable_params)}")
+            if 'lora_' in name:
+                param.requires_grad = True
+                # Ensure parameter is on the correct device and dtype
+                if hasattr(self, 'device'):
+                    param.data = param.data.to(self.device)
+        
+        # Verify trainable parameters
+        trainable_params = []
+        total_trainable = 0
+        for name, param in self.model.named_parameters():
+            if param.requires_grad:
+                trainable_params.append((name, param.numel()))
+                total_trainable += param.numel()
+        
+        logger.info(f"Number of trainable parameter tensors: {len(trainable_params)}")
+        logger.info(f"Total trainable parameters: {total_trainable:,}")
+        
+        if total_trainable == 0:
+            raise ValueError("No trainable parameters found after LoRA setup!")
+        
+        # Log first few trainable parameters for debugging
+        for name, count in trainable_params[:5]:
+            logger.info(f"  {name}: {count:,} parameters")
 
         if not trainable_params:
             logger.error(
@@ -332,7 +354,9 @@ class VetLLMTrainer:
 
         # Adjust settings based on device
         use_bf16 = self.config.bf16
-        if torch.backends.mps.is_available() and torch.backends.mps.is_built():
+        use_mps_device = torch.backends.mps.is_available() and torch.backends.mps.is_built()
+        
+        if use_mps_device:
             # Disable bf16 on MPS for stability
             use_bf16 = False
             logger.info("Disabling bf16 for MPS compatibility")
@@ -350,7 +374,7 @@ class VetLLMTrainer:
             # Optimization settings
             bf16=use_bf16,
             fp16=False,  # Explicitly disable fp16
-            tf32=self.config.tf32,
+            tf32=self.config.tf32 and not use_mps_device,  # Disable TF32 on MPS
             gradient_checkpointing=self.config.gradient_checkpointing,
             # Evaluation and saving
             eval_strategy=self.config.eval_strategy,
@@ -366,6 +390,8 @@ class VetLLMTrainer:
             dataloader_drop_last=True,
             remove_unused_columns=False,
             load_best_model_at_end=True,
+            # MPS specific optimizations
+            use_cpu=(not torch.cuda.is_available() and not use_mps_device),
             metric_for_best_model="eval_loss",
             greater_is_better=False,
             dataloader_pin_memory=False,  # Disable pin memory for MPS
@@ -410,6 +436,29 @@ class VetLLMTrainer:
         if trainable_params == 0:
             logger.error("No trainable parameters found!")
             raise ValueError("Model has no trainable parameters")
+        
+        # Additional check for gradient computation
+        requires_grad_params = []
+        for name, param in self.model.named_parameters():
+            if param.requires_grad:
+                requires_grad_params.append(name)
+        
+        logger.info(f"Parameters requiring gradients: {len(requires_grad_params)}")
+        if len(requires_grad_params) == 0:
+            raise ValueError("No parameters are set to require gradients!")
+        
+        # Log first few parameters that require gradients
+        for name in requires_grad_params[:5]:
+            logger.info(f"  {name} requires grad: {self.model.get_parameter(name).requires_grad}")
+        
+        # Ensure model is prepared for training on the correct device
+        if hasattr(self, 'device'):
+            self.model = self.model.to(self.device)
+        
+        # Force enable training mode for all trainable modules
+        for name, module in self.model.named_modules():
+            if any(p.requires_grad for p in module.parameters()):
+                module.train()
 
         # Create trainer
         trainer = Trainer(
