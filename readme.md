@@ -4,7 +4,7 @@
 
 ---
 
-## 🚀 Quick Start
+##  Quick Start
 
 ### 1. Install Dependencies
 ```bash
@@ -28,59 +28,57 @@ python scripts/inference.py \
 
 ---
 
-## 📋 Overview
+##  Overview
 
 VetLLM fine-tunes Alpaca-7B (LLaMA-2 based) using LoRA on validated veterinary clinical data to predict SNOMED-CT diagnosis codes.
 
 ### Key Features
 
-- ✅ **Production-Ready Pipeline** - Just install and run
-- ✅ **Full Precision Training** - FP16 mixed precision (optimized for accuracy)
-- ✅ **Validated Data** - 3,204 samples ready for training
-- ✅ **Comprehensive Documentation** - Complete guides in `docs/`
-- ✅ **Automated Setup** - One-command installation
+-  **Production-Ready Pipeline** - Just install and run
+-  **Full Precision Training** - FP16 mixed precision (optimized for accuracy)
+-  **Validated Data** - 3,204 samples ready for training
+-  **Comprehensive Documentation** - Complete guides in `docs/`
+-  **Automated Setup** - One-command installation
 
 ---
 
-## 📁 Project Structure
+##  Project Structure
 
 ```
 VetLLM/
-├── README.md                    # ⭐ This file (START HERE)
+├── README.md                    #  This file (START HERE)
 ├── setup.sh                     # Automated setup
 ├── start_training.sh            # Training start script
 ├── requirements.txt            # Dependencies
 │
-├── docs/                        # 📚 All Documentation
+├── docs/                        #  All Documentation
 │   ├── README.md               # Documentation index
 │   ├── QUICK_START.md          # Quick start guide
 │   ├── DEPLOYMENT_GUIDE.md     # Complete deployment guide
 │   ├── IMPLEMENTATION_REPORT.md # Technical details
 │   ├── DATA_VALIDATION.md      # Data validation results
-│   └── DISSERTATION_REPORT.md  # ⭐ Complete report for defense
+│   └── DISSERTATION_REPORT.md  #  Complete report for defense
 │
-├── scripts/                     # 🔧 Core Scripts
+├── scripts/                     #  Core Scripts
 │   ├── train_vetllm.py         # Main training script
 │   ├── inference.py            # Inference script
 │   ├── validate_data.py        # Data validation
 │   └── run_pipeline.py         # Pipeline orchestrator
 │
-├── processed_data/              # 📊 Training Data (Validated)
+├── processed_data/              #  Training Data (Validated)
 │   ├── all_processed_data.json # 1,602 samples (RECOMMENDED)
 │   ├── Verified_DLO_data_-_(Cow_Buffalo)_processed.json
 │   └── Verified_DLO_data_(Sheep_Goat)_processed.json
 │
-├── configs/                     # ⚙️ Configuration Files
-└── models/                      # 🤖 Trained Models (created during training)
+├── configs/                     # ️ Configuration Files
+└── models/                      #  Trained Models (created during training)
 ```
 
 **See [DIRECTORY_STRUCTURE.md](DIRECTORY_STRUCTURE.md) for complete structure guide.**
 
 ---
 
-## 🎯 Training Configuration
-
-**Optimized Settings (Based on Working Notebook):**
+##  Training Configuration
 
 - **Model:** Alpaca-7B (wxjiao/alpaca-7b)
 - **Method:** LoRA fine-tuning
@@ -92,21 +90,21 @@ VetLLM/
 
 ---
 
-## 📊 Data
+##  Data
 
 All data files are **validated and ready**:
 
 | File | Samples | SNOMED Coverage | Status |
 |------|---------|----------------|--------|
-| `all_processed_data.json` | 1,602 | 97.4% | ✅ Ready |
-| `Cow_Buffalo_processed.json` | 746 | 100% | ✅ Ready |
-| `Sheep_Goat_processed.json` | 856 | 95.1% | ✅ Ready |
+| `all_processed_data.json` | 1,602 | 97.4% |  Ready |
+| `Cow_Buffalo_processed.json` | 746 | 100% |  Ready |
+| `Sheep_Goat_processed.json` | 856 | 95.1% |  Ready |
 
 **Total:** 3,204 validated samples
 
 ---
 
-## 💻 System Requirements
+##  System Requirements
 
 - **GPU:** NVIDIA GPU with 16GB+ VRAM (recommended: 24GB+)
 - **RAM:** 32GB+ system RAM
@@ -116,7 +114,7 @@ All data files are **validated and ready**:
 
 ---
 
-## 📚 Documentation
+##  Documentation
 
 All documentation is in the `docs/` directory:
 
@@ -124,11 +122,11 @@ All documentation is in the `docs/` directory:
 - **[Deployment Guide](docs/DEPLOYMENT_GUIDE.md)** - Complete deployment instructions
 - **[Implementation Report](docs/IMPLEMENTATION_REPORT.md)** - Technical details
 - **[Data Validation](docs/DATA_VALIDATION.md)** - Data validation results
-- **[Dissertation Report](docs/DISSERTATION_REPORT.md)** - ⭐ Complete report for defense
+- **[Dissertation Report](docs/DISSERTATION_REPORT.md)** -  Complete report for defense
 
 ---
 
-## 🔧 Usage Examples
+##  Usage Examples
 
 ### Basic Training
 ```bash
@@ -148,23 +146,20 @@ python scripts/inference.py \
 
 ---
 
-## ✅ Status
+##  Status
 
-- ✅ **Data Validated** - All files ready
-- ✅ **Pipeline Complete** - Production ready
-- ✅ **Documentation Complete** - All guides in `docs/`
-- ✅ **Optimized Configuration** - Based on working notebook
-- ✅ **Full Precision Training** - No quantization by default
-- ✅ **Directory Organized** - Clean structure, easy navigation
+-  **Data Validated** - All files ready
+-  **Pipeline Complete** - 
+-  **Documentation Complete** - All guides in `docs/`
+-  **Optimized Configuration** - Based on working notebook
+-  **Full Precision Training** - No quantization by default
+-  **Directory Organized** - Clean structure, easy navigation
 
 ---
 
-## 🎓 For Dissertation Defense
+##  For Dissertation Defense
 
 See **[docs/DISSERTATION_REPORT.md](docs/DISSERTATION_REPORT.md)** for the complete implementation report suitable for dissertation defense.
 
 ---
 
-**Version:** 2.0  
-**Status:** ✅ Production Ready  
-**Last Updated:** December 2024

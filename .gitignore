@@ -12,12 +12,60 @@ build/
 
 # Models and Data (large files)
 models/*/
-!models/.gitkeep
+!models/*/config.json
+!models/*/adapter_config.json
+!models/*/model_config.json
+!models/*/training_args.json
+!models/*/download_model.py
+!models/*/model_info.json
+!models/models_utils.py
 cache/
 *.safetensors
 *.bin
 *.pt
 *.pth
+
+# Large data files
+processed_data/*.json
+data/processed/*.json
+data/veterinary_notes/*.json
+data/veterinary_notes.json
+data/alpaca_data.json
+
+# Dataset files (large Excel/PDF)
+Dataset_UVAS/
+*.xlsx
+*.pdf
+
+# Archive and backup directories
+_backup_*/
+docs/archive/
+
+# LaTeX compiled files
+*.aux
+*.bak
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls
+*.idx
+*.ilg
+*.ind
+*.lof
+*.log
+*.lot
+*.out
+*.synctex
+*.synctex.gz
+*.toc
+*.thm
+*.zip
+latex_samples/
+
+# Large zip files
+thesis.zip
+VetLLM_Thesis.zip
+*.zip
 
 # Jupyter
 .ipynb_checkpoints/
@@ -38,5 +86,7 @@ Thumbs.db
 *.log
 logs/
 
-# Backup directories
-_backup_*/
+# Status/cleanup files (temporary)
+CLEANUP_SUMMARY.md
+FINAL_STATUS.md
+DIRECTORY_STRUCTURE.md

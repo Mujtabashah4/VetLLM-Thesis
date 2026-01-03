@@ -21,7 +21,6 @@ except ImportError:
     PEFT_AVAILABLE = False
     print("Warning: PEFT not available. LoRA model loading may fail.")
 
-
 def create_alpaca_prompt(instruction: str, input_text: str = "", output: str = "") -> str:
     """
     Create Alpaca-style prompt format.
@@ -54,7 +53,6 @@ def create_alpaca_prompt(instruction: str, input_text: str = "", output: str = "
 ### Response:
 {output}"""
     return prompt
-
 
 class VetLLMInference:
     """VetLLM Inference Engine"""
@@ -171,7 +169,7 @@ class VetLLMInference:
                 self.model = self.model.to(self.device)
         
         self.model.eval()
-        print("✅ Model loaded successfully!")
+        print(" Model loaded successfully!")
     
     def predict(
         self,
@@ -256,7 +254,6 @@ class VetLLMInference:
                 seen.add(code)
                 unique_codes.append(code)
         return unique_codes
-
 
 def main():
     """Main inference function"""
@@ -379,13 +376,12 @@ def main():
     if args.output_file:
         with open(args.output_file, 'w', encoding='utf-8') as f:
             json.dump(results, f, indent=2, ensure_ascii=False)
-        print(f"\n✅ Results saved to {args.output_file}")
+        print(f"\n Results saved to {args.output_file}")
     else:
         print("\n" + "="*70)
         print("RESULTS SUMMARY")
         print("="*70)
         print(json.dumps(results, indent=2, ensure_ascii=False))
-
 
 if __name__ == "__main__":
     main()

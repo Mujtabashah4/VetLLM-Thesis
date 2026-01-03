@@ -6,28 +6,28 @@
 
 ## PART A: PRE-DEFENSE PREPARATION CHECKLIST
 
-### ✓ Understand Your Data Completely
+###  Understand Your Data Completely
 - [ ] Know exact statistics: 1050 animals, 4 species, 18-25 diseases, 15 symptoms
 - [ ] Understand disease prevalence in your dataset (% for each disease)
 - [ ] Know data distribution: Cattle 38%, Buffalo 29%, Sheep 19%, Goat 14%
 - [ ] Be prepared to discuss data quality, any anomalies, missing values handling
 - [ ] Know temporal coverage (seasonal patterns if relevant)
 
-### ✓ Internalize Your Innovations
+###  Internalize Your Innovations
 - [ ] Multi-label classification: Why it's different from single-disease prediction
 - [ ] Weighted loss function: Know the mathematical derivation cold
 - [ ] LSTM temporal modeling: Can explain forget/input/output gates in 2 minutes
 - [ ] Multi-task learning: Understand species knowledge sharing benefit
 - [ ] Interpretability: SHAP values, attention weights, clinical interface
 
-### ✓ Prepare Technical Depth
+###  Prepare Technical Depth
 - [ ] Have loss function equation memorized
 - [ ] Can draw LSTM cell diagram by hand
 - [ ] Can explain multi-task architecture quickly
 - [ ] Know XGBoost baseline performance figures
 - [ ] Can discuss why each component was chosen
 
-### ✓ Anticipate Committee Questions (See Section C)
+###  Anticipate Committee Questions (See Section C)
 - [ ] Practice defending dataset size (1000 animals)
 - [ ] Defend temporal data completeness
 - [ ] Explain why not using image data
@@ -41,12 +41,10 @@
 ### Opening Statement (3 minutes)
 **Objective:** Hook the committee with relevance and impact
 
-**What to Say:**
 > "Pakistan loses over $500 million annually to preventable livestock diseases. The 2021-2022 Lumpy Skin Disease outbreak infected 36,000 cattle because detection occurred 4 months after outbreak onset. My research asks: Can we predict disease 3-7 days BEFORE clinical manifestation, enabling early intervention?
 >
 > I'm presenting a deep learning system trained on verified UVAS livestock data that combines multi-label disease prediction, temporal symptom modeling, and species-adaptive learning to create the first livestock disease early warning system optimized for Pakistani veterinary context."
 
-**Slides to Show:**
 - Map of Pakistan showing LSD outbreak spread
 - Timeline: Nov 2021 (outbreak) → March 2022 (detection) = 4 months
 - Your simple but compelling graph: "Days until detection" vs "Days until clinical severity"
@@ -58,14 +56,12 @@
 
 **Part 1: Disease Crisis Context (5 minutes)**
 
-**Key Points:**
 - Pakistan: 212 million livestock animals
 - Livestock contributes: 2.3% GDP, 15-20% agricultural GDP
 - Critical diseases: FMD (endemic), LSD (emerging), Brucellosis (zoonotic), HS (high mortality)
 - Current system: REACTIVE (detect after clinical signs) not PROACTIVE (predict before signs)
 - Economic consequence: Massive losses + export restrictions
 
-**Numbers to Emphasize:**
 - FMD continuous endemic: $500M annual losses
 - LSD outbreak: $100M+ losses in 6 months
 - Delayed detection: 4-6 months lag between onset and official notification
@@ -76,8 +72,6 @@
 ---
 
 **Part 2: Why Traditional Surveillance Fails (4 minutes)**
-
-**Problem Breakdown:**
 
 1. **Manual Surveillance:** 
    - Veterinarians can examine ~20 animals/day
@@ -101,15 +95,12 @@
 
 **Part 3: Why ML/DL is Solution (3 minutes)**
 
-**Why Machine Learning Solves This:**
-
 1. **Pattern Recognition:** Can identify symptom combinations humans miss
 2. **Speed:** Process 1000 animals' data in seconds (vs. days manually)
 3. **Consistency:** Same diagnostic criteria applied identically
 4. **Data Integration:** Combine multiple symptoms simultaneously
 5. **Prediction:** Can identify pre-clinical patterns
 
-**Why Now:**
 - UVAS collected verified systematic data (your dataset)
 - Deep learning techniques proven in medical domains
 - Computing accessible (no longer requires supercomputers)
@@ -120,8 +111,6 @@
 ### Literature Review Integration (15 minutes)
 
 **Part 1: What Previous Work Achieved (6 minutes)**
-
-**Show Comparison Table:**
 
 | Study | Task | Data | Method | Performance | Limitation |
 |-------|------|------|--------|-------------|-----------|
@@ -136,8 +125,6 @@
 
 **Part 2: The Research Gap (4 minutes)**
 
-**What's Missing:**
-
 1. **Multi-label prediction:** Real livestock have multiple concurrent diseases; previous work predicts single disease
 2. **Temporal modeling:** Symptoms evolve over time; previous work uses static features
 3. **Species adaptation:** Pakistan has diverse livestock; must handle cross-species patterns
@@ -150,8 +137,6 @@
 ---
 
 **Part 3: Your Contributions Positioning (5 minutes)**
-
-**Four Components of Innovation:**
 
 1. **Dataset:** 
    - First systematic multi-disease livestock dataset from UVAS
@@ -182,19 +167,14 @@
 
 **Motivation:** Why standard approaches fail
 
-**Standard Multi-Label BCE Loss:**
 $$L_{\text{baseline}} = -\sum_{i,j} \left[ y_{ij} \log(\hat{y}_{ij}) + (1-y_{ij}) \log(1-\hat{y}_{ij}) \right]$$
 
-**Problem Demo:**
 - Suppose dataset: 50% FMD (common), 2% Rare Genetic Disease (rare)
 - Baseline loss treats equally: Both contribute similar gradient signals
 - Result: Model learns FMD well, rare disease poorly
 - Consequence: Misses critical rare diseases where model could add most value
 
-**Your Enhanced Loss:**
 $$L_{\text{yours}} = -\frac{1}{N} \sum_{i,j} w_j \left[ y_{ij}(1-\hat{y}_{ij})^{\gamma} \log(\hat{y}_{ij}) + (1-y_{ij}) \hat{y}_{ij}^{\gamma} \log(1-\hat{y}_{ij}) \right]$$
-
-**Component Breakdown (write on whiteboard as you explain):**
 
 **Weight $w_j$:** Inverse prevalence weighting
 - FMD (50% prevalence): $w_{FMD} = \frac{1}{0.50} = 2$
@@ -202,12 +182,9 @@ $$L_{\text{yours}} = -\frac{1}{N} \sum_{i,j} w_j \left[ y_{ij}(1-\hat{y}_{ij})^{
 - Effect: Rare disease gradients 25× stronger
 - Result: Rare diseases receive 25× more learning focus
 
-**Focal Component $\gamma = 2$:**
 - Easy negatives (confident prediction correct): $(1-\hat{y})^2 \approx 0$ → loss small
 - Hard negatives (uncertain or wrong): $(1-\hat{y})^2$ stays large → loss focuses learning
 - Effect: Automatically emphasizes difficult cases
-
-**Example Calculation (use real numbers):**
 
 Scenario: Predicting Rare Disease (2% prevalence)
 
@@ -219,7 +196,6 @@ Your loss (same case):
 - $L = -50 × 0.01 × \log(1 - 0.1) ≈ 0.525$
 - 5× higher gradient focuses learning on rare disease
 
-**Result:** 
 - Baseline rare disease F1: 0.45-0.55
 - Your approach rare disease F1: 0.70-0.80
 - Improvement: 35-50% better rare disease detection
@@ -228,9 +204,6 @@ Your loss (same case):
 
 **Part 2: LSTM Temporal Modeling (10 minutes)**
 
-**Why Temporal Matters (Explain with Disease Example):**
-
-**FMD Progression Timeline:**
 ```
 Day 1: Fever develops (39.5°C)
 Day 2: Fever rises (40°C), drooling starts
@@ -242,18 +215,14 @@ Question: Can we predict FMD on Day 2, not Day 3?
 Answer: YES—if we model symptom PROGRESSION
 ```
 
-**Static Model Problem:**
 - Takes only Day 3 symptoms
 - Predicts FMD (correct, but 3 days late)
 - No early warning capability
 
-**Temporal Model Solution:**
 - Takes Day 1 + Day 2 + Day 3 symptom sequence
 - Learns: Fever rising + drooling starting = FMD coming
 - Predicts on Day 2 (1 day early warning)
 - With 2-3 visits of data: Can predict 3-7 days in advance
-
-**LSTM Architecture (Draw on board):**
 
 ```
 Input Sequence (3 visits):
@@ -275,8 +244,6 @@ Day 3 symptoms → [1,1,1,0,1,1,...]
     Disease predictions: FMD=0.92, Brucellosis=0.34, ...
 ```
 
-**LSTM Mathematics (Explain step by step):**
-
 **Forget Gate:** Learns what to forget
 $$f_t = \sigma(W_f [h_{t-1}, x_t] + b_f)$$
 - Example: Day 2 "forget" irrelevant Day 1 symptoms
@@ -286,7 +253,6 @@ $$f_t = \sigma(W_f [h_{t-1}, x_t] + b_f)$$
 $$i_t = \sigma(W_i [h_{t-1}, x_t] + b_i)$$
 - "Input new fever measurement from Day 2"
 
-**Candidate Update:**
 $$\tilde{C}_t = \tanh(W_C [h_{t-1}, x_t] + b_C)$$
 - Proposes new cell state values
 
@@ -296,12 +262,10 @@ $$C_t = f_t \odot C_{t-1} + i_t \odot \tilde{C}_t$$
 - Adds new: $i_t \odot \tilde{C}_t$
 - Result: Memory of symptom progression
 
-**Output & Hidden State:**
 $$o_t = \sigma(W_o [h_{t-1}, x_t] + b_o)$$
 $$h_t = o_t \odot \tanh(C_t)$$
 - Produces output informed by disease progression
 
-**Expected Improvement:**
 - Static model (Day 3 only): Diagnoses on Day 3
 - Temporal model (Day 1+2+3): Predicts by Day 2
 - **Lead time: 1 day minimum, up to 7 days with extended history**
@@ -310,7 +274,6 @@ $$h_t = o_t \odot \tanh(C_t)$$
 
 **Part 3: Multi-Task Species Learning (7 minutes)**
 
-**Problem:**
 - You have 4 species datasets:
   - Cattle: 400 examples
   - Buffalo: 300 examples (25% less data)
@@ -322,7 +285,6 @@ $$h_t = o_t \odot \tanh(C_t)$$
 
 **Solution: Multi-Task Learning with Shared Encoder**
 
-**Architecture (Draw):**
 ```
 SHARED SYMPTOM ENCODER
 (learns general "fever means infection", etc.)
@@ -337,8 +299,6 @@ Head 1   Head 2   Head 3   Head 4
 Output   Output   Output   Output
 ```
 
-**Mathematical Formulation:**
-
 $$L_{\text{total}} = \lambda_{\text{cattle}} L_{\text{cattle}} + \lambda_{\text{buffalo}} L_{\text{buffalo}} + \lambda_{\text{sheep}} L_{\text{sheep}} + \lambda_{\text{goat}} L_{\text{goat}}$$
 
 Where:
@@ -346,17 +306,12 @@ Where:
 - $L_k$ = multi-label loss for species $k$
 - Shared encoder trained on all $L_k$ simultaneously
 
-**Why This Works:**
-
-**Shared Knowledge Examples:**
 - All species: Fever + lethargy = systemic infection
 - All species: Mouth lesions + lameness = FMD likely
 - All species: Reproductive signs + fever = Brucellosis
 
 - Cattle training teaches: "Lameness + fever → HS high probability"
 - This knowledge transferred helps Buffalo predict HS (even with fewer examples)
-
-**Empirical Validation (What you'll show):**
 
 ```
 Separate Models:
@@ -406,8 +361,6 @@ Data Efficiency:
 
 **Part 2: Results Comparison Table (7 minutes)**
 
-**Show This Table (Central to Defense):**
-
 | Model | Macro F1 | Rare Disease F1 | Lead Time | Interpretability | Scalability |
 |-------|----------|-----------------|-----------|-----------------|------------|
 | **Baseline: Logistic Reg** | 0.68 | 0.42 | None | Very High | Very Easy |
@@ -415,8 +368,6 @@ Data Efficiency:
 | **Baseline: FCNN** | 0.84 | 0.58 | None | Low | Medium |
 | **Your Model: LSTM+MTL+Weighted** | **0.89** | **0.77** | **3-7 days** | **High** | **Medium** |
 | **Performance vs XGBoost** | **+9.9%** | **+40%** | **Game-changer** | **Built-in** | **Improved** |
-
-**Key Metrics Explained:**
 
 1. **Macro F1:** Average F1 across all diseases
    - Baseline: 81% of diseases correctly identified
@@ -436,8 +387,6 @@ Data Efficiency:
 ---
 
 **Part 3: Statistical Significance (3 minutes)**
-
-**Show Cross-Validation Results:**
 
 ```
 Cross-Validation Performance (5-fold stratified):
@@ -465,8 +414,6 @@ Interpretation: Your model significantly outperforms baseline.
 
 **Part 1: System Architecture (3 minutes)**
 
-**Show System Diagram:**
-
 ```
 Veterinary Clinic Input
 (Veterinarian enters 15 symptoms)
@@ -487,7 +434,6 @@ Veterinary Clinic Input
    (Informed by system, vet maintains authority)
 ```
 
-**Technology Stack:**
 - Frontend: Simple web form (no special requirements)
 - Backend: PyTorch model inference (GPU optional but fast on CPU too)
 - Deployment: Cloud OR local (UVAS server—no vendor lock-in)
@@ -496,8 +442,6 @@ Veterinary Clinic Input
 ---
 
 **Part 2: Integration Pathway (4 minutes)**
-
-**Timeline to Deployment:**
 
 **Month 1-2: Internal Validation**
 - Test with UVAS veterinarians
@@ -523,13 +467,10 @@ Veterinary Clinic Input
 
 **Part 3: Impact Estimation (3 minutes)**
 
-**Economic Value:**
-
 - Pakistan livestock: ~212 million animals
 - Annual disease losses: ~$1.5-2 billion
 - If your system deployed nationally, 10% coverage = 21 million animals
 
-**Scenario Analysis:**
 - 3-7 day early warning → 20% reduction in disease spread
 - 20% of 21 million animals = 4.2 million animals saved from infection
 - Average loss per animal prevented = $100-500
@@ -537,7 +478,6 @@ Veterinary Clinic Input
 
 **Conservative Estimate:** $500M annual value from 10% deployment
 
-**Beyond Economics:**
 - Food security improvement
 - Zoonotic disease control (public health)
 - Livestock export capacity increase
@@ -574,8 +514,6 @@ Veterinary Clinic Input
 
 **Part 2: Future Work Path (4 minutes)**
 
-**Immediate Next Steps (Post-Thesis):**
-
 1. **Multi-modal Integration**
    - Combine clinical signs + visible images
    - Add lab values (fever, white blood cell count if available)
@@ -601,7 +539,6 @@ Veterinary Clinic Input
    - Collect real-world performance data
    - Continuous model improvement from veterinarian feedback
 
-**Long-Term Vision (5-10 Years):**
 - National livestock disease surveillance platform
 - Integration with government veterinary departments
 - Real-time disease outbreak early warning system
@@ -611,8 +548,6 @@ Veterinary Clinic Input
 ---
 
 ### Conclusion & Call to Action (5 minutes)
-
-**Summarize Key Points:**
 
 > "My research addresses a critical gap in Pakistani veterinary medicine: the transition from reactive disease management to proactive early warning.
 >
@@ -640,7 +575,6 @@ Veterinary Clinic Input
 
 ---
 
-**Final Statement:**
 > "I invite the committee to validate this contribution to Pakistani veterinary science and support this research for real-world deployment that will directly benefit our farmers and livestock."
 
 ---
@@ -649,7 +583,6 @@ Veterinary Clinic Input
 
 ### Q1: "Why is 1000 animals enough? Won't more data be better?"
 
-**Smart Response:**
 "Excellent question. While more data is always better in principle, our cross-validation analysis shows diminishing returns. We're observing:
 
 - **Learning curve plateau:** F1 increases sharply to 500 samples, then flattens after 800 samples
@@ -668,7 +601,6 @@ Current model is viable standalone, but federation will definitely strengthen it
 
 ### Q2: "Your LSTM assumes multiple visit histories. Do you really have that data?"
 
-**Honest Response:**
 "Great catch. Let me be specific: Of our 1050 animals,
 - **850 animals (81%):** Have 2+ visits (can use LSTM)
 - **150 animals (14%):** Have 1-2 visits (can use single-step LSTM with masking)
@@ -690,25 +622,20 @@ This shows LSTM gives clear benefit when temporal data available, but model stil
 
 ### Q3: "How do you justify not using image data? Deep learning excels on images!"
 
-**Informed Response:**
 "This is a critical decision we made intentionally. Here's the reasoning:
 
-**Why NOT images:**
 1. **Accessibility:** Not all veterinary clinics in Pakistan have quality cameras
 2. **Privacy:** Images identifiable (farm location, animal identifiers); less shareable
 3. **Disease progression:** Visible lesions appear LATE in disease (Day 3+ for FMD); we want prediction EARLY (Day 2)
 4. **Practical deployment:** Veterinarian typing 15 symptoms faster than taking photos
 
-**Why clinical signs ARE sufficient:**
 - 95% of diagnosis information is in symptom clusters, not appearance
 - Early symptom patterns (fever + drooling) detectable before visible lesions
 - Multi-modal fusion: If images become available, we can add them (future work)
 
-**What others did:**
 - Saqib 2024, NIH Study 2024: Image-based LSD detection (96% accuracy BUT post-clinical)
 - Your contribution: Early prediction BEFORE visible signs
 
-**Future path:**
 - Current work: Clinical signs only (captures early prediction)
 - Future: Add images when available (progressive refinement)
 
@@ -718,28 +645,23 @@ This is feature prioritization, not rejection of images. We're optimizing for ea
 
 ### Q4: "Your multi-task learning—why not just weight the loss instead?"
 
-**Technical Response:**
 "Excellent question; shows you're thinking critically. Loss weighting and multi-task learning are actually complementary:
 
-**Loss weighting alone:**
 $$L_{\text{weighted}} = \sum_j w_j L_j$$
 - Reweights disease importance
 - Handles class imbalance within a single model
 - F1 improvement: ~2-3%
 
-**Multi-task learning alone:**
 $$L_{\text{MTL}} = \sum_s \lambda_s L_s$$
 - Shares representations across species
 - Each species gets its own prediction head
 - F1 improvement on weak species: ~8%
 
-**Your approach (BOTH combined):**
 $$L_{\text{ours}} = \sum_s \lambda_s \sum_j w_j L_{sj}$$
 - Weighted loss WITHIN each species task
 - Shared encoder benefits all species
 - Total F1 improvement: 9-10%
 
-**Empirical validation we'll show:**
 ```
 Baseline XGBoost:           F1 = 0.81
 + Loss weighting:           F1 = 0.84 (+3%)
@@ -753,15 +675,12 @@ The components are synergistic—both together work better than either alone."
 
 ### Q5: "How do you ensure the model isn't just memorizing your training data?"
 
-**Rigorous Response:**
 "Overfitting is the first thing we guard against. Here's our validation strategy:
 
-**1. Cross-Validation Architecture:**
 - 5-fold stratified cross-validation (not random split)
 - Stratified by: Species + Disease prevalence + Temporal characteristics
 - Ensures each fold has balanced disease representation
 
-**Results:**
 ```
 Fold 1: Train F1 = 0.905, Val F1 = 0.888
 Fold 2: Train F1 = 0.903, Val F1 = 0.891
@@ -775,20 +694,16 @@ Gap: 0.015 (1.5% overfitting)
 
 Small gap indicates good generalization, not memorization.
 
-**2. Multiple Validation Strategies:**
-
 - **Hold-out test set (15%):** Independent evaluation
 - **Geographic hold-out:** Train on clinic A, test on clinic B
 - **Temporal hold-out:** Train on older cases, test on recent cases
 - **Species hold-out:** Leave one species out completely
 
-**3. Regularization Techniques:**
 - Dropout: 0.3-0.5
 - L2 regularization: 1e-4
 - Early stopping on validation loss
 - Batch normalization to stabilize training
 
-**Expected results:**
 - Test set F1: 0.87-0.89 (matches validation)
 - Geographic transfer: Similar (good generalization)
 - Temporal transfer: Slight decline if disease patterns shift seasonally (expected and honest)
@@ -799,34 +714,27 @@ We're not claiming perfect generalization, but honest assessment of where model 
 
 ### Q6: "This is focused on Pakistan. Will it work in other countries?"
 
-**Pragmatic Response:**
 "That's an important consideration. Here's my honest assessment:
 
-**Geographic Specificity:**
 - Disease prevalence varies globally
 - Symptom terminology may differ
 - Veterinary practice standards vary
 - Your model trained on Pakistani data
 
-**What transfers well:**
 - LSTM temporal modeling (universal disease progression)
 - Multi-task learning framework (applicable anywhere)
 - Interpretability methods (SHAP works globally)
 - Loss weighting approach (adjustable per region)
 
-**What needs adaptation:**
 - Disease prevalence weights ($w_j$ values)
 - Symptom definitions (terminology translation)
 - Species focus (adjust for different livestock demographics)
-
-**Proposed approach for international deployment:**
 
 1. **Transfer learning:** Use your model as initialization for new country
 2. **Domain adaptation:** Fine-tune on 200-300 examples from new country
 3. **Cost:** ~90% less data than training from scratch
 4. **Expected performance:** Match or exceed your model within 200 examples
 
-**Future roadmap includes:**
 - South Asian expansion (Nepal, Bangladesh): Similar disease patterns
 - Sub-Saharan Africa: Different diseases (Rift Valley Fever, etc.), but framework transfers
 - Indian veterinary schools: Partners already interested
@@ -837,20 +745,16 @@ We're not claiming perfect generalization, but honest assessment of where model 
 
 ### Q7: "Can you really predict disease 3-7 days in advance? Isn't that too good?"
 
-**Cautious Response:**
 "Great skepticism—I expected this. Let me be precise about claims:
 
-**What we're claiming:**
 - Symptom TREND prediction, not disease cause prediction
 - 'This symptom pattern indicates FMD likely to develop in 3-7 days' = prediction
 - 'This is when FMD will appear' = too strong
 
-**Clinical Precedent:**
 - Fever rising + drooling starting = veterinarian's clinical suspicion of FMD
 - Model learning same pattern from data is reasonable
 - Not predicting from nothing; predicting from symptom sequences
 
-**Our Validation Plan:**
 1. **Retrospective analysis:** 
    - For animals diagnosed with FMD on Day 5
    - Check if model detected disease risk on Day 2-3
@@ -875,16 +779,12 @@ The honest answer: Preliminary analysis suggests 3-7 days possible, but final nu
 
 ### Q8: "How much does this cost to deploy? Is it affordable for typical Pakistani veterinarians?"
 
-**Practical Response:**
 "Excellent question about real-world deployment. Let me break down costs:
 
-**Development Cost (One-time):**
 - Research: ~$30,000 (student stipend + computing)
 - Dataset creation: ~$5,000 (veterinarian annotation)
 - Model development: ~$2,000 (computing resources)
 - **Total: ~$37,000 (amortized per deployment)**
-
-**Per-Clinic Deployment:**
 
 Option 1: Cloud-based (Easiest)
 - Initial setup: $0
@@ -904,8 +804,6 @@ Option 3: Mobile/tablet version (Future)
 - Works offline
 - No internet required
 
-**Cost-Benefit Analysis:**
-
 Average Pakistani veterinary clinic:
 - Staff: 2-3 veterinarians
 - Annual patient load: 2000-3000 animals
@@ -916,7 +814,6 @@ Your system value:
 - Increases diagnostic confidence → attracts customers
 - **ROI:** Positive within first month
 
-**Affordability Strategy:**
 1. Start with free cloud-based pilot (0 cost)
 2. Prove value on real cases
 3. Then deploy locally if proven beneficial
@@ -928,28 +825,22 @@ This is deliberately designed to be affordable for typical Pakistani clinics."
 
 ### Q9: "What if the model makes a wrong diagnosis? Aren't there liability issues?"
 
-**Ethical Response:**
 "Critical question about clinical responsibility. Let me be clear on positioning:
 
-**Model Role (NOT Replacement):**
 - Decision SUPPORT, not decision REPLACEMENT
 - Veterinarian maintains clinical authority
 - Model provides evidence; vet makes final call
 - Explicitly stated in clinical interface: "Veterinarian, make final diagnosis"
 
-**Liability Framework:**
 1. **Transparency:** Model shows reasoning (SHAP explanations)
 2. **Confidence scores:** High confidence vs. uncertain predictions indicated
 3. **Veterinarian validation:** Vet must verify before acting
 4. **Documentation:** System logs which cases used AI support (medical record)
 
-**Legal Positioning:**
 - Similar to diagnostic tests (x-ray, blood work)
 - Tests inform diagnosis, don't determine it
 - Veterinarian responsible for interpretation
 - Liability remains with practicing veterinarian, not model developer
-
-**Wrong Diagnosis Scenario:**
 
 If model predicts FMD, vet checks:
 - Mouth lesions? Hoof condition?
@@ -958,7 +849,6 @@ If model predicts FMD, vet checks:
 
 Result: Vet retains clinical authority; model is advisory tool.
 
-**Future Safeguards:**
 1. Licensing/certification for veterinarians using system
 2. Continued training and competency verification
 3. Legal liability clarity (government policy needed)
@@ -970,42 +860,34 @@ Result: Vet retains clinical authority; model is advisory tool.
 
 ### Q10: "Your dataset—are animals' identities anonymous? Any privacy concerns?"
 
-**Compliance Response:**
 "Good question about data ethics. Here's our approach:
 
-**Data Anonymization:**
 - All animal IDs anonymized (Farm-Animal-ID format, not traceable)
 - Owner information NOT included in model
 - Geographic information: Province only (not specific location)
 - Temporal information: Month/season only (not specific dates)
 
-**Data Security:**
 - Dataset stored on UVAS secure server (not cloud)
 - Access restricted to research team
 - Encryption: AES-256 for data at rest
 - Backups: Secure UVAS backup systems
 
-**Veterinarian Privacy:**
 - Vet names NOT recorded
 - Vet recommendations anonymized
 - Performance metrics (accuracy by vet) NOT tracked
 
-**Farm Privacy:**
 - Farm location not recorded
 - Farm size/identity not recorded
 - Only disease outcome + symptoms recorded
 
-**Data Sharing:**
 - Dataset will NOT be publicly released
 - Shared only with collaborating institutions under data use agreements
 - Each partner signs MOA protecting confidentiality
 
-**Ethical Review:**
 - Project approved by UVAS ethics committee
 - Complies with CAPT (Clinical Assessment and Practice Transparency) guidelines
 - Follows WHO data governance standards
 
-**Regulatory Compliance:**
 - Pakistan doesn't have strict data protection law (like GDPR)
 - We follow international standards as best practice
 - Future: Will comply with any national standards enacted
@@ -1015,8 +897,6 @@ This is serious; we're treating data with same rigor as human medical research."
 ---
 
 ## PART D: DRESS REHEARSAL SCRIPT
-
-**Use this as talking points—don't memorize verbatim, but internalize structure:**
 
 ---
 
@@ -1179,5 +1059,5 @@ I welcome your questions."
 
 **YOU'VE GOT THIS. This is legitimate, defensible, impactful research.**
 
-🎯 **Key to Success:** Know your data cold, understand your innovations deeply, be honest about limitations, and communicate with passion about why this matters for Pakistani veterinary medicine.
+ **Key to Success:** Know your data cold, understand your innovations deeply, be honest about limitations, and communicate with passion about why this matters for Pakistani veterinary medicine.
 

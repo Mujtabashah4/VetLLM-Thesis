@@ -134,7 +134,6 @@ The virus exists as **seven distinct serotypes:**
 | **Serotype O Code** | 40656008 |
 | **Serotype A Code** | 81643002 |
 
-**Coding Directive:** 
 - Use **3974005** for the clinical diagnosis
 - Ensure the system does not auto-complete to 266108008 (Hand, foot and mouth disease—human disorder)
 
@@ -146,7 +145,6 @@ The virus exists as **seven distinct serotypes:**
 
 **Peste des Petits Ruminants (PPR)**, also known as **"Goat Plague,"** is a highly contagious viral disease affecting small ruminants.
 
-**Key Facts:**
 - **Causative Agent:** Small ruminant morbillivirus (formerly Peste-des-petits-ruminants virus)
 - **Genus:** Morbillivirus
 - **Related Viruses:** Now-eradicated Rinderpest virus of cattle; Measles virus of humans
@@ -162,11 +160,9 @@ The virus exists as **seven distinct serotypes:**
 
 ### 2.2.2 Global Eradication and Economic Impact
 
-**Current Status:**
 - Target of **Global Eradication Program (PPR-GEP)** led by FAO and OIE (WOAH)
 - Aiming for eradication by 2030
 
-**Economic Impact (South Asia):**
 PPR is consistently ranked as the **most economically damaging disease** of sheep and goats in India and Pakistan, causing greater financial loss than FMD or Pox due to high mortality in productive animals.
 
 ### 2.2.3 Terminological and Coding Analysis
@@ -183,7 +179,6 @@ The nomenclature for PPR is relatively stable, though older literature may refer
 | **Synonyms** | PPR; Goat plague; Pest of small ruminants |
 | **Causative Agent Code** | 116298007 (Peste-des-petits-ruminants virus) |
 
-**Coding Directive:**
 - Use **1679004** (definitive choice)
 - Systems should flag this code as a **"Reportable Disease"** to comply with OIE reporting standards
 
@@ -218,7 +213,6 @@ In livestock (cattle, buffaloes), rabies often presents with the **"dumb" form**
 | **Synonyms** | Hydrophobia (archaic/human); Lyssa |
 | **Causative Agent Code** | 80897008 (Rabies virus) |
 
-**Coding Directive:**
 - Use **14146002**
 - **Critical:** Any entry of this code in a veterinary system should trigger an **immediate notification to public health authorities** as per "One Health" protocols
 
@@ -230,7 +224,6 @@ In livestock (cattle, buffaloes), rabies often presents with the **"dumb" form**
 
 While the list simply states "Pox," the context of veterinary medicine—specifically in a list containing PPR and CCP—strongly implies **Sheep Pox and Goat Pox (SGP)**.
 
-**Key Details:**
 - **Causative Agent:** Capripoxviruses (Sheeppox virus and Goatpox virus)
 - **Distinct from:** Orf (Contagious Ecthyma) and Cowpox
 - **Geographic Distribution:** Endemic in Africa, Middle East, and Asia
@@ -259,7 +252,6 @@ Based on the economic importance (ranking just below PPR in economic loss), spec
 | **Fully Specified Name** | Sheep pox (disorder) / Goat pox (disorder) |
 | **Causative Agent Code** | 68252003 (Sheeppox virus) |
 
-**Coding Directive:**
 - If system requires single code for "Pox" without species specification: use **363196005**
 - **Recommended Practice:** Clinician should select **28886001** (sheep) or **57428005** (goats) when species is known
 
@@ -271,7 +263,6 @@ Based on the economic importance (ranking just below PPR in economic loss), spec
 
 The abbreviation "HC" appears in the user's list and is inherently polysemous. In the context of viral transboundary diseases, **"HC" historically and legally refers to Hog Cholera**, now standardized as **Classical Swine Fever (CSF)**. 
 
-**Evidence for This Interpretation:**
 - Its inclusion in lists alongside FMD and Rinderpest in regulatory documents
 - International trade nomenclature conventions
 
@@ -300,7 +291,6 @@ Although "Classical Swine Fever" is the modern term, SNOMED CT maintains "Hog Ch
 | **Synonyms** | Classical swine fever; CSF; Swine fever |
 | **Causative Agent Code** | 79386001 (Hog cholera virus) |
 
-**Coding Directive:**
 - Map "HC" to **28044006**
 - **Important Caveat:** See Section 4.5 for alternative interpretation (Hydatid Cyst) which is critical for ruminant datasets
 
@@ -318,7 +308,6 @@ This section covers bacterial diseases that, while often endemic, cause sporadic
 
 **Black Quarter** (universally known in scientific literature as **Blackleg**) is an acute, infectious but non-contagious disease.
 
-**Key Facts:**
 - **Affected Species:** Cattle and sheep
 - **Causative Agent:** *Clostridium chauvoei*, an anaerobic, spore-forming bacterium
 - **Source:** Latent spores in muscle tissue, activated by trauma or bruising (cattle) or wound infection (sheep)
@@ -342,7 +331,6 @@ This section covers bacterial diseases that, while often endemic, cause sporadic
 | **Synonyms** | Black quarter; Quarter evil; Clostridial myositis |
 | **Causative Agent Code** | 83664003 (Clostridium chauvoei) |
 
-**Coding Directive:**
 - Use **29600000**
 - The term "Black Quarter" should be added as a local interface synonym pointing to this concept
 
@@ -371,7 +359,6 @@ The term **"Interotoximia"** is a phonetic spelling of **Enterotoxemia**. This r
 | **Synonyms** | Overeating disease; Pulpy kidney disease (Type D specific) |
 | **Causative Agent Code** | 69106008 (Clostridium perfringens) |
 
-**Coding Directive:**
 - Use **370514003** to capture the broad diagnosis of Enterotoxemia
 - Specific codes for Type D or C exist if diagnosis is more granular
 
@@ -389,7 +376,6 @@ The term **"Interotoximia"** is a phonetic spelling of **Enterotoxemia**. This r
 
 ### 3.3.2 Public Health Significance
 
-**Critical Safety Points:**
 - **Top-tier zoonosis** and potential bioterrorism agent
 - **Carcasses must NOT be necropsied** to prevent sporulation of bacteria
 - Requires strict biosafety protocols
@@ -404,7 +390,6 @@ The term **"Interotoximia"** is a phonetic spelling of **Enterotoxemia**. This r
 | **Synonyms** | Splenic fever; Charbon |
 | **Causative Agent Code** | 40610006 (Bacillus anthracis) |
 
-**Coding Directive:**
 - Use **40214000**
 - Strictly distinct from **Anthracosis** (carbon pigment in lungs)
 
@@ -440,7 +425,6 @@ The term **"Interotoximia"** is a phonetic spelling of **Enterotoxemia**. This r
 | **Causative Agent Code** | 22967006 (Brucella species) |
 | **Species-Specific Code** | 186358000 (Brucellosis caused by B. melitensis—for goats) |
 
-**Coding Directive:**
 - Use **75702008** as the general code
 - If species is known (e.g., Goat), specify with 186358000
 
@@ -466,7 +450,6 @@ The term **"Interotoximia"** is a phonetic spelling of **Enterotoxemia**. This r
 | **Synonyms** | TB; Pearl disease |
 | **Causative Agent Code** | 53434008 (Mycobacterium bovis) |
 
-**Coding Directive:**
 - Use **56717001**
 - In veterinary context, almost always implies *M. bovis* infection, but general code is acceptable unless lab confirmation distinguishes species
 
@@ -497,7 +480,6 @@ The abbreviation "CCP" in a veterinary list is unambiguously this disease.
 | **Synonyms** | CCP; CCPP |
 | **Causative Agent Code** | 116289000 (M. capricolum subsp. capripneumoniae) |
 
-**Coding Directive:**
 - Use **2260006**
 
 ---
@@ -525,7 +507,6 @@ SNOMED CT codes Mastitis primarily as a morphologic disorder of the breast/mamma
 | **Synonyms** | Mammitis; Intramammary infection |
 | **Bovine-Specific Code** | 237583006 (Bovine mastitis)—more precise if animal is cow |
 
-**Coding Directive:**
 - Use **72934000** for general condition
 - Use **237583006** if the animal is a cow (more precise)
 - Best practice encourages post-coordination (linking disorder to agent) if etiology is known
@@ -556,7 +537,6 @@ SNOMED CT codes Mastitis primarily as a morphologic disorder of the breast/mamma
 | **Fully Specified Name** | Metritis (disorder) |
 | **Synonyms** | Uterine infection |
 
-**Coding Directive:**
 - Use **50868007**
 
 ---
@@ -588,7 +568,6 @@ This section addresses diseases transmitted by vectors (ticks) or complex parasi
 | **Synonyms** | Gall sickness |
 | **Causative Agent Code** | 13821006 (Anaplasma marginale) |
 
-**Coding Directive:**
 - Use **15264008**
 
 ---
@@ -616,7 +595,6 @@ This section addresses diseases transmitted by vectors (ticks) or complex parasi
 | **Synonyms** | Piroplasmosis; Redwater fever; Texas fever |
 | **Causative Agent Code** | 59138006 (Babesia species) |
 
-**Coding Directive:**
 - Use **24026003**
 
 ---
@@ -643,7 +621,6 @@ This section addresses diseases transmitted by vectors (ticks) or complex parasi
 | **Synonyms** | Theileriosis; East Coast fever (specific to T. parva) |
 | **Causative Agent Code** | 28236006 (Theileria species) |
 
-**Coding Directive:**
 - Use **24694002** (Theileriasis) as the umbrella term
 
 ---
@@ -672,7 +649,6 @@ This section addresses diseases transmitted by vectors (ticks) or complex parasi
 | **Synonyms** | Liver fluke disease; Distomatosis |
 | **Causative Agent Code** | 74594002 (Fasciola species) |
 
-**Coding Directive:**
 - Use **4764006**
 
 ---
@@ -696,7 +672,6 @@ While "HC" formally stands for **Hog Cholera** in international trade (see Secti
 
 ### 4.5.3 Terminological and Coding Analysis
 
-**Context-Dependent Interpretation:**
 If the user's data source is an abattoir report or a parasitology list, "HC" means Hydatid Cyst.
 
 | Attribute | Detail |
@@ -708,7 +683,6 @@ If the user's data source is an abattoir report or a parasitology list, "HC" mea
 | **Synonyms** | Hydatid disease; Hydatidosis |
 | **Causative Agent Code** | 117169008 (Echinococcus granulosus) |
 
-**Coding Directive:**
 - **For "HC"—check the species:**
   - **If Ruminant** (Cattle/Buffalo/Sheep/Goat) → Use **74942003** (Echinococcosis)
   - **If Porcine** → Use **28044006** (Hog Cholera)

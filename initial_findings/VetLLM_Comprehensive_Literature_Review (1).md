@@ -86,7 +86,6 @@ Alpaca-7B demonstrated that efficient models with targeted instruction tuning ca
 
 Instruction tuning fundamentally changes the paradigm of model adaptation. Instead of task-specific supervised learning on large datasets, instruction-tuned models learn meta-tasks: understanding and following natural language instructions.
 
-**Few-shot learning mechanisms:**
 - **In-context examples:** Task examples included in the prompt enable rapid adaptation
 - **Instruction clarity:** Specific task descriptions improve performance compared to generic prompts
 - **Demonstration quality:** High-quality demonstrations provide stronger learning signals than random examples
@@ -142,14 +141,12 @@ $$h = (W + \Delta W)x = (W + BA)x$$
 
 where $B \in \mathbb{R}^{d \times r}$ and $A \in \mathbb{R}^{r \times d}$ with rank $r \ll \min(d, d')$.
 
-**Key innovations:**
 - **Parameter reduction:** Reduces trainable parameters by 10,000x (7B model: 4.2M trainable vs. 7B total)
 - **Memory efficiency:** Reduces peak GPU memory from 112GB to 16-20GB
 - **Training speed:** 1.5-2x faster than full fine-tuning
 - **Inference latency:** Zero additional overhead (adapters merged with weights)
 - **Multi-task efficiency:** Same base model with multiple task-specific LoRA adapters
 
-**LoRA configuration for VetLLM:**
 - Rank r = 16: Balances adaptation capacity vs. parameter efficiency
 - Alpha α = 32: Scaling factor enabling stable gradient flow (α/r = 2)
 - Dropout = 0.1: Regularization to prevent overfitting on limited veterinary data
@@ -360,8 +357,6 @@ Enables clinical prioritization of diagnosis importance.
 
 ### 5.3 Evaluation Metrics for Multi-Label Classification
 
-**Per-label metrics (averaging approaches):**
-
 - **Macro-averaging:** Compute metric per label, average results
   - Treats all labels equally regardless of prevalence
   - Suitable for balanced importance
@@ -376,8 +371,6 @@ Enables clinical prioritization of diagnosis importance.
   - Compromise between macro and micro
   - Reflects realistic diagnosis distributions
   - More realistic than macro-averaging
-
-**Multi-label specific metrics:**
 
 - **Hamming Loss:** Fraction of incorrectly predicted labels
   $$L_{Hamming} = \frac{1}{N \times C} \sum_{i,j} |y_{ij} - \hat{y}_{ij}|$$
@@ -469,13 +462,11 @@ Synthetic data generation offers solutions by creating realistic training data w
 
 ### 6.3 LLM-Based Synthetic Data Generation (VetLLM Approach)
 
-**Knowledge-infused prompting (ClinGen, Natarajan et al., 2024):**
 - Leverages external medical knowledge graphs
 - Guides generation toward semantically valid outputs
 - Reduces hallucinations in healthcare context
 - Outperforms naive prompt-based generation by 15-25%
 
-**Template-based generation with semantic grounding:**
 - Define clinical templates (e.g., "dog + lethargy + fever → possible infection")
 - Instantiate templates with SNOMED-CT codes
 - Generate natural language realizations via LLM
@@ -487,12 +478,10 @@ Synthetic data generation offers solutions by creating realistic training data w
 - Multiple diagnoses consistently presented
 - Reflects real-world comorbidity patterns
 
-**Validation strategies:**
 - Consistency checking: Generated text semantically encodes stated diagnoses
 - Plausibility review: Clinical experts evaluate a sample
 - Performance validation: Test models trained on synthetic data on real held-out test set
 
-**Performance of synthetic data approaches:**
 - Naive template generation: Improves over no augmentation but limited
 - LLM-based synthesis: Achieves 90%+ of real-data performance (Savadjiev et al., 2025)
 - Hybrid (template + LLM refinement): Maximizes realism and controllability
@@ -501,18 +490,15 @@ Synthetic data generation offers solutions by creating realistic training data w
 
 Data augmentation creates variations of existing data to increase diversity:
 
-**Text-level augmentation:**
 - **Synonym replacement:** "vomiting" → "emesis" → "regurgitation"
 - **Back-translation:** Translate text to another language and back
 - **Paraphrasing:** Rewrite clinical note maintaining meaning
 - **Instruction variation:** Rephrase prediction task in multiple ways
 
-**Label-level augmentation:**
 - **Oversampling:** Increase rare diagnosis representation
 - **Mixup:** Combine examples and labels (more sophisticated than simple oversampling)
 - **Stratified sampling:** Ensure diagnosis distribution representation
 
-**Performance impact:**
 - Basic augmentation (synonyms, paraphrasing): 5-15% F1 improvement
 - Advanced augmentation (back-translation, mixup): 10-25% improvement
 - Combined approaches: 15-35% improvement depending on baseline
@@ -521,23 +507,19 @@ Data augmentation creates variations of existing data to increase diversity:
 
 Critical to ensure synthetic data doesn't introduce systematic biases:
 
-**Statistical validation:**
 - Distribution matching: Synthetic data word/token distributions match real data
 - Diversity measures: Sufficient linguistic variety to prevent overfitting
 - Semantic consistency: Generated code-text pairs semantically coherent
 
-**Semantic validation:**
 - Clinical expert review of sample (typically 100-200 examples)
 - Evaluation rubrics: Plausibility (1-5), specificity (1-5), accuracy (1-5)
 - Inter-rater reliability assessment
 
-**Model-level validation:**
 - Train on synthetic data, test on real data
 - Compare performance against models trained on real data
 - Measure generalization gap
 - Acceptable gap: <10-15% (VetLLM targets 5-10%)
 
-**Domain-specific validation:**
 - Species-specific evaluation (if multi-species data)
 - Clinical context validation (emergency vs. routine)
 - Diagnosis category performance analysis
@@ -550,7 +532,6 @@ Critical to ensure synthetic data doesn't introduce systematic biases:
 
 Attention mechanisms enable interpretability by revealing which input regions the model considers important.
 
-**Scaled dot-product attention computes:**
 $$\text{Attention}(Q, K, V) = \text{softmax}\left(\frac{QK^T}{\sqrt{d_k}}\right)V$$
 
 Attention weights $w_{ij} = \text{softmax}_j(\frac{q_i \cdot k_j}{\sqrt{d_k}})$ represent the importance of key position $j$ when processing query position $i$.
@@ -598,25 +579,21 @@ Medical AI systems require interpretability for:
 
 ### 7.4 Explainable AI (XAI) Methods
 
-**LIME (Local Interpretable Model-agnostic Explanations):**
 - Learn local linear approximation around prediction
 - Identify most important features for that instance
 - Model-agnostic: works with any model
 - Limitation: May not capture global model behavior
 
-**SHAP (SHapley Additive exPlanations):**
 - Game-theoretic approach: each feature's contribution valued as its marginal contribution
 - Guarantees: Local accuracy, missingness, consistency
 - Provides global and local explanations
 - Computationally expensive but most theoretically sound
 
-**Attention-based XAI:**
 - Directly visualize attention weights
 - Fast computation (built into model)
 - Clinical interpretability: which symptoms attended to?
 - Limitation: Attention weights don't always reflect model importance
 
-**Recent XAI advances:**
 - Clinical ModernBERT includes structured medical knowledge in attention
 - Enables attention interpretability aligned with clinical knowledge
 - Outperforms standard attention-based explanations on clinical validation
@@ -683,7 +660,6 @@ Transfer learning enables knowledge reuse from data-rich domains to data-scarce 
 - Species mix variations (veterinary context)
 - Comorbidity patterns
 
-**Solutions:**
 - Continual learning: Update models as new data arrives
 - Domain-adversarial training: Align distributions across hospitals
 - Meta-learning: Learn to adapt quickly to new domains
@@ -701,7 +677,6 @@ Veterinary diagnosis systems must generalize across:
 
 **Species variations:** Breed-specific predispositions, species differences
 
-**Transfer learning solutions:**
 - Federated learning: Train on decentralized data without sharing
 - Domain randomization: Train on diverse synthetic data distributions
 - Adversarial domain adaptation: Align representations across practices
@@ -781,19 +756,16 @@ Active learning enables:
 
 Federated learning trains models on decentralized data without centralizing sensitive patient information:
 
-**Decentralized training:**
 1. Central server initializes global model
 2. Each hospital/practice trains on local data
 3. Local models send gradients (not data) to server
 4. Server aggregates gradients, updates global model
 5. Updated model returned to sites for next iteration
 
-**Privacy benefits:**
 - Patient data never leaves original institution
 - Complies with HIPAA, GDPR, data sovereignty requirements
 - Enables multi-institutional collaboration
 
-**Performance characteristics:**
 - Similar final performance to centralized training (typically <1% difference)
 - More communication rounds needed (1.5-3x more)
 - Slower convergence if data heterogeneous
@@ -836,17 +808,14 @@ Federated learning trains models on decentralized data without centralizing sens
 
 Particular relevance for multi-practice veterinary AI:
 
-**Motivation:**
 - Large veterinary chains (Banfield, VCA) want AI without sharing patient data between facilities
 - Multi-institutional research (veterinary schools + teaching hospitals)
 - International collaboration maintaining data sovereignty
 
-**Implementation:**
 - Each practice trains on local data
 - Collaboratively improve shared diagnosis prediction model
 - Enable rare disease research combining across practices
 
-**Challenges:**
 - Heterogeneous practice types (small vs. large animal)
 - Species variation across practices
 - Diagnosis prevalence variation
@@ -857,38 +826,30 @@ Particular relevance for multi-practice veterinary AI:
 
 ### 11.1 Latest Generative Models
 
-**GPT-4 (OpenAI, 2024):**
 - Multimodal: Processes images and text
 - 128K context window (reads 100+ pages)
 - Superior medical reasoning
 - Commercial: Limited free access
 
-**Claude 3 (Anthropic, 2024):**
 - Three sizes: Haiku (fast/cheap), Sonnet (balanced), Opus (most capable)
 - 200K context window (reads 500+ pages)
 - Superior multilingual and reasoning abilities
 - More transparent evaluation methodologies
 
-**Med-PaLM 2 (Google, 2024):**
 - Medical instruction-tuning
 - 86.5% on MedQA licensing exam
 - PaLM 2 base: 540B parameters
 - Research-focused release
 
-**Impact on VetLLM research:**
 - These models enable few-shot veterinary diagnosis prompting
 - Can serve as starting points for LoRA fine-tuning
 - Enable synthetic data generation for training data augmentation
 
 ### 11.2 Model Quantization and Compression
 
-**Quantization approaches:**
-
 - **INT8 (8-bit integer):** 4x memory reduction, <2% accuracy loss
 - **INT4 (4-bit integer):** 8x memory reduction, 3-5% accuracy loss with proper techniques
 - **FP8/FP4 (floating-point):** Alternative to INT; emerging hardware support
-
-**Recent techniques:**
 
 - **SmoothQuant (Xiao et al., 2023):** Achieves INT8 for both weights and activations; minimal accuracy loss; 1.5-2x speedup
 
@@ -896,7 +857,6 @@ Particular relevance for multi-practice veterinary AI:
 
 - **QA-LoRA (Bai et al., 2023):** Combines quantization with LoRA; 10-25x memory reduction
 
-**Applications to VetLLM:**
 - INT8 quantization enables 8GB GPU training/inference
 - INT4 enables edge device deployment
 - Combined with LoRA: Alpaca-7B fits on consumer GPUs
@@ -905,18 +865,15 @@ Particular relevance for multi-practice veterinary AI:
 
 Teacher-student training transfers knowledge from large to small models:
 
-**Process:**
 1. Train large teacher model (e.g., Alpaca-13B)
 2. Generate soft targets: Probability distributions over predictions
 3. Train smaller student (e.g., Alpaca-3B) on soft targets
 4. Student captures essential knowledge with fewer parameters
 
-**Performance:**
 - Student achieves 85-95% of teacher performance with 3-5x fewer parameters
 - Soft targets more informative than hard labels
 - Particularly effective for knowledge transfer
 
-**Medical applications:**
 - DistilBERT: 40% smaller, 60% faster, 97% accuracy of BERT
 - Clinical distillation: Transfer clinical knowledge to mobile/edge models
 - Veterinary application: Deploy diagnosis prediction on tablets/phones
@@ -954,27 +911,22 @@ Teacher-student training transfers knowledge from large to small models:
 
 ### 12.2 Emerging Research Directions
 
-**Multimodal diagnosis prediction:**
 - Joint learning from images, text, lab values
 - Cross-modal attention mechanisms
 - Complementary information exploitation
 
-**Hierarchical diagnosis modeling:**
 - Exploit SNOMED-CT hierarchical structure
 - Hierarchical softmax for output layer
 - Relationship-aware loss functions
 
-**Continual learning:**
 - Adapt models as new data arrives
 - Prevent catastrophic forgetting
 - Efficient online learning
 
-**Causal inference:**
 - Learn causal relationships between symptoms and diagnoses
 - Move beyond correlation to causation
 - Improve counterfactual reasoning
 
-**Meta-learning:**
 - Learn to rapidly adapt to new species, practices, domains
 - Few-shot learning for specialized tasks
 - Domain transfer efficiency
@@ -997,19 +949,16 @@ This convergence enables accessible, efficient, domain-specific diagnosis predic
 
 ### 13.2 Key Success Factors for VetLLM
 
-**Technical:**
 - Instruction-tuning paradigm enables rapid adaptation
 - LoRA provides 10,000x parameter reduction
 - Synthetic data augmentation overcomes data scarcity
 - Multi-label evaluation captures clinical reality
 
-**Practical:**
 - Reproducible pipeline democratizes veterinary NLP access
 - Consumer GPU compatibility (16GB) reduces entry barrier
 - Fast inference (1-2 seconds) enables real-time clinical use
 - Modular design enables species/practice customization
 
-**Clinical:**
 - SNOMED-CT integration ensures EHR compatibility
 - Attention-based interpretability builds clinical trust
 - Multi-label prediction handles real clinical complexity
@@ -1027,19 +976,16 @@ VetLLM contributes to:
 
 Remaining challenges and opportunities:
 
-**Near-term (1-2 years):**
 - Integration of real veterinary datasets
 - Multi-modal diagnosis prediction
 - Species-specific model variants
 - Production deployment in veterinary practices
 
-**Medium-term (2-5 years):**
 - Federated learning for multi-practice collaboration
 - Continual learning and model updating
 - Causal reasoning for treatment prediction
 - Multilingual veterinary NLP
 
-**Long-term (5+ years):**
 - Autonomous clinical reasoning systems
 - Predictive health monitoring and prevention
 - Global veterinary knowledge networks

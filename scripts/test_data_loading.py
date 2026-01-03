@@ -19,7 +19,6 @@ except ImportError as e:
     print("The data structure validation has already passed.")
     sys.exit(0)
 
-
 def test_data_loading(file_path: str):
     """Test if data can be loaded and processed by the training script"""
     print(f"\n{'='*70}")
@@ -27,7 +26,7 @@ def test_data_loading(file_path: str):
     print(f"{'='*70}")
     
     if not os.path.exists(file_path):
-        print(f"❌ File not found: {file_path}")
+        print(f" File not found: {file_path}")
         return False
     
     try:
@@ -35,7 +34,7 @@ def test_data_loading(file_path: str):
         with open(file_path, 'r', encoding='utf-8') as f:
             data = json.load(f)
         
-        print(f"✓ JSON loaded successfully - {len(data)} samples")
+        print(f" JSON loaded successfully - {len(data)} samples")
         
         # Check required fields
         required_fields = ["instruction", "output"]
@@ -47,12 +46,12 @@ def test_data_loading(file_path: str):
                     missing_fields.append(f"Sample {idx}: missing '{field}'")
         
         if missing_fields:
-            print(f"❌ Missing required fields:")
+            print(f" Missing required fields:")
             for msg in missing_fields:
                 print(f"  {msg}")
             return False
         
-        print(f"✓ All required fields present in checked samples")
+        print(f" All required fields present in checked samples")
         
         # Test with tokenizer (if available)
         try:
@@ -88,24 +87,23 @@ def test_data_loading(file_path: str):
                 )
                 
                 if len(tokens["input_ids"]) == 0:
-                    print(f"❌ Sample {idx}: Tokenization produced empty result")
+                    print(f" Sample {idx}: Tokenization produced empty result")
                     return False
             
-            print(f"✓ Tokenization successful for test samples")
-            print(f"✓ Data is compatible with training script!")
+            print(f" Tokenization successful for test samples")
+            print(f" Data is compatible with training script!")
             return True
             
         except Exception as e:
-            print(f"⚠️  Could not test tokenization (this is OK if model not downloaded): {e}")
-            print(f"✓ Data structure is valid - ready for training when model is available")
+            print(f"️  Could not test tokenization (this is OK if model not downloaded): {e}")
+            print(f" Data structure is valid - ready for training when model is available")
             return True
         
     except Exception as e:
-        print(f"❌ Error loading data: {e}")
+        print(f" Error loading data: {e}")
         import traceback
         traceback.print_exc()
         return False
-
 
 def main():
     """Main test function"""
@@ -129,14 +127,13 @@ def main():
     print(f"{'='*70}")
     
     if all_passed:
-        print("✅ ALL FILES CAN BE LOADED BY THE TRAINING SCRIPT!")
+        print(" ALL FILES CAN BE LOADED BY THE TRAINING SCRIPT!")
         print("\nYour data is ready for fine-tuning. You can proceed with:")
         print("  python scripts/train_vetllm.py --data-path processed_data/all_processed_data.json")
         return 0
     else:
-        print("❌ SOME FILES FAILED TO LOAD. Please check the errors above.")
+        print(" SOME FILES FAILED TO LOAD. Please check the errors above.")
         return 1
-
 
 if __name__ == "__main__":
     sys.exit(main())

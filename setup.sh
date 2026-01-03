@@ -17,11 +17,11 @@ echo "Found Python: $python_version"
 # Check if CUDA is available (optional)
 if command -v nvidia-smi &> /dev/null; then
     echo ""
-    echo "✅ NVIDIA GPU detected:"
+    echo " NVIDIA GPU detected:"
     nvidia-smi --query-gpu=name,memory.total --format=csv,noheader
 else
     echo ""
-    echo "⚠️  No NVIDIA GPU detected. Training will use CPU (very slow)."
+    echo "️  No NVIDIA GPU detected. Training will use CPU (very slow)."
 fi
 
 echo ""
@@ -31,10 +31,10 @@ pip install -r requirements.txt
 
 echo ""
 echo "Verifying installation..."
-python3 -c "import torch; print(f'✅ PyTorch: {torch.__version__}')"
-python3 -c "import transformers; print(f'✅ Transformers: {transformers.__version__}')"
-python3 -c "import peft; print(f'✅ PEFT: {peft.__version__}')"
-python3 -c "import datasets; print(f'✅ Datasets: {datasets.__version__}')"
+python3 -c "import torch; print(f' PyTorch: {torch.__version__}')"
+python3 -c "import transformers; print(f' Transformers: {transformers.__version__}')"
+python3 -c "import peft; print(f' PEFT: {peft.__version__}')"
+python3 -c "import datasets; print(f' Datasets: {datasets.__version__}')"
 
 echo ""
 echo "Checking CUDA availability..."
@@ -50,7 +50,7 @@ python3 scripts/validate_data.py
 
 echo ""
 echo "=========================================="
-echo "✅ Setup Complete!"
+echo " Setup Complete!"
 echo "=========================================="
 echo ""
 echo "You can now start training with:"

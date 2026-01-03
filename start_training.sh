@@ -22,7 +22,7 @@ echo ""
 
 # Check if data file exists
 if [ ! -f "$DATA_PATH" ]; then
-    echo "❌ Error: Data file not found: $DATA_PATH"
+    echo " Error: Data file not found: $DATA_PATH"
     echo ""
     echo "Available data files:"
     ls -1 processed_data/*.json 2>/dev/null || echo "  No data files found in processed_data/"
@@ -32,11 +32,11 @@ fi
 # Check if CUDA is available
 python3 -c "import torch; exit(0 if torch.cuda.is_available() else 1)" 2>/dev/null
 if [ $? -eq 0 ]; then
-    echo "✅ CUDA available - Using GPU for training"
+    echo " CUDA available - Using GPU for training"
     DEVICE_INFO=$(python3 -c "import torch; print(torch.cuda.get_device_name(0))")
     echo "   GPU: $DEVICE_INFO"
 else
-    echo "⚠️  CUDA not available - Training will be slow on CPU"
+    echo "️  CUDA not available - Training will be slow on CPU"
 fi
 
 echo ""
@@ -54,7 +54,7 @@ python3 scripts/train_vetllm.py \
 
 echo ""
 echo "=========================================="
-echo "✅ Training Complete!"
+echo " Training Complete!"
 echo "=========================================="
 echo ""
 echo "Model saved to: $OUTPUT_DIR"

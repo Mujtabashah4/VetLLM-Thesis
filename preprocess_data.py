@@ -105,17 +105,16 @@ if SNOMED_MAPPING_FILE.exists():
             snomed_mapping = json.load(f)
             DISEASE_TO_SNOMED = snomed_mapping.get('diseases', _DEFAULT_DISEASE_TO_SNOMED)
             SYMPTOM_TO_SNOMED = snomed_mapping.get('symptoms', _DEFAULT_SYMPTOM_TO_SNOMED)
-        print(f"✅ Loaded SNOMED mapping from {SNOMED_MAPPING_FILE}")
+        print(f" Loaded SNOMED mapping from {SNOMED_MAPPING_FILE}")
     except Exception as e:
-        print(f"⚠️  Error loading {SNOMED_MAPPING_FILE}: {e}")
+        print(f"️  Error loading {SNOMED_MAPPING_FILE}: {e}")
         print("   Using default mappings")
         DISEASE_TO_SNOMED = _DEFAULT_DISEASE_TO_SNOMED
         SYMPTOM_TO_SNOMED = _DEFAULT_SYMPTOM_TO_SNOMED
 else:
-    print(f"⚠️  {SNOMED_MAPPING_FILE} not found, using default mappings")
+    print(f"️  {SNOMED_MAPPING_FILE} not found, using default mappings")
     DISEASE_TO_SNOMED = _DEFAULT_DISEASE_TO_SNOMED
     SYMPTOM_TO_SNOMED = _DEFAULT_SYMPTOM_TO_SNOMED
-
 
 def create_clinical_note(animal_name: str, symptoms: List[str]) -> str:
     """
@@ -199,7 +198,6 @@ def create_clinical_note(animal_name: str, symptoms: List[str]) -> str:
     
     return clinical_note
 
-
 def extract_symptoms_from_row(row: pd.Series, symptom_columns: List[str]) -> List[str]:
     """
     Extract symptoms that are present (value = 1) from a row.
@@ -218,7 +216,6 @@ def extract_symptoms_from_row(row: pd.Series, symptom_columns: List[str]) -> Lis
             symptoms.append(col)
     return symptoms
 
-
 def get_snomed_codes_for_disease(disease: str) -> List[str]:
     """
     Get SNOMED-CT codes for a given disease.
@@ -235,7 +232,6 @@ def get_snomed_codes_for_disease(disease: str) -> List[str]:
     disease_clean = str(disease).strip()
     # Return SNOMED codes only for validated diseases; others will have no codes
     return DISEASE_TO_SNOMED.get(disease_clean, [])
-
 
 def process_excel_file(file_path: str, output_file: str = None) -> List[Dict[str, Any]]:
     """
@@ -323,9 +319,9 @@ def process_excel_file(file_path: str, output_file: str = None) -> List[Dict[str
             print(f"Warning: Error processing row {idx + 2}: {e}")
             continue
     
-    print(f"\n✅ Successfully processed: {len(processed_data)} rows")
+    print(f"\n Successfully processed: {len(processed_data)} rows")
     if skipped_rows:
-        print(f"⚠️  Skipped: {len(skipped_rows)} rows")
+        print(f"️  Skipped: {len(skipped_rows)} rows")
         if len(skipped_rows) <= 10:
             for row_num, reason in skipped_rows:
                 print(f"   Row {row_num}: {reason}")
@@ -338,10 +334,9 @@ def process_excel_file(file_path: str, output_file: str = None) -> List[Dict[str
     if output_file:
         with open(output_file, 'w', encoding='utf-8') as f:
             json.dump(processed_data, f, indent=2, ensure_ascii=False)
-        print(f"\n💾 Saved to: {output_file}")
+        print(f"\n Saved to: {output_file}")
     
     return processed_data
-
 
 def main():
     """
@@ -367,7 +362,7 @@ def main():
         file_path = dataset_dir / excel_file
         
         if not file_path.exists():
-            print(f"⚠️  File not found: {file_path}")
+            print(f"️  File not found: {file_path}")
             continue
         
         # Create output filename
@@ -385,18 +380,17 @@ def main():
             json.dump(all_processed_data, f, indent=2, ensure_ascii=False)
         
         print(f"\n{'='*60}")
-        print(f"📊 SUMMARY")
+        print(f" SUMMARY")
         print(f"{'='*60}")
         print(f"Total processed entries: {len(all_processed_data)}")
         print(f"Combined output saved to: {combined_output}")
         
         # Show sample entry
         if all_processed_data:
-            print(f"\n📋 Sample entry:")
+            print(f"\n Sample entry:")
             print(json.dumps(all_processed_data[0], indent=2))
     
-    print(f"\n✅ Preprocessing complete!")
-
+    print(f"\n Preprocessing complete!")
 
 if __name__ == "__main__":
     main()

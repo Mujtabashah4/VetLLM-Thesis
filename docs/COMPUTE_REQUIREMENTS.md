@@ -4,7 +4,7 @@
 
 ---
 
-## 📊 Current Configuration
+##  Current Configuration
 
 ### Token & Context Settings
 
@@ -27,7 +27,7 @@
 
 ---
 
-## 💻 GPU Memory Requirements
+##  GPU Memory Requirements
 
 ### Full Precision Training (FP16)
 
@@ -59,11 +59,11 @@
 
 | GPU Model | VRAM | Status | Notes |
 |-----------|------|--------|-------|
-| **RTX 3090** | 24 GB | ⚠️ **Tight** | May need batch size 2 |
-| **RTX 4090** | 24 GB | ⚠️ **Tight** | May need batch size 2 |
-| **A100 (40GB)** | 40 GB | ✅ **Recommended** | Comfortable margin |
-| **A100 (80GB)** | 80 GB | ✅ **Excellent** | Plenty of headroom |
-| **V100 (32GB)** | 32 GB | ⚠️ **Marginal** | May need optimization |
+| **RTX 3090** | 24 GB | ️ **Tight** | May need batch size 2 |
+| **RTX 4090** | 24 GB | ️ **Tight** | May need batch size 2 |
+| **A100 (40GB)** | 40 GB |  **Recommended** | Comfortable margin |
+| **A100 (80GB)** | 80 GB |  **Excellent** | Plenty of headroom |
+| **V100 (32GB)** | 32 GB | ️ **Marginal** | May need optimization |
 
 ### Recommended GPU Setup
 
@@ -91,7 +91,7 @@
 
 ---
 
-## 📏 Token Length Analysis
+##  Token Length Analysis
 
 ### Average Token Counts
 
@@ -121,7 +121,7 @@ Based on your data structure:
 
 ---
 
-## 💾 Data Size Calculations
+##  Data Size Calculations
 
 ### Dataset Size
 
@@ -140,7 +140,7 @@ Based on your data structure:
 
 ---
 
-## 🔧 Memory Optimization Options
+##  Memory Optimization Options
 
 ### Option 1: Reduce Batch Size
 
@@ -148,7 +148,6 @@ Based on your data structure:
 python scripts/train_vetllm.py --batch-size 2 ...
 ```
 
-**Impact:**
 - Reduces memory by ~25-30%
 - Increases training time by ~2x
 - Still maintains good gradient estimates
@@ -159,7 +158,6 @@ python scripts/train_vetllm.py --batch-size 2 ...
 python scripts/train_vetllm.py --batch-size 2 --gradient-accumulation-steps 8 ...
 ```
 
-**Impact:**
 - Effective batch size remains 16
 - Reduces peak memory
 - Slightly slower training
@@ -168,7 +166,6 @@ python scripts/train_vetllm.py --batch-size 2 --gradient-accumulation-steps 8 ..
 
 Edit `scripts/train_vetllm.py` and set `use_8bit=True`
 
-**Impact:**
 - Reduces memory by ~50% (to ~24-26 GB)
 - May slightly reduce accuracy
 - Enables training on 24GB GPUs
@@ -177,14 +174,13 @@ Edit `scripts/train_vetllm.py` and set `use_8bit=True`
 
 Edit `scripts/train_vetllm.py` and set `max_length=256`
 
-**Impact:**
 - Reduces memory by ~30-40%
 - May truncate longer notes
 - Not recommended (your notes fit in 512)
 
 ---
 
-## 📈 Scaling Considerations
+##  Scaling Considerations
 
 ### If You Have More Data
 
@@ -210,7 +206,7 @@ Edit `scripts/train_vetllm.py` and set `max_length=256`
 
 ---
 
-## 🖥️ System Requirements Summary
+## ️ System Requirements Summary
 
 ### Minimum Requirements
 
@@ -236,7 +232,7 @@ Edit `scripts/train_vetllm.py` and set `max_length=256`
 
 ---
 
-## 📊 Token Efficiency
+##  Token Efficiency
 
 ### Your Data Characteristics
 
@@ -254,7 +250,7 @@ Edit `scripts/train_vetllm.py` and set `max_length=256`
 
 ---
 
-## 🔍 Detailed Memory Breakdown
+##  Detailed Memory Breakdown
 
 ### Per-Sample Memory (Batch Size = 4)
 
@@ -281,7 +277,7 @@ TOTAL:               ~48 GB
 
 ---
 
-## 💡 Recommendations
+##  Recommendations
 
 ### For Your Current Setup (1,602 samples)
 
@@ -312,7 +308,7 @@ TOTAL:               ~48 GB
 
 ---
 
-## 📝 Summary
+##  Summary
 
 ### Key Numbers
 
@@ -324,13 +320,10 @@ TOTAL:               ~48 GB
 
 ### Your Data is Efficient
 
-- ✅ All notes fit in 512 tokens
-- ✅ No truncation needed
-- ✅ Plenty of headroom for longer notes
-- ✅ Optimal token utilization
+-  All notes fit in 512 tokens
+-  No truncation needed
+-  Plenty of headroom for longer notes
+-  Optimal token utilization
 
 ---
-
-**Last Updated:** December 2024  
-**Configuration Version:** 2.0
 

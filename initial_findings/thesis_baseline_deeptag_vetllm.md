@@ -2,8 +2,6 @@
 ## Baseline Methods for Veterinary Diagnosis Coding
 ### A Comprehensive Review for Thesis Defense
 
-
-
 ---
 
 ## Abstract
@@ -86,7 +84,6 @@ DEEPTAG employs a **bidirectional LSTM (BLSTM)** neural network as its core arch
 
 The distinguishing feature of DEEPTAG is its **hierarchical training objective**. Rather than treating the 42 disease codes as independent binary classification targets, the algorithm groups codes into 18 meta-diseases based on SNOMED-CT taxonomy relationships.
 
-**Example Meta-Disease Grouping:**
 - Various types of neoplasms are grouped together as a meta-disease
 - Various gastrointestinal disorders are grouped together
 
@@ -105,7 +102,6 @@ The paper introduces **DeepTag-M**, which augments the basic architecture by add
 
 DEEPTAG was trained on **112,558 expert-annotated veterinary notes** from Colorado State University (CSU) College of Veterinary Medicine, a tertiary referral center with specialized oncology, orthopedics, and internal medicine services.
 
-**Dataset Characteristics:**
 - Each note manually annotated with multiple SNOMED-CT codes by veterinary clinical experts
 - Average of **8 codes per note**
 - **Important Bias:** Cancer-related diagnoses represent approximately 30% of the dataset due to CSU's specialized cancer center
@@ -143,8 +139,6 @@ Performance degraded substantially when applied to out-of-distribution private p
 #### Disease-Specific Performance Analysis
 
 **Critical Insights:** Regression analysis controlling for training data size revealed that the **number of disease subtypes** (indicator of label diversity) **significantly predicted lower F1 scores (p < 0.001)**.
-
-**Examples:**
 
 | Disease | Training Examples | Subtypes | F1 Score | Pattern |
 |---|---|---|---|---|
@@ -223,7 +217,6 @@ VETLLM builds upon **Alpaca-7B**, an open-source instruction-tuned large languag
 
 Rather than full fine-tuning (which would update all 7 billion parameters), VETLLM employs **Low-Rank Adaptation (LoRA)**, a parameter-efficient technique. LoRA freezes the original model weights and introduces trainable low-rank matrices into attention layers.
 
-**Mathematical Formulation:**
 - W' = W₀ + ΔW = W₀ + BA
 - Where W₀ is the original weight matrix
 - B and A are low-rank matrices (e.g., rank=8)
@@ -279,8 +272,6 @@ The **50.7% relative improvement on cross-hospital data** is exceptional, sugges
 
 #### Domain Robustness Analysis
 
-**Comparing domain drops:**
-
 - **DEEPTAG:** F1 drop of 23.8 points (0.68 → 0.432), or -35% relative
 - **VETLLM:** F1 drop of 11 points (0.747 → 0.637), or -14.7% relative
 
@@ -314,8 +305,6 @@ VETLLM systematically evaluated performance with progressively smaller fine-tuni
 #### Implications for Resource-Constrained Settings
 
 This finding has **profound implications**. VetTag required 100,000+ labeled notes to achieve 0.592 F1. VETLLM **exceeds this performance with just 200 fine-tuned notes**—a **500x reduction in annotation burden**.
-
-**For veterinary practices and research institutions with limited resources:**
 
 | Aspect | Traditional Supervised | VETLLM |
 |---|---|---|
@@ -385,12 +374,10 @@ DEEPTAG introduced deep learning to this problem using:
 - Learning-to-abstain human collaboration mechanism
 - Coverage: 42 top-level disease codes
 
-**Strengths:**
 - First proof-of-concept
 - Human-in-the-loop design
 - Interpretable via attention mechanisms
 
-**Limitations:**
 - Significant cross-hospital domain gap (23.8-point F1 drop)
 - Requires extensive labeled data
 
@@ -403,12 +390,10 @@ VetTag advanced the field using:
 - Hierarchical loss across 5 SNOMED-CT depth levels
 - Coverage: All 4,577 SNOMED codes
 
-**Strengths:**
 - Comprehensive label space
 - Better domain robustness than DEEPTAG
 - Hierarchical structure
 
-**Limitations:**
 - Requires massive labeled datasets
 - Computationally expensive
 - Months of training
@@ -422,13 +407,11 @@ VETLLM represents the modern paradigm:
 - Minimal labeled data requirement (200+ notes)
 - Coverage: 9 high-priority disease classes (limited scope in study)
 
-**Strengths:**
 - Exceptional data efficiency
 - Superior cross-hospital robustness
 - Rapid deployment
 - Zero-shot capability
 
-**Limitations:**
 - Sequential inference (slower)
 - Prompt sensitivity
 - Limited to 9 diseases in study
@@ -537,8 +520,6 @@ Despite having 3× more training examples, the digestive system disorder achieve
 
 This suggests that medical coding involves **inherent complexity from the disease ontology itself**. Diseases with many clinical presentations are fundamentally harder to predict, regardless of training data quantity.
 
-**Underlying mechanisms likely include:**
-
 - **Diverse Clinical Presentations:** Diseases with 694 subtypes manifest in many clinically distinct ways, each potentially expressing different vocabulary in notes
 - **Label Ambiguity:** Different clinical features may map to different subtypes, creating ambiguous training signals
 - **Hierarchical Complexity:** Multiple levels of specificity increase decision boundary complexity
@@ -562,11 +543,11 @@ DEEPTAG and VETLLM have distinct strengths and weaknesses that suggest hybrid ap
 
 | Dimension | DEEPTAG Strength | VETLLM Strength | Opportunity |
 |---|---|---|---|
-| Accuracy | Lower | Higher ✓ | Use VETLLM for predictions |
-| Inference Speed | Higher ✓ | Lower | Use DEEPTAG for real-time |
-| Human Collaboration | Sophisticated ✓ | Basic | Use DEEPTAG for confidence |
-| Interpretability | Better ✓ | Limited | Combine for explainability |
-| Cross-Hospital | Weaker | Stronger ✓ | Use VETLLM foundation |
+| Accuracy | Lower | Higher  | Use VETLLM for predictions |
+| Inference Speed | Higher  | Lower | Use DEEPTAG for real-time |
+| Human Collaboration | Sophisticated  | Basic | Use DEEPTAG for confidence |
+| Interpretability | Better  | Limited | Combine for explainability |
+| Cross-Hospital | Weaker | Stronger  | Use VETLLM foundation |
 
 #### Proposed Hybrid Architecture
 
@@ -618,7 +599,6 @@ Your evaluation protocol should include:
 
 ---
 
-
 ---
 
 ## Detailed Technical Comparisons
@@ -646,8 +626,6 @@ Multi-Label Sigmoid (Independent Predictions)
     ↓ (with Hierarchical Regularization)
 Final Predictions with Abstention Option
 ```
-
-**Key Architectural Features:**
 
 - Word-level processing (rather than subword tokens)
 - Bidirectional context synthesis
@@ -680,8 +658,6 @@ Parse "Yes"/"No" Response
     ↓
 Boolean Diagnosis Prediction (Per Disease Query)
 ```
-
-**Key Architectural Features:**
 
 - Subword tokenization (handles diverse vocabulary)
 - Pre-trained transformer foundation
@@ -740,7 +716,6 @@ VETLLM demonstrates a fundamentally different paradigm with transformative resul
 
 **VETLLM's success reveals** that general-purpose foundation models contain sufficient medical knowledge that adaptation to specialized domains requires minimal data.
 
-
 ## Data Preprocessing and SNOMED-CT Mapping for VetLLM Fine-Tuning
 
 ### Clinical Data Sources
@@ -794,7 +769,6 @@ For diseases that **appear in the Excel files but do not yet have an authoritati
 - downstream evaluation can distinguish between **fully coded** and **uncoded** diagnoses.
 
 Overall, the final fine-tuning dataset contains **1,602 real veterinary cases**, each derived directly from UVAS clinical records, transformed into an instruction-following format, and—where possible—annotated with **validated SNOMED-CT diagnosis codes** suitable for robust VetLLM training.
-
 
 ## Final Thoughts
 

@@ -47,7 +47,6 @@ if not DEEPSPEED_AVAILABLE:
         "DeepSpeed not available. Training will continue without DeepSpeed optimization."
     )
 
-
 @dataclass
 class VetLLMConfig:
     """Configuration for VetLLM training"""
@@ -100,7 +99,6 @@ class VetLLMConfig:
     use_wandb: bool = True
     project_name: str = "vetllm-training"
     run_name: str = None
-
 
 class VetLLMDataProcessor:
     """Data processing for veterinary instruction tuning"""
@@ -174,7 +172,6 @@ class VetLLMDataProcessor:
         logger.info("Dataset tokenization completed")
 
         return tokenized_dataset
-
 
 class VetLLMTrainer:
     """Main trainer class for VetLLM"""
@@ -540,7 +537,6 @@ class VetLLMTrainer:
 
         return trainer
 
-
 def main():
     """Main training function"""
     parser = argparse.ArgumentParser(description="VetLLM Training")
@@ -613,7 +609,6 @@ def main():
     trained_model = trainer.train(train_dataset, eval_dataset)
 
     logger.info("Training pipeline completed successfully!")
-
 
 if __name__ == "__main__":
     main()

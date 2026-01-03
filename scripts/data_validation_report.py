@@ -8,7 +8,6 @@ import os
 from collections import Counter
 from typing import Dict, List
 
-
 def analyze_data_file(file_path: str) -> Dict:
     """Analyze a data file and return statistics"""
     with open(file_path, 'r', encoding='utf-8') as f:
@@ -90,7 +89,6 @@ def analyze_data_file(file_path: str) -> Dict:
     
     return stats
 
-
 def generate_report():
     """Generate comprehensive validation report"""
     base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -164,7 +162,7 @@ def generate_report():
         print(f"  {animal}: {count} ({count/total_samples*100:.1f}%)")
     
     print(f"\n{'='*70}")
-    print("✅ DATA VALIDATION COMPLETE")
+    print(" DATA VALIDATION COMPLETE")
     print(f"{'='*70}")
     print("\nAll files are valid and ready for fine-tuning!")
     print("\nNext Steps:")
@@ -174,7 +172,6 @@ def generate_report():
     print("   - Verified_DLO_data_(Sheep_Goat)_processed.json (856 samples)")
     print("\n2. Run training:")
     print("   python scripts/train_vetllm.py --data-path processed_data/all_processed_data.json")
-
 
 if __name__ == "__main__":
     generate_report()

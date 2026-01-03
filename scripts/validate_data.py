@@ -11,7 +11,6 @@ from typing import Dict, List, Any, Tuple
 from collections import Counter
 import re
 
-
 class DataValidator:
     """Validates veterinary training data for fine-tuning"""
     
@@ -98,7 +97,7 @@ class DataValidator:
                 self.errors.append("Dataset is empty - no samples found")
                 return False
             
-            print(f"✓ JSON structure valid - {len(self.data)} samples found")
+            print(f" JSON structure valid - {len(self.data)} samples found")
             return True
             
         except json.JSONDecodeError as e:
@@ -291,7 +290,7 @@ class DataValidator:
     
     def _print_results(self):
         """Print validation results"""
-        print(f"\n📊 Validation Statistics:")
+        print(f"\n Validation Statistics:")
         print(f"  Total samples: {self.stats['total_samples']}")
         print(f"  Valid samples: {self.stats['valid_samples']}")
         print(f"  Invalid samples: {self.stats['invalid_samples']}")
@@ -300,26 +299,25 @@ class DataValidator:
         print(f"  Duplicate samples: {self.stats['duplicate_samples']}")
         
         if self.errors:
-            print(f"\n❌ ERRORS ({len(self.errors)}):")
+            print(f"\n ERRORS ({len(self.errors)}):")
             for i, error in enumerate(self.errors[:20], 1):  # Show first 20 errors
                 print(f"  {i}. {error}")
             if len(self.errors) > 20:
                 print(f"  ... and {len(self.errors) - 20} more errors")
         
         if self.warnings:
-            print(f"\n⚠️  WARNINGS ({len(self.warnings)}):")
+            print(f"\n️  WARNINGS ({len(self.warnings)}):")
             for i, warning in enumerate(self.warnings[:20], 1):  # Show first 20 warnings
                 print(f"  {i}. {warning}")
             if len(self.warnings) > 20:
                 print(f"  ... and {len(self.warnings) - 20} more warnings")
         
         if not self.errors and not self.warnings:
-            print(f"\n✅ All checks passed! Data is ready for fine-tuning.")
+            print(f"\n All checks passed! Data is ready for fine-tuning.")
         elif not self.errors:
-            print(f"\n⚠️  Data has warnings but no critical errors. Review warnings before training.")
+            print(f"\n️  Data has warnings but no critical errors. Review warnings before training.")
         else:
-            print(f"\n❌ Data has critical errors. Fix them before training.")
-
+            print(f"\n Data has critical errors. Fix them before training.")
 
 def main():
     """Main validation function"""
@@ -339,7 +337,7 @@ def main():
         file_path = os.path.join(base_dir, data_file)
         
         if not os.path.exists(file_path):
-            print(f"\n❌ File not found: {file_path}")
+            print(f"\n File not found: {file_path}")
             all_valid = False
             continue
         
@@ -361,12 +359,11 @@ def main():
     print(f"Total valid samples: {total_valid}")
     
     if all_valid:
-        print(f"\n✅ ALL FILES ARE VALID AND READY FOR FINE-TUNING!")
+        print(f"\n ALL FILES ARE VALID AND READY FOR FINE-TUNING!")
         return 0
     else:
-        print(f"\n❌ SOME FILES HAVE ERRORS. Please fix them before training.")
+        print(f"\n SOME FILES HAVE ERRORS. Please fix them before training.")
         return 1
-
 
 if __name__ == "__main__":
     sys.exit(main())

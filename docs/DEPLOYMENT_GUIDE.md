@@ -241,7 +241,6 @@ Checkpoints are saved every 100 steps (configurable). The best model is automati
 
 **Symptoms:** CUDA out of memory error
 
-**Solutions:**
 1. Reduce batch size:
    ```bash
    python scripts/train_vetllm.py --batch-size 2 ...
@@ -259,7 +258,6 @@ Checkpoints are saved every 100 steps (configurable). The best model is automati
 
 ### Slow Training
 
-**Solutions:**
 1. Ensure CUDA is available:
    ```bash
    python3 -c "import torch; print(torch.cuda.is_available())"
@@ -274,14 +272,12 @@ Checkpoints are saved every 100 steps (configurable). The best model is automati
 
 ### Model Not Saving
 
-**Check:**
 - Disk space available
 - Write permissions on output directory
 - Check logs for errors
 
 ### Poor Results
 
-**Solutions:**
 1. Train for more epochs:
    ```bash
    python scripts/train_vetllm.py --epochs 5 ...
@@ -387,7 +383,4 @@ For issues or questions:
 
 ---
 
-**Last Updated:** December 2024  
-**Pipeline Version:** 2.0  
-**Status:** ✅ Production Ready
-
+**

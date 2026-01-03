@@ -26,7 +26,6 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
-
 class VetLLMPipeline:
     """Complete VetLLM Pipeline"""
     
@@ -65,10 +64,10 @@ class VetLLMPipeline:
             self.results["steps_completed"].append("data_validation")
             
             if is_valid:
-                logger.info("✅ Data validation passed!")
+                logger.info(" Data validation passed!")
                 return True
             else:
-                logger.error("❌ Data validation failed!")
+                logger.error(" Data validation failed!")
                 self.results["errors"].append("Data validation failed")
                 return False
                 
@@ -146,7 +145,7 @@ class VetLLMPipeline:
             }
             self.results["steps_completed"].append("training")
             
-            logger.info("✅ Training completed successfully!")
+            logger.info(" Training completed successfully!")
             return True
             
         except Exception as e:
@@ -224,7 +223,7 @@ class VetLLMPipeline:
             if output_file:
                 with open(output_file, 'w', encoding='utf-8') as f:
                     json.dump(results, f, indent=2, ensure_ascii=False)
-                logger.info(f"✅ Results saved to {output_file}")
+                logger.info(f" Results saved to {output_file}")
             
             self.results["inference"] = {
                 "model_path": model_path,
@@ -233,7 +232,7 @@ class VetLLMPipeline:
             }
             self.results["steps_completed"].append("inference")
             
-            logger.info("✅ Inference completed successfully!")
+            logger.info(" Inference completed successfully!")
             return True
             
         except Exception as e:
@@ -250,8 +249,7 @@ class VetLLMPipeline:
         with open(output_file, 'w', encoding='utf-8') as f:
             json.dump(self.results, f, indent=2, ensure_ascii=False)
         
-        logger.info(f"✅ Pipeline report saved to {output_file}")
-
+        logger.info(f" Pipeline report saved to {output_file}")
 
 def main():
     """Main pipeline function"""
@@ -426,15 +424,14 @@ def main():
     
     if success:
         logger.info("\n" + "="*70)
-        logger.info("✅ PIPELINE COMPLETED SUCCESSFULLY!")
+        logger.info(" PIPELINE COMPLETED SUCCESSFULLY!")
         logger.info("="*70)
         sys.exit(0)
     else:
         logger.error("\n" + "="*70)
-        logger.error("❌ PIPELINE COMPLETED WITH ERRORS")
+        logger.error(" PIPELINE COMPLETED WITH ERRORS")
         logger.error("="*70)
         sys.exit(1)
-
 
 if __name__ == "__main__":
     main()

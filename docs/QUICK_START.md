@@ -39,7 +39,6 @@ python scripts/inference.py \
 
 ## Configuration
 
-**Default Settings (Optimized):**
 - Model: Alpaca-7B (wxjiao/alpaca-7b)
 - Method: LoRA fine-tuning
 - Precision: FP16 (full precision)
@@ -47,7 +46,6 @@ python scripts/inference.py \
 - Learning Rate: 2e-4
 - Epochs: 3
 
-**Data Files (All Validated):**
 - `processed_data/all_processed_data.json` - 1,602 samples
 - `processed_data/Verified_DLO_data_-_(Cow_Buffalo)_processed.json` - 746 samples
 - `processed_data/Verified_DLO_data_(Sheep_Goat)_processed.json` - 856 samples
