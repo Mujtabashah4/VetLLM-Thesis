@@ -69,24 +69,26 @@ class VetLLMConfig:
     num_epochs: int = 3
     batch_size: int = 128
     per_device_batch_size: int = 4
-    gradient_accumulation_steps: int = 8
-    learning_rate: float = 2e-5
-    weight_decay: float = 0.0
+    gradient_accumulation_steps: int = 4  # Effective batch = 4 * 4 = 16 (matches notebook)
+    learning_rate: float = 2e-4  # Higher LR for LoRA (matches notebook)
+    weight_decay: float = 0.01  # Matches notebook
     warmup_ratio: float = 0.03
     lr_scheduler_type: str = "cosine"
 
     # Optimization
     bf16: bool = False  # Disabled by default for MPS compatibility
-    tf32: bool = False  # Disabled for compatibility with non-Ampere GPUs
+    fp16: bool = True  # Use FP16 mixed precision for CUDA (faster training)
+    use_8bit: bool = False  # Use 8-bit quantization (disabled by default for full precision)
+    tf32: bool = True  # Enable TF32 for Ampere+ GPUs (faster)
     gradient_checkpointing: bool = True
     deepspeed_config: Optional[str] = None
 
     # Evaluation and saving
     eval_strategy: str = "steps"
-    eval_steps: int = 500
+    eval_steps: int = 50  # More frequent evaluation (matches notebook)
     save_strategy: str = "steps"
-    save_steps: int = 2000
-    save_total_limit: int = 1
+    save_steps: int = 100  # More frequent saving (matches notebook)
+    save_total_limit: int = 2  # Keep 2 checkpoints (matches notebook)
 
     # Paths
     data_path: str = "data/processed/train_data.json"
@@ -248,50 +250,82 @@ class VetLLMTrainer:
 
         logger.info("Tokenizer loaded successfully")
 
-        # Load model with proper device mapping and offload configuration
-        import os
-
-        offload_folder = os.path.join(self.config.output_dir, "offload")
-        os.makedirs(offload_folder, exist_ok=True)
-
-        # Determine the best device and dtype for the current system
+        # Determine the best device for the current system
         device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
         if torch.backends.mps.is_available() and torch.backends.mps.is_built():
             device = torch.device("mps")
-            # Use float32 for MPS to avoid gradient issues
-            model_dtype = torch.float32
-            device_map = None  # Don't use device_map with MPS
-        else:
-            model_dtype = torch.float16 if self.config.bf16 else torch.float32
-            device_map = "auto"
-
-        self.model = AutoModelForCausalLM.from_pretrained(
-            self.config.model_name,
-            cache_dir=self.config.cache_dir,
-            torch_dtype=model_dtype,
-            device_map=device_map,
-            trust_remote_code=True,
-            offload_folder=offload_folder if device_map else None,
-            low_cpu_mem_usage=True,
-        )
-
-        # Move model to device if not using device_map
-        if device_map is None:
-            self.model = self.model.to(device)
-
-        # Store device info for later use
         self.device = device
+
+        # Load model with 8-bit quantization if enabled and CUDA available
+        if self.config.use_8bit and torch.cuda.is_available():
+            try:
+                from transformers import BitsAndBytesConfig
+                
+                logger.info("Loading model with 8-bit quantization for memory efficiency...")
+                bnb_config = BitsAndBytesConfig(
+                    load_in_8bit=True,
+                    llm_int8_threshold=6.0,
+                )
+                
+                self.model = AutoModelForCausalLM.from_pretrained(
+                    self.config.model_name,
+                    cache_dir=self.config.cache_dir,
+                    quantization_config=bnb_config,
+                    device_map="auto",
+                    trust_remote_code=True,
+                    low_cpu_mem_usage=True,
+                )
+                
+                logger.info("Model loaded with 8-bit quantization")
+                
+                # Prepare model for k-bit training (CRITICAL for 8-bit)
+                from peft import prepare_model_for_kbit_training
+                self.model = prepare_model_for_kbit_training(self.model)
+                logger.info("Model prepared for k-bit training")
+                
+            except ImportError:
+                logger.warning("bitsandbytes not available. Falling back to standard loading.")
+                self.config.use_8bit = False
+            except Exception as e:
+                logger.warning(f"8-bit quantization failed: {e}. Falling back to standard loading.")
+                self.config.use_8bit = False
+        
+        # Fallback to standard loading
+        if not self.config.use_8bit or not torch.cuda.is_available():
+            import os
+            offload_folder = os.path.join(self.config.output_dir, "offload")
+            os.makedirs(offload_folder, exist_ok=True)
+            
+            # Determine dtype
+            if torch.backends.mps.is_available() and torch.backends.mps.is_built():
+                model_dtype = torch.float32
+                device_map = None
+            else:
+                model_dtype = torch.float16 if self.config.bf16 else torch.float32
+                device_map = "auto" if torch.cuda.is_available() else None
+
+            self.model = AutoModelForCausalLM.from_pretrained(
+                self.config.model_name,
+                cache_dir=self.config.cache_dir,
+                torch_dtype=model_dtype,
+                device_map=device_map,
+                trust_remote_code=True,
+                offload_folder=offload_folder if device_map else None,
+                low_cpu_mem_usage=True,
+            )
+
+            # Move model to device if not using device_map
+            if device_map is None:
+                self.model = self.model.to(device)
 
         logger.info("Base model loaded successfully")
 
-        # Setup LoRA if enabled (do this before gradient checkpointing)
+        # Setup LoRA if enabled (do this after model loading)
         if self.config.use_lora:
             self.setup_lora()
 
-        # Enable gradient checkpointing after LoRA setup
-        if self.config.gradient_checkpointing:
-            self.model.gradient_checkpointing_enable()
-            logger.info("Gradient checkpointing enabled")
+        # Note: Gradient checkpointing is handled in TrainingArguments
+        # Don't enable it here for 8-bit models as it may conflict
 
     def setup_lora(self):
         """Setup LoRA configuration"""
@@ -373,9 +407,9 @@ class VetLLMTrainer:
             lr_scheduler_type=self.config.lr_scheduler_type,
             # Optimization settings
             bf16=use_bf16,
-            fp16=False,  # Explicitly disable fp16
+            fp16=self.config.fp16 and not self.config.use_8bit and torch.cuda.is_available(),  # FP16 for CUDA (matches notebook)
             tf32=self.config.tf32 and not use_mps_device,  # Disable TF32 on MPS
-            gradient_checkpointing=self.config.gradient_checkpointing,
+            gradient_checkpointing=self.config.gradient_checkpointing and not self.config.use_8bit,  # Disable for 8-bit
             # Evaluation and saving
             eval_strategy=self.config.eval_strategy,
             eval_steps=self.config.eval_steps,
@@ -418,10 +452,12 @@ class VetLLMTrainer:
         training_args = self.create_training_arguments()
 
         # Data collator
+        # Pad to multiple of 8 for FP16/BF16 efficiency
+        use_mixed_precision = (self.config.fp16 or self.config.bf16) and torch.cuda.is_available()
         data_collator = DataCollatorForLanguageModeling(
             tokenizer=self.tokenizer,
             mlm=False,
-            pad_to_multiple_of=8 if self.config.bf16 else None,
+            pad_to_multiple_of=8 if use_mixed_precision else None,
         )
 
         # Ensure model is in training mode

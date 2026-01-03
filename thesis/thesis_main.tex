@@ -1,0 +1,287 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% MS Thesis - VetLLM: Deep Learning for Veterinary Diagnosis Prediction
+%
+% Author: Mujtaba Shah
+% Supervisor: [Your Supervisor Name]
+% Institution: University of Veterinary and Animal Sciences (UVAS)
+% Year: 2025
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[a4paper,12pt]{report}
+
+% ===== TYPOGRAPHY AND FORMATTING =====
+\usepackage[T1]{fontenc}          % Better font encoding
+\usepackage[utf8]{inputenc}       % UTF-8 input encoding
+\usepackage{microtype}            % Better typography (spacing, kerning)
+
+\usepackage{fancyhdr,setspace,geometry,ifthen}
+\usepackage[verbose]{cite}
+\usepackage[tbtags]{amsmath}
+\usepackage[amsmath,thmmarks]{ntheorem}
+\usepackage{graphicx,psfrag,epsfig}
+\usepackage{amssymb}
+\usepackage{array}
+\usepackage{hhline}
+\allowdisplaybreaks[1]
+\usepackage{epic}
+\usepackage{eepic}
+\usepackage{enumerate}
+\usepackage{color}
+\usepackage{comment}
+\usepackage{index}\makeindex
+\usepackage{tikz}
+\usepackage{mathtools}
+\usepackage{subfig}
+\usepackage{url}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage{listings}
+\usepackage{xcolor}
+
+% Hyperref for clickable links
+\usepackage[a4paper=true,breaklinks=true,colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+
+% ===== FIX JUSTIFICATION AND TEXT ALIGNMENT =====
+\tolerance=1000                    % Allow flexibility in word spacing
+\emergencystretch=3em              % Prevent overfull hboxes
+\hyphenpenalty=500                 % Moderate hyphenation
+\hbadness=10000                    % Suppress underfull warnings
+\sloppy                            % Prefer underfull over overfull lines
+
+% Page geometry
+\geometry{margin=41mm}
+\addtolength{\evensidemargin}{-20mm}
+\addtolength{\textwidth}{20mm}
+\addtolength{\topmargin}{-11mm}
+\addtolength{\textheight}{22mm}
+
+% Line spacing
+\onehalfspacing
+
+% Clear empty double page
+\newcommand{\clearemptydoublepage}{\newpage{\pagestyle{empty}\cleardoublepage}}
+
+% Fancy headers
+\pagestyle{fancy}
+\fancypagestyle{plain}{%
+\renewcommand{\headrulewidth}{0pt}
+\fancyhf{}
+\fancyfoot[C]{\thepage}}
+\headheight=14.5pt
+
+\renewcommand{\chaptermark}[1]{\markboth{#1}{}}
+\renewcommand{\sectionmark}[1]{\markright{\thesection\ #1}}
+
+\fancyfoot{}
+\fancyhead[LE,RO]{\thepage}
+\fancyhead[RE]{\nouppercase \leftmark}
+\fancyhead[LO]{\nouppercase \rightmark}
+
+% Theorem environments
+\theoremstyle{plain} \theoremheaderfont{\normalfont\bfseries}
+\theoremsymbol{}
+\newtheorem{theorem}{Theorem}[chapter]
+\newtheorem{corollary}{Corollary}[chapter]
+\newtheorem{Proposition}{Proposition}[chapter]
+\newtheorem{definition}{Definition}[chapter]
+\newtheorem{lemma}{Lemma}[chapter]
+\newtheorem{remark}{Remark}[chapter]
+
+\theoremstyle{break} \theorembodyfont{\upshape}
+\newtheorem{example}{Example}[section]
+
+% Math commands
+\def\beq#1\eeq{\begin{equation}#1\end{equation}}
+\newcommand{\bmat}{\begin{bmatrix}}
+\newcommand{\emat}{\end{bmatrix}}
+\newcommand{\by}{\ensuremath{\times}}
+\newcommand{\is}{\ensuremath{\stackrel{\mathrm{def}}{=}}}
+\newcommand{\absmod}[1]{\ensuremath{\left| #1 \right|}}
+\newcommand{\rank}{\ensuremath{\operatorname{rank}}}
+\newcommand{\diag}{\ensuremath{\operatorname{diag}}}
+
+% Figure widths
+\newcommand{\onecolumnfigurewidth}{1.00\columnwidth}
+\newcommand{\twocolumnfigurewidth}{1.00\textwidth}
+
+% Appendix handling
+\renewcommand{\appendixname}{Appendix}
+\newenvironment{appendices}{%
+    \setcounter{chapter}{0}%
+    \renewcommand{\chaptername}{\appendixname}%
+    \renewcommand{\thechapter}{\Alph{chapter}}%
+} {}
+
+% Signature definition
+\def\signature#1#2{\par\noindent#1\dotfill\null\\*
+  {\raggedleft #2\par}}
+
+% Code listing style
+\lstset{
+    basicstyle=\ttfamily\small,
+    breaklines=true,
+    frame=single,
+    numbers=left,
+    numberstyle=\tiny,
+    keywordstyle=\color{blue},
+    commentstyle=\color{green!60!black},
+    stringstyle=\color{red}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% THESIS METADATA - UPDATE THESE
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\thtitle}{VetLLM: Deep Learning-Based Livestock Disease Outbreak Prediction System for Early Warning and Clinical Decision Support}
+\newcommand{\thauthor}{Syed Muhammad Mujtaba}
+\newcommand{\thauthorID}{24280069}
+\newcommand{\thsupervisor}{Dr. Malik Jahan Khan}
+\newcommand{\thdept}{Department of Computer Science}
+\newcommand{\thschool}{Syed Babar Ali School of Science and Engineering}
+\newcommand{\thuni}{Lahore University of Management Sciences (LUMS), Lahore}
+
+% Graphics path
+\graphicspath{{figures/}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% DOCUMENT BEGIN
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+\setcounter{secnumdepth}{3}
+\setcounter{tocdepth}{2}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% TITLE PAGE
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{titlepage}
+\begin{center}
+    \begin{doublespacing}
+        {\bfseries\huge \thtitle \par}
+    \end{doublespacing}
+    \vskip 2cm
+\end{center}
+
+\begin{center}
+    \large{A Masters Thesis}\\
+    \large{Submitted By}\\
+    \vspace{1.5cm}
+    \large{\textbf{\thauthor}}\\
+    Roll Number : \thauthorID\\
+    \vspace{1.5cm}
+    \large{In Partial Fulfillment of the Requirements for the Degree of}\\
+    \large{Master of Science in Artificial Intelligence}\\
+    \vspace{1.5cm}
+    \large{Supervisor: \thsupervisor}
+    \vskip 10mm
+    {\large 2024-2025}
+    \vfill
+    \includegraphics[width=3cm]{lums_logo.png}\par
+    \vspace{0.5cm}
+    {\rmfamily\large \thdept \linebreak
+    \thschool \linebreak
+    \thuni}
+\end{center}
+\end{titlepage}
+\clearemptydoublepage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% PRELIMINARY PAGES (Roman numerals)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\pagenumbering{roman}
+
+% Signature page
+\input{chap0/signs}
+\clearemptydoublepage
+
+% Dedication
+\addcontentsline{toc}{chapter}{Dedication}
+\input{chap0/dedication}
+\clearemptydoublepage
+
+% Acknowledgements
+\addcontentsline{toc}{chapter}{Acknowledgements}
+\input{chap0/acknowledgements}
+\clearemptydoublepage
+
+% Abstract
+\addcontentsline{toc}{chapter}{Abstract}
+\input{chap0/abstract}
+\clearemptydoublepage
+
+% List of Acronyms
+\addcontentsline{toc}{chapter}{List of Acronyms}
+\input{chap0/acronyms}
+\clearemptydoublepage
+
+% Notations
+\addcontentsline{toc}{chapter}{Notations}
+\input{chap0/notations}
+\clearemptydoublepage
+
+% Table of Contents
+\tableofcontents
+\clearemptydoublepage
+
+% List of Figures
+\addcontentsline{toc}{chapter}{List of Figures}
+\listoffigures
+\clearemptydoublepage
+
+% List of Tables
+\addcontentsline{toc}{chapter}{List of Tables}
+\listoftables
+\clearemptydoublepage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% MAIN CHAPTERS (Arabic numerals)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\pagenumbering{arabic}
+
+% Chapter 1: Introduction
+\input{chap1/introduction}
+\clearemptydoublepage
+
+% Chapter 2: Literature Review
+\input{chap2/literature_review}
+\clearemptydoublepage
+
+% Chapter 3: Methodology
+\input{chap3/methodology}
+\clearemptydoublepage
+
+% Chapter 4: Results and Analysis
+\input{chap4/results}
+\clearemptydoublepage
+
+% Chapter 5: Conclusions and Future Work
+\input{chap5/conclusions}
+\clearemptydoublepage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% APPENDICES
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{appendices}
+\input{appendix/appendix_a}
+\clearemptydoublepage
+\end{appendices}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% REFERENCES
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\addcontentsline{toc}{chapter}{References}
+\bibliographystyle{IEEEbib}
+\renewcommand{\bibname}{References}
+\bibliography{IEEEabrv,thesis_references}
+\clearemptydoublepage
+
+\end{document}

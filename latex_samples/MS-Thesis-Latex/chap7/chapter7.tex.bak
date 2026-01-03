@@ -1,0 +1,147 @@
+\newcommand{\chapsixfigs}{chap6/Figures}
+
+\chapter{Conclusions and Future Research Directions}\label{chap7:chapter7}
+
+In this chapter we summarize the general conclusions drawn from this
+thesis.  The summary of specific contributions can be found at the
+end of each chapter and are not repeated here. We also outline some
+future research directions arising from this work.
+
+
+\section{Conclusions}
+
+This thesis has been primarily concerned with the development of new
+signal processing techniques and the extension of existing theories
+to analyze signals defined on the sphere.
+
+First, in Chapter 3, we have considered the problem to define and
+formulate convolution on the sphere in a manner that serves as direct analog
+of the Euclidean domain convolution. In contrast to the existing
+definitions of convolution, we have formulated convolution on the
+sphere which is commutative in nature, admits anisotropic filter and
+produces an output that remains on the sphere.
+
+
+In the second part of the thesis, from Chapter 4 to Chapter 6, we
+focussed on analysis of signals on the sphere in a joint
+spatio-spectral domain. Analogous to the STFT in time-frequency
+analysis, we developed the SLSHT, composed of spatial windowing followed
+by a spherical harmonic transform, to obtain the spatio-spectral
+representation of the signal. It has been shown that the
+spatio-spectral representation, herein, referred to as the SLSHT
+distribution represents the spatially varying spectral contents and
+therefore reveals information about the localization of spectral
+contents which cannot be directly obtained from the spectral domain
+representation of a signal. Since the SLSHT distribution relies on a
+window function for spatial localization, different window functions
+have been studied from the perspective of the uncertainty principle.
+Noting that the eigenfunction obtained from the Slepian concentration
+problem on the sphere attains the lower bound imposed by uncertainty
+principle, we have proposed to use this eigenfunction as window function
+in obtaining SLSHT distribution of a signal. New uncertainty
+principles, which relate the concentration of a signal in spatial
+and spectral domain, have also been derived.
+
+Earlier, in Chapter 4, we used azimuthally symmetric window functions
+for spatial localization in order to parameterize the SLSHT
+distribution on $\untsph$. Later, we extended the development of
+the SLSHT in Chapter 6, where an azimuthally asymmetric window function is
+used for spatial localization and the spatio-spectral representation
+is referred to as the directional SLSHT distribution. The use of an asymmetric
+window function enables the SLSHT to also reveal localization of
+\emph{directional} features in the spatio-spectral domain. Due to
+the fact the rotation is fully characterized by the consideration of
+all three Euler angles, the asymmetric window provides SO(3) spatial
+localization and therefore the directional SLSHT distribution is
+parameterized on SO(3) instead of $\untsph$. Since the data-sets on
+the sphere may be of large size, and the SLSHT distribution of a signal must 
+be computed for each spatial position and for each
+spectral component, we have developed fast algorithms for efficient
+computation of the SLSHT distribution.
+
+The spatially localized spherical harmonic transform (SLSHT)
+distribution, representing the spatially-varying spectrum of a
+signal on the unit sphere, presents a mechanism to transform, modify
+and filter the signal in the joint spatio-spectral domain to realize
+spatially varying spectral filtering.  As in the time-frequency
+analogy, such a transformation in the spatio-spectral domain can
+lead to a modified distribution that is not the SLSHT distribution of
+a physically valid spatial signal.  Therefore, we formulated and
+solved an optimization problem to find the closest physically valid
+signal to the modified SLHT distribution. We illustrated two types
+of transformation to the SLSHT distribution, multiplicative
+modification and convolutive modification, both being instances of a
+general linear integral operator. It has been shown that the
+proposed framework enables the processing of signals in the joint
+spatio-spectral domain in a way that cannot be accomplished
+separately in either spatial or spectral domain.
+
+
+\section{Future Research Directions}
+
+A number of interesting future research directions arise from the work presented in this thesis.\\
+
+\begin{itemize}
+
+\item The capability of the 
+SLSHT distribution to reveal localized contribution of spectral
+contents depends on the window function being used for spatial
+localization. Considering that there exists a localization trade-off
+for a window function in the spatial and spectral domains, the choice of
+window function affects the resulting SLSHT distribution. Use of
+the same window function to achieve localization
+for all spatial positions may not be adequate to find what spectral
+components exist at different spatial positions. Lower spatial
+resolution window should be used in the region of lower degree
+spectral components. Higher spatial resolution window must be
+employed in the region that contains localized higher degree
+spectral components in order to distinguish spatially varying
+spectral components at different spatial positions. Therefore, there
+is a need to investigate the use of different resolution window
+functions at different spatial positions to achieve localization,
+such that the resolution of the window function adapts to the
+characteristics of the signal being analyzed. An analogous problem
+is well known in time-frequency
+analysis~\cite{Jones:1992,Baraniuk:1993,Jones:1997}, where it has
+been shown that, according to several different measures of
+performance, the optimal window function for STFT depends on the
+signal being analyzed.
+
+\item In this thesis, we have studied the SLSHT distribution as
+spatio-spectral representation of signals on the sphere. The
+SLSHT has been formulated in analogy with the STFT in time-frequency
+analysis. There exist more sophisticated, different types of
+time-frequency distributions in the literature with different
+properties~\cite{Cohen:1989}. Potentially, these existing techniques
+need to extended and tailored for signals on the sphere. For
+example, the ambiguity function for signals on the sphere formulated
+in \cite{Khalid_icassp_2:2012} can be used to develop a general
+class of spatio-spectral distributions for signals on the sphere
+similar to the Cohen class of time-frequency
+distributions~\cite{Cohen:1989,Cohen:1995}.
+
+
+\item  In Chapter 5, we presented a framework for transformation of signals in the spatio-spectral domain. There are natural generalizations of the proposed framework. The
+technique we developed to recover a spectral response of a valid
+signal on the unit sphere from a modified SLSHT distribution is not
+limited to linear transformations in the spatio-spectral domain.
+Since there exist efficient computational techniques to
+\emph{exactly} evaluate the spherical harmonic transform of the
+the band-limited signals~\cite{Driscoll:1994,McEwen:2011}, we have
+considered the signal in the spectral domain in the proposed
+mathematical developments and formulations. We consider the
+development of efficient computational techniques to do signal
+processing in spatio-spectral domain an open problem for further
+work.
+
+
+\item The problem of optimal filtering on the sphere has been investigated in \cite{McEwen:2008,Arora:2010} and applied in
+\cite{Mcewen:bubble_filters:2012} for the detection of bubble
+collision signatures in WMAP 7-year
+observations~\cite{Jarosik:2010}. Following the explorations and
+research on the filtering of Euclidean signals in the time-frequency
+domain using STFT~\cite{Hlawatsch:2000}, the proposed SLSHT
+distribution can be used to formulate the optimal filtering in the
+joint spatio-spectral domain for signals on the sphere.
+
+\end{itemize}

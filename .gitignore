@@ -1,4 +1,42 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
 venv/
-models/vetllm-finetuned/offload
-wandb/
+*.egg-info/
+dist/
+build/
+
+# Models and Data (large files)
+models/*/
+!models/.gitkeep
 cache/
+*.safetensors
+*.bin
+*.pt
+*.pth
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
+
+# Backup directories
+_backup_*/

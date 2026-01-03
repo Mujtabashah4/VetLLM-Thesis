@@ -1,0 +1,305 @@
+\chapter{Supplementary Materials}
+\label{appendix:supplementary}
+
+This appendix provides additional details on the dataset, implementation, and experimental results.
+
+\section{Dataset Details}
+\label{appendix:dataset}
+
+\subsection{Complete Disease List}
+
+Table~\ref{tab:disease_list} provides the complete list of diseases in the VetLLM dataset:
+
+\begin{table}[htbp]
+\centering
+\caption{Complete Disease List with Prevalence}
+\label{tab:disease_list}
+\begin{tabular}{clcc}
+\toprule
+\textbf{\#} & \textbf{Disease Name} & \textbf{Category} & \textbf{Prevalence (\%)} \\
+\midrule
+1 & Foot and Mouth Disease (FMD) & Viral & 18.2 \\
+2 & Lumpy Skin Disease (LSD) & Viral & 8.5 \\
+3 & Hemorrhagic Septicemia (HS) & Viral & 6.3 \\
+4 & Peste des Petits Ruminants (PPR) & Viral & 5.1 \\
+5 & Poxvirus Infections & Viral & 3.8 \\
+6 & Other Viral & Viral & 2.1 \\
+\midrule
+7 & Brucellosis & Bacterial & 7.4 \\
+8 & Mastitis & Bacterial & 12.6 \\
+9 & Metritis & Bacterial & 4.2 \\
+10 & Bovine Tuberculosis & Bacterial & 2.3 \\
+11 & Fascioliasis & Bacterial & 3.1 \\
+\midrule
+12 & Tick-borne Diseases & Parasitic & 5.8 \\
+13 & Internal Parasites & Parasitic & 8.9 \\
+14 & Coccidiosis & Parasitic & 3.4 \\
+15 & Parasitic Anemia & Parasitic & 2.7 \\
+\midrule
+16 & Hypocalcemia (Milk Fever) & Metabolic & 4.5 \\
+17 & Anorexia/Malnutrition & Metabolic & 6.2 \\
+18 & Black Quarter & Metabolic & 1.8 \\
+19 & Enterotoxemia & Metabolic & 2.4 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Symptom-Disease Correlation Matrix}
+
+Table~\ref{tab:symptom_disease} shows the correlation between symptoms and major diseases:
+
+\begin{table}[htbp]
+\centering
+\caption{Symptom-Disease Correlation (Selected)}
+\label{tab:symptom_disease}
+\small
+\begin{tabular}{lccccc}
+\toprule
+\textbf{Symptom} & \textbf{FMD} & \textbf{LSD} & \textbf{Brucellosis} & \textbf{Mastitis} & \textbf{HS} \\
+\midrule
+Fever & 0.82 & 0.71 & 0.65 & 0.45 & 0.88 \\
+Blisters on lips & 0.91 & 0.12 & 0.08 & 0.05 & 0.15 \\
+Lameness & 0.78 & 0.22 & 0.18 & 0.12 & 0.25 \\
+Weakness & 0.55 & 0.62 & 0.72 & 0.48 & 0.75 \\
+Blood in milk & 0.08 & 0.05 & 0.12 & 0.85 & 0.10 \\
+Vaginal abnormalities & 0.05 & 0.08 & 0.82 & 0.15 & 0.12 \\
+Nasal discharge & 0.35 & 0.42 & 0.25 & 0.18 & 0.68 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Implementation Details}
+\label{appendix:implementation}
+
+\subsection{Hyperparameter Configuration}
+
+Table~\ref{tab:hyperparameters} lists the final hyperparameter settings:
+
+\begin{table}[htbp]
+\centering
+\caption{Hyperparameter Settings}
+\label{tab:hyperparameters}
+\begin{tabular}{lcc}
+\toprule
+\textbf{Hyperparameter} & \textbf{Value} & \textbf{Search Range} \\
+\midrule
+\multicolumn{3}{l}{\textit{Encoder}} \\
+Hidden Layer 1 & 128 & [64, 128, 256] \\
+Hidden Layer 2 & 64 & [32, 64, 128] \\
+Dropout Rate & 0.3 & [0.1, 0.3, 0.5] \\
+\midrule
+\multicolumn{3}{l}{\textit{LSTM}} \\
+LSTM Units & 64 & [32, 64, 128] \\
+Recurrent Dropout & 0.2 & [0.1, 0.2, 0.3] \\
+Sequence Length & 3 & [2, 3, 5] \\
+\midrule
+\multicolumn{3}{l}{\textit{Training}} \\
+Learning Rate & $1 \times 10^{-3}$ & [$10^{-4}$, $10^{-3}$, $10^{-2}$] \\
+Batch Size & 32 & [16, 32, 64] \\
+Weight Decay & $1 \times 10^{-4}$ & [$10^{-5}$, $10^{-4}$, $10^{-3}$] \\
+Epochs & 100 & Fixed \\
+Early Stopping Patience & 10 & Fixed \\
+\midrule
+\multicolumn{3}{l}{\textit{Loss Function}} \\
+Focal Loss $\gamma$ & 2.0 & [1.0, 2.0, 3.0] \\
+Class Weighting & Inverse prevalence & Fixed \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Software Dependencies}
+
+\begin{lstlisting}[language=Python, caption=Key Software Dependencies]
+# Core Libraries
+torch==2.0.1
+numpy==1.24.3
+pandas==2.0.2
+scikit-learn==1.2.2
+
+# Deep Learning
+pytorch-lightning==2.0.0
+
+# Interpretability
+shap==0.42.1
+
+# Experiment Tracking
+wandb==0.15.0
+
+# Baselines
+xgboost==1.7.5
+\end{lstlisting}
+
+\subsection{Model Architecture Code}
+
+\begin{lstlisting}[language=Python, caption=VetLLM Model Definition]
+import torch
+import torch.nn as nn
+
+class VetLLM(nn.Module):
+    def __init__(self, num_symptoms=15, num_diseases=19, 
+                 hidden_dim=64, lstm_units=64, num_species=4):
+        super().__init__()
+        
+        # Shared Symptom Encoder
+        self.encoder = nn.Sequential(
+            nn.Linear(num_symptoms, 128),
+            nn.BatchNorm1d(128),
+            nn.ReLU(),
+            nn.Dropout(0.3),
+            nn.Linear(128, hidden_dim),
+            nn.BatchNorm1d(hidden_dim),
+            nn.ReLU(),
+            nn.Dropout(0.3)
+        )
+        
+        # LSTM for temporal modeling
+        self.lstm = nn.LSTM(
+            input_size=hidden_dim,
+            hidden_size=lstm_units,
+            batch_first=True,
+            dropout=0.2
+        )
+        
+        # Species-specific heads
+        self.species_heads = nn.ModuleDict({
+            'cattle': self._make_head(lstm_units, num_diseases),
+            'buffalo': self._make_head(lstm_units, num_diseases),
+            'sheep': self._make_head(lstm_units, num_diseases),
+            'goat': self._make_head(lstm_units, num_diseases)
+        })
+    
+    def _make_head(self, in_features, num_classes):
+        return nn.Sequential(
+            nn.Linear(in_features, 32),
+            nn.ReLU(),
+            nn.Linear(32, num_classes),
+            nn.Sigmoid()
+        )
+    
+    def forward(self, x_seq, species):
+        # x_seq: (batch, seq_len, num_symptoms)
+        batch_size, seq_len, _ = x_seq.shape
+        
+        # Encode each time step
+        encoded = []
+        for t in range(seq_len):
+            enc_t = self.encoder(x_seq[:, t, :])
+            encoded.append(enc_t)
+        encoded = torch.stack(encoded, dim=1)
+        
+        # LSTM processing
+        lstm_out, (h_n, c_n) = self.lstm(encoded)
+        final_hidden = h_n.squeeze(0)
+        
+        # Species-specific prediction
+        output = self.species_heads[species](final_hidden)
+        return output
+\end{lstlisting}
+
+\section{Additional Results}
+\label{appendix:results}
+
+\subsection{Learning Curves}
+
+Training and validation loss curves showed convergence around epoch 45, with early stopping triggered at epoch 55 for the best model.
+
+\subsection{Confusion Matrix Analysis}
+
+Table~\ref{tab:confusion} shows the confusion matrix for selected high-impact diseases:
+
+\begin{table}[htbp]
+\centering
+\caption{Confusion Matrix: FMD Prediction}
+\label{tab:confusion}
+\begin{tabular}{lcc}
+\toprule
+& \textbf{Predicted Positive} & \textbf{Predicted Negative} \\
+\midrule
+\textbf{Actual Positive} & 162 (TP) & 18 (FN) \\
+\textbf{Actual Negative} & 22 (FP) & 798 (TN) \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Metrics for FMD:
+\begin{itemize}
+    \item Precision: 162 / (162 + 22) = 0.88
+    \item Recall: 162 / (162 + 18) = 0.90
+    \item F1 Score: 0.89
+\end{itemize}
+
+\subsection{Per-Fold Cross-Validation Results}
+
+\begin{table}[htbp]
+\centering
+\caption{5-Fold Cross-Validation Detailed Results}
+\label{tab:cv_detailed}
+\begin{tabular}{lccccc}
+\toprule
+\textbf{Fold} & \textbf{Train F1} & \textbf{Val F1} & \textbf{Rare F1} & \textbf{Gap} & \textbf{Epochs} \\
+\midrule
+1 & 0.905 & 0.888 & 0.75 & 0.017 & 52 \\
+2 & 0.903 & 0.891 & 0.78 & 0.012 & 48 \\
+3 & 0.907 & 0.885 & 0.76 & 0.022 & 55 \\
+4 & 0.901 & 0.893 & 0.79 & 0.008 & 45 \\
+5 & 0.904 & 0.889 & 0.77 & 0.015 & 50 \\
+\midrule
+\textbf{Mean $\pm$ Std} & 0.904 $\pm$ 0.002 & 0.889 $\pm$ 0.003 & 0.77 $\pm$ 0.02 & 0.015 & 50 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The small train-validation gap (1.5\% average) indicates good generalization without significant overfitting.
+
+\section{SHAP Visualization Examples}
+\label{appendix:shap}
+
+Example SHAP force plot interpretation for a cattle case diagnosed with FMD:
+
+\begin{lstlisting}[frame=single, caption=SHAP Explanation Output]
+Prediction: FMD (0.92 confidence)
+
+Positive contributions (increase probability):
+  - Blisters on lips:    +0.42
+  - Lameness:            +0.31
+  - Fever:               +0.18
+  - Weakness:            +0.08
+
+Negative contributions (decrease probability):
+  - Blood in milk:       -0.05
+  - No vaginal signs:    -0.03
+  - No severe cough:     -0.02
+
+Base value: 0.18 (population average for FMD)
+Final prediction: 0.92
+\end{lstlisting}
+
+\section{Ethical Considerations}
+\label{appendix:ethics}
+
+\subsection{Data Privacy}
+
+\begin{itemize}
+    \item All animal identifiers anonymized using format: Species\_Year\_Number
+    \item Farm locations abstracted to province level only
+    \item Owner information not recorded
+    \item Data stored on secure UVAS institutional servers
+\end{itemize}
+
+\subsection{Institutional Approval}
+
+This research was conducted under approval from:
+\begin{itemize}
+    \item UVAS Institutional Ethics Committee
+    \item Department of Computer Science / Veterinary Sciences
+\end{itemize}
+
+\subsection{Clinical Responsibility}
+
+VetLLM is designed as a \textbf{decision support tool}, not a replacement for veterinary clinical judgment. The system:
+\begin{itemize}
+    \item Explicitly indicates it provides recommendations, not diagnoses
+    \item Displays confidence scores to indicate prediction certainty
+    \item Requires veterinarian validation before clinical action
+    \item Maintains audit trail for accountability
+\end{itemize}

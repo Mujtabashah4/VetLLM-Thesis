@@ -1,0 +1,1953 @@
+
+@STRING{IEEE_J_SP         = "{IEEE} Trans. Signal Process."}
+
+@string{ieee_j_assp = {{IEEE} Trans. Acoust., Speech, Signal Process.}}
+
+@string{ieee_j_ip = {{IEEE} Trans. Image Process.}}
+
+@string{ieee_j_it = {{IEEE} Trans. Inf. Theory}}
+
+@string{ieee_j_mi = {{IEEE} Trans. Med. Imag.}}
+
+@string{ieee_j_pami = {{IEEE} Trans. Pattern Anal. Mach. Intell.}}
+
+@string{ieee_j_proc = {Proc. {IEEE}}}
+
+@string{ieee_j_sp = {{IEEE} Trans. Signal Process.}}
+
+@string{jasm = {J. Acoust. Soc. Am.}}
+
+
+
+
+%%%% Added 21 Dec. 2019.
+
+@ARTICLE{Hlawatsch:2000,
+author={Hlawatsch, F. and Matz, G. and Kirchauer, H. and Kozek, W.},
+journal=ieee_j_sp, title={Time-frequency formulation, design, and implementation of time-varying optimal filters for signal estimation},
+year={2000},
+month=may,
+volume={48},
+number={5},
+pages={1417-1432},
+keywords={approximate time-frequency design;design;extended filter design schemes;implementation;multiwindow short-time Fourier transforms;nonstationary environments;optimal linear filter;optimal linear filters;optimal linear time-varying filter;projection side constraint;signal estimation;signal estimators;spectral representations;time-frequency formulation;time-frequency framework;time-varying Wiener filter;time-varying optimal filters;underspread nonstationary processes;weighted error criterion;Fourier transforms;Wiener filters;parameter estimation;signal representation;spectral analysis;time-frequency analysis;time-varying filters;},
+doi={10.1109/78.839987},
+ISSN={1053-587X},}
+
+@article{Khalid:2013,
+  author = {Z. Khalid and R. A. Kennedy and S. Durrani and P. Sadeghi and Y. Wiaux and J. D. McEwen},
+  title = {Fast directional spatially localized spherical harmonic transform},
+  journal = ieee_j_sp,
+  volume = {61},
+  number = {9},
+  pages = {2192--2203},
+  year = {2013}
+}
+
+
+@inproceedings{Khalid:2013_wavelet,
+  title={Spatio-spectral Formulation and Design of Spatially-Varying Filters for Signal Estimation on the 2-Sphere},
+  author={Z. Khalid and R. A. Kennedy and P. Sadeghi and S. Durrani},
+  booktitle = {Wavelets and Sparsity XIV, SPIE international symposium on optics and photonics, invited contribution},
+  pubtype = {proceedings},
+  year = {2013}
+}
+
+
+@inproceedings{Kennedy:2013_wavelet,
+  author = {R. A. Kennedy and P. Sadeghi and Z. Khalid and J. D. McEwen},
+  title = {Classification and construction of closed-form kernels for signal representation on the 2-sphere},
+  booktitle = {Wavelets and Sparsity XIV, SPIE international symposium on optics and photonics, invited contribution},
+  year = {2013},
+}
+
+
+
+@article{Mcewen:bubble_filters:2012,
+  author = {J. D. McEwen and S. M. Feeney and M. C. Johnson and H. V. Peiris},
+  title = {Optimal filters for detecting cosmic bubble collisions},
+  journal = {Phys. Rev. D.},
+  volume = {85},
+  number = {10},
+  pages = {103502},
+  year = {2012},
+  pubtype = {refereed},
+  eprint = {arXiv:1202.2861},
+  doi = {10.1103/PhysRevD.85.103502},
+  pdf = {papers/bubble_filters.pdf}
+}
+
+@ARTICLE{Arora:2010,
+author={Arora, R. and Parthasarathy, H.},
+journal=ieee_j_sp,
+title={Optimal Estimation and Detection in Homogeneous Spaces},
+year={2010},
+month=may,
+volume={58},
+number={5},
+pages={2623-2635},
+keywords={3D surface denoising;Fourier domain;Fourier transform;Haar integrals;Peter-Weyl theory;Signal estimation problems;Wiener filter;Wiener-Hopf equations;compact Lie group;compact embedded object detection;computational complexity;convolutional integral equations;correlation biinvariance;coupled integral equations;homogeneous spaces;isotropic signal fields;matched filtering;noise correlation function;noisy test signal;omnidirectional camera;optimal detection;optimal estimation;signal classification;signal correlations;signal function;signal-to-noise-ratio;spherical signals;squared error loss function;stabilizer subgroup;stochastic background;template detection;visual navigation;Fourier transforms;Lie groups;Wiener filters;computational complexity;image denoising;integral equations;matched filters;navigation;object detection;signal classification;signal detection;},
+doi={10.1109/TSP.2010.2040687},
+ISSN={1053-587X},}
+
+
+@ARTICLE{Jones:1990,
+author={Jones, D. L. and Parks, T. W.},
+journal=ieee_j_assp,
+title={A high resolution data-adaptive time-frequency representation},
+year={1990},
+month=dec,
+volume={38},
+number={12},
+pages={2127-2135},
+keywords={Gaussian basis functions;chirp rate;data-adaptive time-frequency representation;frequency analysis;local signal concentration;optimal basis parameters;short-time Fourier transform;signal processing;time width;signal processing;spectral analysis;},
+doi={10.1109/29.61539},
+ISSN={0096-3518},}
+
+
+@ARTICLE{Baraniuk:1993,
+author={Baraniuk, R. G. and Jones, D. L.},
+journal=ieee_j_sp, title={A signal-dependent time-frequency representation: optimal kernel design},
+year={1993},
+month=apr,
+volume={41},
+number={4},
+pages={1589-1602},
+keywords={Cohen class;fast algorithm;linear program;optimal kernel design;optimization problem;signal-dependent time-frequency representation;time complexity;computational complexity;linear programming;signal processing;time-frequency analysis;},
+doi={10.1109/78.212733},
+ISSN={1053-587X},}
+
+
+@ARTICLE{Jones:1994,
+author={Jones, D. L. and Baraniuk, R. G.},
+journal=IEEE_J_SP,
+title={A simple scheme for adapting time-frequency representations},
+year={1994},
+month=Dec,
+volume={42},
+number={12},
+pages={3530-3535},
+keywords={adaptive method;free estimates;free parameter;interpolation;optimal parameter;short-time quality measure;time-frequency representations;time-scale representations;adaptive estimation;adaptive signal processing;interpolation;parameter estimation;signal processing;signal representation;time-frequency analysis;},
+doi={10.1109/78.340790},
+ISSN={1053-587X},}
+
+
+@ARTICLE{Jones:1997,
+author={Jones, G. and Boashash, B.},
+journal=IEEE_J_SP,
+title={Generalized instantaneous parameters and window matching in the time-frequency plane},
+year={1997},
+month=may,
+volume={45},
+number={5},
+pages={1264-1275},
+keywords={1D measures;2D time-frequency plane;generalized instantaneous parameters;group delay;instantaneous frequency;local moments;local signal behavior;nonstationary deterministic signals;real data;short-time Fourier transform;signal power representation;simulated data;spectrograms;time-frequency distributions;window matching;Fourier transforms;delays;parameter estimation;signal representation;spectral analysis;statistical analysis;time-frequency analysis;},
+doi={10.1109/78.575699},
+ISSN={1053-587X},}
+
+@INPROCEEDINGS{Jones:1992,
+author={Jones, G. and Boashash, B.},
+booktitle={Proceedings of the {IEEE-SP} International Symposium Time-Frequency and Time-Scale Analysis, 1992},
+title={Window matching in the time-frequency plane and the adaptive spectrogram},
+year={1992},
+month=oct,
+volume={},
+number={},
+pages={87-90},
+keywords={adaptive spectrogram;adaptive window-matched spectrogram;instantaneous parameters;iterative algorithms;signal characteristics;time-frequency analysis;time-frequency plane;window matching;spectral analysis;time-frequency analysis;},
+doi={10.1109/TFTSA.1992.274228},
+ISSN={},}
+
+
+@ARTICLE{Slepian:1960,
+  author = {D. Slepian and H. O. Pollak},
+  title = {Prolate Spheroidal Wave Functions, {F}ourier Analysis and Uncertainity-$\textsc{I}$},
+  journal = {Bell Syst. Techn. J.},
+  year = {1961},
+  volume = {40},
+  pages = {43-63},
+  month = Jan,
+  owner = {zkhalid},
+  timestamp = {2010.08.02},
+  vol = {40}
+}
+
+
+@ARTICLE{Slepian:1964,
+  author = {D. Slepian},
+  title = {{Fourier} analysis and uncertainty—-$\textsc{IV}$: extensions to many dimensions;
+    generalized prolate spheroidal functions},
+  journal = {Bell Syst. Tech. J},
+  year = {1964},
+  volume = {43},
+  pages = {3009-3057},
+  owner = {zkhalid},
+  timestamp = {2010.08.25}
+}
+
+
+@ARTICLE{Landau:1962,
+  author = {H. J. Landau and H. O. Pollak},
+  title = {Prolate Spheroidal Wave Functions, {Fourier} Analysis and Uncertainity-{III}:
+    The dimension of the space of essentially time- and band-limited
+    signals},
+  journal = {Bell System Tech J.},
+  year = {1962},
+  volume = {41},
+  pages = {1295-1336},
+  owner = {zkhalid},
+  timestamp = {2010.08.02},
+  vol = {40}
+}
+
+@ARTICLE{Landau:1961,
+  author = {H. J. Landau and H. O. Pollak},
+  title = {Prolate Spheroidal Wave Functions, {Fourier} Analysis and Uncertainity-{II}},
+  journal = {Bell System Tech J.},
+  year = {1961},
+  volume = {40},
+  pages = {65-84},
+  month = Jan,
+  owner = {zkhalid},
+  timestamp = {2010.08.02},
+  vol = {40}
+}
+
+
+
+@ARTICLE{Ran:2010,
+author={R. Tao and Y. Li and Y. Wang},
+journal=IEEE_J_SP, title={Short-Time Fractional {F}ourier Transform and Its Applications},
+year={2010},
+month=may ,
+volume={58},
+number={5},
+pages={2568-2580},}
+
+
+@INPROCEEDINGS{Skrapas:2005,
+author={Skrapas, K. and Boultadakis, G. and Karakasiliotis, A. and Frangos, P.},
+booktitle={Proceedings of 2nd International Conference on Recent Advances in Space Technologies, 2005.}, title={Time - frequency analysis of radar signals for {ISAR} applications},
+year={2005},
+month=jun,
+volume={},
+number={},
+pages={ 699-703},}
+
+
+@book{Flanagan:1972,
+ author = {J. Flanagan},
+ title = {Speech Analysis Synthesis and Perception},
+ year = {1972},
+ edition = {2nd},
+ publisher = {NY: Springer},
+}
+
+@book{Warner,
+ author = {G. Warner},
+ title = {Harmonic Analysis on {S}emi-Simple Lie Groups {II}},
+ year = {1972},
+ edition = {2nd},
+ publisher = {NY: Springer},
+}
+
+@ARTICLE{Camporesi:1990,
+   author = {Camporesi, R.},
+    title = {Harmonic analysis and propagators on homogeneous spaces},
+  journal = {Physics Reports},
+     year = 1990,
+    month = nov,
+   volume = 196,
+    pages = {1-134},
+}
+
+
+@ARTICLE{Claasen:1980,
+author={Classen, T. A. C. M. and Mecklenbrauker, W. F. G.},
+journal={Philips J. Res}, title={The {W}igner distribution-a tool for time-frequency signal analysis; {P}art {I}},
+year={1980},
+volume={35},
+pages={ 217-250},}
+
+
+
+@ARTICLE{Durak:2003,
+author={Durak, L. and Arikan, O.},
+journal=IEEE_J_SP, title={Short-time {F}ourier transform: two fundamental properties and an optimal implementation},
+year={2003},
+month={May},
+volume={51},
+number={5},
+pages={ 1231-1242},}
+
+
+
+@ARTICLE{Allen:1977,
+author={Allen, J. B. and Rabiner, L. R.},
+journal={Proceedings of the IEEE}, title={A unified approach to short-time {Fourier} analysis and synthesis},
+year={1977},
+month=nov,
+volume={65},
+number={11},
+pages={ 1558-1564},}
+
+
+@INPROCEEDINGS{Allen:1982,
+author={Allen, J. B.},
+booktitle={Proc. of IEEE International Conference on Acoustics, Speech, and Signal Processing, ICASSP '82}, title={Applications of the short time {Fourier} transform to speech processing and spectral analysis},
+year={1982},
+month=may,
+volume={7},
+number={},
+pages={ 1012-1015},}
+
+
+@article{Antoine:1998:wavelets,
+  title={Wavelets on the $n$-sphere and related manifolds},
+  author={Antoine, J.-P. and Vandergheynst, P.},
+  journal={J. Math. Phys.},
+  volume={39},
+  pages={3987},
+  year={1998}
+}
+
+@article{Antoine:2002:wavelets,
+  title={Wavelets on the sphere: implementation and approximations},
+  author={Antoine,  J.-P. and Demanet, L. and Jacques, L. and Vandergheynst, P.},
+  journal={Appl. Comp. Harm. Anal.},
+  volume={13},
+  number={3},
+  pages={177--200},
+  year={2002},
+  publisher={Academic Press}
+}
+
+@techreport{Demanet:2001,
+  title={Directional wavelets on the sphere},
+  author={Demanet, L. and Vandergheynst, P.},
+  year={2001},
+  institution={Technical Report R-2001-2, Signal Processing Laboratory, Lausanne}
+}
+
+
+@techreport{Boudreaux:1992,
+  title={References for the short-time {F}ourier transform, {G}abor expansion, wavelet transform, {W}igner distribution, ambiguity function, and other time-frequency and time-scale signal representations},
+  author={Boudreaux-Bartels, G. F. and Hlawatsch, F.},
+  year={1992},
+  institution={Technical Report 0492-0001, University of Rhode Island, Electrical Eng. Dept., Kingston, RI}
+}
+
+
+@article{Bogdanova:2005,
+  title={Stereographic wavelet frames on the sphere},
+  author={Bogdanova, I. and Vandergheynst, P. and Antoine, J.-P. and Jacques, L. and Morvidone, M.},
+  journal={Appl. Comp. Harm. Anal.},
+  volume={19},
+  number={2},
+  pages={223--252},
+  year={2005},
+  publisher={Academic Press}
+}
+
+
+@inproceedings{Demanet:2003,
+  title={Gabor wavelets on the sphere (Invited Paper)[5207-26]},
+  author={Demanet, L. and Vandergheynst, P.},
+  booktitle = {Applications in Image and Signal Processing},
+  publisher = {SPIE conference on wavelets},
+  number={1},
+  pages={208--215},
+  year={2003},
+  publisher={International Society for Optical Engineering; 1999}
+}
+
+
+%%%%%%%%%%%%%%%%%5 Added for thesis%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+@article{Donoho:1989,
+ author = {Donoho, D. and Stark, P.},
+ title = {Uncertainty principles and signal recovery},
+ journal = {SIAM J. Appl. Math.},
+ volume = {49},
+ issue = {3},
+ month = jun,
+ year = {1989},
+ pages = {906-931},
+}
+
+@incollection{Schroder:1995,
+    Address = {Berlin Heidelberg},
+    Affiliation = {California Institute of Technology Department of Computer Science 91125 Pasadena CA U.S.A. 91125 Pasadena CA U.S.A.},
+    Author = {Schr{\"o}der, P. and Sweldens, W.},
+    Bdsk-Color = {2063564031},
+    Booktitle = {Wavelets in the Geosciences},
+    Date-Added = {2011-10-25 07:47:22 +1100},
+    Date-Modified = {2011-10-26 13:47:07 +1100},
+    Doi = {10.1007/BFb0011096},
+    Editor = {Klees, Roland and Haagmans, Roger},
+    Google-Scholar = {553},
+    Google-Scholar-Url = {http://scholar.google.com.au/scholar?q=Spherical+wavelets%3A+Efficiently+representing+functions+on+a+sphere},
+    Isbn = {978-3-540-66951-7},
+    Keyword = {Earth and Environmental Science},
+    Note = {(Reprinted from Computer Graphics Proceedings, 1995, 161-172, ACM Siggraph.)},
+    Pages = {158-188},
+    Publisher = {Springer},
+    Series = {Lecture Notes in Earth Sciences},
+    Status = {Verified},
+    Title = {Spherical wavelets: Efficiently representing functions on a sphere},
+    Volume = {90},
+    Year = {2000},
+    Abstract = {Wavelets have proven to be powerful bases for use in numericalanalysis and signal processing. Their power lies in the fact thatthey only require a small number of coefficients to represent gen-eral functions and large data sets accurately. This allows compres-sion and efficient computations. Classical constructions have beenlimited to simple domains such as intervals and rectangles. In thispaper we present a wavelet construction for scalar functions definedon the sphere. We show how biorthogonal wavelets with customproperties can be constructed with the lifting scheme. The basesare extremely easy to implement and allow fully adaptive subdivi-sions. We give examples of functions defined on the sphere, suchas topographic data, bidirectional reflection distribution functions,and illumination, and show how they can be efficiently representedwith spherical wavelets.},
+    Annote = {http://dx.doi.org/10.1007/BFb0011096}}
+
+
+@article{Brechbuhler:1995,
+    Author = {Brechb{\"u}hler, C. H. and Gerig, G. and K{\"u}bler, O.},
+    Bdsk-Color = {2063564031},
+    Date-Modified = {2011-10-26 15:23:29 +1100},
+    Doi = {10.1006/cviu.1995.1013},
+    Journal = {Computer Vision and Image Understanding},
+    Month = mar,
+    Number = {2},
+    Pages = {154-170},
+    Status = {Verified},
+    Title = {Parametrization of closed surfaces for {3-D} shape description},
+    Volume = {61},
+    Year = {1995},
+    Abstract = {This paper presents procedures for the explicit parametric representation and global description of surfaces of simply connected 3-D objects. The novel techniques overcome severe limitations of earlier methods (restriction to star-shaped objects (D. H. Ballard and Ch. M. Brown, Computer Vision, Prentice-Hall, Englewood Cliffs, NJ, 1981), constraints on positioning and shape of cross-sections (F. Solina and R. Bajcsy, IEEE Trans. Pattern Anal. Much. Intell. 12(2), 1990, 131-147; L. H. Staib and J. S. Duncan, in Visualization in Biomedical Computing 1992 (R. A. Robb, Ed.), Vol. Proc. SPIE 108, pp. 90-104, 1992), and nonhomogeneous distribution of parameter space). We parametrize the surface by defining a continuous, one-to-one mapping from the surface of the original object to the surface of a unit sphere. The parametrization is formulated as a constrained optimization problem. Practicable starting values are obtained by an initial mapping based on a heat conduction model. The parametrization enables us to expand the object surface into a series of spherical harmonic functions, extending to 3-D the concept of elliptical Fourier descriptors for 2-D closed curves (E. Persoon and K. S. Fu, IEEE Trans. Syst. Man Cybernetics 7(3), 1977, 388-397; F. P. Kuhl and Ch. R. Giardina, Comput. Graphics Image Process. 18(3), 1982, 236-258). Invariant, object-centered descriptors are obtained by rotating the parameter net and the object into standard positions. The new methods are illustrated with 3-D test objects. Potential applications are recognition, classification, and comparison of convoluted surfaces or parts of surfaces of 3-D shapes.}}
+
+
+@article{Rafaely:2004,
+    Author = {Rafaely, B.},
+    Bdsk-Color = {2063564031},
+    Date-Added = {2011-10-25 17:39:49 +1100},
+    Date-Modified = {2011-10-25 17:47:31 +1100},
+    Doi = {10.1121/1.1792643},
+    Google-Scholar = {53},
+    Google-Scholar-Url = {http://scholar.google.com.au/scholar?q=Plane-wave+decomposition+of+the+sound+field+on+a+sphere+by+spherical+convolution},
+    Journal = {J. Acoust. Soc. Am.},
+    Month = oct,
+    Number = {4},
+    Pages = {2149-2157},
+    Pdf-Url = {http://users.rsise.anu.edu.au/~rod/hilbertbook/Rafaely-2004.pdf},
+    Status = {Verified},
+    Title = {Plane-wave decomposition of the sound field on a sphere by spherical convolution},
+    Volume = {116},
+    Year = {2004},
+    Abstract = {Spherical microphone arrays have been recently studied for sound analysis and sound recordings, which have the advantage of spherical symmetry facilitating three-dimensional analysis. This paper complements the recent microphone array design studies by presenting a theoretical analysis of plane-wave decomposition given the sound pressure on a sphere. The analysis uses the spherical Fourier transform and the spherical convolution, where it is shown that the amplitudes of the incident plane waves can be calculated as a spherical convolution between the pressure on the sphere and another function which depends on frequency and the sphere radius. The spatial resolution of plane-wave decomposition given limited bandwidth in the spherical Fourier domain is formulated, and ways to improve the computation efficiency of plane-wave decomposition are introduced. The paper concludes with a simulation example of plane-wave decomposition.}}
+
+
+@book{Schechter:2002,
+ author = {M. Schechter},
+ title = {Principles of functional analysis},
+ year = {2002},
+ edition = {2nd},
+ publisher = {American Mathematical Society},
+}
+
+
+
+@ARTICLE{Candes:2006,
+author={Candes, E. J. and Romberg, J. and Tao, T.},
+journal={IEEE Transactions on Information Theory},
+title={Robust uncertainty principles: exact signal reconstruction from highly incomplete frequency information},
+year={2006},
+month={Feb.},
+volume={52},
+number={2},
+pages={489-509},
+}
+
+
+@ARTICLE{Goyal:2008,
+author={Goyal, V. K. and Fletcher, A. K. and Rangan, S.},
+journal= {IEEE Signal Processing Magazine},
+title={Compressive Sampling and Lossy Compression},
+year={2008},
+month={March},
+volume={25},
+number={2},
+pages={48-56},}
+
+
+
+@book{kennedy:book,
+    Address = {New York, NY},
+    Author = {Kennedy, R. A. and Sadeghi, P.},
+    Date-Added = {2012-03-21 19:47:17 +0000},
+    Date-Modified = {2012-03-21 19:55:45 +0000},
+    Publisher = {Cambridge University Press},
+    Title = {Hilbert Space Methods in Signal Processing},
+    Year = {2012}}
+
+
+@ARTICLE{Dahlen:2008,
+  Author = {F. A. Dahlen and F. J. Simons},
+  Title = {Spectral Estimation on a sphere in geophysics and cosmology},
+  Journal = {Geophys. J. Int.},
+  Year = {2008},
+  Volume = {174},
+  Pages = {774-807},
+  owner = {zkhalid},
+  timestamp = {2010.08.25}
+}
+
+
+
+@article{Dokamnic:2010,
+    Author = {Dokmani$\acute{\textrm{c}}$, I. and Petrinovi$\acute{\textrm{c}}$, D.},
+    Doi = {10.1109/TSP.2009.2033329},
+    Journal = ieee_j_sp,
+    Month = mar,
+    Number = {3},
+    Pages = {1157-1170},
+    Title = {Convolution on the $n$-Sphere With Application to {PDF} Modeling},
+    Volume = {58},
+    Year = {2010}}
+
+
+
+@article{Tegmark:1996,
+    Author = {Tegmark, M. and Hartmann, D. H. and Briggs, M. S. and Meegan, C. A.},
+    Bdsk-Color = {2063564031},
+    Date-Added = {2011-10-26 15:26:51 +1100},
+    Date-Modified = {2011-10-26 15:30:22 +1100},
+    Doi = {10.1086/177684},
+    Google-Scholar = {33},
+    Google-Scholar-Url = {http://scholar.google.com.au/scholar?q=The+Angular+Power+Spectrum+of+%7BBATSE+3B%7D+Gamma-Ray+Burst},
+    Journal = {Astrophysical J.},
+    Month = {Sep.},
+    Pages = {214-224},
+    Pdf-Url = {http://users.rsise.anu.edu.au/~rod/hilbertbook/Tegmark-1996.pdf},
+    Status = {Verified},
+    Title = {The Angular Power Spectrum of {BATSE 3B} Gamma-Ray Burst},
+    Volume = {468},
+    Year = {1996},
+    Abstract = {We compute the angular power spectrum C_l from the BATSE 3B catalog of 1122 gamma-ray bursts, and find no evidence for clustering on any scale. These constraints bridge the entire range from small scales (which probe source clustering and burst repetition) to the largest scales (which constrain possible anisotropies from the Galactic halo or from nearby cosmological large scale structures). We develop an analysis technique that takes the angular position errors into account, which enables us to place tight upper limits on the clustering down to scales l\approx 60, corresponding to a few degrees on the sky. The minimum-variance burst weighting that we employ is graphically visualized as an all-sky map where each burst is smeared out by an amount corresponding to its position uncertainty. We also present separate band-pass filtered sky maps for the quadrupole term and for the multipole-ranges l=3-10 and l=11-30, so that the fluctuations on different angular scales can be separately inspected for visual features such as localized ``hot spots" or structures aligned with the Galactic plane. These filtered maps reveal no apparent deviations from isotropy.}}
+
+
+@article{Seon:2006,
+    Author = {Seon, K.-I.},
+    Bdsk-Color = {2063564031},
+    Date-Added = {2011-10-24 21:17:39 +1100},
+    Date-Modified = {2011-10-25 17:28:29 +1100},
+    Google-Scholar = {3},
+    Google-Scholar-Url = {http://scholar.google.com.au/scholar?q=Smoothing+of+an+All-Sky+Survey+Map+with+a+Fisher-Von+Mises+Function},
+    Journal = {J. Korean Phys. Soc.},
+    Month = mar,
+    Number = {3},
+    Pages = {331-334},
+    Pdf-Url = {http://users.rsise.anu.edu.au/~rod/hilbertbook/Seon-2006.pdf},
+    Status = {Verified},
+    Title = {Smoothing of all-sky survey map with {F}isher-{V}on {M}ises function},
+    Volume = {48},
+    Year = {2006},
+    Abstract = {A convolution of the all-sky survey data with a smoothing function is crucial in calculating the smooth surface brightness of the sky survey data. The convolution is usually performed using a spherical version of the convolution theorem. However, a Gaussian function, applicable only in the flat-sky approximation, has been usually adopted as a smoothing kernel. In this paper, we present an exact analytic solution of the spherical-harmonics transformation of a Fisher-von Mises function, the mathematical version of a Gaussian function in spherical space. We also obtain the approximate solutions $\exp[-l(l+1)/2\kappa]$. The exact and the approximate solutions may be useful when an astrophysical survey map is convolved with a smoothing function of $\kappa\gtrsim1$.},
+    Annote = {Journal of the Korean Physical Society}}
+
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+@article {McEwen:2005:WMAP,
+author = {McEwen, J. D. and Hobson, M. P. and Lasenby, A. N. and Mortlock, D. J.},
+title = {A high-significance detection of non-{G}aussianity in the {W}ilkinson {M}icrowave {A}nisotropy {P}robe 1-yr data using directional spherical wavelets},
+  journal = {Mon. Not. R. Astron. Soc.},
+volume = {359},
+number = {4},
+pages = {1583-1596},
+year = {2005},
+}
+
+
+@article{McEwen:2008,
+author={McEwen, J. D. and Hobson, M. P. and Lasenby, A. N.},
+Journal=ieee_j_sp,
+Title={Optimal Filters on the Sphere},
+Year={2008},
+Month=aug,
+Volume={56},
+Number={8},
+pages={3813-3823},
+doi={10.1109/TSP.2008.923198},
+ISSN={1053-587X},}
+
+
+
+@ARTICLE{Kakarala:2012,
+author={Kakarala, R. and Ogunbona, P.},
+Journal=ieee_j_sp,
+title={A Phase-Sensitive Approach to Filtering on the Sphere},
+year={2012},
+month=dec,
+volume={60},
+number={12},
+pages={6330-6339}
+}
+
+
+
+
+@article{Chung:2010,
+  author    = {M. K. Chung and K. J. Worsley and B. M. Nacewicz and K. M. Dalton and R. J. Davidson},
+  title     = {General multivariate linear modeling of surface shapes using SurfStat},
+  journal   = {NeuroImage},
+  volume    = {53},
+  number    = {2},
+  year      = {2010},
+  pages     = {491-505}
+}
+
+
+@article{Fay:2008,
+  title = {CMB power spectrum estimation using wavelets},
+  author = {Fa\"y, G. and Guilloux, F. and Betoule, M. and Cardoso, J.-F. and Delabrouille, J. and Le Jeune, M.},
+  journal = {Phys. Rev. D},
+  volume = {78},
+  issue = {8},
+  pages = {083013},
+  numpages = {16},
+  year = {2008},
+  month = oct,
+  doi = {10.1103/PhysRevD.78.083013},
+  publisher = {American Physical Society}
+}
+
+
+@article{Lan:2008,
+   author = {{Lan}, X. and {Marinucci}, D.},
+    title = "{The needlets bispectrum}",
+  journal = {Electronic Journal of Statistics},
+     year = 2008,
+   volume = 2,
+    pages = {332-367},
+      doi = {10.1214/08-EJS197}
+}
+
+@article{Labatie:2012,
+   author = {{Labatie}, A. and {Starck}, J.-L. and {Lachi{\`e}ze-Rey}, M.},
+    title = "{Detecting Baryon Acoustic Oscillations}",
+  journal = {Astron. J.},
+   eprint = {1112.0980},
+     year = 2012,
+    month = feb,
+   volume = 746,
+      eid = {172},
+    pages = {172},
+      doi = {10.1088/0004-637X/746/2/172},
+}
+
+@article{Deriaz:2012,
+   author = {{Deriaz}, E. and {Starck}, J.-L. and {Pires}, S.},
+    title = "{Wavelet Helmholtz decomposition for weak lensing mass map reconstruction}",
+  journal = {Astron. \& Astrophys.},
+ keywords = {methods: data analysis, gravitational lensing: weak},
+     year = 2012,
+    month = apr,
+   volume = 540,
+      eid = {A34},
+    pages = {A34},
+      doi = {10.1051/0004-6361/201117129},
+}
+
+
+
+@article{Basak:2012,
+   author = {{Basak}, S. and {Delabrouille}, J.},
+    title = "{A needlet internal linear combination analysis of {WMAP} {7}-year data: estimation of {CMB} temperature map and power spectrum}",
+  journal = {Mon. Not. R. Astron. Soc.},
+   eprint = {1106.5383},
+ keywords = {methods: data analysis, cosmic background radiation},
+     year = 2012,
+    month = jan,
+   volume = 419,
+    pages = {1163-1175},
+      doi = {10.1111/j.1365-2966.2011.19770.x}
+}
+
+@article{Schmitt:2010,
+   author = {{Schmitt}, J. and {Starck}, J.-L. and {Casandjian}, J.~M. and
+    {Fadili}, J. and {Grenier}, I.},
+    title = "{Poisson denoising on the sphere: application to the Fermi gamma ray space telescope}",
+  journal = {Astron. \& Astrophys.},
+   eprint = {1003.5613},
+ primaryClass = "astro-ph.IM",
+ keywords = {methods: data analysis, techniques: image processing, gamma rays: general},
+     year = 2010,
+    month = jul,
+   volume = 517,
+    pages = {A26},
+      doi = {10.1051/0004-6361/200913822}
+}
+
+@article{Pietrobon:2008,
+   author = {{Pietrobon}, D. and {Amblard}, A. and {Balbi}, A. and {Cabella}, P. and
+    {Cooray}, A. and {Marinucci}, D.},
+    title = "{Needlet detection of features in the {WMAP} {CMB} sky and the impact on anisotropies and hemispherical asymmetries}",
+  journal = {Phys. Rev. D},
+ keywords = {Cosmology, Observational cosmology},
+     year = 2008,
+    month = nov,
+   volume = 78,
+   number = 10,
+      eid = {103504},
+    pages = {103504},
+      doi = {10.1103/PhysRevD.78.103504}
+}
+
+
+@article{Starck:2006_2,
+    Author = {J.-L. Starck and S. Pires and A. Refregier},
+    Journal = {Astron. \& Astrophys.},
+    Month = jun,
+    Number = {3},
+    Pages = {1139-1150},
+    Status = {Verified},
+    Title = {Weak Lensing Mass Reconstruction using Wavelets},
+    Volume = {451},
+    Year = {2006}
+}
+
+
+
+@article{Barreiro:2000,
+   Author = {{Barreiro}, R.~B. and {Hobson}, M.~P. and {Lasenby}, A.~N. and {Banday}, A.~J. and {G{\'o}rski}, K.~M. and {Hinshaw}, G.},
+    Title = "{Testing the Gaussianity of the {COBE} {DMR} data with spherical wavelets}",
+   Journal = {Mon. Not. R. Astron. Soc.},
+   eprint = {arXiv:astro-ph/0004202},
+ keywords = {METHODS: DATA ANALYSIS, COSMIC MICROWAVE BACKGROUND},
+     Year = 2000,
+    Month = oct,
+   Volume = 318,
+    Pages = {475-481},
+      doi = {10.1046/j.1365-8711.2000.03772.x}
+}
+
+@Article{vielva:2004,
+     author    = "Vielva, P. and Mart\'{\i}nez-Gonz\'{a}lez, E. and Barreiro, R.
+                  B. and Sanz, J. L. and Cay\'{o}n, L.",
+     title     = "Detection of non-{G}aussianity in the {WMAP} 1-year data using
+                  spherical wavelets",
+     journal   = "Astrophys. J.",
+     volume    = "609",
+     year      = "2004",
+     pages     = "22--34",
+     eprint    = "astro-ph/0310273",
+     SLACcitation  = "%%CITATION = ASTRO-PH 0310273;%%"
+}
+
+@article{Vielva:2006,
+   author = {{Vielva}, P. and {Mart{\'{\i}}nez-Gonz{\'a}lez}, E. and {Tucci}, M.},
+    title = "{Cross-correlation of the cosmic microwave background and radio galaxies in real, harmonic and wavelet spaces: detection of the integrated Sachs-Wolfe effect and dark energy constraints}",
+  journal = {Mon. Not. R. Astron. Soc.},
+   eprint = {arXiv:astro-ph/0408252},
+ keywords = {cosmic microwave background, cosmology: observations},
+     year = 2006,
+    month = jan,
+   volume = 365,
+    pages = {891-901},
+      doi = {10.1111/j.1365-2966.2005.09764.x}
+}
+
+@article{Cayon:2001,
+   author = {{Cay{\'o}n}, L. and {Sanz}, J.~L. and {Mart{\'{\i}}nez-Gonz{\'a}lez}, E. and
+    {Banday}, A.~J. and {Arg{\"u}eso}, F. and {Gallegos}, J.~E. and
+    {G{\'o}rski}, K.~M. and {Hinshaw}, G.},
+    title = "{Spherical Mexican hat wavelet: an application to detect non-Gaussianity in the COBE-DMR maps}",
+  journal = {Mon. Not. R. Astron. Soc.},
+   eprint = {arXiv:astro-ph/0105111},
+ keywords = {methods: data analysis; cosmic microwave background},
+     year = 2001,
+    month = oct,
+   volume = 326,
+    pages = {1243-1248},
+      doi = {10.1111/j.1365-8711.2001.04641.x},
+}
+
+
+
+@article{Simons:2011_1,
+  author = {F. J. Simons and I. Loris and G. Nolet and I. C. Daubechies and S. Voronin and P. A. Vetter and J. Charléty and C. Vonesch},
+  title = {Solving or resolving global tomographic models with spherical wavelets, and the scale and sparsity of seismic heterogeneity},
+  journal = {Geophys. J. Int.},
+  year = {2011},
+  volume = {187},
+  pages = {969--988},
+  doi = {http://dx.doi.org/10.1111/j.1365-246X.2011.05190.x}
+}
+
+@inproceedings{Simons:2011_2,
+  author = {F. J. Simons and I. Loris and E. Brevdo and I. C. Daubechies},
+  title = {Wavelets and wavelet-like transforms on the sphere and their application to geophysical data inversion},
+  booktitle = {Wavelets and Sparsity XIV},
+  publisher = {SPIE},
+  year = {2011},
+  volume = {81380},
+  pages = {81380X},
+  doi = {http://dx.doi.org/10.1117/12.892285}
+}
+
+@article {Marinucci:2008,
+Author = {Marinucci, D. and Pietrobon, D. and Balbi, A. and Baldi, P. and Cabella, P. and Kerkyacharian, G. and Natoli, P. and Picard, D. and Vittorio, N.},
+title = {Spherical needlets for cosmic microwave background data analysis},
+Journal = {Mon. Not. R. Astron. Soc.},
+Volume = {383},
+Number = {2},
+Publisher = {Blackwell Publishing Ltd},
+pages = {539--545},
+year = {2008},
+}
+
+
+@article{McEwen:2006,
+    Author = {McEwen, J. D. and Hobson, M. P. and Lasenby, A. N.},
+    Bdsk-Color = {2063563519},
+    Date-Added = {2011-10-26 08:48:19 +1100},
+    Date-Modified = {2011-10-26 09:16:36 +1100},
+    Google-Scholar = {13},
+    Google-Scholar-Url = {http://scholar.google.com.au/scholar?q=A+directional+continuous+wavelet+transform+on+the+sphere},
+    Journal = {Arxiv preprint astro-ph/0609159},
+    Pdf-Url = {http://users.rsise.anu.edu.au/~rod/hilbertbook/McEwen-2006.pdf},
+    Status = {Verified},
+    Title = {A directional continuous wavelet transform on the sphere},
+    Year = {2006},
+    Abstract = {A new construction of a directional continuous wavelet analysis on the sphere is derived herein. We adopt the harmonic scaling idea for the spherical dilation operator recently proposed by Sanz et al. but extend the analysis to a more general directional framework. Directional wavelets are a powerful extension that allow one to also probe oriented structure in the analysed function. Our spherical wavelet methodology has the advantage that all functions and operators are defined directly on the sphere. The construction of wavelets in our framework is demonstrated with an example.},
+    Annote = {astro-ph/0609159}}
+
+
+@article{McEwen:2006:bianchi,
+  author = {McEwen, J. D. and Hobson, M. P. and Lasenby, A. N. and Mortlock, D. J.},
+  title = {Non-{G}aussianity detections in the {B}ianchi {VII{$_h$}} corrected {WMAP} 1-year data made with directional spherical wavelets},
+  journal = {Mon. Not. Roy. Astron. Soc.},
+  volume = {369},
+  number = {4},
+  pages = {1858-1868},
+  year = {2006},
+  doi = {10.1111/j.1365-2966.2006.10434.x},
+}
+
+
+@article{McEwen:2006:ISW,
+  author = {J. D. McEwen and P. Vielva and M. P. Hobson and E. Mart{\'\i}nez-Gonz\'alez and A. N. Lasenby},
+  title = {Detection of the {ISW} effect and corresponding dark energy constraints made with directional spherical wavelets},
+  journal = {Mon. Not. Roy. Astron. Soc.},
+  month = apr,
+  volume = {376},
+  number = {3},
+  pages = {1211-1226},
+  year = {2007},
+  doi = {10.1111/j.1365-2966.2007.11505.x}
+}
+
+@article{McEwen:2007:cosmology,
+  author = {McEwen, J. D. and Vielva, P. and Wiaux, Y. and Barreiro, R. B. and Cay\'on, L. and Hobson, M. P. and Lasenby, A. N. and Mart{\'\i}nez-Gonz\'alez, E. and Sanz, J. L.},
+  title = {Cosmological applications of a wavelet analysis on the sphere},
+  journal = {J. Fourier Anal. and Appl.},
+  volume = {13},
+  number = {4},
+  pages = {495-510},
+  month = aug,
+  year = {2007},
+  doi = {10.1007/s00041-006-6918-8},
+}
+
+@article{McEwen:2008:NVSS,
+  author = {J. D. McEwen and Y. Wiaux and M. P. Hobson and P. Vandergheynst and A. N. Lasenby},
+  title = {Probing dark energy with steerable wavelets through correlation of {WMAP} and {NVSS} local morphological measures},
+  journal = {Mon. Not. Roy. Astron. Soc.},
+  volume = {384},
+  number = {4},
+  pages = {1289-1300},
+  year = {2008},
+  doi = {10.1111/j.1365-2966.2007.12776.x},
+}
+
+
+@article{Starck:2006,
+    Author = {Starck, J.-L. and Moudden, Y. and Abrial, P. and Nguyen, M.},
+    Bdsk-Color = {2063564031},
+    Date-Modified = {2011-10-26 15:35:39 +1100},
+    Doi = {10.1051/0004-6361:20053246},
+    Google-Scholar = {52},
+    Google-Scholar-Url = {http://scholar.google.com.au/scholar?q=Wavelets%2C+Ridgelets+and+Curvelets+on+the+Sphere},
+    Journal = {Astron. \& Astrophys.},
+    Keywords = {cosmic microwave background - methods: data analysis - methods: statistical},
+    Month = feb,
+    Number = {3},
+    Pages = {1191-1204},
+    Pdf-Url = {http://users.rsise.anu.edu.au/~rod/hilbertbook/Starck-2006.pdf},
+    Status = {Verified},
+    Title = {Wavelets, Ridgelets and Curvelets on the Sphere},
+    Volume = {446},
+    Year = {2006},
+    Abstract = {We present in this paper new multiscale transforms on the sphere, namely the isotropic undecimated wavelet transform, the pyramidal wavelet transform, the ridgelet transform and the curvelet transform. All of these transforms can be inverted i.e. we can exactly reconstruct the original data from its coefficients in either representation. Several applications are described. We show how these transforms can be used in denoising and especially in a Combined Filtering Method, which uses both the wavelet and the curvelet transforms, thus benefiting from the advantages of both transforms. An application to component separation from multichannel data mapped to the sphere is also described in which we take advantage of moving to a wavelet representation.}}
+
+
+@article{Wiaux:2006,
+    Author = {Wiaux, Y. and Jacques, L. and Vielva, P. and Vandergheynst, P.},
+    Bdsk-Color = {2063564031},
+    Date-Added = {2011-10-25 17:58:31 +1100},
+    Date-Modified = {2011-10-26 12:23:45 +1100},
+    Doi = {10.1086/507692},
+    Google-Scholar = {34},
+    Google-Scholar-Url = {http://scholar.google.com.au/scholar?q=Fast+Directional+Correlation+on+the+Sphere+with+Steerable+Filters},
+    Journal = {Astrophys. J.},
+    Month = nov,
+    Number = {1},
+    Pages = {820-832},
+    Pdf-Url = {http://users.rsise.anu.edu.au/~rod/hilbertbook/Wiaux-2006.pdf},
+    Status = {Verified},
+    Title = {Fast Directional Correlation on the Sphere with Steerable Filters},
+    Volume = {652},
+    Year = {2006},
+    Abstract = {A fast algorithm is developed for the directional correlation of scalar band-limited signals and band-limited steerable filters on the sphere. The asymptotic complexity associated with it through simple quadrature is of order O(L^5), where 2L stands for the square root of the number of sampling points on the sphere, also setting a band limit L for the signals and filters considered. The filter steerability allows us to compute the directional correlation uniquely in terms of direct and inverse scalar spherical harmonics transforms, which drive the overall asymptotic complexity. The ``separation of variables'' technique for a scalar spherical harmonics transform produces an O(L^3) algorithm independent of the pixelization. On equiangular pixelizations, a sampling theorem introduced by Driscoll and Healy implies the exactness of the algorithm. The equiangular and HEALPix implementations are compared in terms of memory requirements, computation times, and numerical stability. The computation times for the scalar transform, and hence for the directional correlation, of maps of several megapixels on the sphere (L\approx 10^3) are reduced from years to tens of seconds in both implementations on a single standard computer. These generic results for the scale-space signal processing on the sphere are specifically developed in the perspective of the wavelet analysis of the cosmic microwave background (CMB) temperature (T) and polarization (E and B) maps of the Wilkinson Microwave Anisotropy Probe and Planck experiments. As an illustration, we consider the computation of the wavelet coefficients of a simulated temperature map of several megapixels with the second Gaussian derivative wavelet.}}
+
+@article{Yu:2007,
+    Author = {Yu, P. and Grant, P. E. and Yuan, Q. and Xiao, H. and Segonne, F. and Pienaar, R. and Busa, E. and Pacheco, J. and Makris, N. and Buckner, R. L. and Golland, P. and Fischl, B.},
+    Bdsk-Color = {2063564031},
+    Date-Modified = {2011-10-26 10:04:26 +1100},
+    Doi = {10.1109/TMI.2007.892499},
+    Google-Scholar = {29},
+    Google-Scholar-Url = {http://scholar.google.com.au/scholar?q=Cortical+Surface+Shape+Analysis+Based+on+Spherical+Wavelets},
+    Journal = IEEE_J_MI,
+    Month = apr,
+    Number = {4},
+    Pages = {582-597},
+    Pdf-Url = {http://users.rsise.anu.edu.au/~rod/hilbertbook/Yu-2007.pdf},
+    Status = {Verified},
+    Title = {Cortical Surface Shape Analysis Based on Spherical Wavelets},
+    Volume = {26},
+    Year = {2007},
+    Abstract = {In vivo quantification of neuroanatomical shape variations is possible due to recent advances in medical imaging and has proven useful in the study of neuropathology and neurodevelopment. In this paper, we apply a spherical wavelet transformation to extract shape features of cortical surfaces reconstructed from magnetic resonance images (MRIs) of a set of subjects. The spherical wavelet transformation can characterize the underlying functions in a local fashion in both space and frequency, in contrast to spherical harmonics that have a global basis set. We perform principal component analysis (PCA) on these wavelet shape features to study patterns of shape variation within normal population from coarse to fine resolution. In addition, we study the development of cortical folding in newborns using the Gompertz model in the wavelet domain, which allows us to characterize the order of development of large-scale and finer folding patterns independently. Given a limited amount of training data, we use a regularization framework to estimate the parameters of the Gompertz model to improve the prediction performance on new data. We develop an efficient method to estimate this regularized Gompertz model based on the Broyden-Fletcher-Goldfarb-Shannon (BFGS) approximation. Promising results are presented using both PCA and the folding development model in the wavelet domain. The cortical folding development model provides quantitative anatomic information regarding macroscopic cortical folding development and may be of potential use as a biomarker for early diagnosis of neurologic deficits in newborns.}}
+
+
+
+@article{Zhong:2010,
+author={J. Zhong and Y. Huang},
+journal=ieee_j_sp,
+Title={Time-Frequency Representation Based on an Adaptive Short-Time {F}ourier Transform},
+Year={2010},
+Month=oct,
+Volume={58},
+Number={10},
+Pages={5118-5128},
+doi={10.1109/TSP.2010.2053028},
+ISSN={1053-587X},}
+
+@article{Czerwinski:1997,
+author={Czerwinski, R. N. and Jones, D. L.},
+Journal={IEEE Signal Process. Lett.},
+Title={Adaptive short-time {F}ourier analysis},
+Year={1997},
+Month=feb,
+Volume={4},
+Number={2},
+Pages={42-45},
+keywords={FFT;STFT;adaptive short-time Fourier analysis;adaptive window length adjustment;cone kernel distribution;cone length;constant frequency structure;fast Fourier transform;long-term signal components;nonadaptive time-frequency algorithms;optimization;slowly changing frequency structure;spectral analysis;time-frequency analysis;time-varying short-time Fourier transform;transient signal components;Fourier transforms;adaptive signal processing;spectral analysis;time-frequency analysis;},
+doi={10.1109/97.554468},
+ISSN={1070-9908},}
+
+@article{Ng:2005,
+    Author = {Ng, K.-W.},
+    Bdsk-Color = {2063563775},
+    Date-Added = {2011-10-25 22:19:32 +1100},
+    Date-Modified = {2011-10-25 22:32:32 +1100},
+    Doi = {10.1103/PhysRevD.71.083009},
+    Google-Scholar = {7},
+    Google-Scholar-Url = {http://scholar.google.com.au/scholar?q=Full-sky+correlation+functions+for+%7BCMB%7D+experiments+with+asymmetric+window+functions},
+    Journal = {Phys. Rev. D},
+    Month = apr,
+    Number = {8},
+    Pages = {083009:1-083009:9},
+    Pdf-Url = {http://users.rsise.anu.edu.au/~rod/hilbertbook/Ng-2005.pdf},
+    Status = {Verified},
+    Title = {Full-sky correlation functions for {CMB} experiments with asymmetric window functions},
+    Volume = {71},
+    Year = {2005},
+    Abstract = {We discuss full-sky convolution of the instrumental beam with the CMB sky signal in CMB single-dish and interferometry experiments using the method [A. Challinor et al. Phys. Rev. D 62 123002 (2000) B. D. Wandelt and K. M. Gorski Phys. Rev. D 63 123002 (2001)] that the measured temperature and polarization anisotropies are defined globally on the group manifold of the three-dimensional rotation by means of Wigner D functions. We rederive the anisotropy and polarization correlation functions incorporated with asymmetric window functions, which are then explicitly calculated for a single-dish elliptical Gaussian beam and an interferometric Gaussian beam.}}
+
+
+
+
+
+@article{Ng:2004,
+ author = {Ng, R. and Ramamoorthi, R. and Hanrahan, P.},
+ title = {Triple product wavelet integrals for all-frequency relighting},
+ journal = {ACM Trans. Graph.},
+ issue_date = {August 2004},
+ volume = {23},
+ number = {3},
+ month = aug,
+ year = {2004},
+ issn = {0730-0301},
+ pages = {477--487},
+ numpages = {11},
+ doi = {10.1145/1015706.1015749},
+ acmid = {1015749},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+ keywords = {Haar Wavelets, Image-Based Rendering, Non-linear Approximation, Pre-computed Radiance Transfer, Relighting},
+}
+
+
+
+@INPROCEEDINGS{Khalid_icspcs_2:2011,
+author={W. Huang and Z. Khalid and R. A. Kennedy},
+booktitle={ 5th International Conference on Signal Processing and Communication Systems, ICSPCS'2011},
+title={Efficient computation of spherical harmonic transform using parallel architecture of CUDA},
+year={2011},
+month=dec,
+pages={6},
+Address = {Honolulu, HI}
+}
+
+
+@inproceedings{Khalid_icspcs:2011,
+author={Khalid, Z. and Durrani, S. and Kennedy, R. A. and Sadeghi, P.},
+booktitle={ 5th International Conference on Signal Processing and Communication Systems, ICSPCS'2011}, title={Revisiting {S}lepian concentration problem on the sphere for azimuthally non-symmetric regions},
+year={2011},
+month=dec,
+pages = {7},
+volume={},
+Address = {Honolulu, HI},
+number={},
+keywords={Slepian concentration problem;eigenfunction;filter design;filtering;localized spectral analysis;nonsymmetric function;nonsymmetric region;nonsymmetric spatial region;smoothing;spectral bandwidth;spectral estimation;sphere;spherical harmonics component;eigenvalues and eigenfunctions;spectral analysis;},
+doi={10.1109/ICSPCS.2011.6140887},
+ISSN={},}
+
+@INPROCEEDINGS{Khalid_icspcs:2012,
+author={Khalid, Z. and Kennedy, R.A. and Sadeghi, P.},
+booktitle={ 6th International Conference on Signal Processing and Communication Systems, ICSPCS'2012},
+title={Efficient computation of commutative anisotropic convolution on the 2-sphere},
+year={2012},
+month=dec,
+pages={7},
+Address = {Gold Coast, Australia}
+}
+
+
+
+@article {Risbo:1996,
+   author = {Risbo, T.},
+   affiliation = {Geophysical Department Niels Bohr Institute of Astronomy, Physics and Geophysics Haraldsgade 6 DK-2200 Copenhagen Denmark},
+   title = {Fourier transform summation of {L}egendre series and {D}-functions},
+   journal = {J. Geodesy},
+   issn = {0949-7714},
+   keyword = {Earth and Environmental Science},
+   pages = {383-396},
+   volume = {70},
+   issue = {7},
+   year = {1996}
+}
+
+
+@article{Jarosik:2010,
+  author={N. Jarosik and C. L. Bennett and J. Dunkley and B. Gold and M. R. Greason and M. Halpern and R. S. Hill and G. Hinshaw and A.
+Kogut and E. Komatsu and D. Larson and M. Limon and S. S. Meyer and M. R. Nolta and N. Odegard and L. Page and K. M. Smith and D. N. Spergel and G. S. Tucker and J. L. Weiland and E. Wollack and E. L. Wright},
+  title={Seven-year {W}ilkinson {M}icrowave {A}nisotropy {P}robe ({WMAP}) Observations: Sky Maps, Systematic Errors, and Basic Results},
+  journal={Astrophys. J.},
+  volume={192},
+  number={2},
+  pages={1-14},
+  year={2011},
+  abstract={New full-sky temperature and polarization maps based on seven years of data from WMAP are presented. The new results are consistent with previous results, but have improved due to reduced noise from the additional integration time, improved knowledge of the instrument performance, and improved data analysis procedures. The improvements are described in detail. The seven-year data set is well fit by a minimal six-parameter flat ?CDM model. The parameters for this model, using the WMAP data in conjunction with baryon acoustic oscillation data from the Sloan Digital Sky Survey and priors on H 0 from Hubble Space Telescope observations, are O b h 2 = 0.02260 ± 0.00053, O c h 2 = 0.1123 ± 0.0035, O ? = 0.728 +0.015 –0.016 , n s = 0.963 ± 0.012, t = 0.087 ± 0.014, and s 8 = 0.809 ± 0.024 (68% CL uncertainties). The temperature power spectrum signal-to-noise ratio per multipole is greater that unity for multipoles l ##IMG## [http://ej.iop.org/icons/Entities/lsim.gif] {lsim} 919, allowing a robust measurement of the third acoustic peak. This measurement results in improved constraints on the matter density, O m h 2 = 0.1334 +0.0056 –0.0055 , and the epoch of matter-radiation equality, z eq = 3196 +134 –133 , using WMAP data alone. The new WMAP data, when combined with smaller angular scale microwave background anisotropy data, result in a 3s detection of the abundance of primordial helium, Y He = 0.326 ± 0.075. When combined with additional external data sets, the WMAP data also yield better determinations of the total mass of neutrinos, ? m ? = 0.58 eV(95%CL), and the effective number of neutrino species, N eff = 4.34 +0.86 –0.88 . The power-law index of the primordial power spectrum is now determined to be n s = 0.963 ± 0.012, excluding the Harrison-Zel'dovich-Peebles spectrum by >3s. These new WMAP measurements provide important tests of big bang cosmology.}
+}
+
+
+@article{Harris:1978,
+    Author = {Harris, F. J.},
+    Bdsk-Color = {2063563519},
+    Date-Added = {2011-10-25 22:55:30 +1100},
+    Date-Modified = {2011-10-26 08:20:06 +1100},
+    Doi = {10.1109/PROC.1978.10837},
+    Google-Scholar = {3172},
+    Google-Scholar-Url = {http://scholar.google.com.au/scholar?q=On+the+use+of+windows+for+harmonic+analysis+with+the+discrete+%7BF%7Dourier+transform},
+    Journal = IEEE_J_PROC,
+    Month = Jan,
+    Number = {1},
+    Pages = {51-83},
+    Pdf-Url = {http://users.rsise.anu.edu.au/~rod/hilbertbook/Harris-1978.pdf},
+    Status = {Verified},
+    Title = {On the use of windows for harmonic analysis with the discrete {F}ourier transform},
+    Volume = {66},
+    Year = {1978},
+    Abstract = {This paper makes available a concise review of data windows and their affect on the detection of harmonic signals in the presence of broad-band noise, and in the presence of nearby strong harmonic interference. We also call attention to a number of common errors in the application of windows when used with the fast Fourier transform. This paper includes a comprehensive catalog of data windows along with their significant performance parameters from which the different windows can be compared. Finally, an example demonstrates the use and value of windows to resolve closely spaced harmonic signals characterized by large differences in amplitude.}}
+
+
+
+
+@book{Varsha:1988,
+  title = {Quantum Theory of Angular Momentum},
+  publisher = {World Scientific},
+  year = {1988},
+  author = {D. A. Varshalovich and A. N. Moskalev and V. K. Khersonskii},
+  owner = {zkhalid},
+  timestamp = {2011.11.05}
+}
+
+
+@article{Khalid2:2012,
+    Author = {Khalid, Z. and Sadeghi, P. and Kennedy, R. A. and Durrani, S.},
+    Journal = IEEE_J_SP,
+    Month = feb,
+    Number = {3},
+    Pages = {530-544},
+    Title = {Spatially varying spectral filtering of signals on the unit sphere},
+    Volume = {61},
+    Year = {2013}}
+
+
+@inproceedings{Khalid_icassp:2012,
+    Address = {Kyoto, Japan},
+    Author = {Khalid, Z. and Kennedy, R. A. and Durrani, S. and Sadeghi, P.},
+    Bdsk-Color = {3993698047},
+    Booktitle = {Proc. IEEE Int. Conf. Acoust., Speech, Signal Process., ICASSP'2012},
+    Date-Added = {2012-04-05 16:31:34 +1000},
+    Date-Modified = {2012-04-18 13:10:05 +1000},
+    Doi = {10.1109/ICASSP.2011.5947318},
+    Era-Rank = {B},
+    Google-Scholar = {1},
+    Google-Scholar-Url = {http://scholar.google.com.au/scholar?q=allintitle%3A+%22construction+of+low-pass+filters+on+the+unit+sphere%22},
+    Keywords = {Sphere},
+    Month = mar,
+    Rating = {5},
+    Status = {Verified},
+    Title = {Conjugate gradient algorithm for extrapolation of sampled bandlimited signals on the $2$-sphere},
+    Year = {2011},
+    Abstract = {This paper considers the problem of construction of low-pass filters on the unit sphere, which has wide ranging applications in the processing of signals on the unit sphere. We propose a design criterion for the construction of strictly bandlimited low-pass filters in the spectral domain with optimal concentration in the specified polar cap region in the spatial domain. Our approach uses the weighted sum of the first optimally concentrated eigenfunctions from appropriately formulated Slepian concentration problems on the sphere. Furthermore, in order to reduce the computational complexity of the proposed algorithm, we develop a closed-form expression to accurately model these eigenfunctions. We illustrate the construction of low-pass filters using the proposed approach and demonstrate the advantage of our method approach compared to a diffusion based approach in the literature in terms of control over both bandwidth in the spectral domain and concentration in the spatial domain.},
+    Annote = {DP1094350},
+    Bdsk-Url-1 = {http://dx.doi.org/10.1109/ICASSP.2011.5947318}}
+
+
+@inproceedings{Khalid_icassp_3:2012,
+  author    = {Z. Khalid and
+               S. Durrani and
+               P. Sadeghi and
+               R. A. Kennedy},
+  title     = {Concentration uncertainty principles for signals on the unit sphere},
+  Booktitle = {Proc. IEEE Int. Conf. Acoust., Speech, Signal Process., ICASSP'2012},
+  Month = mar,
+  Rating = {5},
+  year      = {2012},
+  pages     = {3717-3720},
+}
+
+
+@inproceedings{Khalid_icassp_2:2012,
+    Address = {Kyoto, Japan},
+    Author = {Khalid, Z. and Durrani, S. and Sadeghi, P. and Kennedy, R. A.},
+    Bdsk-Color = {3993698047},
+    Booktitle = {Proc. IEEE Int. Conf. Acoust., Speech, Signal Process., ICASSP'2012},
+    Date-Added = {2012-04-05 16:31:34 +1000},
+    Date-Modified = {2012-04-18 13:10:05 +1000},
+    Doi = {10.1109/ICASSP.2011.5947318},
+    Era-Rank = {B},
+    Google-Scholar = {1},
+    Google-Scholar-Url = {http://scholar.google.com.au/scholar?q=allintitle%3A+%22construction+of+low-pass+filters+on+the+unit+sphere%22},
+    Keywords = {Sphere},
+    Month = mar,
+    Rating = {5},
+    Status = {Verified},
+    Title = {AMBIGUITY FUNCTION AND {W}IGNER DISTRIBUTION ON THE SPHERE},
+    Year = {2011},
+    Abstract = {This paper considers the problem of construction of low-pass filters on the unit sphere, which has wide ranging applications in the processing of signals on the unit sphere. We propose a design criterion for the construction of strictly bandlimited low-pass filters in the spectral domain with optimal concentration in the specified polar cap region in the spatial domain. Our approach uses the weighted sum of the first optimally concentrated eigenfunctions from appropriately formulated Slepian concentration problems on the sphere. Furthermore, in order to reduce the computational complexity of the proposed algorithm, we develop a closed-form expression to accurately model these eigenfunctions. We illustrate the construction of low-pass filters using the proposed approach and demonstrate the advantage of our method approach compared to a diffusion based approach in the literature in terms of control over both bandwidth in the spectral domain and concentration in the spatial domain.},
+    Annote = {DP1094350},
+    Bdsk-Url-1 = {http://dx.doi.org/10.1109/ICASSP.2011.5947318}}
+
+
+
+
+@INPROCEEDINGS{Rod_icspcs:2008,
+author={Kennedy, R. A. and W. Zhang and Abhayapala, T. D.},
+booktitle={Proc. 2nd International Conference on Signal Processing and Communication Systems},
+title={Spherical harmonic analysis and model-limited extrapolation on the sphere: Integral equation formulation},
+year={2008},
+month={Dec.},
+pages={1-6},
+}
+
+
+
+
+
+@article{McEwen:2011,
+author={McEwen, J. D. and Wiaux, Y.},
+journal=ieee_j_sp,
+title={A Novel Sampling Theorem on the Sphere},
+year={2011},
+month={Dec. },
+volume={59},
+number={12},
+pages={5876-5887},}
+
+
+@article{Wandelt:2001,
+    Author = {Wandelt, B. D. and G\'orski, K. M.},
+    Bdsk-Color = {2063563775},
+    Date-Added = {2011-10-25 22:02:45 +1100},
+    Date-Modified = {2011-10-25 23:34:25 +1100},
+    Doi = {10.1103/PhysRevD.63.123002},
+    Google-Scholar = {98},
+    Google-Scholar-Url = {http://scholar.google.com.au/scholar?q=Fast+convolution+on+the+sphere},
+    Journal = {Phys. Rev. D},
+    Month = may,
+    Number = {12},
+    Pages = {123002},
+    Pdf-Url = {http://users.rsise.anu.edu.au/~rod/hilbertbook/Wandelt-2001.pdf},
+    Status = {Verified},
+    Title = {Fast convolution on the sphere},
+    Volume = {63},
+    Year = {2001},
+    Abstract = {We propose fast, exact and efficient algorithms for the convolution of two arbitrary functions on the sphere which speed up computations by a factor $O(\sqrt{N})$ compared to present methods where N is the number of pixels. No simplifying assumptions are made other than band limitation. This reduces typical computation times for convolving the full sky with the asymmetric beam pattern of a megapixel cosmic microwave background (CMB) mission from months to minutes. Our methods enable realistic simulation and careful analysis of data from such missions, taking into account the effects of asymmetric ``point spread functions'' and far side lobes of the physical beam. While motivated by CMB studies, our methods are general and hence applicable to the convolution or filtering of any scalar field on the sphere with an arbitrary, asymmetric kernel. We show in an Appendix that the same ideas can be applied to the inverse problems of map-making and beam reconstruction by similarly accelerating the transpose convolution which is needed for the iterative solution of the normal equations.}}
+
+@article{Trapani:2006,
+author = {Trapani, S. and Navaza, J.},
+title = {Calculation of spherical harmonics and {W}igner {\it d}~functions by {FFT}. Applications to fast rotational matching in molecular replacement and implementation into {\it {AM}o{R}e}},
+journal = {Acta Cryst. A},
+year = {2006},
+volume = {62},
+number = {4},
+pages = {262--269},
+month = jul,
+doi = {10.1107/S0108767306017478},
+}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+@article{Wieczorek:2007,
+    Author = {Wieczorek, M. A. and Simons, F. J.},
+    Bdsk-Color = {3993698047},
+    Date-Added = {2012-04-18 13:33:37 +1000},
+    Date-Modified = {2012-04-18 13:33:40 +1000},
+    Doi = {10.1007/s00041-006-6904-1},
+    Google-Scholar = {18},
+    Google-Scholar-Url = {http://scholar.google.com.au/scholar?hl=en&q=Minimum+Variance+multitaper+spectral+estimation+on+the+sphere},
+    Journal = {J. Fourier Anal. Appl.},
+    Number = {6},
+    Pages = {665-692},
+    Rating = {5},
+    Status = {Verified},
+    Title = {Minimum Variance multitaper spectral estimation on the sphere},
+    Volume = {13},
+    Year = {2007}}
+
+@inproceedings{Kramer:1994,
+    Author = {Kramer, M. L. and Jones, D. L.},
+    Bdsk-Color = {3993698047},
+    Booktitle = {Proc. IEEE-SP Int. Symp. Time-Freq., Time-Scale Anal., 1994.},
+    Date-Added = {2012-04-18 13:32:44 +1000},
+    Date-Modified = {2012-04-18 13:33:42 +1000},
+    Month = oct,
+    Pages = {264-267},
+    Rating = {5},
+    Title = {Improved time-frequency filtering using an {STFT} analysis-modification-synthesis method},
+    Year = {1994}}
+
+@article{Kennedy:2011,
+    Author = {Kennedy, R. A. and Lamahewa, T. A. and Wei, L.},
+    Bdsk-Color = {2063563775},
+    Date-Added = {2011-10-25 22:47:23 +1100},
+    Date-Modified = {2011-10-25 22:47:40 +1100},
+    Doi = {10.1016/j.dsp.2011.05.002},
+    Era-Rank = {B},
+    Google-Scholar = {3},
+    Google-Scholar-Url = {http://scholar.google.com.au/scholar?q=allintitle%3A+On+azimuthally+symmetric+2-sphere+convolution+author%3AKennedy},
+    Journal = {Digital Signal Processing},
+    Month = Sep,
+    Number = {11},
+    Pages = {660-666},
+    Pdf-Url = {http://users.rsise.anu.edu.au/~rod/papers/2011/dsp21-660-666.pdf},
+    Rating = {3},
+    Status = {Verified},
+    Title = {On azimuthally symmetric 2-sphere convolution},
+    Volume = {5},
+    Year = {2011},
+    Abstract = {We consider the problem of azimuthally symmetric convolution of signals defined on the 2-Sphere. Applications of such convolution include but are not limited to: geodesy, astronomical data (such as the famous Wilkinson Microwave Anisotropy Probe data), and 3D beamforming/sensing. We review various definitions of convolution from the literature and show a nontrivial equivalence between different definitions. Some convolution formulations based on SO(3) are shown not to be well formed for applications and we demonstrate a simpler framework to understand, use and generalize azimuthally symmetric convolution.},
+    Bdsk-Url-1 = {http://dx.doi.org/10.1016/j.dsp.2011.05.002},
+    Bdsk-Url-2 = {http://scholar.google.com.au/scholar?q=allintitle%3A+On+azimuthally+symmetric+2-sphere+convolution+author%3AKennedy}}
+
+
+@article{Pollock:2003,
+    Author = {Pollock, T. S. and Abhayapala, T. D. and Kennedy, R. A.},
+    Bdsk-Color = {3993698047},
+    Date-Added = {2012-04-17 21:28:26 +0000},
+    Date-Modified = {2012-04-18 11:00:44 +1000},
+    Doi = {10.1023/A:1026143603179},
+    Era-Rank = {C},
+    Google-Scholar = {37},
+    Google-Scholar-Url = {http://scholar.google.com/scholar?q=10.1023/A:1026143603179},
+    Journal = {J. Telecommun. Syst.},
+    Keywords = {Spatial},
+    Month = oct,
+    Number = {2},
+    Pages = {415-436},
+    Pdf-Url = {http://users.rsise.anu.edu.au/~rod/papers/2003/KennedyJ2003a.pdf},
+    Rating = {5},
+    Status = {Published},
+    Title = {Introducing Space into {MIMO} Capacity Calculations},
+    Volume = {24},
+    Year = {2003},
+    Abstract = {The large spectral efficiencies promised for multiple-input multiple-output (MIMO) wireless fading channels are derived under certain conditions which do not fully take into account the spatial aspects of the channel. Spatial correlation, due to limited angular spread or insufficient antenna spacing, significantly reduces the performance of MIMO systems. In this paper we explore the effects of spatially selective channels on the capacity of MIMO systems via a new capacity expression which is more general and realistic than previous expressions. By including spatial information we derive a closed-form expression for ergodic capacity which uses the physics of signal propagation combined with the statistics of the scattering environment. This expression gives the capacity of a MIMO system in terms of antenna placement and scattering environment and leads to valuable insights into the factors determining capacity for a wide range of scattering models.},
+    Bdsk-Url-1 = {http://dx.doi.org/10.1023/A:1026143603179},
+    Bdsk-Url-2 = {http://scholar.google.com/scholar?q=10.1023/A:1026143603179}}
+
+@inproceedings{Khalid:2011,
+    Address = {Prague, Czech Republic},
+    Author = {Khalid, Z. and Durrani, S. and Kennedy, R. A. and Sadeghi, P.},
+    Bdsk-Color = {3993698047},
+    Booktitle = {Proc. IEEE Int. Conf. Acoust., Speech, Signal Process., ICASSP'2011},
+    Date-Added = {2012-04-05 16:31:34 +1000},
+    Date-Modified = {2012-04-18 13:10:05 +1000},
+    Doi = {10.1109/ICASSP.2011.5947318},
+    Era-Rank = {B},
+    Google-Scholar = {1},
+    Google-Scholar-Url = {http://scholar.google.com.au/scholar?q=allintitle%3A+%22construction+of+low-pass+filters+on+the+unit+sphere%22},
+    Keywords = {Sphere},
+    Month = may,
+    Pages = {4356-4359},
+    Pdf-Url = {http://users.rsise.anu.edu.au/~rod/papers/2011/05947318.pdf},
+    Rating = {5},
+    Status = {Verified},
+    Title = {On the construction of low-pass filters on the unit sphere},
+    Year = {2011},
+    Abstract = {This paper considers the problem of construction of low-pass filters on the unit sphere, which has wide ranging applications in the processing of signals on the unit sphere. We propose a design criterion for the construction of strictly bandlimited low-pass filters in the spectral domain with optimal concentration in the specified polar cap region in the spatial domain. Our approach uses the weighted sum of the first optimally concentrated eigenfunctions from appropriately formulated Slepian concentration problems on the sphere. Furthermore, in order to reduce the computational complexity of the proposed algorithm, we develop a closed-form expression to accurately model these eigenfunctions. We illustrate the construction of low-pass filters using the proposed approach and demonstrate the advantage of our method approach compared to a diffusion based approach in the literature in terms of control over both bandwidth in the spectral domain and concentration in the spatial domain.},
+    Annote = {DP1094350},
+    Bdsk-Url-1 = {http://dx.doi.org/10.1109/ICASSP.2011.5947318}}
+
+@article{Sadeghi:2012,
+Author = {Sadeghi, P. and Kennedy, R. A. and Khalid, Z.},
+Journal = ieee_j_sp,
+Month = dec,
+Number = {12},
+Pages = {6697-6703},
+Title = {Commutative anisotropic convolution on the 2-sphere},
+Volume = {60},
+Year = {2012}}
+
+
+
+
+@article{Khalid:2012,
+    Author = {Khalid, Z. and Durrani, S. and Sadeghi, P. and Kennedy, R. A.},
+    Bdsk-Color = {4278845183},
+    Date-Added = {2012-04-05 10:57:17 +1000},
+    Date-Modified = {2012-04-18 13:29:34 +1000},
+    Doi = {10.1109/TSP.2011.2177265},
+    Era-Rank = {A*},
+    Google-Scholar = {0},
+    Google-Scholar-Url = {http://scholar.google.com.au/scholar?q=Spatio-spectral+analysis+on+the+sphere+using+spatially+localized+spherical+harmonics+transform},
+    Journal = IEEE_J_SP,
+    Keywords = {2-sphere},
+    Month = mar,
+    Number = {3},
+    Pages = {1487-1492},
+    Pdf-Url = {http://users.rsise.anu.edu.au/~rod/papers/2012/06086770.pdf},
+    Rating = {5},
+    Status = {Verified},
+    Title = {Spatio-spectral analysis on the sphere using spatially localized spherical harmonics transform},
+    Volume = {60},
+    Year = {2012},
+    Abstract = {This correspondence studies a spatially localized spectral transform for signals on the unit sphere, which we call spatially localized spherical harmonics transform (SLSHT). For a systematic treatment, we explicitly express the transform in terms of rotated versions of an azimuthally symmetric window function and introduce the spatio-spectral SLSHT distribution with a succinct matrix representation. We present guidelines for the choice of the window function in the SLSHT, based on the inherent tradeoff between the spatial and spectral resolution of different window functions from the perspective of the uncertainty principle. We demonstrate the use of an eigenfunction window, obtained from the Slepian concentration problem on the sphere, as a good choice for window function. As an illustration, we apply the transform to the topographic map of Mars, which can reveal spatially localized spectral contributions that were not obtainable from traditional spherical harmonics analysis.},
+    Annote = {DP1094350},
+    Bdsk-Url-1 = {http://users.rsise.anu.edu.au/~rod/papers/preprint/KennedyJS2011_TSP_Zubair.pdf}}
+
+@article{Ward:1995,
+    Author = {Ward, D. B. and Kennedy, R. A. and Williamson, R. C.},
+    Bdsk-Color = {3993698047},
+    Date-Added = {2012-04-05 10:53:19 +1000},
+    Date-Modified = {2012-04-17 21:26:03 +0000},
+    Doi = {10.1121/1.412215},
+    Era-Rank = {A*},
+    Google-Scholar = {166},
+    Google-Scholar-Url = {http://scholar.google.com/scholar?q=Theory+and+design+of+broadband+sensor+arrays+with+frequency+invariant+far-field+beam+patterns},
+    Journal = jasm,
+    Keywords = {Beamforming},
+    Month = feb,
+    Number = {2},
+    Pages = {1023-1034},
+    Pdf-Url = {http://users.rsise.anu.edu.au/~rod/papers/1995/KennedyJ1995b.pdf},
+    Rating = {5},
+    Status = {Published},
+    Title = {Theory and design of broadband sensor arrays with frequency invariant far-field beam patterns},
+    Volume = {97},
+    Year = {1995},
+    Abstract = {The theory and design of a broadband array of sensors with a frequency invariant far-field beam pattern over an arbitrarily wide design bandwidth is presented. The frequency invariant beam pattern property is defined in terms of a continuously distributed sensor, and the problem of designing a practical sensor array is then treated as an approximation to this continuous sensor using a discrete set of filtered broadband omnidirectional array elements. The design methodology is suitable for one-, two-, and three-dimensional sensor arrays; it imposes no restrictions on the desired aperture distribution (beam shape), and can cope with arbitrarily wide bandwidths. An important consequence of the results is that the frequency response of the filter applied to the output of each sensor can be factored into two components: One component is related to a slice of the desired aperture distribution, and the other is sensor independent. The results also indicate that the locations of the sensors are not a crucial design consideration, although it is shown that nonuniform spacings simultaneously avoid spatial aliasing and minimize the number of sensors. An example design which covers a 10:1 frequency range (which is suitable for speech acquisition using a microphone array) illustrates the utility of the method. Finally, the theory is generalized to cover a parameterized class of arrays in which the frequency dependence of the beam pattern can be controlled in a continuous manner from a classical single-frequency design to a frequency invariant design.},
+    Bdsk-Url-1 = {http://dx.doi.org/10.1121/1.412215},
+    Bdsk-Url-2 = {http://scholar.google.com/scholar?q=Theory+and+design+of+broadband+sensor+arrays+with+frequency+invariant+far-field+beam+patterns}}
+
+@article{Wieczorek:2005,
+    Author = {Wieczorek, M. A. and Simons, F. J.},
+    Bdsk-Color = {3993698047},
+    Date-Added = {2012-04-05 10:23:37 +1000},
+    Date-Modified = {2012-04-18 11:01:04 +1000},
+    Doi = {10.1111/j.1365-246X.2005.02687.x},
+    Google-Scholar = {52},
+    Google-Scholar-Url = {http://scholar.google.com.au/scholar?q=Localized+spectral+analysis+on+the+sphere},
+    Journal = {Geophys. J. Int.},
+    Keywords = {2-sphere},
+    Month = may,
+    Number = {3},
+    Pages = {655-675},
+    Pdf-Url = {http://users.rsise.anu.edu.au/~rod/hilbertbook/Wieczorek-2005.pdf},
+    Rating = {5},
+    Status = {Verified},
+    Title = {Localized spectral analysis on the sphere},
+    Volume = {162},
+    Year = {2005},
+    Abstract = {It is often advantageous to investigate the relationship between two geophysical data sets in the spectral domain by calculating admittance and coherence functions. While there exist powerful Cartesian windowing techniques to estimate spatially localized (cross-)spectral properties, the inherent sphericity of planetary bodies sometimes necessitates an approach based in spherical coordinates. Direct localized spectral estimates on the sphere can be obtained by tapering, or multiplying the data by a suitable windowing function, and expanding the resultant field in spherical harmonics. The localization of a window in space and its spectral bandlimitation jointly determine the quality of the spatiospectral estimation. Two kinds of axisymmetric windows are here constructed that are ideally suited to this purpose: bandlimited functions that maximize their spatial energy within a cap of angular radius \theta_0, and spacelimited functions that maximize their spectral power within a spherical harmonic bandwidth $L$. Both concentration criteria yield an eigenvalue problem that is solved by an orthogonal family of data tapers, and the properties of these windows depend almost entirely upon the space--bandwidth product $N_0=(L+1)\theta_0/\pi$. The first $N_0-1$ windows are near perfectly concentrated, and the best-concentrated window approaches a lower bound imposed by a spherical uncertainty principle. In order to make robust localized estimates of the admittance and coherence spectra between two fields on the sphere, we propose a method analogous to Cartesian multitaper spectral analysis that uses our optimally concentrated data tapers. We show that the expectation of localized (cross-)power spectra calculated using our data tapers is nearly unbiased for stochastic processes when the input spectrum is white and when averages are made over all possible realizations of the random variables. In physical situations, only one realization of such a process will be available, but in this case, a weighted average of the spectra obtained using multiple data tapers well approximates the expected spectrum. While developed primarily to solve problems in planetary science, our method has applications in all areas of science that investigate spatiospectral relationships between data fields defined on a sphere.},
+    Bdsk-Url-1 = {http://dx.doi.org/10.1111/j.1365-246X.2005.02687.x},
+    Bdsk-Url-2 = {http://scholar.google.com.au/scholar?q=Localized+spectral+analysis+on+the+sphere},
+    Bdsk-Url-3 = {http://users.rsise.anu.edu.au/~rod/hilbertbook/Wieczorek-2005.pdf}}
+
+@inproceedings{Jepsen:1955,
+    Author = {Jepsen, D. W. and Haugh, E. F. and Hirschfelder, J. O.},
+    Bdsk-Color = {4278845183},
+    Booktitle = {Proc. Natl. Acad. Sci. {USA}.},
+    Date-Modified = {2012-04-18 13:24:45 +1000},
+    Month = sep,
+    Pages = {645-647},
+    Rating = {5},
+    Title = {The integral of the associated {L}egendre function},
+    Volume = {41},
+    Year = {1955}}
+
+@inproceedings{Kozek:1992,
+    Author = {Kozek, W. and Hlawatsch, F.},
+    Bdsk-Color = {3993698047},
+    Booktitle = {Proc. IEEE-SP Int. Symp. Time-Freq., Time-Scale Anal., 1992.},
+    Date-Modified = {2012-04-18 13:29:43 +1000},
+    Doi = {10.1109/TFTSA.1992.274211 },
+    Month = oct,
+    Pages = {163-166},
+    Rating = {5},
+    Title = {A comparative study of linear and nonlinear time-frequency filters},
+    Year = {1992}}
+
+@article{Albertella:1999,
+    Author = {Albertella, A. and Sans{\`o}, F. and Sneeuw, N.},
+    Bdsk-Color = {3993698047},
+    Date-Modified = {2012-04-18 13:29:12 +1000},
+    Doi = {10.1007/PL00003999},
+    Journal = {J. Geodesy},
+    Month = jun,
+    Number = {9},
+    Owner = {zkhalid},
+    Pages = {436-447},
+    Rating = {5},
+    Status = {Verified},
+    Timestamp = {2010.08.02},
+    Title = {Band-limited functions on a bounded spherical domain: the {S}lepian problem on the sphere},
+    Vol = {73},
+    Volume = {73},
+    Year = {1999}}
+
+@inproceedings{Hlawatsch:1990,
+    Author = {Hlawatsch, F. and Kozek, W. and Krattenthaler, W.},
+    Bdsk-Color = {3993698047},
+    Booktitle = {Proc. IEEE Int. Conf. Acoust., Speech, Signal Process., ICASSP'1990},
+    Date-Modified = {2012-04-18 11:00:34 +1000},
+    Doi = {10.1109/ICASSP.1990.115731 },
+    Month = apr,
+    Pages = {1607-1610},
+    Rating = {5},
+    Status = {Verified},
+    Title = {Time-frequency subspaces and their application to time-varying filtering},
+    Volume = {3},
+    Year = {1990}}
+
+
+@article{Krattenthaler:1993,
+Author={Krattenthaler, W. and Hlawatsch, F.},
+Journal=ieee_j_sp,
+Title={Time-Frequency Design and Processing of Signals Via Smoothed {W}igner Distributions},
+Year={1993},
+month=jan,
+Volume={41},
+Number={1},
+Pages={278-287},
+Doi={10.1109/TSP.1993.193145},
+ISSN={1053-587X},}
+
+
+
+@article{Boudreaux-Bartels:1986,
+    Author = {Boudreaux-Bartels, G. and Parks, T.},
+    Bdsk-Color = {4278845183},
+    Date-Modified = {2012-04-18 11:00:24 +1000},
+    Doi = {10.1109/TASSP.1986.1164833},
+    Journal = ieee_j_assp,
+    Month = jun,
+    Number = {3},
+    Pages = {442-451},
+    Rating = {5},
+    Status = {Verified},
+    Title = {Time-varying filtering and signal estimation using {W}igner distribution synthesis techniques},
+    Volume = {34},
+    Year = {1986}}
+
+@inproceedings{Cohen:1988,
+    Author = {Cohen, L.},
+    Bdsk-Color = {4278845183},
+    Booktitle = {Proc. IEEE Int. Conf. Acoust., Speech, Signal Process., ICASSP'1988},
+    Date-Modified = {2012-04-18 11:00:26 +1000},
+    Doi = {10.1109/ICASSP.1988.197074},
+    Month = apr,
+    Pages = {2212-2215},
+    Rating = {5},
+    Title = {Time frequency filtering},
+    Year = {1988}}
+
+@article{Saleh:1985,
+    Author = {Saleh, B. E. A. and Subotik, N. S.},
+    Bdsk-Color = {4278845183},
+    Date-Modified = {2012-04-18 11:00:47 +1000},
+    Doi = {10.1109/TASSP.1985.1164753},
+    Journal = ieee_j_assp,
+    Month = dec,
+    Number = {6},
+    Pages = {1479-1485},
+    Rating = {5},
+    Status = {Verified},
+    Title = {Time-Variant Filtering of Signals in the Mixed Time-Frequency Domain},
+    Volume = {33},
+    Year = {1985}}
+
+@book{Boashash:2003,
+    Author = {Boashash, B.},
+    Bdsk-Color = {3993698047},
+    Date-Modified = {2012-04-18 11:06:34 +1000},
+    Publisher = {Elsevier, UK},
+    Rating = {5},
+    Title = {Time frequency signal analysis and processing: a comprehensive reference},
+    Year = {2003}}
+
+
+
+@article{Cohen:1989,
+    Author = {Cohen, L.},
+    Bdsk-Color = {2063563775},
+    Date-Added = {2011-10-25 23:18:24 +1100},
+    Date-Modified = {2011-10-25 23:25:31 +1100},
+    Doi = {10.1109/5.30749},
+    Google-Scholar = {2220},
+    Google-Scholar-Url = {http://scholar.google.com.au/scholar?q=Time-frequency+distributions-a+review},
+    Journal = IEEE_J_PROC,
+    Month = jul,
+    Number = {7},
+    Pages = {941-981},
+    Pdf-Url = {http://users.rsise.anu.edu.au/~rod/hilbertbook/Cohen-1989.pdf},
+    Status = {Verified},
+    Title = {Time-frequency distributions$-$a review},
+    Volume = {77},
+    Year = {1989},
+    Abstract = {A review and tutorial of the fundamental ideas and methods of joint time-frequency distributions is presented. The objective of the field is to describe how the spectral content of a signal changes in time and to develop the physical and mathematical ideas needed to understand what a time-varying spectrum is. The basic gal is to devise a distribution that represents the energy or intensity of a signal simultaneously in time and frequency. Although the basic notions have been developing steadily over the last 40 years, there have recently been significant advances. This review is intended to be understandable to the nonspecialist with emphasis on the diversity of concepts and motivations that have gone into the formation of the field}}
+
+@book{Cohen:1995,
+    Author = {Cohen, L.},
+    Bdsk-Color = {3993698047},
+    Date-Modified = {2012-04-18 11:00:27 +1000},
+    Publisher = {Prentice-Hall, Inc.},
+    Rating = {5},
+    Title = {Time-frequency analysis: Theory and applications},
+    Year = {1995}}
+
+@book{Allen:2004,
+    Author = {Allen, R. L. and Mills, D. W.},
+    Bdsk-Color = {3993698047},
+    Date-Modified = {2012-04-18 11:06:35 +1000},
+    Publisher = {IEEE Press, Piscataway, NJ},
+    Rating = {5},
+    Title = {Signal Analysis: Time, Frequency, Scale and Structure},
+    Year = {2004}}
+
+@article{Antoine:1999,
+    Author = {Antoine, J.-P. and Vandergheynst, P.},
+    Bdsk-Color = {3993698047},
+    Date-Added = {2011-10-26 15:14:02 +1100},
+    Date-Modified = {2012-04-18 11:00:15 +1000},
+    Doi = {10.1006/acha.1999.0272},
+    Google-Scholar = {120},
+    Google-Scholar-Url = {http://scholar.google.com.au/scholar?q=Wavelets+on+the+2-sphere%3A+A+group-theoretical+approach},
+    Journal = {Appl. Comput. Harmon. Anal.},
+    Number = {3},
+    Pages = {262-291},
+    Pdf-Url = {http://users.rsise.anu.edu.au/~rod/hilbertbook/Antoine-1999.pdf},
+    Rating = {5},
+    Status = {Verified},
+    Title = {Wavelets on the 2-sphere: A group-theoretical approach},
+    Volume = {7},
+    Year = {1999}}
+
+@article{Wiaux:2008,
+    Author = {Wiaux, Y. and McEwen, J. D. and Vandergheynst, P. and Blanc, O.},
+    Bdsk-Color = {3993698047},
+    Date-Added = {2011-10-26 15:07:58 +1100},
+    Date-Modified = {2012-04-18 11:01:03 +1000},
+    Doi = {10.1111/j.1365-2966.2008.13448.x},
+    Google-Scholar = {33},
+    Google-Scholar-Url = {http://scholar.google.com.au/scholar?q=Exact+reconstruction+with+directional+wavelets+on+the+sphere},
+    Journal = {Mon. Not. R. Astron. Soc.},
+    Number = {2},
+    Pages = {770-788},
+    Pdf-Url = {http://users.rsise.anu.edu.au/~rod/hilbertbook/Wiaux-2008.pdf},
+    Rating = {5},
+    Status = {Verified},
+    Title = {Exact reconstruction with directional wavelets on the sphere},
+    Volume = {388},
+    Year = {2008},
+    Abstract = {A new formalism is derived for the analysis and exact reconstruction of band-limited signals on the sphere with directional wavelets. It represents an evolution of a previously developed wavelet formalism developed by Antoine & Vandergheynst and Wiaux et al. The translations of the wavelets at any point on the sphere and their proper rotations are still defined through the continuous three-dimensional rotations. The dilations of the wavelets are directly defined in harmonic space through a new kernel dilation, which is a modification of an existing harmonic dilation. A family of factorized steerable functions with compact harmonic support which are suitable for this kernel dilation are first identified. A scale-discretized wavelet formalism is then derived, relying on this dilation. The discrete nature of the analysis scales allows the exact reconstruction of band-limited signals. A corresponding exact multi-resolution algorithm is finally described and an implementation is tested. The formalism is of interest notably for the denoising or the deconvolution of signals on the sphere with a sparse expansion in wavelets. In astrophysics, it finds a particular application for the identification of localized directional features in the cosmic microwave background data, such as the imprint of topological defects, in particular, cosmic strings, and for their reconstruction after separation from the other signal components.}}
+
+@article{Freeden:1999,
+    Author = {Freeden, W. and Michel, V.},
+    Bdsk-Color = {3993698047},
+    Date-Added = {2011-10-26 13:49:21 +1100},
+    Date-Modified = {2012-04-18 13:22:31 +1000},
+    Doi = {10.1007/PL00004001},
+    Google-Scholar = {21},
+    Google-Scholar-Url = {http://scholar.google.com.au/scholar?q=Constructive+Approximation+and+Numerical+Methods+in+Geodetic+Research+Today.+%7BA%7Dn+Attempt+at+a+Categorization+Based+on+an+Uncertainty+Principle},
+    Journal = {J. Geodesy},
+    Number = {9},
+    Pages = {452-465},
+    Pdf-Url = {http://users.rsise.anu.edu.au/~rod/hilbertbook/Freeden-1999.pdf},
+    Rating = {5},
+    Status = {Verified},
+    Title = {Constructive Approximation and Numerical Methods in Geodetic Research Today -- an Attempt at a Categorization Based on an Uncertainty Principle},
+    Volume = {73},
+    Year = {1999},
+    Abstract = {Current activities and recent progress on constructive approximation and numerical analysis in physical geodesy are reported upon. Two major topics of interest are focused upon, namely trial systems for purposes of global and local approximation and methods for adequate geodetic application. A fundamental tool is an uncertainty principle, which gives appropriate bounds for the quantification of space and momentum localization of trial functions. The essential outcome is a better understanding of constructive approximation in terms of radial basis functions such as splines and wavelets.},
+    Annote = {Journal of Geodesy}}
+
+@article{McEwen:2007,
+    Author = {McEwen, J. D. and Hobson, M. P. and Mortlock, D. J. and Lasenby, A. N.},
+    Bdsk-Color = {3993698047},
+    Date-Added = {2011-10-26 08:48:19 +1100},
+    Date-Modified = {2012-04-18 11:00:40 +1000},
+    Doi = {10.1109/TSP.2006.887148},
+    Google-Scholar = {29},
+    Google-Scholar-Url = {http://scholar.google.com.au/scholar?q=Fast+Directional+Continuous+Spherical+Wavelet+Transform+Algorithms},
+    Journal = IEEE_J_SP,
+    Month = feb,
+    Number = {2},
+    Pages = {520-529},
+    Pdf-Url = {http://users.rsise.anu.edu.au/~rod/hilbertbook/McEwen-2007.pdf},
+    Rating = {5},
+    Status = {Verified},
+    Title = {Fast Directional Continuous Spherical Wavelet Transform Algorithms},
+    Volume = {55},
+    Year = {2007},
+    Abstract = {We describe the construction of a spherical wavelet analysis through the inverse stereographic projection of the Euclidean planar wavelet framework, introduced originally by Antoine and Vandergheynst and developed further by Wiaux Fast algorithms for performing the directional continuous wavelet analysis on the unit sphere are presented. The fast directional algorithm, based on the fast spherical convolution algorithm developed by Wandelt and Goacuterski, provides a savings of O(radicNpix) over a direct quadrature implementation for Npix pixels on the sphere, and allows one to perform a directional spherical wavelet analysis of a 106 pixel map on a personal computer}}
+
+@article{Wiaux:2005,
+    Author = {Wiaux, Y. and Jacques, L. and Vandergheynst, P.},
+    Bdsk-Color = {2063564031},
+    Date-Modified = {2011-10-26 15:13:02 +1100},
+    Doi = {10.1086/432926},
+    Google-Scholar = {67},
+    Google-Scholar-Url = {http://scholar.google.com.au/scholar?q=Correspondence+principle+between+spherical+and+Euclidean+wavelets},
+    Journal = {Astrophys. J.},
+    Month = oct,
+    Number = {1},
+    Pages = {15-28},
+    Pdf-Url = {http://users.rsise.anu.edu.au/~rod/hilbertbook/Wiaux-2005.pdf},
+    Status = {Verified},
+    Title = {Correspondence principle between spherical and {E}uclidean wavelets},
+    Volume = {632},
+    Year = {2005}}
+
+
+@article{Narcowich:1996,
+    Author = {Narcowich, F. J. and Ward, J. D.},
+    Bdsk-Color = {3993698047},
+    Date-Added = {2011-10-25 23:42:19 +1100},
+    Date-Modified = {2012-04-18 11:00:43 +1000},
+    Doi = {10.1006/acha.1996.0025},
+    Google-Scholar = {84},
+    Google-Scholar-Url = {http://scholar.google.com.au/scholar?q=Nonstationary+Wavelets+on+the+m-Sphere+for+Scattered+Data},
+    Journal = {Appl. Comput. Harmon. Anal.},
+    Month = Oct,
+    Number = {4},
+    Pages = {324-336},
+    Pdf-Url = {http://users.rsise.anu.edu.au/~rod/hilbertbook/Narcowich-1996.pdf},
+    Rating = {5},
+    Status = {Verified},
+    Title = {Nonstationary Wavelets on the $m$-Sphere for Scattered Data},
+    Volume = {3},
+    Year = {1996},
+    Abstract = {We construct classes of nonstationary wavelets generated by what we callspherical basis functions,which comprise a subclass of Schoenberg's positive definite functions on them-sphere. The wavelets are intrinsically defined on them-sphere and are independent of the choice of coordinate system. In addition, they may be orthogonalized easily, if desired. We will discuss decomposition, reconstruction, and localization for these wavelets. In the special case of the 2-sphere, we derive an uncertainty principle that expresses the trade-off between localization and the presence of high harmonics---or high frequencies---in expansions in spherical harmonics. We discuss the application of this principle to the wavelets that we construct.}}
+
+
+
+@article{Gorski:2005,
+    Author = {G\'orski, K. M. and Hivon, E. and Banday, A. J. and Wandelt, B. D. and Hansen, F. K. and Reinecke, M. and and M. Bartelmann},
+    Bdsk-Color = {2063564031},
+    Date-Added = {2011-10-25 17:09:07 +1100},
+    Date-Modified = {2011-10-26 08:17:33 +1100},
+    Doi = {10.1086/427976},
+    Google-Scholar = {986},
+    Google-Scholar-Url = {http://scholar.google.com.au/scholar?q=HEALPix},
+    Journal = {Astrophysical J.},
+    Month = apr,
+    Number = {2},
+    Pages = {759-771},
+    Pdf-Url = {http://users.rsise.anu.edu.au/~rod/hilbertbook/Gorski-2005.pdf},
+    Rating = {3},
+    Status = {Verified},
+    Title = {{HEALP}ix: A Framework for High-Resolution Discretization and Fast Analysis of Data Distributed on the Sphere},
+    Volume = {622},
+    Year = {2005},
+    Abstract = {HEALPix---the Hierarchical Equal Area isoLatitude Pixelization---is a versatile structure for the pixelization of data on the sphere. An associated library of computational algorithms and visualization software supports fast scientific applications executable directly on discretized spherical maps generated from very large volumes of astronomical data. Originally developed to address the data processing and analysis needs of the present generation of cosmic microwave background experiments (e.g., BOOMERANG, WMAP), HEALPix can be expanded to meet many of the profound challenges that will arise in confrontation with the observational output of future missions and experiments, including, e.g., Planck, Herschel, SAFIR, and the Beyond Einstein inflation probe. In this paper we consider the requirements and implementation constraints on a framework that simultaneously enables an efficient discretization with associated hierarchical indexation and fast analysis/synthesis of functions defined on the sphere. We demonstrate how these are explicitly satisfied by HEALPix.}}
+
+
+@article{Armitage:2004,
+    Author = {Armitage, Charmaine and Wandelt, Benjamin D.},
+    Bdsk-Color = {2063564031},
+    Date-Added = {2011-10-25 18:09:50 +1100},
+    Date-Modified = {2011-10-25 18:14:16 +1100},
+    Doi = {10.1103/PhysRevD.70.123007},
+    Google-Scholar = {20},
+    Google-Scholar-Url = {http://scholar.google.com.au/scholar?q=Deconvolution+map-making+for+cosmic+microwave+background+observations},
+    Journal = {Phys. Rev. D},
+    Month = dec,
+    Number = {12},
+    Pages = {123007:1-123007:7},
+    Pdf-Url = {http://users.rsise.anu.edu.au/~rod/hilbertbook/Armitage-2004.pdf},
+    Status = {Verified},
+    Title = {Deconvolution map-making for cosmic microwave background observations},
+    Volume = {70},
+    Year = {2004},
+    Abstract = {We describe a new map-making code for cosmic microwave background observations. It implements fast algorithms for convolution and transpose convolution of two functions on the sphere [B. Wandelt and K. Gorski, Phys. Rev. D 63, 123002 (2001)]. Our code can account for arbitrary beam asymmetries and can be applied to any scanning strategy. We demonstrate the method using simulated time-ordered data for three beam models and two scanning patterns, including a coarsened version of the WMAP strategy. We quantitatively compare our results with a standard map-making method and demonstrate that the true sky is recovered with high accuracy using deconvolution map-making.}}
+
+
+@article{Spergel:2007,
+    Author = {Spergel, D. N. and Bean, R. and Dor{\'e}, O. and Nolta, M. R. and Bennett, C. L. and Dunkley, J. and Hinshaw, G. and Jarosik, N. and Komatsu, E. and Page, L. and Peiris, H. V. and Verde, L. and Halpern, M. and Hill, R. S. and Kogut, A. and Limon, M. and Meyer, S. S. and Odegard, N. and Tucker, G. S. and Weiland, J. L. and Wollack, E. and Wright, E. L.},
+    Bdsk-Color = {3993698047},
+    Date-Added = {2011-10-25 00:12:52 +1100},
+    Date-Modified = {2012-04-18 11:00:59 +1000},
+    Doi = {10.1086/513697},
+    Google-Scholar = {4213},
+    Google-Scholar-Url = {http://scholar.google.com.au/scholar?q=three-year+wilkinson+microwave+anisotropy+probe+wmap+observations+implications+for+cosmology},
+    Journal = {The Astrophysical Journal Supplement Series},
+    Number = {2},
+    Pages = {377-408},
+    Pdf-Url = {http://users.rsise.anu.edu.au/~rod/hilbertbook/Spergel-2007.pdf},
+    Rating = {5},
+    Status = {Verified},
+    Title = {Three-Year {W}ilkinson {M}icrowave {A}nisotropy {P}robe ({WMAP}) Observations: Implications for Cosmology},
+    Volume = {170},
+    Year = {2007}}
+
+@article{Wei:2011,
+    Author = {Wei, L. and Kennedy, R. A. and Lamahewa, T. A.},
+    Bdsk-Color = {2063564031},
+    Date-Added = {2011-10-25 08:09:48 +1100},
+    Date-Modified = {2011-10-26 10:05:28 +1100},
+    Doi = {10.1109/TSP.2011.2162506},
+    Era-Rank = {A*},
+    Google-Scholar = {0},
+    Google-Scholar-Url = {http://scholar.google.com.au/scholar?q=10.1109%2FTSP.2011.2162506},
+    Journal = IEEE_J_SP,
+    Month = nov,
+    Number = {11},
+    Pages = {5243-5252},
+    Pdf-Url = {http://users.rsise.anu.edu.au/~rod/hilbertbook/Wei-2011.pdf},
+    Rating = {5},
+    Status = {Verified},
+    Title = {Quadratic variational framework for signal design on the 2-sphere},
+    Volume = {59},
+    Year = {2011},
+    Abstract = {This paper introduces a quadratic variational framework for solving a broad class of signal design problems on the 2-sphere. The functional, to be extremized, combines energy concentration measures using a weighting function in the spatial domain, multiplicative weights in the spectral domain, and a total energy constraint. This leads to two formulations of the signal design problem on the 2- sphere, one a Fredholm integral equation in the spatial domain and the other an infinite matrix equation in the spectral domain. The framework is illustrated by deriving the key equations for the two classical spatio-spectral concentration problems on the 2-sphere, and for an isotropic filter design that maximizes the filtered energy. In addition, using the proposed framework, we formulate a joint 3- D beamforming application which achieves optimal directivity and spatial resolution simultaneously.},
+    Bdsk-Url-1 = {http://users.rsise.anu.edu.au/~rod/papers/preprint/optimalbasis.pdf}}
+
+
+
+@article{Driscoll:1994,
+    Author = {Driscoll, J. R. and Healy, Jr., D. M.},
+    Bdsk-Color = {3993698047},
+    Date-Added = {2011-10-24 21:32:06 +1100},
+    Date-Modified = {2012-04-18 11:00:28 +1000},
+    Doi = {10.1006/aama.1994.1008},
+    Google-Scholar = {453},
+    Google-Scholar-Url = {http://scholar.google.com.au/scholar?q=10.1006%2Faama.1994.1008},
+    Journal = {Adv. Appl. Math.},
+    Month = jun,
+    Number = {2},
+    Pages = {202-250},
+    Pdf-Url = {http://users.rsise.anu.edu.au/~rod/hilbertbook/Driscoll-1994.pdf},
+    Rating = {5},
+    Rodnotes = {Advances in Applied Mathematics},
+    Status = {Verified},
+    Title = {Computing {F}ourier transforms and convolutions on the 2-sphere},
+    Volume = {15},
+    Year = {1994},
+    Abstract = {This paper considers the problem of efficient computation of the spherical harmonic expansion, or Fourier transform, of functions defined on the two dimensional sphere, S2. The resulting algorithms are applied to the efficient computation of convolutions of functions on the sphere. We begin by proving convolution theorems generalizing well known and useful results from the abelian case. These convolution theorems are then used to develop a sampling theorem on the sphere. which reduces the calculation of Fourier transforms and convolutions of band-limited functions to discrete computations. We show how to perform these efficiently, starting with an O(n(log n)2) time algorithm for computing the Legendre transform of a function defined on the interval [-1,1] sampled at n points there. Theoretical and experimental results on the effects of finite precision arithmetic are presented. The Legendre transform algorithm is then generalized to obtain an algorithm for the Fourier transform, requiring O(n(log n)2) time, and an algorithm for its inverse in O(n1.5) time, where n is the number of points on the sphere at which the function is sampled. This improves the naive O(n2) bound, which is the best previously known. These transforms give an O(n1.5) algorithm for convolving two functions on the sphere.}}
+
+@article{Bulow:2004,
+    Author = {B{\"u}low, T.},
+    Bdsk-Color = {3993698047},
+    Date-Added = {2011-10-24 21:23:36 +1100},
+    Date-Modified = {2012-04-18 11:00:25 +1000},
+    Doi = {10.1109/TPAMI.2004.129},
+    Google-Scholar = {69},
+    Google-Scholar-Url = {http://scholar.google.com.au/scholar?q=Spherical+diffusion+for+3D+surface+smoothing},
+    Journal = IEEE_J_PAMI,
+    Month = dec,
+    Number = {12},
+    Pages = {1650-1654},
+    Pdf-Url = {http://users.rsise.anu.edu.au/~rod/hilbertbook/Bulow-2004.pdf},
+    Rating = {5},
+    Status = {Verified},
+    Title = {Spherical diffusion for {3D} surface smoothing},
+    Volume = {26},
+    Year = {2004},
+    Abstract = {A diffusion-based approach to surface smoothing is presented. Surfaces are represented as scalar functions defined on the sphere. The approach is equivalent to Gaussian smoothing on the sphere and is computationally efficient since it does not require iterative smoothing. Furthermore, it does not suffer from the well-known shrinkage problem. Evolution of important shape features (parabolic curves) under diffusion is demonstrated. A nonlinear modification of the diffusion process is introduced in order to improve smoothing behavior of elongated and poorly centered objects.},
+    Annote = {IEEE_J_PAMI {IEEE} Trans. Pattern Anal. Machine Intell. IEEE Transactions on Pattern Analysis and Machine Intelligence}}
+
+@book{Sakurai:1994,
+    Address = {Reading, MA},
+    Author = {Sakurai, J. J.},
+    Bdsk-Color = {3993698047},
+    Date-Modified = {2012-04-18 11:00:46 +1000},
+    Edition = {2nd},
+    Owner = {zkhalid},
+    Publisher = {Addison Wesley Publishing Company, Inc.},
+    Rating = {5},
+    Timestamp = {2010.08.02},
+    Title = {Modern Quantum Mechanics},
+    Year = {1994}}
+
+@book{Colton:1998,
+    Address = {Berlin},
+    Author = {Colton, D. and Kress, R.},
+    Bdsk-Color = {3993698047},
+    Date-Modified = {2012-04-18 11:00:27 +1000},
+    Edition = {second},
+    Google-Scholar = {2528},
+    Google-Scholar-Url = {http://scholar.google.com.au/scholar?q=Inverse+Acoustic+and+Electromagnetic+Scattering+Theory},
+    Publisher = {Springer-Verlag},
+    Rating = {5},
+    Status = {Verified},
+    Title = {Inverse Acoustic and Electromagnetic Scattering Theory},
+    Year = {1998},
+    Abstract = {This book is devoted to the mathematical and numerical analysis of the inverse scattering problem for acoustic and electromagnetic waves. The second edition includes material on Newton's method for the inverse obstacle problem, an elegant proof of uniqueness for the inverse medium problem, a discussion of the spectral theory of the far field operator and a method for determining the support of an inhomogeneous medium from far field data.}}
+
+@article{Simons:2006,
+    Author = {Simons, F. J. and Dahlen, F. A. and Wieczorek, M. A.},
+    Bdsk-Color = {3993698047},
+    Date-Modified = {2012-04-18 11:00:55 +1000},
+    Doi = {10.1137/S0036144504445765},
+    Google-Scholar = {83},
+    Google-Scholar-Url = {http://scholar.google.com.au/scholar?q=Spatiospectral+Concentration+on+a+Sphere},
+    Journal = {SIAM Rev.},
+    Number = {3},
+    Pages = {504-536},
+    Pdf-Url = {http://users.rsise.anu.edu.au/~rod/hilbertbook/Simons-2006.pdf},
+    Rating = {5},
+    Status = {Verified},
+    Title = {Spatiospectral Concentration on a Sphere},
+    Volume = {48},
+    Year = {2006},
+    Abstract = {We pose and solve the analogue of Slepian's time-frequency concentration problem on the surface of the unit sphere to determine an orthogonal family of strictly bandlimited functions that are optimally concentrated within a closed region of the sphere or, alterna- tively, of strictly spacelimited functions that are optimally concentrated in the spherical harmonic domain. Such a basis of simultaneously spatially and spectrally concentrated functions should be a useful data analysis and representation tool in a variety of geophysi- cal and planetary applications, as well as in medical imaging, computer science, cosmology, and numerical analysis. The spherical Slepian functions can be found by solving either an algebraic eigenvalue problem in the spectral domain or a Fredholm integral equation in the spatial domain. The associated eigenvalues are a measure of the spatiospectral concen- tration. When the concentration region is an axisymmetric polar cap, the spatiospectral projection operator commutes with a Sturm-Liouville operator; this enables the eigenfunc- tions to be computed extremely accurately and efficiently, even when their area-bandwidth product, or Shannon number, is large. In the asymptotic limit of a small spatial region and a large spherical harmonic bandwidth, the spherical concentration problem reduces to its planar equivalent, which exhibits self-similarity when the Shannon number is kept invariant.},
+    Annote = {SIAM Review}}
+
+@book{Biedenharn:1981,
+    Address = {Reading, MA},
+    Author = {Biedenharn, L. C. and Louck, J. D.},
+    Bdsk-Color = {3993698047},
+    Date-Modified = {2012-04-18 13:29:01 +1000},
+    Publisher = {Addison Wesley},
+    Rating = {5},
+    Title = {Angular Momentum in Quantum Physics: Theory and Application},
+    Year = {1981}}
+
+@article{Simons:1997,
+    Author = {Simons, M. and Solomon, S. C. and Hager, B. H.},
+    Bdsk-Color = {3993698047},
+    Date-Modified = {2012-04-18 12:56:34 +1000},
+    Doi = {10.1111/j.1365-246X.1997.tb00593.x},
+    Google-Scholar = {107},
+    Google-Scholar-Url = {http://scholar.google.com.au/scholar?q=Localization+of+gravity+and+topography%3A+constraints+on+the+tectonics+and+mantle+dynamics+of+Venus},
+    Journal = {Geophys. J. Int.},
+    Month = oct,
+    Number = {1},
+    Pages = {24-44},
+    Pdf-Url = {http://users.rsise.anu.edu.au/~rod/hilbertbook/Simons-1997.pdf},
+    Rating = {5},
+    Status = {Verified},
+    Title = {Localization of gravity and topography: constraints on the tectonics and mantle dynamics of {V}enus},
+    Volume = {131},
+    Year = {1997},
+    Abstract = {We develop a method for spatio-spectral localization of harmonic data on a sphere and use it to interpret recent high-resolution global estimates of the gravity and topography of Venus in the context of geodynamical models. Our approach applies equally to the simple spatial windowing of harmonic data and to variable-length-scale analyses, which are analogous to a wavelet transform in the Cartesian domain. Using the variable-length-scale approach, we calculate the localized RMS amplitudes of gravity and topography, as well as the spectral admittance between the two fields, as functions of position and wavelength. The observed admittances over 10 per cent of the surface of Venus (highland plateaus and tessera regions) are consistent with isostatic compensation of topography by variations in crustal thickness, while admittances over the remaining 90 per cent of the surface (rises, plains and lowlands) indicate that long-wavelength topography is dominantly the result of vertical convective tractions at the base of the lithosphere. The global average crustal thickness is less than 30 km, but can reach values as large as 40 km beneath tesserae and highland plateaus. We also note that an Earth-like radial viscosity structure cannot be rejected by the gravity and topography data and that, without a mechanical model of the lithosphere, admittance values cannot constrain the thickness of the thermal boundary layer of Venus. Modelling the lithosphere as a thin elastic plate indicates that at the time of formation of relief in highland plateaus and tesserae, the effective elastic plate thickness, Te, was less than 20 km. Estimates of Te at highland rises are consistently less than 30 km. Our inability to find regions with Te > 30 km is inconsistent with predictions made by a class of catastrophic resurfacing models.},
+    Annote = {Geophysical Journal International}}
+
+@article{Audet:2011,
+    Author = {Audet, P.},
+    Bdsk-Color = {3993698047},
+    Date-Modified = {2012-04-18 11:00:23 +1000},
+    Doi = {10.1029/2010JE003710},
+    Google-Scholar = {3},
+    Google-Scholar-Url = {http://scholar.google.com.au/scholar?q=Directional+wavelet+analysis+on+the+sphere%3A+Application+to+gravity+and+topography+of+the+terrestrial+planets},
+    Journal = {J. Geophys. Res.},
+    Month = feb,
+    Pdf-Url = {http://users.rsise.anu.edu.au/~rod/hilbertbook/Audet-2011.pdf},
+    Rating = {5},
+    Status = {Verified},
+    Title = {Directional wavelet analysis on the sphere: Application to gravity and topography of the terrestrial planets},
+    Volume = {116},
+    Year = 2011,
+    Abstract = {The spectral relations (admittance and correlation) between gravity and topography are often used to obtain information on the density structure, flexural support, and heat flow of planetary lithospheres. Mapping spatial variations in these quantities requires spatiospectral analysis techniques. Here we describe the application of a directional, continuous spherical wavelet transform using a wavelet basis constructed from the superposition of azimuthally adjacent complex Morlet wavelets, in a manner similar to the ``fan'' wavelet developed in the plane. The method is applied to gravity and topography of the Earth, Venus, Mars, and the Moon. The wavelet coefficients are used to compute isotropic and directional wavelet autospectra and cross spectra, which are then combined to form the admittance and correlation functions. The resulting maps offer insights into lithospheric structure of the terrestrial planets. In particular we show that the Earth and Venus have uniformly low positive admittance and high correlation, whereas Mars and the Moon display hemispherical contrasts with large negative and anisotropic coefficients coinciding with lowlands. As has long been known, the two largest impact basins in the inner solar system, the South Pole-Aitken basin on the Moon and the Hellas basin on Mars, display low positive admittance and high correlation, indicating isostatic compensation. In contrast, most other impact basins, particularly the Martian and lunar mascons, show negative coefficients at low wavelet degrees suggesting flexural support by a strong lithosphere. These results imply that, although simple isotropic flexural models can account for most observations, future models may need to incorporate anisotropy as an additional parameter.},
+    Annote = {Journal of Geophysical Research}}
+
+@article{Han:2007,
+    Author = {Han, C. and Sun, B. and Ramamoorthi, R. and Grinspun, E.},
+    Bdsk-Color = {3993698047},
+    Date-Modified = {2012-04-18 11:00:31 +1000},
+    Doi = {10.1145/1276377.1276412},
+    Google-Scholar = {39},
+    Google-Scholar-Url = {http://scholar.google.com.au/scholar?q=Frequency+Domain+Normal+Map+Filtering},
+    Journal = {ACM Trans. on Graphics},
+    Month = Jul,
+    Number = {3},
+    Pages = {28:1-28:12},
+    Pdf-Url = {http://users.rsise.anu.edu.au/~rod/hilbertbook/Han-2007.pdf},
+    Rating = {5},
+    Status = {Verified},
+    Title = {Frequency Domain Normal Map Filtering},
+    Volume = {26},
+    Year = {2007},
+    Abstract = {Filtering is critical for representing detail, such as color textures or normal maps, across a variety of scales. While MIP-mapping texture maps is commonplace, accurate normal map filtering remains a challenging problem because of nonlinearities in shading---we cannot simply average nearby surface normals. In this paper, we show analytically that normal map filtering can be formalized as a spherical convolution of the normal distribution function (NDF) and the BRDF, for a large class of common BRDFs such as Lambertian, microfacet and factored measurements. This theoretical result explains many previous filtering techniques as special cases, and leads to a generalization to a broader class of measured and analytic BRDFs. Our practical algorithms leverage a significant body of work that has studied lighting-BRDF convolution. We show how spherical harmonics can be used to filter the NDF for Lambertian and low-frequency specular BRDFs, while spherical von Mises-Fisher distributions can be used for high-frequency materials.},
+    Annote = {ACM Transactions on Graphics}}
+
+@article{Yeo:2008,
+    Author = {Yeo, B. T. T. and Ou, W. and Golland, P.},
+    Bdsk-Color = {3993698047},
+    Date-Modified = {2012-04-18 11:01:05 +1000},
+    Doi = {10.1109/TIP.2007.915550},
+    Google-Scholar = {15},
+    Google-Scholar-Url = {http://scholar.google.com.au/scholar?q=On+the+Construction+of+Invertible+Filter+Banks+on+the+2-Sphere},
+    Journal = IEEE_J_IP,
+    Month = mar,
+    Number = {3},
+    Pages = {283-300},
+    Pdf-Url = {http://users.rsise.anu.edu.au/~rod/hilbertbook/Yeo-2008.pdf},
+    Rating = {5},
+    Status = {Verified},
+    Title = {On the Construction of Invertible Filter Banks on the 2-Sphere},
+    Volume = {17},
+    Year = {2008},
+    Abstract = {The theories of signal sampling, filter banks, wavelets, and ldquoovercomplete waveletsrdquo are well established for the Euclidean spaces and are widely used in the processing and analysis of images. While recent advances have extended some filtering methods to spherical images, many key challenges remain. In this paper, we develop theoretical conditions for the invertibility of filter banks under continuous spherical convolution. Furthermore, we present an analogue of the Papoulis generalized sampling theorem on the 2-Sphere. We use the theoretical results to establish a general framework for the design of invertible filter banks on the sphere and demonstrate the approach with examples of self-invertible spherical wavelets and steerable pyramids. We conclude by examining the use of a self-invertible spherical steerable pyramid in a denoising experiment and discussing the computational complexity of the filtering framework.}}
+
+@techreport{planck:bluebook,
+    author = {{P}lanck collaboration},
+    collaboration = "{P}lanck collaboration",
+    TITLE  = "{ESA} {P}lanck Blue Book",
+    institution = "ESA",
+    number = "ESA-SCI(2005)1",
+    year = "2005",
+    eprint    = "astro-ph/0604069"
+}

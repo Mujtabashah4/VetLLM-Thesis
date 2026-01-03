@@ -1,0 +1,612 @@
+\chapter{Methodology}
+\label{chap:methodology}
+
+This chapter presents the detailed methodology for VetLLM, our deep learning-based livestock disease outbreak prediction system. We describe the dataset collection and preprocessing, model architectures, training procedures, and evaluation framework.
+
+\section{Dataset Description}
+\label{sec:dataset}
+
+\subsection{Data Source and Collection}
+
+The dataset was collected from the \textbf{University of Veterinary and Animal Sciences (UVAS), Lahore, Pakistan}. UVAS is Pakistan's premier veterinary institution, providing clinical services across multiple species and disease categories. Data was collected under institutional ethics approval following established veterinary data governance protocols.
+
+\textbf{Collection Period}: Data spans multiple seasons (2023--2024) to capture seasonal disease patterns, including monsoon (higher tick-borne disease prevalence), summer (heat stress conditions), and winter (respiratory disease peaks).
+
+\textbf{Collection Process}:
+\begin{enumerate}
+    \item Veterinary clinicians recorded clinical observations during routine examinations
+    \item Symptoms were documented using standardized binary indicators
+    \item Diagnoses were confirmed through clinical examination and, where applicable, laboratory verification
+    \item Data was anonymized by removing identifying information (farm location, owner details)
+\end{enumerate}
+
+\subsection{Dataset Statistics}
+
+Table~\ref{tab:dataset_statistics} presents the overall dataset statistics:
+
+\begin{table}[htbp]
+\centering
+\caption{VetLLM Dataset Statistics}
+\label{tab:dataset_statistics}
+\begin{tabular}{ll}
+\toprule
+\textbf{Attribute} & \textbf{Value} \\
+\midrule
+Total Animals & 1,050 \\
+Species & 4 (Cattle, Buffalo, Sheep, Goat) \\
+Disease Categories & 18--25 confirmed \\
+Symptom Features & 15 binary indicators \\
+Average Diagnoses per Animal & 1.4 (range: 1--3) \\
+Animals with Multiple Diagnoses & $\sim$25\% \\
+Temporal Coverage & Multi-seasonal (2023--2024) \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Species Distribution}
+
+Table~\ref{tab:species_distribution} details the species-level breakdown:
+
+\begin{table}[htbp]
+\centering
+\caption{Species Distribution in Dataset}
+\label{tab:species_distribution}
+\begin{tabular}{lccc}
+\toprule
+\textbf{Species} & \textbf{Scientific Name} & \textbf{Count} & \textbf{Percentage} \\
+\midrule
+Cattle & \textit{Bos taurus} & $\sim$400 & 38.1\% \\
+Buffalo & \textit{Bubalus bubalis} & $\sim$300 & 28.6\% \\
+Sheep & \textit{Ovis aries} & $\sim$200 & 19.0\% \\
+Goat & \textit{Capra aegagrus hircus} & $\sim$150 & 14.3\% \\
+\midrule
+\textbf{Total} & & \textbf{1,050} & \textbf{100\%} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Disease Categories}
+
+Diseases are categorized into four major groups following veterinary classification standards:
+
+\textbf{Category 1: Viral Diseases (6 conditions)}
+\begin{itemize}
+    \item Lumpy Skin Disease (LSD)
+    \item Foot and Mouth Disease (FMD)
+    \item Poxvirus infections
+    \item Hemorrhagic Septicemia (HS)
+    \item Peste des Petits Ruminants (PPR)
+    \item Other viral infections
+\end{itemize}
+
+\textbf{Category 2: Bacterial Diseases (5 conditions)}
+\begin{itemize}
+    \item Brucellosis
+    \item Tuberculosis (bTB)
+    \item Mastitis
+    \item Metritis
+    \item Fascioliasis
+\end{itemize}
+
+\textbf{Category 3: Parasitic Diseases (4 conditions)}
+\begin{itemize}
+    \item Tick-borne diseases
+    \item Internal parasites
+    \item Coccidiosis
+    \item Parasitic anemia
+\end{itemize}
+
+\textbf{Category 4: Metabolic/Nutritional Conditions (4 conditions)}
+\begin{itemize}
+    \item Hypocalcemia (milk fever)
+    \item Anorexia/Malnutrition
+    \item Black Quarter
+    \item Enterotoxemia
+\end{itemize}
+
+\subsection{Clinical Symptom Features}
+
+Fifteen binary symptom features are recorded for each animal:
+
+\begin{table}[htbp]
+\centering
+\caption{Clinical Symptom Features}
+\label{tab:symptoms}
+\begin{tabular}{clc}
+\toprule
+\textbf{\#} & \textbf{Symptom Description} & \textbf{Type} \\
+\midrule
+1 & Fever (elevated body temperature) & Binary (0/1) \\
+2 & Water/fluid leakage from eyes/nose/mouth & Binary (0/1) \\
+3 & Loose motions (diarrhea) & Binary (0/1) \\
+4 & Cough & Binary (0/1) \\
+5 & Blisters on lips/mouth & Binary (0/1) \\
+6 & Lameness & Binary (0/1) \\
+7 & Stiffening of body & Binary (0/1) \\
+8 & Fluid leakage from nose (nasal discharge) & Binary (0/1) \\
+9 & Severe cough & Binary (0/1) \\
+10 & Pain in stomach / screaming & Binary (0/1) \\
+11 & Loose motions with blood & Binary (0/1) \\
+12 & Blood in milk & Binary (0/1) \\
+13 & Vaginal abnormalities & Binary (0/1) \\
+14 & Teat abnormalities & Binary (0/1) \\
+15 & Weakness / lethargy & Binary (0/1) \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Data Format}
+
+Each record follows the multi-label format:
+\begin{itemize}
+    \item \textbf{Animal ID}: Anonymized identifier (e.g., ``Sheep\_2024\_001'')
+    \item \textbf{Species}: Categorical (Cattle/Buffalo/Sheep/Goat)
+    \item \textbf{Symptoms}: Binary vector $x \in \{0,1\}^{15}$
+    \item \textbf{Diseases}: Multi-hot vector $y \in \{0,1\}^{C}$ where $C$ = number of disease classes
+\end{itemize}
+
+\textbf{Example Record}:
+\begin{lstlisting}[language=Python]
+{
+    "animal_id": "Cattle_2024_042",
+    "species": "Cattle",
+    "symptoms": [1, 0, 1, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1],
+    "diseases": {
+        "FMD": 1, "Brucellosis": 0, "Mastitis": 0, ...
+    },
+    "visit_sequence": [  # For temporal modeling
+        {"day": 1, "symptoms": [1, 0, 0, ...]},
+        {"day": 3, "symptoms": [1, 1, 0, ...]},
+        {"day": 5, "symptoms": [1, 1, 1, ...]}
+    ]
+}
+\end{lstlisting}
+
+\section{Data Preprocessing}
+\label{sec:preprocessing}
+
+\subsection{Data Cleaning}
+
+\begin{enumerate}
+    \item \textbf{Missing Value Handling}: Records with $>$20\% missing symptom values are excluded. Remaining missing values are imputed as 0 (symptom absent), following the conservative clinical assumption.
+    
+    \item \textbf{Duplicate Removal}: Exact duplicate records are removed. Near-duplicates (same animal, same visit) are merged.
+    
+    \item \textbf{Validation}: Clinical experts reviewed a random sample of 100 records for data quality assurance.
+\end{enumerate}
+
+\subsection{Label Encoding}
+
+Diseases are encoded as a multi-hot binary vector:
+
+\begin{equation}
+y_i = [y_{i1}, y_{i2}, \ldots, y_{iC}] \in \{0, 1\}^C
+\end{equation}
+
+where $y_{ij} = 1$ if animal $i$ has disease $j$, and $C$ is the total number of disease classes.
+
+\subsection{Train/Validation/Test Split}
+
+We employ stratified splitting to ensure balanced representation:
+
+\begin{table}[htbp]
+\centering
+\caption{Dataset Split}
+\label{tab:split}
+\begin{tabular}{lccc}
+\toprule
+\textbf{Split} & \textbf{Proportion} & \textbf{Approximate Count} & \textbf{Purpose} \\
+\midrule
+Training & 70\% & 735 & Model training \\
+Validation & 15\% & 158 & Hyperparameter tuning \\
+Test & 15\% & 157 & Final evaluation \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Stratification ensures:
+\begin{itemize}
+    \item Each species is proportionally represented in all splits
+    \item Disease class distribution is preserved across splits
+    \item Rare diseases appear in all splits where possible
+\end{itemize}
+
+\subsection{Temporal Sequence Construction}
+
+For LSTM modeling, we construct temporal sequences from animals with multiple visits:
+
+\begin{equation}
+X_i^{\text{seq}} = [x_i^{(t-T+1)}, x_i^{(t-T+2)}, \ldots, x_i^{(t)}]
+\end{equation}
+
+where $T$ is the sequence length (typically 3--5 visits). For animals with fewer visits, we apply:
+\begin{itemize}
+    \item \textbf{Zero-padding}: Pad missing early visits with zero vectors
+    \item \textbf{Masking}: Use masking layers to ignore padded positions during training
+\end{itemize}
+
+\section{Model Architecture}
+\label{sec:architecture}
+
+\subsection{Overview}
+
+The VetLLM architecture comprises four main components:
+
+\begin{enumerate}
+    \item \textbf{Shared Symptom Encoder}: Learns general symptom representations
+    \item \textbf{LSTM Temporal Module}: Captures symptom progression patterns
+    \item \textbf{Species-Specific Heads}: Adapt predictions for each species
+    \item \textbf{Multi-Label Output}: Produces disease probability vectors
+\end{enumerate}
+
+Figure~\ref{fig:architecture} illustrates the overall architecture.
+
+\begin{figure}[htbp]
+\centering
+\fbox{
+\begin{minipage}{0.9\textwidth}
+\centering
+\textbf{VetLLM Architecture}\\[0.5cm]
+\begin{tabular}{c}
+Input: Symptom Sequence $[x_{t-2}, x_{t-1}, x_t]$ \\
+$\downarrow$ \\
+\fbox{Shared Symptom Encoder (Dense 128 $\rightarrow$ 64)} \\
+$\downarrow$ \\
+\fbox{LSTM Layer (64 units, return sequences=False)} \\
+$\downarrow$ \\
+\begin{tabular}{|c|c|c|c|}
+\hline
+Cattle Head & Buffalo Head & Sheep Head & Goat Head \\
+\hline
+\end{tabular} \\
+$\downarrow$ \\
+Multi-Label Output (Sigmoid activation) \\
+\end{tabular}
+\end{minipage}
+}
+\caption{VetLLM Model Architecture}
+\label{fig:architecture}
+\end{figure}
+
+\subsection{Shared Symptom Encoder}
+
+The shared encoder transforms raw symptom vectors into learned representations:
+
+\begin{align}
+h_1 &= \text{ReLU}(\text{BatchNorm}(W_1 x + b_1)) \\
+h_2 &= \text{Dropout}_{0.3}(\text{ReLU}(\text{BatchNorm}(W_2 h_1 + b_2)))
+\end{align}
+
+where:
+\begin{itemize}
+    \item $W_1 \in \mathbb{R}^{128 \times 15}$: First layer weights
+    \item $W_2 \in \mathbb{R}^{64 \times 128}$: Second layer weights
+    \item BatchNorm: Batch normalization for training stability
+    \item Dropout: 30\% dropout for regularization
+\end{itemize}
+
+\subsection{LSTM Temporal Module}
+
+The LSTM processes symptom sequences to capture temporal dynamics:
+
+\begin{align}
+f_t &= \sigma(W_f [h_{t-1}, z_t] + b_f) \\
+i_t &= \sigma(W_i [h_{t-1}, z_t] + b_i) \\
+\tilde{C}_t &= \tanh(W_C [h_{t-1}, z_t] + b_C) \\
+C_t &= f_t \odot C_{t-1} + i_t \odot \tilde{C}_t \\
+o_t &= \sigma(W_o [h_{t-1}, z_t] + b_o) \\
+h_t &= o_t \odot \tanh(C_t)
+\end{align}
+
+where $z_t$ is the encoded symptom representation at time $t$.
+
+\textbf{Configuration}:
+\begin{itemize}
+    \item LSTM units: 64
+    \item Return sequences: False (final state only)
+    \item Recurrent dropout: 0.2
+\end{itemize}
+
+\subsection{Species-Specific Prediction Heads}
+
+Each species has a dedicated prediction head:
+
+\begin{equation}
+\hat{y}_s = \sigma(W_s h_{\text{final}} + b_s)
+\end{equation}
+
+where $s \in \{\text{cattle, buffalo, sheep, goat}\}$ and $h_{\text{final}}$ is the LSTM output.
+
+\textbf{Head Architecture}:
+\begin{itemize}
+    \item Dense layer: 32 units, ReLU activation
+    \item Output layer: $C_s$ units (species-specific disease count), Sigmoid activation
+\end{itemize}
+
+\subsection{Complete Forward Pass}
+
+For input sequence $X = [x_{t-2}, x_{t-1}, x_t]$ and species $s$:
+
+\begin{align}
+z_\tau &= \text{Encoder}(x_\tau) \quad \forall \tau \in \{t-2, t-1, t\} \\
+h_{\text{final}} &= \text{LSTM}([z_{t-2}, z_{t-1}, z_t]) \\
+\hat{y} &= \text{Head}_s(h_{\text{final}})
+\end{align}
+
+\section{Loss Function Design}
+\label{sec:loss}
+
+\subsection{Baseline: Binary Cross-Entropy}
+
+Standard multi-label loss:
+
+\begin{equation}
+\mathcal{L}_{\text{BCE}} = -\frac{1}{N} \sum_{i=1}^{N} \sum_{j=1}^{C} \left[ y_{ij} \log(\hat{y}_{ij}) + (1-y_{ij}) \log(1-\hat{y}_{ij}) \right]
+\end{equation}
+
+\subsection{Our Enhanced Loss: Weighted Focal Loss}
+
+We address class imbalance through combined weighting:
+
+\begin{equation}
+\boxed{
+\mathcal{L}_{\text{VetLLM}} = -\frac{1}{N} \sum_{i=1}^{N} \sum_{j=1}^{C} w_j \left[ y_{ij}(1-\hat{y}_{ij})^{\gamma} \log(\hat{y}_{ij}) + (1-y_{ij}) \hat{y}_{ij}^{\gamma} \log(1-\hat{y}_{ij}) \right]
+}
+\label{eq:vetllm_loss_final}
+\end{equation}
+
+\textbf{Component 1: Inverse Prevalence Weighting}
+
+\begin{equation}
+w_j = \frac{1}{p_j} = \frac{N}{\sum_{i=1}^{N} y_{ij}}
+\end{equation}
+
+where $p_j$ is the prevalence of disease $j$. This amplifies gradient signals for rare diseases.
+
+\textbf{Component 2: Focal Loss Term}
+
+The terms $(1-\hat{y}_{ij})^\gamma$ and $\hat{y}_{ij}^\gamma$ with $\gamma = 2$ down-weight easy examples:
+\begin{itemize}
+    \item Confident correct predictions: $(1-0.9)^2 = 0.01$ (small loss)
+    \item Uncertain predictions: $(1-0.5)^2 = 0.25$ (larger loss, focused learning)
+\end{itemize}
+
+\subsection{Multi-Task Loss Aggregation}
+
+For multi-species training:
+
+\begin{equation}
+\mathcal{L}_{\text{total}} = \sum_{s \in \mathcal{S}} \lambda_s \mathcal{L}_s
+\end{equation}
+
+where $\mathcal{S} = \{\text{cattle, buffalo, sheep, goat}\}$ and $\lambda_s = \frac{n_s}{N}$ weights by species sample count.
+
+\section{Training Procedure}
+\label{sec:training}
+
+\subsection{Optimization}
+
+\begin{itemize}
+    \item \textbf{Optimizer}: AdamW~\cite{loshchilov_adamw} with weight decay 0.01
+    \item \textbf{Learning Rate}: $1 \times 10^{-3}$ with cosine annealing
+    \item \textbf{Batch Size}: 32
+    \item \textbf{Epochs}: 100 with early stopping (patience = 10)
+\end{itemize}
+
+\subsection{Regularization}
+
+\begin{itemize}
+    \item \textbf{Dropout}: 0.3 in encoder, 0.2 in LSTM
+    \item \textbf{L2 Regularization}: $\lambda = 1 \times 10^{-4}$
+    \item \textbf{Batch Normalization}: Applied after each dense layer
+    \item \textbf{Early Stopping}: Monitor validation loss
+\end{itemize}
+
+\subsection{Training Algorithm}
+
+Algorithm~\ref{alg:training} presents the training procedure:
+
+\begin{algorithm}[htbp]
+\caption{VetLLM Training Procedure}
+\label{alg:training}
+\begin{algorithmic}[1]
+\Require Training data $\mathcal{D}_{\text{train}}$, Validation data $\mathcal{D}_{\text{val}}$
+\Require Model parameters $\theta$, Learning rate $\eta$, Epochs $E$, Patience $P$
+\State Initialize $\theta$ randomly
+\State best\_loss $\gets \infty$, patience\_counter $\gets 0$
+\For{epoch $= 1$ to $E$}
+    \For{batch $(X, Y, S)$ in $\mathcal{D}_{\text{train}}$}
+        \State $\hat{Y} \gets \text{Forward}(X, S; \theta)$
+        \State $\mathcal{L} \gets \mathcal{L}_{\text{VetLLM}}(Y, \hat{Y})$
+        \State $\theta \gets \theta - \eta \nabla_\theta \mathcal{L}$
+    \EndFor
+    \State val\_loss $\gets$ Evaluate($\mathcal{D}_{\text{val}}$, $\theta$)
+    \If{val\_loss $<$ best\_loss}
+        \State best\_loss $\gets$ val\_loss
+        \State Save checkpoint($\theta$)
+        \State patience\_counter $\gets 0$
+    \Else
+        \State patience\_counter $\gets$ patience\_counter $+ 1$
+    \EndIf
+    \If{patience\_counter $\geq P$}
+        \State \textbf{break} \Comment{Early stopping}
+    \EndIf
+\EndFor
+\State \Return Best checkpoint
+\end{algorithmic}
+\end{algorithm}
+
+\subsection{Computational Requirements}
+
+\begin{table}[htbp]
+\centering
+\caption{Computational Requirements}
+\label{tab:compute}
+\begin{tabular}{ll}
+\toprule
+\textbf{Resource} & \textbf{Specification} \\
+\midrule
+GPU Memory & 8--16 GB (consumer-grade) \\
+Training Time & 2--4 hours (100 epochs) \\
+Inference Time & $<$2 seconds per sample \\
+Model Parameters & $\sim$500K trainable \\
+Storage & $<$50 MB model file \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Baseline Models}
+\label{sec:baselines}
+
+We compare VetLLM against the following baselines:
+
+\subsection{Logistic Regression}
+
+Multi-label logistic regression treating each disease independently:
+
+\begin{equation}
+\hat{y}_j = \sigma(w_j^T x + b_j)
+\end{equation}
+
+Trained using L-BFGS optimization with L2 regularization.
+
+\subsection{XGBoost}
+
+Gradient boosting ensemble with multi-label wrapper:
+\begin{itemize}
+    \item Trees: 100
+    \item Max depth: 6
+    \item Learning rate: 0.1
+    \item Multi-output strategy: One-vs-rest
+\end{itemize}
+
+\subsection{Fully Connected Neural Network (FCNN)}
+
+Three-layer MLP without temporal modeling:
+\begin{align}
+h_1 &= \text{ReLU}(W_1 x + b_1) \\
+h_2 &= \text{ReLU}(W_2 h_1 + b_2) \\
+\hat{y} &= \sigma(W_3 h_2 + b_3)
+\end{align}
+
+Architecture: 15 $\rightarrow$ 128 $\rightarrow$ 64 $\rightarrow$ $C$ with dropout 0.3.
+
+\section{Evaluation Metrics}
+\label{sec:metrics}
+
+\subsection{Multi-Label Classification Metrics}
+
+\textbf{Macro F1 Score}: Average F1 across all disease classes:
+
+\begin{equation}
+\text{Macro-F1} = \frac{1}{C} \sum_{j=1}^{C} \text{F1}_j = \frac{1}{C} \sum_{j=1}^{C} \frac{2 \cdot P_j \cdot R_j}{P_j + R_j}
+\end{equation}
+
+\textbf{Micro F1 Score}: Aggregate across all predictions:
+
+\begin{equation}
+\text{Micro-F1} = \frac{2 \cdot \sum_j TP_j}{\sum_j (2 \cdot TP_j + FP_j + FN_j)}
+\end{equation}
+
+\textbf{Rare Disease F1}: F1 computed only for diseases with $<$5\% prevalence, measuring performance on critical low-frequency conditions.
+
+\textbf{Hamming Loss}: Fraction of incorrect label predictions:
+
+\begin{equation}
+\text{Hamming} = \frac{1}{N \cdot C} \sum_{i=1}^{N} \sum_{j=1}^{C} \mathbb{1}[y_{ij} \neq \hat{y}_{ij}]
+\end{equation}
+
+\textbf{Exact Match Ratio}: Proportion of samples where all labels are correctly predicted:
+
+\begin{equation}
+\text{EMR} = \frac{1}{N} \sum_{i=1}^{N} \mathbb{1}[y_i = \hat{y}_i]
+\end{equation}
+
+\subsection{Early Warning Metrics}
+
+\textbf{Lead Time}: Days between model prediction and clinical diagnosis for correctly predicted diseases. Computed by retrospective analysis of temporal sequences.
+
+\textbf{Early Detection Rate}: Proportion of diseases predicted before clinical manifestation.
+
+\subsection{Interpretability Metrics}
+
+\textbf{Veterinarian Agreement}: Percentage of predictions where veterinarian experts agree with model's explanation (top contributing symptoms match clinical reasoning).
+
+\textbf{SHAP Consistency}: Correlation between SHAP values and known clinical symptom-disease associations.
+
+\section{Cross-Validation Strategy}
+\label{sec:cross_validation}
+
+We employ 5-fold stratified cross-validation:
+
+\begin{enumerate}
+    \item Data is divided into 5 folds with stratification by species and disease prevalence
+    \item Each fold serves as validation set once while remaining 4 folds form training set
+    \item Final performance is mean $\pm$ standard deviation across folds
+\end{enumerate}
+
+This approach provides:
+\begin{itemize}
+    \item Robust performance estimates with confidence intervals
+    \item Detection of overfitting (train-validation gap)
+    \item Validation across different data subsets
+\end{itemize}
+
+\section{Interpretability Implementation}
+\label{sec:interpretability}
+
+\subsection{SHAP Integration}
+
+We compute SHAP values for each prediction:
+
+\begin{equation}
+\phi_j(x) = \sum_{S \subseteq \mathcal{F} \setminus \{j\}} \frac{|S|!(|\mathcal{F}|-|S|-1)!}{|\mathcal{F}|!} \left[ f(S \cup \{j\}) - f(S) \right]
+\end{equation}
+
+Implementation uses KernelSHAP for model-agnostic computation.
+
+\subsection{Clinical Explanation Format}
+
+For each prediction, we generate:
+
+\begin{lstlisting}[frame=single]
+Animal ID: Cattle_2024_042
+Species: Cattle
+
+Predicted Diseases (Confidence):
+1. Foot and Mouth Disease: 0.92 [HIGH]
+2. Secondary Bacterial Infection: 0.67 [MODERATE]
+3. Malnutrition: 0.34 [LOW]
+
+Key Symptom Contributions (SHAP):
+- Blisters on lips: +0.42 (strongly indicates FMD)
+- Lameness: +0.31 (supports FMD diagnosis)
+- Fever: +0.18 (consistent with infection)
+- Blood in milk: -0.05 (reduces mastitis probability)
+
+Recommendation: Consider FMD testing and isolation.
+\end{lstlisting}
+
+\section{Experimental Design Summary}
+\label{sec:experimental_design}
+
+Table~\ref{tab:experimental_design} summarizes the experimental phases:
+
+\begin{table}[htbp]
+\centering
+\caption{Experimental Design Phases}
+\label{tab:experimental_design}
+\begin{tabular}{lp{8cm}}
+\toprule
+\textbf{Phase} & \textbf{Description} \\
+\midrule
+Phase 1: Baseline & Establish baseline performance with Logistic Regression, XGBoost, and FCNN \\
+Phase 2: Temporal & Add LSTM temporal modeling, compare to static baselines \\
+Phase 3: Weighted Loss & Implement weighted focal loss, evaluate rare disease improvement \\
+Phase 4: Multi-Task & Add species-specific heads with shared encoder, evaluate transfer \\
+Phase 5: Integration & Combine all components into final VetLLM model \\
+Phase 6: Interpretability & Integrate SHAP explanations, validate with veterinarians \\
+Phase 7: Ablation & Systematically remove components to measure individual contributions \\
+\bottomrule
+\end{tabular}
+\end{table}

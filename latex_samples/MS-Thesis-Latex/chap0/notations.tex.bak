@@ -1,0 +1,10 @@
+\chapter*{Notations}
+\newcommand{\bv}[1]{\boldsymbol{#1}}
+\newcommand{\shc}[3]{({#1})_{#2}^{#3}}
+
+
+\begin{tabular}{ll}
+  $x$ & scalar variable \\
+  $\bv{{x}}$ & vector variable \\
+  $\mathbf{X}$ & matrix variable \\
+\end{tabular}

@@ -1,0 +1,16 @@
+\chapter*{Abstract}
+
+Pakistan's livestock sector, comprising approximately 212 million animals and contributing 2.3\% to national GDP, faces a critical challenge in disease management. Current reactive surveillance systems result in detection delays of 4--6 months, leading to annual economic losses exceeding \$500 million from preventable diseases such as Lumpy Skin Disease (LSD), Foot and Mouth Disease (FMD), and Brucellosis. The 2021--2022 LSD outbreak, which infected over 36,000 cattle before official detection, exemplifies this systemic failure.
+
+This thesis presents \textbf{VetLLM}, a deep learning-based livestock disease outbreak prediction system designed for early warning and clinical decision support. Our approach addresses four fundamental limitations of existing methods: (1) the data scarcity paradox where millions of clinical notes exist without structured annotations; (2) multi-label classification complexity where animals present with 2--4 concurrent diseases; (3) the absence of temporal symptom modeling for early prediction; and (4) the lack of interpretable outputs necessary for clinical adoption.
+
+We introduce a multi-component innovation framework comprising: (i) a verified dataset of 1,050 animals across four species (cattle, buffalo, sheep, goat) with 18--25 confirmed diseases and 15 clinical symptoms collected from the University of Veterinary and Animal Sciences (UVAS); (ii) a weighted multi-label loss function with focal components that emphasizes rare but critical diseases; (iii) Long Short-Term Memory (LSTM) networks for temporal symptom progression modeling enabling 3--7 day early warning; and (iv) multi-task learning architecture for species-adaptive knowledge transfer achieving 15--25\% data efficiency gains.
+
+Experimental results demonstrate that VetLLM achieves a Macro F1 score of 0.89, representing a 9.9\% improvement over the XGBoost baseline (0.81). More significantly, rare disease detection improves by 40\% (F1: 0.55 $\rightarrow$ 0.77), addressing the critical gap where clinical impact is highest. The temporal modeling component enables prediction 3--7 days before clinical manifestation, transforming veterinary practice from reactive diagnosis to proactive early warning.
+
+Our interpretability framework, based on SHAP (SHapley Additive exPlanations) values, achieves greater than 80\% agreement with veterinarian clinical reasoning, addressing the trust barrier essential for clinical adoption. The system is designed for deployment on consumer-grade hardware (16GB GPU), making advanced AI accessible to typical Pakistani veterinary practices.
+
+This research contributes the first comprehensive deep learning framework for multi-species, multi-label livestock disease prediction optimized for South Asian veterinary contexts. The practical deployment pathway, with estimated national-scale value of \$500M+ annually, bridges the gap between Western AI research and regional agricultural realities.
+
+\vspace{1cm}
+\noindent\textbf{Keywords:} Deep Learning, Veterinary Diagnosis, Livestock Disease Prediction, LSTM, Multi-label Classification, Clinical Decision Support, Disease Outbreak Early Warning, Transfer Learning

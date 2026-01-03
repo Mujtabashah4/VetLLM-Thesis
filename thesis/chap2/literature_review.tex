@@ -1,0 +1,419 @@
+\chapter{Literature Review}
+\label{chap:literature_review}
+
+This chapter provides a comprehensive review of the literature relevant to livestock disease prediction and clinical decision support systems. We examine traditional veterinary surveillance approaches, the evolution of machine learning in medical diagnosis, deep learning architectures for tabular and sequential data, multi-label classification techniques, and interpretable AI methods. We conclude by identifying research gaps that motivate our proposed approach.
+
+\section{Traditional Veterinary Disease Surveillance}
+\label{sec:traditional_surveillance}
+
+\subsection{Clinical Diagnosis Methods}
+
+Traditional veterinary diagnosis relies on a combination of clinical examination, laboratory testing, and practitioner expertise~\cite{radostits_veterinary_medicine}:
+
+\textbf{Physical Examination}: Veterinarians assess observable signs including body temperature, respiratory rate, mucous membrane color, posture, gait, and behavioral changes. While essential, physical examination is inherently subjective and dependent on practitioner experience.
+
+\textbf{Laboratory Testing}: Definitive diagnosis often requires:
+\begin{itemize}
+    \item \textbf{Serology}: Antibody detection for diseases like Brucellosis (ELISA testing)
+    \item \textbf{PCR (Polymerase Chain Reaction)}: Pathogen DNA/RNA detection
+    \item \textbf{Culture}: Bacterial isolation and identification
+    \item \textbf{Histopathology}: Tissue examination for pathological changes
+\end{itemize}
+
+Laboratory confirmation, while accurate, introduces delays of hours to days and incurs significant costs, making it impractical for routine screening in resource-limited settings~\cite{veterinary_diagnostics_review}.
+
+\subsection{Surveillance System Types}
+
+\textbf{Passive Surveillance}: The predominant model in developing countries, passive surveillance relies on voluntary reporting by farmers and veterinarians~\cite{who_surveillance_guidelines}. Limitations include:
+\begin{itemize}
+    \item Time lag of days to weeks before data reaches authorities
+    \item Estimated 30--50\% of actual outbreaks remain undetected
+    \item Systematic bias: large outbreaks over-reported, endemic diseases under-reported
+    \item Geographic and temporal gaps in coverage
+\end{itemize}
+
+\textbf{Active Surveillance}: Systematic monitoring through regular sampling and testing. While more reliable, active surveillance requires substantial resources and is therefore limited in implementation across Pakistan, typically focusing only on export-critical diseases~\cite{active_surveillance_review}.
+
+\subsection{Limitations of Current Approaches}
+
+The fundamental limitations driving the need for AI-based approaches include:
+
+\begin{enumerate}
+    \item \textbf{Cognitive Limitations}: Processing 15+ symptom variables simultaneously, considering species-specific presentations, and accounting for disease co-occurrence patterns exceeds human cognitive capacity for rapid, consistent decision-making~\cite{cognitive_limits_diagnosis}.
+    
+    \item \textbf{Temporal Constraints}: Manual surveillance cannot achieve the speed necessary for early outbreak detection. By the time traditional systems identify an outbreak, exponential spread has already occurred.
+    
+    \item \textbf{Data Integration}: No mechanism exists to aggregate clinical observations across practitioners, preventing pattern identification at population scale.
+    
+    \item \textbf{Predictive Incapacity}: Traditional approaches are inherently reactive---they can only diagnose existing disease, not predict impending disease development.
+\end{enumerate}
+
+\section{Machine Learning for Medical Diagnosis}
+\label{sec:ml_medical}
+
+\subsection{Historical Development}
+
+The application of machine learning to medical diagnosis has evolved through several paradigms~\cite{ml_medicine_review}:
+
+\textbf{Expert Systems (1970s--1990s)}: Rule-based systems like MYCIN encoded explicit clinical knowledge. While interpretable, these systems proved brittle and difficult to maintain as medical knowledge expanded~\cite{shortliffe_mycin}.
+
+\textbf{Statistical Learning (1990s--2010s)}: Methods including logistic regression, decision trees, and support vector machines enabled learning from data rather than explicit rules. Studies demonstrated diagnostic accuracy comparable to physicians for specific conditions~\cite{statistical_learning_medicine}.
+
+\textbf{Deep Learning Era (2012--present)}: The breakthrough performance of deep neural networks on image classification~\cite{krizhevsky_imagenet} catalyzed adoption in medical imaging. Applications now span radiology~\cite{deep_learning_radiology}, pathology~\cite{deep_learning_pathology}, and clinical text analysis~\cite{clinical_nlp_review}.
+
+\subsection{Veterinary-Specific Applications}
+
+Machine learning applications in veterinary medicine have lagged behind human medicine due to data scarcity and fragmentation~\cite{veterinary_ai_review}. Notable developments include:
+
+\textbf{DeepTag (2018)}: Pioneering work on automated veterinary diagnosis coding from clinical notes. Using 100,000+ labeled examples from corporate veterinary practices, DeepTag achieved 65--70\% F1 on disease classification~\cite{deeptag_2018}. Limitations included dependence on large labeled datasets unavailable to most institutions.
+
+\textbf{VetTag (2019)}: Improved upon DeepTag with enhanced neural architectures, achieving 74.7\% F1 on top diagnoses~\cite{vettag_2019}. However, the approach remained data-intensive and focused on common conditions, with poor performance on rare diseases.
+
+\textbf{Image-Based Disease Detection}: Recent studies have applied deep learning to visual disease identification:
+\begin{itemize}
+    \item Saqib et al. (2024) achieved 95\% accuracy for Lumpy Skin Disease detection using MobileNetV2~\cite{saqib_lsd_2024}
+    \item NIH comparative study (2024) evaluated 10+ CNN architectures, with VGG16 achieving 96.07\% accuracy on LSD image classification~\cite{nih_lsd_2024}
+\end{itemize}
+
+\textbf{Limitation of Image-Based Approaches}: While achieving high accuracy, image-based methods fundamentally require visible lesions---they detect disease \textit{after} clinical manifestation rather than enabling early prediction. Our approach addresses this limitation through symptom-based temporal modeling.
+
+\section{Deep Learning Architectures for Tabular Data}
+\label{sec:dl_tabular}
+
+Veterinary clinical data is predominantly tabular (structured symptom features), for which specialized architectures have been developed~\cite{tabular_dl_review}.
+
+\subsection{Gradient Boosting Methods}
+
+\textbf{XGBoost (eXtreme Gradient Boosting)}~\cite{chen_xgboost} remains a strong baseline for tabular data:
+
+\begin{equation}
+\hat{y}_i = \sum_{k=1}^{K} f_k(x_i), \quad f_k \in \mathcal{F}
+\end{equation}
+
+where $f_k$ represents individual decision trees and $\mathcal{F}$ is the function space of all possible trees. The objective function:
+
+\begin{equation}
+\text{obj} = \sum_{i=1}^{N} l(y_i, \hat{y}_i) + \sum_{k=1}^{K} \Omega(f_k)
+\end{equation}
+
+balances predictive loss $l$ against regularization $\Omega$ to prevent overfitting.
+
+\textbf{Performance on Medical Data}: XGBoost typically achieves 82--87\% accuracy and 0.78--0.83 F1 on disease prediction tasks~\cite{xgboost_medical}. Advantages include handling of feature interactions and mixed data types; limitations include inability to learn complex sequential patterns.
+
+\subsection{Fully Connected Neural Networks}
+
+Standard multi-layer perceptrons (MLPs) provide deep learning baselines for tabular data~\cite{mlp_tabular}:
+
+\begin{align}
+h_1 &= \text{ReLU}(W_1 x + b_1) \\
+h_2 &= \text{ReLU}(W_2 h_1 + b_2) \\
+\hat{y} &= \sigma(W_3 h_2 + b_3)
+\end{align}
+
+With proper regularization (dropout, batch normalization), FCNNs achieve 0.82--0.86 F1 on medical tabular data. However, they remain prone to overfitting with limited training data and cannot capture temporal dynamics.
+
+\subsection{Attention-Based Architectures}
+
+\textbf{TabTransformer}~\cite{huang_tabtransformer} applies transformer attention to tabular features:
+
+\begin{equation}
+\text{Attention}(Q, K, V) = \text{softmax}\left(\frac{QK^T}{\sqrt{d_k}}\right)V
+\end{equation}
+
+Each symptom feature attends to other symptoms, learning disease-specific feature interactions. TabTransformer achieves 0.88--0.91 F1 on medical classification, with the additional benefit of interpretable attention weights~\cite{tabtransformer_medical}.
+
+\subsection{Graph Neural Networks}
+
+Graph Neural Networks (GNNs) model relationships between symptoms and diseases as graph structures~\cite{gnn_medical}:
+
+\begin{equation}
+h_v^{(l+1)} = \text{ReLU}\left(W^{(l)} \text{Aggregate}\left(\{h_u^{(l)} : u \in \mathcal{N}(v)\}\right)\right)
+\end{equation}
+
+where $h_v^{(l)}$ represents node embeddings at layer $l$ and $\mathcal{N}(v)$ denotes neighbors. GNNs achieve 0.89--0.92 F1 when domain knowledge specifies graph structure, but require expert input for graph construction.
+
+\subsection{Comparative Analysis}
+
+Table~\ref{tab:architecture_comparison} summarizes architecture trade-offs for veterinary tabular data:
+
+\begin{table}[htbp]
+\centering
+\caption{Comparison of Deep Learning Architectures for Tabular Medical Data}
+\label{tab:architecture_comparison}
+\begin{tabular}{lcccc}
+\toprule
+\textbf{Approach} & \textbf{Data Requirement} & \textbf{F1 Score} & \textbf{Interpretability} & \textbf{Temporal} \\
+\midrule
+Logistic Regression & 200--500 & 0.72--0.78 & Very High & No \\
+XGBoost & 500--1000 & 0.78--0.83 & High & No \\
+FCNN (3-layer) & 1000+ & 0.82--0.86 & Low & No \\
+TabTransformer & 2000+ & 0.88--0.91 & Medium & No \\
+LSTM & 1000+ & 0.85--0.90 & Medium & \textbf{Yes} \\
+GNN & 1000+ & 0.89--0.92 & High & Partial \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Our approach combines LSTM temporal modeling with multi-task learning and weighted loss functions to address the specific requirements of veterinary disease prediction.
+
+\section{Sequential Models for Temporal Data}
+\label{sec:sequential_models}
+
+Disease development is inherently temporal: symptoms evolve over days before full clinical manifestation. Sequential models capture these dynamics.
+
+\subsection{Recurrent Neural Networks}
+
+Basic RNNs process sequential input through recurrent connections~\cite{rnn_fundamentals}:
+
+\begin{equation}
+h_t = \tanh(W_{hh} h_{t-1} + W_{xh} x_t + b_h)
+\end{equation}
+
+However, vanilla RNNs suffer from vanishing/exploding gradients when modeling long sequences~\cite{bengio_vanishing_gradient}.
+
+\subsection{Long Short-Term Memory Networks}
+
+LSTMs~\cite{hochreiter_lstm} address gradient issues through gating mechanisms:
+
+\begin{align}
+f_t &= \sigma(W_f [h_{t-1}, x_t] + b_f) \quad \text{(Forget gate)} \\
+i_t &= \sigma(W_i [h_{t-1}, x_t] + b_i) \quad \text{(Input gate)} \\
+\tilde{C}_t &= \tanh(W_C [h_{t-1}, x_t] + b_C) \quad \text{(Candidate)} \\
+C_t &= f_t \odot C_{t-1} + i_t \odot \tilde{C}_t \quad \text{(Cell state)} \\
+o_t &= \sigma(W_o [h_{t-1}, x_t] + b_o) \quad \text{(Output gate)} \\
+h_t &= o_t \odot \tanh(C_t) \quad \text{(Hidden state)}
+\end{align}
+
+The forget gate $f_t$ controls information retention from previous states; the input gate $i_t$ controls incorporation of new information; and the cell state $C_t$ provides a pathway for gradient flow across time steps.
+
+\textbf{Application to Disease Prediction}: By encoding symptom observations across multiple veterinary visits, LSTMs can learn patterns such as:
+\begin{itemize}
+    \item ``Fever increasing over 3 days followed by drooling onset'' $\rightarrow$ FMD likely
+    \item ``Progressive lethargy with reproductive signs'' $\rightarrow$ Brucellosis developing
+\end{itemize}
+
+This enables prediction \textit{before} full clinical presentation, providing the early warning capability absent from static models.
+
+\subsection{Bidirectional and Stacked Architectures}
+
+Bidirectional LSTMs process sequences in both forward and backward directions~\cite{bidirectional_lstm}, capturing dependencies that may depend on future context. Stacked LSTMs increase model capacity through multiple layers:
+
+\begin{equation}
+h_t^{(l)} = \text{LSTM}^{(l)}(h_t^{(l-1)}, h_{t-1}^{(l)})
+\end{equation}
+
+where layer $l$ receives input from the layer below and its previous time step.
+
+\section{Multi-Label Classification}
+\label{sec:multi_label}
+
+Veterinary diagnosis is inherently multi-label: animals frequently present with 2--4 concurrent conditions. Multi-label classification differs fundamentally from multi-class classification~\cite{multilabel_survey}.
+
+\subsection{Problem Formulation}
+
+Given input $x \in \mathbb{R}^D$ and label set $\mathcal{Y} = \{1, 2, \ldots, C\}$, multi-label classification predicts a subset $Y \subseteq \mathcal{Y}$ of applicable labels. The target is represented as $y \in \{0, 1\}^C$ where $y_j = 1$ indicates presence of label $j$.
+
+\subsection{Binary Cross-Entropy Loss}
+
+The standard multi-label loss treats each label independently~\cite{binary_cross_entropy}:
+
+\begin{equation}
+\mathcal{L}_{\text{BCE}} = -\frac{1}{N} \sum_{i=1}^{N} \sum_{j=1}^{C} \left[ y_{ij} \log(\hat{y}_{ij}) + (1-y_{ij}) \log(1-\hat{y}_{ij}) \right]
+\label{eq:bce}
+\end{equation}
+
+\textbf{Limitation}: BCE treats all classes equally, regardless of prevalence. Common diseases dominate gradient updates, while rare diseases receive minimal learning signal.
+
+\subsection{Class Imbalance in Medical Data}
+
+Class imbalance is extreme in veterinary data~\cite{class_imbalance_medical}:
+\begin{itemize}
+    \item Common conditions (FMD, mastitis): 20--50\% of cases
+    \item Rare but critical diseases: $<$0.1--1\% of cases
+    \item Optimization toward common classes yields poor rare disease performance
+\end{itemize}
+
+\subsection{Addressing Class Imbalance}
+
+\textbf{Cost-Sensitive Learning}: Weight classes inversely by prevalence~\cite{cost_sensitive_learning}:
+
+\begin{equation}
+w_j = \frac{N}{C \cdot n_j}
+\end{equation}
+
+where $n_j$ is the count of positive examples for class $j$.
+
+\textbf{Focal Loss}~\cite{lin_focal_loss}: Down-weights easy examples to focus on hard cases:
+
+\begin{equation}
+\mathcal{L}_{\text{focal}} = -\sum_{i,j} (1-p_t)^\gamma \log(p_t)
+\end{equation}
+
+where $p_t = \hat{y}_{ij}$ if $y_{ij}=1$ else $1-\hat{y}_{ij}$, and $\gamma$ (typically 2) controls the focusing strength.
+
+\textbf{Hierarchical Classification}: Leverage disease taxonomies (SNOMED-CT) to structure the label space~\cite{hierarchical_classification}. Semantic similarity between diseases can inform loss functions, reducing penalty for predictions that are ``close'' in the hierarchy.
+
+\subsection{Our Approach: Combined Weighted Focal Loss}
+
+We combine inverse-prevalence weighting with focal loss:
+
+\begin{equation}
+\mathcal{L}_{\text{ours}} = -\frac{1}{N} \sum_{i=1}^{N} \sum_{j=1}^{C} w_j \left[ y_{ij}(1-\hat{y}_{ij})^{\gamma} \log(\hat{y}_{ij}) + (1-y_{ij}) \hat{y}_{ij}^{\gamma} \log(1-\hat{y}_{ij}) \right]
+\end{equation}
+
+This provides two mechanisms for rare disease emphasis:
+\begin{enumerate}
+    \item Weight $w_j$ increases gradient magnitude for rare diseases
+    \item Focal term $(1-\hat{y}_{ij})^\gamma$ focuses learning on difficult cases
+\end{enumerate}
+
+\section{Multi-Task and Transfer Learning}
+\label{sec:multitask}
+
+Multi-task learning (MTL) improves generalization by sharing representations across related tasks~\cite{mtl_survey}.
+
+\subsection{Hard Parameter Sharing}
+
+The most common MTL approach shares hidden layers across tasks with task-specific output heads~\cite{caruana_mtl}:
+
+\begin{equation}
+\mathcal{L}_{\text{MTL}} = \sum_{t=1}^{T} \lambda_t \mathcal{L}_t(f_t(\text{Enc}(x)), y_t)
+\end{equation}
+
+where $\text{Enc}(\cdot)$ is the shared encoder, $f_t$ is the task-specific head, and $\lambda_t$ weights task contributions.
+
+\subsection{Benefits of Multi-Task Learning}
+
+\textbf{Data Augmentation Effect}: Each task provides training signal that improves shared representations~\cite{mtl_augmentation}. Tasks with abundant data effectively augment tasks with limited data.
+
+\textbf{Regularization}: Learning multiple tasks simultaneously constrains the hypothesis space, reducing overfitting~\cite{mtl_regularization}.
+
+\textbf{Feature Selection}: The shared representation must capture features useful across all tasks, implicitly performing feature selection~\cite{mtl_feature_selection}.
+
+\subsection{Application to Multi-Species Veterinary Data}
+
+Our dataset includes four species with varying sample sizes:
+\begin{itemize}
+    \item Cattle: $\sim$400 examples (most data)
+    \item Buffalo: $\sim$300 examples
+    \item Sheep: $\sim$200 examples
+    \item Goat: $\sim$150 examples (least data)
+\end{itemize}
+
+Without MTL, goat disease prediction would be severely limited by data scarcity. With MTL, the shared encoder learns general symptom-disease patterns (e.g., ``fever + reproductive signs $\rightarrow$ Brucellosis'') from all species, then species-specific heads learn to adjust for species differences.
+
+\textbf{Expected Benefit}: 15--25\% improvement in data efficiency, with low-data species benefiting most from knowledge transfer.
+
+\section{Interpretable Machine Learning}
+\label{sec:interpretability}
+
+Clinical adoption of AI requires interpretability---veterinarians must understand \textit{why} a prediction is made~\cite{interpretable_ml_medicine}.
+
+\subsection{The Interpretability Imperative}
+
+Studies indicate that 81\% of healthcare professionals distrust AI systems lacking transparency~\cite{healthcare_ai_trust}. For veterinary deployment:
+\begin{itemize}
+    \item Practitioners must validate predictions against clinical experience
+    \item Errors must be traceable to specific input features
+    \item Regulatory compliance may require explanation capability
+    \item Liability concerns necessitate decision audit trails
+\end{itemize}
+
+\subsection{SHAP (SHapley Additive exPlanations)}
+
+SHAP~\cite{lundberg_shap} provides game-theoretic feature importance based on Shapley values:
+
+\begin{equation}
+\phi_j = \sum_{S \subseteq \mathcal{F} \setminus \{j\}} \frac{|S|!(|\mathcal{F}|-|S|-1)!}{|\mathcal{F}|!} \left[ f(S \cup \{j\}) - f(S) \right]
+\end{equation}
+
+where $\phi_j$ is the contribution of feature $j$ to the prediction, computed by averaging marginal contributions across all possible feature subsets.
+
+\textbf{Advantages}: Theoretically grounded, locally accurate, model-agnostic, and provides both individual and global explanations.
+
+\textbf{Application}: For each disease prediction, SHAP values indicate which symptoms increased or decreased the probability, enabling veterinarian validation.
+
+\subsection{Attention-Based Interpretability}
+
+Attention mechanisms provide built-in interpretability through attention weights~\cite{attention_interpretability}:
+
+\begin{equation}
+\alpha_{ij} = \frac{\exp(e_{ij})}{\sum_k \exp(e_{ik})}
+\end{equation}
+
+Higher attention weights indicate features more influential to the prediction. While computationally efficient, attention-based interpretation has been debated for faithfulness~\cite{attention_faithfulness}.
+
+\subsection{Clinical Interface Requirements}
+
+Effective clinical interpretability requires~\cite{clinical_interpretability_requirements}:
+\begin{enumerate}
+    \item Prediction confidence scores (well-calibrated probabilities)
+    \item Top contributing features (symptoms) for each prediction
+    \item Comparison to similar historical cases
+    \item Uncertainty quantification for low-confidence predictions
+\end{enumerate}
+
+\section{Large Language Models in Healthcare}
+\label{sec:llm_healthcare}
+
+The emergence of large language models (LLMs) has transformed natural language processing in healthcare~\cite{llm_medicine_review}.
+
+\subsection{Foundation Models}
+
+\textbf{BERT}~\cite{devlin_bert} introduced bidirectional pre-training for language understanding. Medical variants include:
+\begin{itemize}
+    \item BioBERT~\cite{biobert}: Pre-trained on biomedical literature
+    \item ClinicalBERT~\cite{clinicalbert}: Pre-trained on clinical notes
+    \item PubMedBERT~\cite{pubmedbert}: Pre-trained on PubMed abstracts
+\end{itemize}
+
+\textbf{GPT Models}~\cite{brown_gpt3} demonstrated few-shot learning capabilities. GPT-4 achieves 92.3\% on MedQA, exceeding human physician performance~\cite{gpt4_medical}.
+
+\subsection{Parameter-Efficient Fine-Tuning}
+
+Full fine-tuning of LLMs requires prohibitive computational resources (100GB+ GPU memory). Parameter-efficient methods reduce this barrier:
+
+\textbf{LoRA (Low-Rank Adaptation)}~\cite{hu_lora}: Freezes pre-trained weights and adds trainable low-rank decomposition matrices:
+
+\begin{equation}
+W' = W + \Delta W = W + BA
+\end{equation}
+
+where $B \in \mathbb{R}^{d \times r}$ and $A \in \mathbb{R}^{r \times k}$ with rank $r \ll \min(d, k)$. This reduces trainable parameters from billions to millions, enabling fine-tuning on consumer GPUs.
+
+\textbf{Implications for Veterinary AI}: LoRA enables adaptation of foundation models to veterinary diagnosis with minimal data and compute resources, democratizing access beyond well-resourced institutions.
+
+\subsection{Synthetic Data Generation}
+
+LLMs can generate synthetic training data~\cite{synthetic_data_llm}:
+\begin{enumerate}
+    \item Prompt with disease characteristics and symptom distributions
+    \item Generate synthetic clinical case descriptions
+    \item Filter for quality and medical accuracy
+    \item Augment limited real data
+\end{enumerate}
+
+Studies indicate synthetic data achieves 85--95\% of the training value of real data~\cite{synthetic_data_quality}, addressing the data scarcity challenge in veterinary AI.
+
+\section{Research Gaps and Motivation}
+\label{sec:research_gaps}
+
+Our review identifies the following critical gaps in existing literature:
+
+\begin{enumerate}
+    \item \textbf{Dataset Gap}: No public multi-species, multi-disease livestock dataset exists for South Asian contexts. Existing veterinary AI research relies on proprietary data from Western corporate practices.
+    
+    \item \textbf{Multi-Label Gap}: Prior work predominantly addresses single-disease prediction. Real veterinary cases involve concurrent diseases requiring multi-label approaches.
+    
+    \item \textbf{Temporal Gap}: Existing methods use static symptom features, missing the temporal symptom progression that enables early warning. No published work applies sequence models to veterinary symptom trajectories.
+    
+    \item \textbf{Species Adaptation Gap}: No systematic approach exists for cross-species knowledge transfer in veterinary AI. Each species is typically modeled independently.
+    
+    \item \textbf{Rare Disease Gap}: Optimization for overall accuracy systematically neglects rare but high-impact diseases. Specialized loss functions for veterinary rare disease detection are unexplored.
+    
+    \item \textbf{Interpretability Gap}: Veterinary AI systems lack the interpretability necessary for clinical adoption. SHAP-based explanation frameworks have not been validated for veterinarian acceptance.
+    
+    \item \textbf{Deployment Gap}: Practical deployment pathways for resource-limited veterinary settings remain undefined. Computational requirements exclude typical practices from AI benefits.
+\end{enumerate}
+
+\textbf{Summary}: Our proposed VetLLM system addresses these gaps through an integrated approach combining authentic regional data, weighted multi-label classification, LSTM temporal modeling, multi-task species learning, SHAP interpretability, and efficient deployment design.

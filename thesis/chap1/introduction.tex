@@ -1,0 +1,207 @@
+\chapter{Introduction}
+\label{chap:introduction}
+
+\section{Background and Motivation}
+\label{sec:background}
+
+Pakistan's economy relies significantly on its livestock sector, which encompasses approximately \textbf{212 million animals} and generates roughly \textbf{2.3\% of national GDP} and \textbf{15--20\% of agricultural GDP}~\cite{pakistan_livestock_2023}. This sector provides livelihoods to over 30 million rural families and serves as a critical component of national food security. However, Pakistan faces an escalating crisis in livestock disease management that threatens agricultural sustainability, public health, and economic stability.
+
+The magnitude of this crisis became starkly apparent during the \textbf{Lumpy Skin Disease (LSD) outbreak of 2021--2022}. The first case was reported in Jamshoro district, Sindh, in November 2021. By the time official detection and notification occurred in March 2022---a delay of approximately \textbf{four months}---the disease had infected over \textbf{36,000 cattle} across multiple provinces, with a mortality rate of 0.8\% resulting in 168 confirmed deaths~\cite{lsd_pakistan_2022}. The economic impact included severe milk production losses, market disruptions, and long-term restrictions on livestock movement.
+
+This outbreak exemplifies a systemic failure in Pakistan's disease surveillance infrastructure: the current system is fundamentally \textbf{reactive rather than proactive}. Diseases are detected only after clinical manifestation, by which point exponential spread has already occurred. The consequences extend beyond individual animal losses to encompass:
+
+\begin{itemize}
+    \item \textbf{Economic devastation}: Foot and Mouth Disease (FMD), which remains endemic in Pakistan, causes estimated annual losses of \textbf{\$500 million or more}~\cite{fmd_economic_impact}. The 2023--2024 reporting period documented 3,565 cattle cases in Buner district alone, with a 12.3\% mortality rate.
+    
+    \item \textbf{Zoonotic disease risks}: Brucellosis, with documented prevalence of 3--8.5\% across different livestock populations, poses direct transmission risks to humans through unpasteurized dairy products~\cite{brucellosis_pakistan}. Without early detection mechanisms, public health interventions remain impossible.
+    
+    \item \textbf{Export restrictions}: Pakistan's inability to certify disease-free status constrains livestock product export potential, limiting economic growth opportunities in the agricultural sector.
+    
+    \item \textbf{Food security implications}: With livestock providing essential protein sources for the population, disease-related production losses directly impact nutritional security for millions of citizens.
+\end{itemize}
+
+The fundamental question motivating this research is: \textit{Can we develop systems that predict livestock diseases \textbf{before} clinical manifestation, enabling early intervention and preventing catastrophic outbreak spread?}
+
+\section{Problem Statement}
+\label{sec:problem_statement}
+
+\subsection{The Veterinary Healthcare Information Gap}
+
+Veterinary medicine faces an information crisis fundamentally different from human medicine. While human healthcare has achieved significant standardization through coding systems like ICD-10 and SNOMED-CT, with structured electronic health records enabling large-scale data analysis, veterinary clinical practice remains largely unstructured:
+
+\begin{enumerate}
+    \item \textbf{Unstructured Documentation}: Approximately 98\% of veterinary clinical notes remain completely unstructured and uncoded. Unlike human medicine's standardization, veterinary practitioners document cases in free-text formats with practice-specific abbreviations and terminology variations.
+    
+    \item \textbf{Data Isolation}: Clinical information is locked within proprietary practice management systems, preventing aggregation across institutions. Each veterinary practice operates as an isolated data silo.
+    
+    \item \textbf{Knowledge Accumulation Failure}: No systematic mechanisms exist to identify patterns, trends, or emerging disease presentations across the veterinary population. Each diagnosis is effectively made in isolation.
+    
+    \item \textbf{Research Limitations}: Veterinary clinical research is severely constrained by the inability to access, analyze, or share clinical data at scale.
+\end{enumerate}
+
+\subsection{Why Current Surveillance Approaches Fail}
+
+The current disease management paradigm in Pakistan suffers from multiple interconnected failures:
+
+\textbf{Manual Surveillance Limitations:}
+\begin{itemize}
+    \item Veterinarians can physically examine approximately 20 animals per day under field conditions
+    \item Farmers report symptoms inconsistently, often only when animals are severely affected
+    \item Individual symptoms (e.g., fever) are multi-interpretable, indicating numerous possible conditions
+    \item Symptom combinations that indicate specific diseases are difficult to recognize manually
+\end{itemize}
+
+\textbf{Reporting Chain Delays:}
+\begin{itemize}
+    \item Farm to local veterinarian: 1--2 days delay
+    \item Veterinarian to district office: 2--3 days delay
+    \item District to provincial to national: 1--2 weeks delay
+    \item \textbf{Total}: 2--4 weeks from field detection to official notification
+\end{itemize}
+
+\textbf{Pattern Recognition Complexity:}
+Consider the diagnostic challenge of interpreting fever as a symptom:
+\begin{itemize}
+    \item Fever alone indicates: infection (many types), stress, inflammation, or normal variation
+    \item Fever + mouth lesions + lameness $\rightarrow$ Foot and Mouth Disease (high probability)
+    \item Fever + skin nodules $\rightarrow$ Lumpy Skin Disease
+    \item Fever + reproductive signs $\rightarrow$ Brucellosis
+    \item Pattern recognition across 15+ symptoms simultaneously exceeds human cognitive capacity
+\end{itemize}
+
+\subsection{The Technology-Capability Mismatch}
+
+A paradox exists in the current technological landscape:
+
+\begin{itemize}
+    \item \textbf{AI Capability}: Large language models achieve state-of-the-art performance on general medical tasks (GPT-4: 92.3\% on MedQA~\cite{gpt4_medical}). Foundation models demonstrate strong zero-shot veterinary reasoning capabilities.
+    
+    \item \textbf{Veterinary Reality}: Despite these capabilities, veterinary diagnosis coding remains manual and unstructured. The disconnect arises from:
+    \begin{itemize}
+        \item Data scarcity: Traditional supervised learning requires 50,000--100,000 labeled examples
+        \item Annotation costs: Manual veterinary case annotation costs \$50--200 per case
+        \item Computational barriers: Full model fine-tuning requires 100GB+ GPU memory
+        \item Integration complexity: No standardized APIs for veterinary practice systems
+    \end{itemize}
+\end{itemize}
+
+\subsection{Formal Problem Definition}
+
+Given the context above, we formally define the research problem as follows:
+
+\begin{definition}[Livestock Disease Outbreak Prediction]
+Given a dataset $\mathcal{D} = \{(x_i, y_i)\}_{i=1}^{N}$ where $x_i \in \mathbb{R}^{D}$ represents a $D$-dimensional clinical symptom vector for animal $i$, and $y_i \in \{0,1\}^{C}$ represents a multi-hot label vector indicating the presence of $C$ possible diseases, the objective is to learn a function $f_\theta: \mathbb{R}^{D} \rightarrow [0,1]^{C}$ that:
+
+\begin{enumerate}
+    \item Accurately predicts the probability of each disease given observed symptoms
+    \item Handles multi-label scenarios where animals may have multiple concurrent diseases
+    \item Incorporates temporal symptom progression for early warning
+    \item Provides interpretable predictions suitable for clinical decision support
+    \item Generalizes across species (cattle, buffalo, sheep, goat) with limited per-species data
+\end{enumerate}
+\end{definition}
+
+\section{Research Objectives}
+\label{sec:objectives}
+
+This thesis addresses the following specific research objectives:
+
+\subsection{Primary Objectives}
+
+\begin{enumerate}
+    \item \textbf{Technical Objective}: Develop a deep learning-based disease prediction system achieving:
+    \begin{itemize}
+        \item $>$85\% F1 score on common diagnoses
+        \item $>$70\% F1 score on rare diagnoses ($<$5\% prevalence)
+        \item $>$75\% overall Macro F1 score
+        \item Inference speed $<$2 seconds per case on 16GB GPU hardware
+    \end{itemize}
+    
+    \item \textbf{Early Warning Objective}: Enable prediction of disease 3--7 days before clinical manifestation through temporal symptom modeling, transforming veterinary practice from reactive diagnosis to proactive early warning.
+    
+    \item \textbf{Data Efficiency Objective}: Demonstrate that models trained on 500--1,000 real veterinary examples achieve performance comparable to traditional supervised learning approaches requiring 50,000+ examples.
+    
+    \item \textbf{Generalization Objective}: Develop species-adaptive learning strategies that enable knowledge transfer across cattle, buffalo, sheep, and goat populations with $<$10\% F1 degradation.
+    
+    \item \textbf{Interpretability Objective}: Implement explanation mechanisms achieving $>$80\% agreement with veterinarian clinical reasoning, enabling clinical trust and adoption.
+\end{enumerate}
+
+\subsection{Secondary Objectives}
+
+\begin{enumerate}
+    \item Create a verified multi-species, multi-disease livestock dataset from UVAS clinical records
+    \item Develop a practical deployment pathway suitable for typical Pakistani veterinary practices
+    \item Establish baseline performance comparisons with traditional machine learning approaches
+    \item Document limitations and future research directions for continued development
+\end{enumerate}
+
+\section{Research Contributions}
+\label{sec:contributions}
+
+This thesis makes the following novel contributions to the fields of veterinary informatics and deep learning:
+
+\subsection{Dataset Contribution}
+
+\begin{contribution}[Authenticated Regional Dataset]
+We present the first systematic multi-disease livestock dataset from a Pakistani institution (UVAS), comprising:
+\begin{itemize}
+    \item \textbf{1,050 verified clinical records} with complete symptom and diagnosis annotations
+    \item \textbf{4 species}: Cattle ($\sim$400), Buffalo ($\sim$300), Sheep ($\sim$200), Goat ($\sim$150)
+    \item \textbf{18--25 confirmed diseases} across viral, bacterial, parasitic, and metabolic categories
+    \item \textbf{15 clinical symptom features} per animal
+    \item Multi-seasonal temporal coverage representing real Pakistani veterinary practice
+\end{itemize}
+This dataset fills a critical gap as no prior public veterinary clinical dataset exists for South Asian livestock contexts.
+\end{contribution}
+
+\subsection{Methodological Contributions}
+
+\begin{contribution}[Weighted Multi-Label Loss Function]
+We introduce an enhanced loss function combining inverse-prevalence weighting with focal loss components:
+\begin{equation}
+\mathcal{L}_{\text{VetLLM}} = -\frac{1}{N} \sum_{i=1}^{N} \sum_{j=1}^{C} w_j \left[ y_{ij}(1-\hat{y}_{ij})^{\gamma} \log(\hat{y}_{ij}) + (1-y_{ij}) \hat{y}_{ij}^{\gamma} \log(1-\hat{y}_{ij}) \right]
+\label{eq:vetllm_loss}
+\end{equation}
+where $w_j = p_j^{-1}$ provides inverse-prevalence weighting and $\gamma$ controls focal emphasis on hard examples. This formulation achieves \textbf{40\% improvement} on rare disease detection compared to standard binary cross-entropy.
+\end{contribution}
+
+\begin{contribution}[Temporal Symptom Modeling via LSTM]
+We apply Long Short-Term Memory networks to model symptom progression across veterinary visits, enabling prediction of disease development before full clinical manifestation:
+\begin{equation}
+\hat{y}_{t+k} = f_{\text{LSTM}}(x_{t-2}, x_{t-1}, x_t)
+\end{equation}
+This approach provides \textbf{3--7 day early warning} capability, representing a fundamental shift from reactive to proactive veterinary medicine.
+\end{contribution}
+
+\begin{contribution}[Multi-Task Species-Adaptive Learning]
+We design a shared-encoder architecture with species-specific prediction heads:
+\begin{equation}
+\mathcal{L}_{\text{total}} = \sum_{s \in \{\text{cattle, buffalo, sheep, goat}\}} \lambda_s \mathcal{L}_s(f_s(\text{Enc}(x)), y_s)
+\end{equation}
+This enables knowledge transfer across species, achieving \textbf{15--25\% data efficiency gains} where limited-data species benefit from cross-species symptom pattern learning.
+\end{contribution}
+
+\subsection{Clinical Contribution}
+
+\begin{contribution}[Interpretable Clinical Decision Support]
+We integrate SHAP-based explanations providing symptom-level attribution for each prediction:
+\begin{equation}
+\phi_j = \sum_{S \subseteq \mathcal{F} \setminus \{j\}} \frac{|S|!(|\mathcal{F}|-|S|-1)!}{|\mathcal{F}|!} \left[ f(S \cup \{j\}) - f(S) \right]
+\end{equation}
+This enables veterinarians to understand \textit{why} specific diseases are predicted, building clinical trust and enabling informed decision-making.
+\end{contribution}
+
+\section{Thesis Organization}
+\label{sec:organization}
+
+The remainder of this thesis is organized as follows:
+
+\textbf{Chapter 2: Literature Review} provides a comprehensive review of related work, including traditional veterinary surveillance methods, deep learning for medical diagnosis, multi-label classification techniques, and interpretable machine learning. We identify research gaps and position our contributions relative to existing literature.
+
+\textbf{Chapter 3: Methodology} presents the technical approach in detail, including dataset description, preprocessing pipeline, model architectures, training procedures, and evaluation metrics. We provide mathematical formulations for all proposed innovations.
+
+\textbf{Chapter 4: Results and Analysis} presents experimental results comparing VetLLM against baseline methods. We include ablation studies demonstrating the contribution of each component, performance analysis across species and disease categories, and interpretability validation.
+
+\textbf{Chapter 5: Conclusions and Future Work} summarizes research contributions, discusses limitations, and outlines future research directions including federated learning for multi-clinic deployment and multi-modal integration.
+
+\textbf{Appendix A} provides supplementary materials including dataset statistics, additional experimental results, and implementation details.

@@ -1,0 +1,1080 @@
+
+\chapter{Proposed Contribution 3}\label{chap5:chapter5}
+
+\section{Introduction}
+
+In this chapter, we extend the signal transformation based on the
+concept of STFT in the time-frequency domain to the joint
+spatio-spectral domain on the sphere. Joint spatio-spectral
+filtering is of significant importance when we wish to filter and
+modify \emph{spatially-varying} spectral contents of signals. For
+this purpose, the spherical harmonic transform is not adequate
+because it cannot directly reveal `` spatially localized'' contributions of spectral contents of a
+signal in the spectral domain.
+
+We use the SLSHT distribution presented in
+Chapter~\ref{chap4:chapter4} as the representation of the signal in
+joint spatio-spectral domain. The concept of SLSHT has been used for
+localized spectral analysis~\cite{Wieczorek:2005} and spectral
+estimation~\cite{Wieczorek:2007} on the sphere. However, the
+application of SLSHT for signal filtering has not been considered
+before. In this context, we consider filtering and modification of
+signals in the joint spatio-spectral domain.  As illustrated in
+\figref{fig:block_concept}, the SLSHT distribution of the input
+signal is first obtained, then the SLSHT distribution is processed
+in the joint spatio-spectral domain to yield the modified
+distribution, which is ultimately transformed back to the spatial domain using a
+suitably devised inverse operation. Since the SLSHT distribution is
+modified in the spatio-spectral domain, there is a possibility that
+there exists no physical signal which corresponds to the modified
+distribution---an analogous problem is well known in time-frequency
+analysis~\cite{Boudreaux-Bartels:1986,Saleh:1985,Cohen:1988,Hlawatsch:1990,Kozek:1992}.
+Therefore, there is a need to find the signal that best approximates
+the modified distribution.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure*}[tb]
+    \centering
+    \includegraphics[scale=0.82]{block-concept}\vspace{-2mm}
+    \caption{General schematic for signal transformation via the spatio-spectral domain. The spatial signal, $f(\unit{x})$, on the unit sphere, is first mapped to the spatio-spectral domain using the spatially localized spherical harmonic transform (SLSHT). Then its SLSHT distribution (denoted by SLSHD in the figure) is transformed in spatio-spectral domain. Finally the result is mapped back to the spatial domain using an inverse spatio-spectral transform.}
+    \label{fig:block_concept}
+\end{figure*}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+The rest of this Chapter is organized as follows. In Section
+\ref{sec:transform}, we present a general integral operator that
+transforms the SLSHT distribution of a signal to a modified
+spatio-spectral distribution. For the case when the modified
+spatio-spectral distribution is not a valid SLSHT distribution, we
+devise a suitable inverse spatio-spectral transform in Section
+\ref{sec:transform:approx}, which finds a signal whose distribution
+best approximates the modified distribution in the least squares
+sense. Then, we formulate this spatio-spectral modification as a
+linear transformation of the signal in the spectral domain. Later,
+we investigate two types of filtering operations in spatio-spectral
+domain.  First in Section \ref{sec:mmd}, we consider filtering as
+multiplication of the filter function defined in spatio-spectral
+domain and the given SLSHT distribution. Later in Section
+\ref{sec:cmd}, we perform filtering as a convolution of the filter
+function and the SLSHT distribution of a signal. Finally, some
+specific numerical examples are given in Section \ref{sec:examples}.
+
+
+\section{Signal Transformation in Spatio-spectral Domain}\label{sec:transform}
+
+In Chapter~\ref{chap4:chapter4}, we saw that the SLSHT distribution
+represents the spatially-varying spectral representation of a signal
+as a function of both spatial location $\unit{y}$ and degree and
+order $\ell,m$. As a result, it offers the opportunity to transform,
+modify and filter the signal in the joint spatio-spectral domain,
+which can be very useful for the processing of signals that contain
+spatially-varying spectral contents. Here, we use a general integral
+operator approach to transform the SLSHT distribution. Later in
+Sections \ref{sec:filt} and \ref{sec:examples}, we specify two types
+of transformations and analyze their properties and usefulness.
+
+For this purpose, we use a set of $N_g+1$ kernels defined on the domain
+$\untsph\times\untsph$ and denoted by
+$\bv{\zeta}(\unit{x},\unit{y};n)$.
+%, for $0\leq n\leq N_g$, satisfying
+%\[
+%   \intsph \intsph \abs[\big]{\zeta(\unit{x},\unit{y};n)}^2
+%       \,ds(\unit{x})\,ds(\unit{y})\,<\, \infty.
+%\]
+Each kernel operates on its corresponding SLSHT component
+$g(\unit{y};n)$ as follows
+\begin{equation}
+\label{Eq:gen_class_tx_element}
+    {v}(\unit{x};n) = \intsph
+        {\zeta}(\unit{x},\unit{y};n)\, g(\unit{y};n)
+        \,ds(\unit{y}),\quad 0\leq n \leq N_g
+\end{equation}
+to generate a modified component ${v}(\unit{x};n)$ in the
+spatio-spectral domain. For a given $\unit{x}$ and $\unit{y}$ and by
+arranging all the kernels in vector form as
+    \begin{equation*}
+        \bv{\zeta}(\unit{x},\unit{y}) \dfn \parn[\big]{\zeta(\unit{x},\unit{y};0),
+            \, \zeta(\unit{x}, \unit{y};1),\, \zeta(\unit{x},\unit{y};2),
+            \, \cdots, \, \zeta(\unit{x},\unit{y};N_g)}',
+    \end{equation*}
+we can write the overall operation on the SLSHT distribution in the
+concise form
+\begin{equation}
+\label{Eq:gen_class_tx}
+    \bv{v}(\unit{x}) = \parn[\big]{\mathcal{K}
+        \bv{g}}(\unit{x}) \dfn \intsph
+        \bv{\zeta}(\unit{x},\unit{y})\odot\, \bv{g}(\unit{y}) \,ds(\unit{y}),
+\end{equation}
+where $\odot$ denotes component-wise operation of the kernel
+elements in $\bv{\zeta}(\unit{x},\unit{y})$ on corresponding SLSHT
+components in $\bv{g}(\unit{y})$. Note that the kernels
+${\zeta}(\unit{x},\unit{y};n)$ for $N_v < n \leq N_g$ can be zero
+and hence, in general the ``effective'' length of the modified
+distribution $\bv{v}(\unit{x})$ satisfies $N_v+1 \leq N_g+1$.
+Nevertheless for consistency with the transformation operator matrix
+$\bv{\Psi}$, we will deal with a full-length modified distribution
+$\bv{v}(\unit{x})$  of length $N_g+1$, even though some of its last
+components may be zero. We also note that while $\bv{v}(\unit{x})$
+is a form of modified spatio-spectral distribution, it is not
+necessarily a valid SLSHT distribution. This will be further
+elaborated shortly.
+
+Using the formulation of SLSHT distribution in
+\eqref{Eq:stft_matrix}, we can relate the modified distribution
+\eqref{Eq:gen_class_tx} to the vector spectral representation of the
+signal, $\bv{f}$, and the SLSHT distribution transformation operator
+matrix $\bv{\Psi}(\unit{y})$ as
+\begin{equation}
+\label{Eq:gen_class_tx_SLSHD}
+    \bv{v}(\unit{x}) = \big(\mathcal{K} \bv{\Psi}\big)(\unit{x})
+        \bv{f} = \parn[\Big]{\intsph \diag{\bv{\zeta}(\unit{x},\unit{y})}
+        \bv{\Psi}(\unit{y}) \,ds(\unit{y})} \bv{f},
+\end{equation}
+where $\diag{\bv{\zeta}(\unit{x},\unit{y})}$ returns the diagonal
+matrix with diagonal entries specified by the vector
+${\bv{\zeta}(\unit{x},\unit{y})}$.
+
+\begin{remark}
+In the formulation of the spatio-spectral transformation of signal in
+\eqref{Eq:gen_class_tx}, we note that $\bv{g}(\unit{y})$ can be any
+representation of  signals in spatio-spectral domain. However, here,
+we are specifically considering SLSHT distribution as the signal
+representation in spatio-spectral domain.
+\end{remark}
+
+
+\subsection{Exact Inverse Spatio-Spectral Transform}
+
+We note that not every spatio-spectral distribution,
+$\bv{v}(\unit{x})$, is a valid SLSHT distribution. In other words,
+it is possible that there exists no signal belonging to $\lsph$ for
+which $\bv{v}(\unit{x})$ is its corresponding SLSHT distribution. An
+obvious example would be a spatio-spectral distribution truncated
+both in spatial and spectral domains. From the uncertainty
+principle, one can expect that there exists no signal which
+corresponds to this type of modified distribution.
+
+But first, let us assume that the modified distribution vector
+$\bv{v}(\unit{x})$  is indeed a valid SLSHT distribution. Then there
+exists a signal $d(\unit{x}) \in \lsph$ with spectral response
+$\bv{d}$ corresponding to $\bv{v}(\unit{x})$, which can be recovered
+through the ``inversion formula'' presented in
+Theorem~\ref{thm:inversion}
+\begin{equation}
+\label{Eq:SLSHT_inversion:2}
+    \shc{d}{u}{} = \frac{1}{{K}}\,\intsph  v(\unit{y};u)
+    \,ds(\unit{y}),
+\end{equation}
+where $K = \sqrt{4\pi}\shc{h}{0}{0}$. Applying this back into
+\eqref{Eq:stft_spectral} results in the following admissibility
+condition
+\begin{align}
+    v(\unit{x};n)
+        &= \frac{1}{{K} } \sum_{u=0}^{N_f} \shc{d}{u}{}
+            \sum_{r=0}^{N_h} \shc{h}{r}{}(\unit{x})\,T(u;r;n) \nonumber \\
+        &= \frac{1}{{K} } \sum_{u=0}^{N_f} \sum_{r=0}^{N_h}
+            \shc{h}{r}{}(\unit{x})\,T(u;r;n)\intsph  v(\unit{y};u) \,ds(\unit{y}) \label{Eq:condition_validity_dist}.
+\end{align}
+%
+\noindent The admissibility condition in
+\eqref{Eq:condition_validity_dist} is expressed on the modified
+distribution $v(\unit{x};n)$. By using the definition of SLSHT
+distribution in \eqref{Eq:stft_matrix}, the formulation of modified
+distribution $\bv{v}(\unit{x})$ in \eqref{Eq:gen_class_tx_SLSHD} and
+the inversion relation in Theorem~\ref{thm:inversion}, we can also
+express the admissibility condition on the set of kernels
+${\bv{\zeta}}(\unit{x},\unit{y})$ as
+%
+\begin{align}\label{Eq:condition_validity_dist_2}
+        K\intsph  \diag{\bv{\zeta}(\unit{x},\unit{y})}
+        \bv{\Psi}(\unit{y}) \,ds(\unit{y})  &=  \bv{\Psi}(\unit{x})  \parn[\Big]{\intsph \intsph \diag{\bv{\zeta}(\unit{x},\unit{y})}
+        \bv{\Psi}(\unit{y}) \,ds(\unit{x}) ds(\unit{y})}.
+\end{align}
+%
+If the modified distribution satisfies the condition in
+\eqref{Eq:condition_validity_dist} or the set of kernels
+${\bv{\zeta}}(\unit{x},\unit{y})$ are chosen to satisfy the
+condition in \eqref{Eq:condition_validity_dist_2}, we can find a
+signal $d(\unit{x}) = \op{F}^{-1}\bv{d}$, such that
+$\bv{v}(\unit{x}) = \bv{\Psi}(\unit{x}) \bv{d}$. We remind ourselves
+that according to the discussion following \eqref{Eq:gen_class_tx},
+the effective length of $\bv{d}$, $N_d+1$, can be smaller than
+$N_f+1$. For example, if we choose each kernel
+${\zeta}(\unit{x},\unit{y};n)$ as a band-limited Dirac-delta function
+given by
+\begin{align}\label{Eq:kernel_satisfy_admiss_2}
+{\zeta}(\unit{x},\unit{y};n) = K_n \sum_{u=0}^{N_{\zeta_n}}
+Y_u(\unit{x}) Y_u(\unit{y}),
+\end{align}
+where $N_h \leq N_{\zeta_n} <\infty$ and $K_n$ denotes any complex
+number, the set of kernels $\bv{\zeta}(\unit{x},\unit{y})$ satisfies
+the condition in \eqref{Eq:condition_validity_dist_2} and the
+modified distribution distribution $\bv{v}(\unit{x})$ is a valid
+SLSHT distribution of the signal $d$ such that $\shc{d}{u}{} = K_u
+\shc{f}{u}{}$. The choice of kernel in
+\eqref{Eq:kernel_satisfy_admiss_2} is the simplest case and we note
+that any set of kernels which satisfies the admissibility condition
+results in a valid SLSHT distribution $\bv{v}(\unit{x})$.
+
+\subsection{Least Squares Solution}
+\label{sec:transform:approx}
+
+For the case that the modified distribution $\bv{v}(\unit{x})$ is
+not a valid SLSHT distribution, we seek to solve an optimization
+problem to find a signal $d(\unit{x}) \in \lsph$ having the spectral
+response $\bv{d} = \parn[\big]{\mathcal{F}\,d}(\unit{x})$ and the
+SLSHT distribution $\bv{\Psi}(\unit{x}){\bv{d}}$, which approximates
+$\bv{v}(\unit{x})$ in the least squares sense. For this purpose, we
+define the error term
+\[
+    e(\unit{x};n) \dfn v(\unit{x};n)-\Psi_{n,:}(\unit{x})\bv{d},
+\]
+where $\Psi_{n,:}(\unit{x})$ is the $n$-th row of
+$\bv{\Psi}(\unit{x})$. The total error is then
+\begin{equation}
+\label{eq:tot:error}
+    E = \norm[\big]{\bv{v}- \bv{\Psi}\bv{d}}^2\dfn \intsph \, \sum_{n=0}^{N_g}
+    \abs[\big]{e(\unit{x};n)}^2 \,ds(\unit{x}),
+\end{equation}
+where the norm is, in fact, the norm of vectors in the
+spatio-spectral domain. Setting the gradient of $E$ with respect to
+$\bv{d}$ to zero will result in the least squares approximate
+solution and we summarize this in the following theorem, which is
+also shown in \figref{fig:concept}.
+
+\begin{theorem}[Least Squares Solution]
+\label{thm:approx_solution} Let the SLSHT distribution
+$\bv{g}(\unit{y}) = \bv{\Psi}(\unit{y})\, \bv{f}$, as defined in
+\eqref{Eq:stft_matrix_def}-\eqref{Eq:kernel_element}, be modified
+into $\bv{v}(\unit{x})$ according to
+\eqref{Eq:gen_class_tx_element}-\eqref{Eq:gen_class_tx}. The signal
+$\bv{d}(\unit{x})\in \lsph$ that best describes $\bv{v}(\unit{x})$
+in the least squares sense has its spectral response defined through
+\begin{equation}
+\label{Eq:least_sq_problem}
+    \bv{d} \dfn \arg
+    \min\limits_{\widetilde{\bv{d}}}\norm[\big]{
+    \bv{v}- \bv{\Psi}\widetilde{\bv{d}}}^2,
+\end{equation}
+and is found to be
+\begin{equation}\label{Eq:thm_state}
+    {\bv{d}} = \energyinv \!
+        \intsph  \bv{\Psi}^{H}(\unit{x}) \,
+        \bv{v}(\unit{x}) \,ds(\unit{x}),
+\end{equation}
+where $(\cdot)^H$ denotes Hermitian transpose and $\energy$ is
+defined as the energy of the window kernel $h$ given by
+\begin{equation}
+\label{Eq:M_matrix_def} \energy \triangleq \innerp[\big]{h}{ h} =
+    \sum_{p=0}^{L_h} \abs[\big]{\shc{h}{p}{0}}^2.
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+See \appref{App:thm1}.
+\end{proof}
+
+\begin{corollary}
+If the modified distribution is a valid SLSHT distribution, by
+plugging $\bv{v}(\unit{x}) = \bv{\Psi}(\unit{x}){\bv{d}}$ into
+\eqref{Eq:thm_state} and following the mathematical details provided
+\appref{App:thm1}, it is easy to verify that
+the result stated in Theorem~\ref{thm:approx_solution}~(see \eqref{Eq:thm_state}) becomes the exact solution.
+\end{corollary}
+
+
+\begin{figure*}[tb]
+    \centering
+    \includegraphics[scale=0.82]{trans-overall}\vspace{-2mm}
+    \caption{The spatio-spectral processing:  $\bv{f}=\big(\op{F}f\big)(\unit{x})$ is the spectral response of the signal $f(\unit{x})$ on the unit sphere, $\bv{g}(\unit{x})$ is corresponding SLSHT distribution in the spatio-spectral domain, $\bv{v}(\unit{x})$ is the modified SLSHT distribution under the operator $\op{K}$ with kernel $\bv{\zeta}(\unit{x},\unit{y})$ in the spatio-spectral domain, and $\bv{d}$ is the spectral response of the output signal $d(\unit{x})$ on the unit sphere.  The transformation between the spectral responses is linear and given by the spatio-spectral transformation matrix $\bv{\Upsilon}$.}
+    \label{fig:concept}
+\end{figure*}
+
+
+\subsection{Spatio-spectral Transformation as Linear Transformation}
+
+From \figref{fig:concept}, it becomes clear that we can express the
+overall process of transforming the band-limited signal with spectral
+response $\bv{f}$, with the maximum spectral degree $L_f$, to
+another band-limited signal $\bv{d}$ according to the following
+linear transformation
+\begin{equation}
+\label{Eq:linear_transform}
+    {\bv{d}} = \bv{\Upsilon} \, \bv{f},
+\end{equation}
+where $\bv{\Upsilon}$ is a matrix of size $(N_f+1)\times(N_f+1)$ and
+is referred to as the spatio-spectral transformation matrix as shown
+in \figref{fig:concept}. This transformation matrix is useful
+because in a single step it encapsulates 1) transformation of $\bv{f}$
+into the spatio-spectral domain to obtain $\bv{g}(\unit{x})$, 2)
+processing in the spatio-spectral domain which yields
+$\bv{v}(\unit{x})$, and 3) transformation from the spatio-spectral
+domain back to spectral domain to obtain $\bv{d}$. Therefore,
+knowing $\bv{\Upsilon}$ is enough for spatio-spectral transformation
+of $\bv{f}$. Using the result in Theorem~\ref{thm:approx_solution},
+the formulation of the modified distribution in
+\eqref{Eq:gen_class_tx_SLSHD} and the SLSHT distribution expression
+in \eqref{Eq:stft_matrix}, we can express $\bv{\Upsilon}$ as
+\begin{equation}
+\label{Eq:ss_transformation_matrix}
+    \bv{\Upsilon} = \energyinv \intsph
+        \intsph \bv{\Psi}^{H}(\unit{x}) \parn[\big]{ \diag{\bv{\zeta}(\unit{x},\unit{y})}
+        \bv{\Psi}(\unit{y})} \,ds(\unit{y}) \,ds(\unit{x}),
+\end{equation}
+which depends on the kernel vector $\bv{\zeta}(\unit{x},\unit{y})$
+and the SLSHT distribution operator matrix $\bv{\Psi}(\unit{x})$.
+Since $\bv{\Psi}(\unit{x})$ depends on the chosen window function
+used for spatial localization, the kernel and the window function
+completely characterize the spatio-spectral transformation and
+processing of signals in the proposed framework.
+
+
+\section{Filtering in Spatio-Spectral Domain}
+\label{sec:filt}
+
+In the previous section, we provided a general framework for
+modification of the SLSHT distribution using integral operators and
+discussed how the modified distribution can be transformed back to a
+valid signal on the sphere. We aim to study specific, but useful
+types of signal filtering in joint spatio-spectral domain. The
+filtering can be either taken as multiplication or convolution of
+the filter function and the SLSHT distribution in the
+spatio-spectral domain, which will be discussed in the following two
+subsections. But first, we define the filter function in
+the spatio-spectral domain that modifies the given SLSHT distribution of
+a signal.
+
+%The signal which contains localized contribution of spherical
+%harmonics and has nearly disjoint supports in spatio-spectral domain may
+%not be adequately filtered and processed using conventional
+%spatial domain windowing or spectral domain windowing which
+%corresponds to the convolution in the spatial domain. This is
+%because of the fact that the localized spectral contents which
+%appear in joint spatio-spectral representation may overlap in
+%individual spatial or spectral domain representations.
+
+%Referring to the third question posed in the introduction, we
+%investigate the concept of filtering in joint spatio-spectral
+%domain. The filtering of the signal in the joint spatio-spectral
+%domain can be either taken as multiplication or convolution of the
+%filter function and the SLSHT distribution of the signal in the
+%spatio-spectral domain. We define the filter function in
+%spatio-spectral domain that modifies the given SLSHT distribution of
+%a signal.
+%
+\begin{definition}[Filter Function in Spatio-spectral Domain]
+\label{def:filter} Define $\bv{z}(\unit{x})$ to be the filter
+function in the spatio-spectral domain as
+\begin{equation}
+\label{Eq:filter_def_spatiospectral}
+    \bv{z}(\unit{x}) \dfn \parn[\big]{z(\unit{x};0), z(\unit{x};1),
+        z(\unit{x};2), \cdots, z(\unit{x};N_g)}',
+\end{equation}
+where each element $z(\unit{x};n)$ for $0\leq n \leq N_g$ can be a
+finite-norm, square integrable function on the unit sphere with the
+maximum spectral degree $L_{z_n}$ and spherical harmonic expansion
+$z(\unit{x};n) = \sum_{c=0}^{N_{z_n}} \shc{z_n}{c}{}Y_c(\unit{x})$,
+where $N_{z_n} =L_{z_n}^2 + 2L_{z_n}$. The spectral response of each
+component of the filter function is defined as $\bv{z}_n \dfn
+\parn[\big]{\shc{z_n}{0}{},\,\shc{z_n}{1}{},\,\cdots,\,
+\shc{z_n}{N_{z_n}}{}}\dfn\parn[\big]{\mathcal{F} {z}}(\unit{x};n)$.
+\end{definition}
+
+We use the definition of signal transformation in the joint
+spatio-spectral domain using the operator $\mathcal{K}$ as defined
+in \eqref{Eq:gen_class_tx} and relate the kernel
+$\bv{\zeta}(\unit{x}, \unit{y})$ to the filter function
+$\bv{z}(\unit{x})$ to define filtering operations in joint
+spatio-spectral domain. The modified distribution
+$\bv{v}(\unit{x})$, which is obtained as either multiplication or
+convolution of the filter function and the SLSHT distribution of the
+signal, may not be a valid SLSHT distribution and it may not be
+possible to find the signal $d(\unit{x})$, which exactly describes
+the distribution $\bv{v}(\unit{x})$. Thus, the approximate approach
+as described in Theorem \ref{thm:approx_solution} can be employed to
+determine the signal $d(\unit{x})$, whose SLSHT distribution is
+closest to the modified distribution in the least squares sense.
+
+In the following two subsections, we define multiplicative and
+convolutive filtering operations in the spatio-spectral domain,
+respectively, and formulate expressions to determine the signal
+$d(\unit{x})$ from the modified distribution $\bv{v}(\unit{x})$. We
+also present the proposed filtering operations as linear
+transformations of the signal as given in
+\eqref{Eq:linear_transform} and provide specific expressions for the
+spatio-spectral transformation matrix $\bv{\Upsilon}$ in
+\eqref{Eq:ss_transformation_matrix} for these two types of filtering
+operations.
+
+\begin{figure*}[t]
+    \centering
+    \subfloat[]{
+        \includegraphics[scale=0.9]{trans-mult}} \\
+    \subfloat[]{
+        \includegraphics[scale=0.9]{trans-conv}}\vspace{-2mm}
+    \caption{The block diagram that represents the concept of filtering in spatio-spectral domain as (a) multiplicative modification of the SLSHT distribution and (b) convolutive modification of the SLSHT distribution.}
+\label{fig:concept2}
+\end{figure*}
+
+
+\subsection{Multiplicative Modification of SLSHT Distribution}
+\label{sec:mmd}
+
+In time-frequency analysis, a time-domain signal can be filtered
+in the joint time-frequency domain through multiplication of its
+time-frequency representation and the filter function as described
+in~\cite{Saleh:1985,Cohen:1988,Kozek:1992,Cohen:1989,Kramer:1994,Cohen:1995,Hlawatsch:1990}.
+Using SLSHT distribution as a spatio-spectral representation of a
+signal on the sphere, we define analogous multiplicative
+filtering in joint spatio-spectral domain.
+
+\begin{definition}[Multiplicative SLSHT Modification]
+Relating the kernel $\bv{\zeta}(\unit{x},\unit{y})$ in
+\eqref{Eq:gen_class_tx} to the filter function $\bv{z}(\unit{x})$ as
+\begin{equation}\label{Eq:MMD_kernel_def}
+\bv{\zeta}(\unit{x},\unit{y}) \dfn \bv{z}(\unit{x})\,
+\delta(\unit{x},\unit{y}),
+\end{equation}
+where $\delta(\unit{x},\unit{y})$ is the Dirac delta function on the
+sphere, we define component-wise multiplication of the SLSHT
+distribution $\bv{g}(\unit{x})$ and the filter function
+$\bv{z}(\unit{x})$ to obtain the multiplicative modified
+distribution~(MMD), $\bv{v}(\unit{x})$ through
+\begin{equation}
+\label{Eq:MMD_dist_element_def}
+    v(\unit{x};n) \dfn z(\unit{x};n)\,g(\unit{x};n),
+\end{equation}
+for $0 \leq n \leq N_g$, which results in
+\begin{equation}
+\label{Eq:MMD_dist_def}
+    \bv{v}(\unit{x}) \dfn \bv{z}(\unit{x})\odot\bv{g}(\unit{x}).
+\end{equation}
+Multiplicative modification of the SLSHT distribution in
+spatio-spectral domain is depicted in the first two blocks of
+\figref{fig:concept2}(a).
+\end{definition}
+
+\begin{remark}
+Since each component of the SLSHT distribution describes the
+spatially varying contribution of a spherical harmonic in the spatial domain, the
+multiplication of the filter function $\bv{z}(\unit{x})$ and the
+SLSHT distribution $\bv{g}(\unit{x})$ can be thought of as a type of
+spatially-varying spectral filtering.
+\end{remark}
+
+\begin{remark}
+If the filter function $\bv{z}(\unit{x})$ is real, then the kernel
+$\bv{\zeta}(\unit{x},\unit{y})$ in \eqref{Eq:MMD_kernel_def} is real
+and satisfies $\bv{\zeta}(\unit{x},\unit{y}) =
+\bv{\zeta}(\unit{y},\unit{x})$, which implies that the corresponding operator is
+self adjoint.
+\end{remark}
+
+The general least squares approximation method of $\bv{v}(\unit{x})$
+is shown in the third block of \figref{fig:concept2}(a) according to
+\eqref{Eq:thm_state}. For the special case of exact recovery, we can
+explicitly provide the expression for obtaining the signal exactly
+from the modified distribution $\bv{v}(\unit{x})$.
+
+
+\begin{lemma}
+\label{thm:theorem2} If the MMD, $\bv{v}(\unit{x})$ given in
+\eqref{Eq:MMD_dist_def}, is a valid SLSHT distribution, then the
+$n$-th spherical harmonic coefficient of the transformed signal
+$d(\unit{x})$, denoted by $\shc{d}{n}{}$, is related to the signal
+$f(\unit{x})$ by
+\begin{equation}
+\label{Eq:inversion_modified_element}
+    \shc{d}{n}{} = \frac{1}{K}\intsph f(\unit{x}) w_n(\unit{x})
+    \conj{Y_n(\unit{x})} \,ds(\unit{x}),
+\end{equation}
+where $w_n(\unit{x})$ is the result of isotropic convolution of the
+$n$-th filter component $z(\unit{x};n)$ and the azimuthally
+symmetric window function $h(\unit{x})$. That is,
+\begin{equation}
+\label{Eq:inversion_modified_element_2}
+    w_n(\unit{x}) = \intsph \parn[\big]{\mathcal{D}(\phi,\theta,0)h}(\unit{y})\,
+        z(\unit{y};n) \,ds(\unit{y}), \quad \unit{x} = \unit{x}(\theta,\phi).
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+See \appref{App:thm2}.
+\end{proof}
+
+In what follows, we first explicitly discuss the case where the MMD,
+$\bv{v}(\unit{x})$, is a valid SLSHT distribution and provide the
+elements of the transformation matrix $\bv{\Upsilon}$ for this
+special case. We then discuss the elements of the transformation
+matrix $\bv{\Upsilon}$ in the general approximation approach.
+
+\begin{lemma}\label{lem:upsilon:exact}
+Assume that the MMD, $\bv{v}(\unit{x})$, is a valid SLSHT
+distribution. Then the spatio-spectral transformation matrix
+$\bv{\Upsilon}$ in \eqref{Eq:linear_transform}, which relates
+$\bv{d}$ to $\bv{f}$, is given by
+\begin{equation}
+\label{Eq:linear_transform_MMD_exact}
+    \bv{\Upsilon} =  \frac{1}{K}\intsph \Big\{
+        \diagg{\bv{z}(\unit{x})}\,\bv{\Psi}(\unit{x})\Big\}_{N_f}
+        \,ds(\unit{x}),
+\end{equation}
+where $\diagg{\bv{z}(\unit{x})}$ is the diagonal matrix with
+diagonal entries specified by ${\bv{z}(\unit{x})}$ and
+$\{\cdot\}_{N_f}$ selects the first sub-matrix of size
+$(N_f+1)\times(N_f+1)$. The entries of $\bv{\Upsilon}$ are
+    \begin{align}
+        \Upsilon_{u,u'}
+            &= \frac{1}{K} \intsph z(\unit{x};u) \,\psi_{u,u'}(\unit{x}) \,ds(\unit{x}) \nonumber \\
+            &= \smashoperator{\sum_{r=0}^{\min(N_h,\,N_{z_u})}}
+                \frac{1}{\shc{h}{0}{0}\sqrt{2p+1}}\,T(u';r;u) \, \shc{h}{p}{0}
+                \,\shc{z_u}{r}{}, \quad (p,q)\leftrightarrow r.
+        \label{Eq:linear_transform_MMD_exact_entries}
+    \end{align}
+\end{lemma}
+
+\begin{proof}
+See \appref{App:thm2}.
+\end{proof}
+
+
+%\begin{remark}
+%\textbf{Do we need this?} It must be noted here that we have not posed any condition on the
+%maximum spectral degree of $z(\unit{x},c)$, however it is bandlimited
+%by the maximum spectral degree of the window function because of
+%their multiplication in spectral domain and the integral in
+%\eqref{Eq:linear_transform_MMD_exact} that results in isotropic
+%convolution between window function and each of $z(\unit{x},c)$ for
+%each $0 \leq c \leq N_g$, which is also indicated in
+%\eqref{Eq:inversion_modified_element_2}.
+%\end{remark}
+% Salman suggests this is removed; Rod thinks it is slightly esoteric; so probably delete
+
+\begin{lemma}\label{lem:upsilon:approx}
+For the multiplicative modification of the SLSHT distribution, the
+general spatio-spectral transformation matrix ${\bv{\Upsilon}}$ in
+\eqref{Eq:ss_transformation_matrix} is simplified to
+\begin{equation}
+\label{Eq:linear_transform_MMD_approx}
+    {\bv{\Upsilon}} = \energyinv \,
+    \Big(\intsph  \bv{\Psi}^{H}(\unit{x}) \,\big(
+    \diagg{\bv{z}(\unit{x})} \,\bv{\Psi}(\unit{x})\big)\,ds(\unit{x})\Big),
+\end{equation}
+with entries given by
+    \begin{align}
+    \label{Eq:linear_transform_MMD_approx_entries}
+        \Upsilon_{u,u'}= \energyinv\, \sum_{n=0}^{N_g}
+            \sum_{r=0}^{N_h}\sum_{r'=0}^{N_h}\sum_{c=0}^{N_{z_n}}
+            & \frac{4\pi}{\sqrt{{(2p+1)(2p'+1)}}} \,
+        \conj{\shc{h}{p}{0}}
+        \shc{h}{p'}{0}\shc{z_n}{c}{} \nonumber \\ &
+        \times T(u;r;n)\,T(u';r';n)\,T(r;c;r'),
+    \end{align}
+where the mappings $(\ell,m)\leftrightarrow n$,
+$(p,q)\leftrightarrow r$, $(p',q')\leftrightarrow r'$ and
+$(s,t)\leftrightarrow u$ are used.
+\end{lemma}
+
+\begin{proof}
+See \appref{App:thm2}.
+\end{proof}
+
+We note that this approximate solution cannot be further simplified
+because of the coupling of Wigner-$3j$ symbols.
+
+
+\subsection{Convolutive Modification of the SLSHT Distribution}
+\label{sec:cmd}
+
+We now consider a signal transformation in the spatio-spectral domain
+as the convolutive modification of the SLSHT distribution, which can
+be achieved through convolution of the filter function
+$\bv{z}(\unit{x})$ and the SLSHT distribution $\bv{g}(\unit{x})$.
+The convolutive modification can also be thought of as
+spatially-varying spectral filtering of the signal, which is
+accomplished by filtering the spatially-varying spectral components
+of the signal in the spatial domain. The analog of convolutive
+modification in time-frequency analysis is smoothing of
+the time-frequency distribution to remove artifacts in the
+time-frequency domain~\cite{Cohen:1989,Krattenthaler:1993}. We first
+specify the kernel $\bv{\zeta}(\unit{x},\unit{y})$ in terms of the
+convolutive filter function and then express this operation as a
+linear transformation of the signal. Later, we discuss the special
+case in which each component of the filter function is azimuthally
+symmetric.
+
+\begin{definition}[Convolutive SLSHT Modification]
+Let $\unit{x} = \unit{x}(\theta,\phi)$ and a spatio-spectral filter
+function $\bv{z}(\unit{y})$ be given according to Definition
+\ref{def:filter}. The kernel $\bv{\zeta}(\unit{x},\unit{y})$ in
+\eqref{Eq:gen_class_tx} is obtained by rotating each component of
+$\bv{z}(\unit{y})$, such as $z(\unit{y};n)$, as follows
+    \begin{align}
+    \label{Eq:CMD_kernel_def}
+        \bv{\zeta}(\unit{x},\unit{y})
+            &\dfn \parn[\big]{\mathcal{D}(\phi,\theta,0)\bv{z}}(\unit{y}) \nonumber \\
+            &= \parn[\Big]{\parn[\big]{\mathcal{D}(\phi,\theta,0)z}(\unit{y};0), \,
+                \parn[\big]{\mathcal{D}(\phi,\theta,0)z}(\unit{y};1), \, \cdots, \,
+                \parn[\big]{\mathcal{D}(\phi,\theta,0)z}(\unit{y};N_g)}'.
+    \end{align}
+As a result, the convolutive modified distribution~(CMD)
+$\bv{v}(\unit{x})$ will have elements given by
+    \begin{equation}
+    \label{Eq:CMD_dist_element_def}
+        v(\unit{x};n) = \intsph \parn[\big]{\mathcal{D}(\phi,\theta,0)z}(\unit{y};n) \,
+        g(\unit{y};n) \,ds(\unit{y}), \quad \unit{x} = \unit{x}(\theta,\phi),
+    \end{equation}
+for $0\leq n\leq N_g$. More concisely, we can write
+\begin{equation}
+\label{Eq:CMD_dist_def}
+    \bv{v}(\unit{x}) \dfn \parn[\big]{\bv{z}\,\circledast
+    \,\bv{g}}(\unit{x}),
+\end{equation}
+where `$\circledast$' denotes spherical convolution. This
+type of filtering in spatio-spectral domain as convolutive
+modification of the SLSHT distribution is depicted in the first two
+blocks of \figref{fig:concept2}(b).
+\end{definition}
+
+We note here that the convolution definition here, given by the
+operand symbol `$\circledast$' is different from the definition of
+convolutions presented in Chapter~\ref{chap3:chapter3}. Here, we
+consider the special case of SO(3) convolution presented in
+\eqref{ch3:Eq:conv_so3} in Chapter~\ref{chap3:chapter3}, with the
+consideration that the initial rotation around $z$-axis is zero.
+
+Using the definition of the SLSHT distribution $\bv{g}(\unit{x})$
+for signal $f(\unit{x})$, we now formulate an expression that
+relates the CMD $\bv{v}(\unit{x})$ to $\bv{f} =
+\big(\mathcal{F}f\big)(\unit{x})$. Such a relation will be useful in
+finding the signal $d(\unit{x})$ with spectral response $\bv{d}$
+that corresponds to the CMD $\bv{v}(\unit{x})$, and in expressing
+$\bv{d}$ as a linear transformation of $\bv{f}$. This is
+accomplished by defining the matrix $\bv{\Gamma}(\unit{x}) \dfn
+\bv{z}(\unit{x})\,\circledast \,\bv{\Psi}(\unit{x})$ of size
+$(N_g+1)\times (N_f+1)$ with entries
+    \begin{align}\label{}
+        \Gamma_{n,u}(\unit{x})
+            &= \intsph \parn[\big]{\mathcal{D}(\phi,\theta,0)z}(\unit{y};n) \,
+                \psi_{n,u}(\unit{y}) \,ds(\unit{y}) \nonumber \\
+         &= {\sum_{r=0}^{\min(N_h,\,N_{z_n})}} \sum_{q'=-p}^p
+            \sqrt{\frac{4\pi}{2p+1}}\shc{h}{p}{0}\,\shc{z_n}{p}{q'}\,T(u;r;n)\,
+            D_p^{q,q'}(\phi,\theta,0),
+    \label{Eq:CMD_dist_der_1}
+    \end{align}
+with $\unit{x} = \unit{x}(\theta,\phi)$ and $r \leftrightarrow
+(p,q)$, which is obtained using \eqref{Eq:window_r} and
+\eqref{Eq:kernel_element}. Therefore, referring to
+\eqref{Eq:stft_matrix} we express the CMD $\bv{v}(\unit{x})$ in
+\eqref{Eq:CMD_dist_def} as
+\begin{equation}
+\label{Eq:CMD_dist_der_2}
+    \bv{v}(\unit{x}) = \bv{\Gamma}(\unit{x}) \bv{f}.
+\end{equation}
+Now, we derive the expressions for the spatio-spectral transform matrix
+$\bv{\Upsilon}$ in \eqref{Eq:linear_transform} for both exact and
+approximate cases.
+
+\begin{lemma}
+If the CMD $\bv{v}(\unit{x})$ defined in \eqref{Eq:CMD_dist_def} is
+a valid SLSHT distribution, the spatio-spectral transform matrix
+$\bv{\Upsilon}$ is obtained by using the inversion operation defined
+in Theorem~\ref{thm:inversion} as
+\begin{equation}
+\label{Eq:linear_transform_CMD_exact}
+    \bv{\Upsilon} = \frac{1}{K}\intsph \Big\{\bv{\Gamma}(\unit{x})\Big\}_{N_f}
+        \,ds(\unit{x}),
+\end{equation}
+where the entries are obtained by integrating the elements of
+$\bv{\Gamma}(\unit{x})$ in \eqref{Eq:CMD_dist_der_1} as
+    \begin{equation}
+    \label{Eq:linear_transform_CMD_exact_entries}
+        \Upsilon_{u,u'} = \sum_{r=0}^{\min(N_h,\,N_{z_{u}})} \sum_{q'=-p}^p
+        \frac{1}{\shc{h}{0}{0}\sqrt{{2p+1}}}\shc{h}{p}{0}\,\shc{z_{u}}{p}{q'}\,T(u';r,u)\,\intsph
+        D_p^{q,q'}(\phi,\theta,0) \,ds(\unit{x}).
+    \end{equation}
+The integral above can be evaluated using the relation between
+spherical harmonic function and Wigner-$D$ function in
+\eqref{eqn:wignerD:Y} and the expression for the integral of
+associated Legendre function~\cite{Jepsen:1955} as
+\begin{align}\label{Eq:integral_wigner_d}
+    \intsph D_p^{q,q'}(\phi,\theta,0) \,ds(\unit{x})
+        &= 2\pi\,\delta_{q,0}\int_0^{\pi} d_p^{0,q'}(\theta) \sin\theta\,d\theta \\
+        &\hspace{-30mm}= 2\pi
+            \begin{cases}
+                \displaystyle
+                -\frac{2q'\,(p/2)!\, (p/2)!\, \sqrt{(p-q')!(p+q')!}}{p \,\big((p+q')/2\big)! \,
+                    \big((p-q')/2\big)!\, (p+1)!} \\
+                \hspace{15mm}\text{if $p$ is even, $q'$ is even, and $q = 0$,} \\
+                \displaystyle
+                -\frac{q'\pi\,(p+1)!\, \sqrt{(p-q')!(p+q')!} }{p\,2^{2p+1}\, \big((p+q')/2\big)! \,
+                    \big((p-q')/2\big)!\,\big((p+1)/2\big)! }  \\
+                \hspace{15mm}\text{if $p$ is odd, $q'$ is odd, and $q = 0$,} \\
+                0\quad\textrm{otherwise.}\\
+            \end{cases}
+\end{align}
+\end{lemma}
+
+\begin{proof}
+The proof follows directly from \eqref{Eq:CMD_dist_der_1} and is
+omitted for brevity.
+\end{proof}
+
+\begin{lemma}\label{lemma:upsilon:conv:appr}
+For the case that the CMD $\bv{v}(\unit{x})$ in
+\eqref{Eq:CMD_dist_def} is not a valid SLSHT distribution, the
+approximate solution presented in Theorem~\ref{thm:approx_solution}
+specializes to
+\begin{align}
+\label{Eq:linear_transform_CMD_approx}
+    {\bv{\Upsilon}} = \energyinv \!
+    \intsph \bv{\Psi}^{H}(\unit{x}) \,
+    \bv{\Gamma}(\unit{x}) \,ds(\unit{x}),
+\end{align}
+with entries
+    \begin{align}
+        \Upsilon_{u,u'}
+        &= \energyinv \sum_{n=0}^{N_g} \intsph
+            \conj{\psi_{n,u}(\unit{x})}\Gamma_{n,u'}(\unit{x}) \,ds(\unit{x}) \nonumber \\
+        &= \energyinv \sum_{n=0}^{N_g} \sum_{r=0}^{N_h} \sum_{r'=0}^{\min(N_h,\,N_{z_n})}
+            \sum_{q'' = -p'}^{p'}\, \frac{{4\pi}}{\sqrt{(2p+1)}}\, \conj{\shc{h}{p}{0}}
+            \frac{1}{\sqrt{(2p'+1)}}\, \shc{h}{p'}{0} \nonumber \\
+        &\qquad\qquad \times\shc{z_n}{p'}{q''}\,T(u;r;n)\,T(u';r';n) \intsph
+            D_{p'}^{q',q''}(\phi,\theta,0) Y_{r}(\unit{x}) \,ds(\unit{x}),
+    \label{Eq:linear_transform_CMD_approx_entries}
+    \end{align}
+where the mappings $(p,q)\leftrightarrow r$ and
+$(p',q')\leftrightarrow r'$ are used. The integral in
+\eqref{Eq:linear_transform_CMD_approx_entries} is the projection of
+Wigner-$D$ function $D_{p'}^{q',q''}(\phi,\theta,0)$ onto spherical
+harmonics and can be evaluated by employing the expansion of the product
+of Wigner-$D$ functions using Wigner $3j$ symbols. Following the
+relation between Wigner-$D$ functions and spherical harmonics in
+\eqref{eqn:wignerD:Y}, the integral in
+\eqref{Eq:linear_transform_CMD_approx_entries} can be expressed as
+%
+\begin{align}
+\intsph D_{p'}^{q',q''}(\phi,\theta,0) Y_{p}^q(\unit{x})
+\,ds(\unit{x}) &= \sqrt{\frac{4\pi}{2p+1}} \int_0^{\pi}
+d_{p'}^{q',q''}(\theta)d_p^{q,0}(\theta)\sin\theta d\theta
+\int_0^{2\pi} e^{-i(q-q')\phi}d\phi \nonumber \\
+&=2\pi \sqrt{\frac{4\pi}{2p+1}} \int_0^{\pi}
+d_{p'}^{q',q''}(\theta)d_p^{q',0}(\theta)\sin\theta d\theta,
+\end{align}
+%
+\noindent where the integral over $\theta$ can be evaluated by
+employing the following expansion of product of Wigner-$d$ functions
+in terms of Wigner-$3j$ symbols and then using the computation of
+integral given in \eqref{Eq:integral_wigner_d}
+%
+    \begin{equation}
+        d_{p'}^{q',q''}(\theta)d_p^{q',0}(\theta) = (-1)^{q''} \,
+            \sum_{c=|p'-p|}^{p'+p}(2c+1) \,d_c^{0,q''}(\theta)
+        \begin{pmatrix}
+          p' & p & c \\
+          q' & q' & -2q'
+        \end{pmatrix}
+        \begin{pmatrix}
+          p' & p & c \\
+          q'' & 0 & -q''
+        \end{pmatrix}.
+    \end{equation}
+
+\end{lemma}
+
+\begin{proof}
+We use \eqref{Eq:thm_state}, \eqref{Eq:linear_transform}, and
+\eqref{Eq:CMD_dist_der_2} to infer
+\eqref{Eq:linear_transform_CMD_approx}. Equation
+\eqref{Eq:linear_transform_CMD_approx_entries} follows  from
+\eqref{Eq:CMD_dist_der_1} and \eqref{eq:psi:conj}, where the latter
+is defined in Appendix \ref{App:thm2}.
+\end{proof}
+
+Again, further simplification of this approximate solution is not
+possible because of coupling of Wigner-$3j$ symbols and irreducible
+Wigner-D functions. However, for the special case where each
+component of the filter function is azimuthally symmetric, we obtain
+further simplifications as follows.
+
+
+\subsubsection{Special Case -- Azimuthally Symmetric Filter Function}
+
+If each component of the filter function is azimuthally symmetric,
+then $\shc{z_n}{p'}{q''} = 0$ for $q''\neq 0$ in
+\eqref{Eq:linear_transform_CMD_approx_entries} for all
+$n\in[0,N_g]$. Using the relation between Wigner-$D$ functions and
+spherical harmonics in \eqref{eqn:wignerD:Y} and the orthonormal property
+of spherical harmonics, the expression for the entries
+$\Upsilon_{u,u'}$ in \eqref{Eq:linear_transform_CMD_approx_entries}
+simplifies to
+    \begin{align}
+    \label{Eq:symm_case_special_entries_1}
+        \Upsilon_{u,u'} = \energyinv \, \sum_{n=0}^{N_g}  \,
+        \sum_{r=0}^{\min(N_h,\,N_{z_n})} & \,
+        \parn[\Big]{\frac{4\pi}{2p+1}}^{3/2} \big|\shc{h}{p}{0}\big|^2\,
+        \shc{z_n}{p}{0} \, \nonumber \\ & \times T(u;r;n)\,T(u';r;n), \quad
+        \quad (p,q)\leftrightarrow r.
+    \end{align}
+Let us assume that in addition to being azimuthally symmetric, the
+components of the filter function also satisfy ${z}(\unit{x};n)=
+{z}(\unit{x};\ell)$ with the mapping $(\ell,m) \leftrightarrow n $
+for all $n\in[0,N_g]$, which indicates that there is the same filter
+function component of degree $\ell$ for all the spherical harmonic
+orders $-\ell \leq m \leq \ell$. With this assumption and employing
+the orthogonality relations of Wigner-$3j$ symbols
+\cite{Sakurai:1994}, $\Upsilon_{u,u'}$ in
+\eqref{Eq:symm_case_special_entries_1} simplifies to
+    \begin{equation}
+    \label{Eq:symm_case_special_entries_2}
+        \Upsilon_{u,u'} = \energyinv\, \sum_{\ell=0}^{L_g}
+            \, \sum_{p=0}^{\min(L_h,\,L_{z_n})}  \,(2\ell+1)
+            \sqrt{\frac{4\pi}{2p+1}}\, \shc{z_\ell}{p}{0}\, \big|\shc{h}{p}{0}\big|^2\,
+        \renewcommand{\arraystretch}{0.65}
+        \begin{pmatrix}
+            s & p & \ell \\
+            0 & 0 & 0
+        \end{pmatrix}^2
+        \, \delta_{u,u'}
+    \end{equation}
+and the spatio-spectral transformation matrix $\bv{\Upsilon}$
+becomes a diagonal matrix.
+%\textbf{It seems like we should write $\delta_{s,s'}\delta_{t,t'}\delta_{t,0}$. So not only diagonal, but also non-zero for zero order terms?}
+%Some concluding/bridging statements are needed here or not?
+
+
+\section{Examples}
+\label{sec:examples}
+
+In this section, we provide an illustration of the filtering
+operation in the spatio-spectral domain. In our experiments, we have
+implemented the method outlined in \cite{Driscoll:1994} to calculate
+the spherical harmonic coefficients and the triple product
+\eqref{Eq:triple_prod_abc} in \texttt{MATLAB}. We use equiangular
+sampling with $M \times M$ samples on the sphere as $\theta_m = {\pi
+m/M}$, $\phi_m = {2 \pi m}/{M}$ for $m=0,1,\hdots,M-1$. Note that
+the exact quadrature rule can be evaluated using this tessellation.
+We use the most optimally concentrated azimuthally symmetric
+band-limited Slepian eigenfunction as the window function to obtain
+the SLSHT distribution of a
+signal~\cite{Wieczorek:2005,Simons:2006}. For inverse spherical
+harmonic transform of a function with the maximum spherical harmonic
+degree $L$, we use the minimum resolution $M=2(L+1)$ for the exact
+quadrature rule~\cite{Driscoll:1994}. Furthermore, we consider unit
+energy normalized functions in our experiments.
+
+
+\begin{figure*}[t]
+    \centering
+    \subfloat[]{%Co-latitude portion of signal $f(\unit{x}) = f(\theta)$] {
+        \includegraphics[width=0.48\textwidth]{f_spatial}}
+    \subfloat[]{%Signal $f(\unit{x}) = f(\theta)$ shown on the sphere] {
+        \includegraphics[width=0.48\textwidth]{f_sphere}} \\[-1mm]
+    \subfloat[]{%Spectrum of signal vs degree $\ell$ for order $m=0$.]{
+       \includegraphics[width=0.48\textwidth]{f_spect}}
+    \subfloat[]{%SLSHT distribution ${\bv{g}}(\unit{x})$ of signal $f(\unit{x}) = f(\theta)$] {
+       \includegraphics[width=0.5\textwidth]{dist_f_ss}}\vspace{-2mm}
+    \caption{Signal $f(\unit{x}) = f(\theta)$: (a) as a function of co-latitude $\theta$ and (b) on the sphere. (c) Spectrum of the signal $\bv{f}$ vs degree $\ell$ for order $m=0$, $\shc{f}{\ell}{0}$. (d) SLSHT distribution ${\bv{g}}(\unit{x})$ of the signal as a function of degree $\ell$ and co-latitude $\theta$.}
+\label{fig:example1_1}
+\end{figure*}
+
+
+\subsection{First Example}
+\label{sec:example1}
+
+In our first example, we consider the band-limited azimuthally
+symmetric signal $f(\unit{x}) = f(\theta)$ on the sphere with
+maximum spherical harmonic degree $L_f = 60$. The signal under
+consideration is shown in \figref{fig:example1_1}(a) and (b)  and is
+obtained by spectrally truncating the following signal
+$f_1(\unit{x})$ defined as
+    \begin{equation}
+        f_1(\unit{x}) = f_1(\theta) \dfn
+        \begin{cases}
+            1, & \theta \in [0, \pi/8] \cup [\pi/4, 3\pi/8]
+                \cup[\pi/2,5\pi/8] \cup[3\pi/4,7\pi/8]; \\
+            0, & \textrm{otherwise;}\
+        \end{cases}
+    \end{equation}
+to a maximum spherical harmonic degree $L_f$. Since the signal is
+azimuthally symmetric, only zero-order spherical harmonic
+coefficients $\shc{f}{\ell}{0}$ can be non-zero, which are shown in
+\figref{fig:example1_1}(c). Since we are seeking the contribution of
+zero-order spherical harmonics, the SLSHT distribution
+$\bv{g}(\unit{x})$ is shown in \figref{fig:example1_1}(d) as a
+function of co-latitude $\theta$ and degree $\ell$. The SLSHT
+distribution is obtained using an azimuthally symmetric
+eigenfunction window of maximum degree $L_h = 60$, which is
+spatially concentrated in the region $ 0 \leq \theta \leq \pi/30$.
+We are interested to obtain the MMD $\bv{v}(\unit{x})$, defined in
+\eqref{Eq:MMD_dist_def}, using the following filter function
+$\bv{z}(\unit{x})$
+\begin{equation}\label{Eq:filter_ex1}
+{z}(\unit{x};\ell,0) =
+     \begin{cases}
+       1, & 30 \leq \ell \leq 50,\,\pi/4 \leq \theta \leq \pi/2,\,0\leq\phi<2\pi;  \\
+       0, & \text{otherwise;}\\
+            \end{cases}
+\end{equation}
+where the maximum spectral degree is considered to be $L_{z_n} = 60$
+for each non-zero filter component ${z}(\unit{x};\ell,0)$ for $30
+\leq \ell \leq 50$. The filter function $\bv{z}(\unit{x})$ is shown
+in the spatio-spectral domain in \figref{fig:example1_2}(a) as a
+function of degree $\ell$ and co-latitude $\theta$. The negligible
+ringing, which can be observed outside the spatio-spectral region
+defined in \eqref{Eq:filter_ex1} along the spatial domain, is due to
+the consideration that each component of filter function is
+band-limited with $L_{z_n}=60$.
+%\textbf{(have a question here). filter components are space limited, so they cannot be bandlimited too. So is (56) approximate?}.
+Since the filter function truncates $\bv{g}(\unit{x})$ in both the spatial and spectral domains, the resulting MMD $\bv{v}(\unit{x})$ is not a valid SLSHT distribution. Therefore, we employ the approximate solution to determine the signal $d(\unit{x}) = d(\theta)$, the SLSHT distribution of which best approximates the MMD $\bv{v}(\unit{x})$ in the least squares sense. The approximated distribution $\hat{\bv{v}}(\unit{x})$ is shown in \figref{fig:example1_2}(b) which is the SLSHT distribution of  signal $d(\unit{x})$. The signal $d(\unit{x})$ is shown in \figref{fig:example1_2}(c) and \figref{fig:example1_2}(d) in the spatial and spectral domains, respectively. The approximated distribution $\hat{\bv{v}}(\unit{x})$ shows that the signal is concentrated around the desired spatio-spectral region. There are some artifacts near the poles at $\theta=0$ and $\theta=\pi$, which is due to the fact that zero-order spherical harmonics have relatively higher values near the poles. %Since the SLSHT distribution determines the correlation in the localized spatial region, therefore the value of the correlation would be higher.
+
+
+\begin{figure*}[t]
+    \centering
+    \subfloat[]{%
+        \includegraphics[width=0.48\textwidth]{filter_1_ss}}
+    \subfloat[]{%
+        \includegraphics[width=0.48\textwidth]{dist_r_1_ss.pdf}} \\[-3mm]
+    \subfloat[]{%
+       \includegraphics[width=0.48\textwidth]{r_spatial_1}}
+    \subfloat[]{%
+       \includegraphics[width=0.48\textwidth]{r_spect_1}}\vspace{-2mm}
+    \caption{(a) Spatially-varying filter ${\bv{z}}(\unit{x})$ as defined in \eqref{Eq:filter_ex1}. (b) The approximated distribution ${\hat{\bv{v}}}(\unit{x})$ as the SLSHT distribution of the signal $d(\unit{x})$. (c) Signal $d(\unit{x}) = d(\theta)$ in the spatial domain as a function of co-latitude $\theta$ and (d) in the spectral domain as $\bv{d}$ vs degree $\ell$ for order $m=0$.}
+\label{fig:example1_2}
+\end{figure*}
+
+
+\begin{figure*}[t]
+\centering
+\subfloat[]{%
+    \includegraphics[width=0.48\textwidth]{filter_2_ss}}
+\subfloat[]{%
+    \includegraphics[width=0.48\textwidth]{dist_r_2_ss.pdf}} \\[-3mm]
+\subfloat[]{%
+    \includegraphics[width=0.48\textwidth]{r_spatial_2}}
+\subfloat[]{%
+    \includegraphics[width=0.48\textwidth]{r_spect_2}}\vspace{-2mm}
+    \caption{(a) Spatially-varying filter ${\bv{z}}(\unit{x})$ as defined in \eqref{Eq:filter_ex2}. (b) The approximated distribution ${\hat{\bv{v}}}(\unit{x})$ as the SLSHT distribution of the signal $d(\unit{x})$. (c) Signal $d(\unit{x})=d(\theta)$ in the spatial domain as a function of co-latitude $\theta$ and (d) in the spectral domain as $\bv{d}$ vs degree $\ell$ for order $m=0$.}
+\label{fig:example1_3}
+\end{figure*}
+
+
+
+\subsection{Second Example}
+
+The type of filtering shown in Section~\ref{sec:example1} which
+truncates the signal in the spatio-spectral domain can also be
+considered as spatial truncation followed by spectral truncation.
+However, this will not ensure concentration of the filtered
+signal in the spatio-spectral domain. In order to further illustrate
+the capability of the proposed framework, we consider another
+example of multiplicative modification of the SLSHT distribution, in
+which we carry out spatially-varying spectral filtering in the
+spatio-spectral domain.
+
+We consider the following filter function $\bv{z}(\unit{x})$ in the
+spatio-spectral domain
+    \begin{equation}
+    \label{Eq:filter_ex2}
+        {z}(\unit{x};\ell,0) =
+            \begin{cases}
+                1, & 0 \leq \ell \leq 10,\,0 \leq \theta \leq \pi,\,0\leq\phi<2\pi;  \\
+                1, & 11 \leq \ell \leq 70,\,(\ell+20)\pi/120 \leq \theta \leq
+                \pi;
+                    0\leq\phi<2\pi  \\
+                1, & 71 \leq \ell \leq 120,\,3\pi/4 \leq \theta \leq \pi,\,0\leq\phi<2\pi;  \\
+                0, & \textrm{otherwise;},\\
+            \end{cases}
+    \end{equation}
+which is shown in \figref{fig:example1_3}(a), where we have again
+assumed that each filter function component is band-limited with the
+maximum spherical harmonic degree equal to $L_{z_n} = 60$. It is
+evident from \figref{fig:example1_3}(a) that the filter function
+is spatially-varying in the spatio-spectral domain and thus filters
+out different spectral contents in different spatial regions. For
+example, it filters the contribution of all spherical harmonics of
+degree greater than $10$ around $\theta = \pi/4$, whereas it
+filters spherical harmonics of degree greater than $70$ around
+$\theta=3\pi/4$. Thus such type of filtering can be regarded
+as spatially-varying low pass filtering, where the bandwidth of the
+filter function is changing with the co-latitude. Using the proposed
+least squares solution, we determine the signal $d(\unit{x})$ whose
+SLSHT distribution best approximates the MMD $\bv{v}(\unit{x})$ in the least
+squares sense. The approximated distribution
+$\hat{\bv{v}}(\unit{x})$ in the spatio-spectral domain and the signal
+$d(\unit{x})$ in spatial and spectral domains are shown in
+\figref{fig:example1_3}(b), (c) and (d), where the effect of
+spatially-varying low-pass filtering is apparent.
+
+
+\section{Summary of Contributions}\label{ch5:sec:conclusions}
+
+In this chapter, we have presented a framework to transform a
+signal in the spatio-spectral domain using SLSHT distribution of a
+signal presented in Chapter 4. Due to transformation of SLSHT
+distribution of a signal in spatio-spectral domain, there is a possibility that there exists no
+signal which corresponds to the modified distribution. To address this
+problem, we have presented solution to find a signal, the SLSHT
+distribution of which optimally approximates the modified distribution in
+the least square sense. The proposed framework has also been formulated
+as a linear transformation of a signal.
+
+Later, we investigated multiplicative and convolutive modification
+of SLSHT distribution in the spatio-spectral domain. The power of
+the technique was illustrated in two examples of spatially-varying
+spectral filtering that allows processing of signals in joint spatio-spectral
+domain, in a way that cannot be accomplished separately in either
+spatial or spectral domain. The contributions made in this chapter
+are as follows.
+
+Addressing Q5 posed in Section~\ref{sec:intro_questions}:
+
+\begin{itemize}
+\item Using the SLSHT distribution as a spatio-spectral representation of a
+signal, we have presented a mechanism to transform, modify and
+filter the signal in the joint spatio-spectral domain to realize
+spatially varying spectral filtering.
+
+\item The signal transformation or modification has been formulated
+using an integral operator acting on SLSHT distribution in
+spatio-spectral domain. We have also presented the action of
+integral operator as linear transformation of the signal, where the
+linear transformation matrix is expressed in terms of the kernel of
+an integral operator.
+\end{itemize}
+
+
+Addressing Q6 posed in Section~\ref{sec:intro_questions}:
+
+\begin{itemize}
+
+\item As in the time-frequency analogy, the
+transformation in the spatio-spectral domain can lead to a modified
+distribution that is not a SLSHT distribution of physically valid
+spatial signal.  We have presented an admissibility condition on
+the kernel of an integral operator, which if satisfied, ensures that
+the modified distribution is a SLSHT distribution of a valid signal.
+
+\item For the case when the admissibility condition is not satisfied, we have formulated and solved an optimization
+problem to find the closest physically valid signal to the modified
+SLHT distribution by deriving an expression for an appropriate
+inverse spatio-spectral transform.
+
+\end{itemize}
+
+
+Addressing Q7 posed in Section~\ref{sec:intro_questions}:
+
+\begin{itemize}
+\item We illustrated two types of transformation to the SLSHT
+distribution, both being instances of a general linear integral
+operator. However, the technique we developed to recover a spectral
+response of a valid signal on the unit sphere from a modified SLSHT
+distribution is not limited to linear transformations in the
+spatio-spectral domain.
+
+\item Multiplicative modification and convolutive modification of the
+SLSHT distribution have been considered. Both can be regarded as
+representing spatially varying spectral filtering. For both
+multiplicative modification and convolutive modification, we haveformulated these modifications as linear
+transformation on the signal.
+\end{itemize}

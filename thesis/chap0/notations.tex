@@ -1,0 +1,63 @@
+\chapter*{Notations}
+
+\section*{General Notations}
+
+\begin{tabular}{ll}
+$x$ & Input feature vector (symptom representation) \\[0.2cm]
+$y$ & Ground truth label vector \\[0.2cm]
+$\hat{y}$ & Predicted output vector \\[0.2cm]
+$N$ & Number of samples/animals in dataset \\[0.2cm]
+$C$ & Number of disease classes \\[0.2cm]
+$D$ & Feature dimensionality \\[0.2cm]
+$T$ & Sequence length (number of temporal visits) \\[0.2cm]
+$\theta$ & Model parameters \\[0.2cm]
+$\mathcal{L}$ & Loss function \\[0.2cm]
+$\eta$ & Learning rate \\[0.2cm]
+\end{tabular}
+
+\section*{Multi-Label Classification}
+
+\begin{tabular}{ll}
+$y_{ij}$ & Binary indicator: 1 if animal $i$ has disease $j$, 0 otherwise \\[0.2cm]
+$\hat{y}_{ij}$ & Predicted probability of animal $i$ having disease $j$ \\[0.2cm]
+$w_j$ & Class weight for disease $j$ (inverse prevalence) \\[0.2cm]
+$\gamma$ & Focal loss focusing parameter \\[0.2cm]
+$p_j$ & Prevalence of disease $j$ in training data \\[0.2cm]
+\end{tabular}
+
+\section*{LSTM Network}
+
+\begin{tabular}{ll}
+$h_t$ & Hidden state at time step $t$ \\[0.2cm]
+$C_t$ & Cell state at time step $t$ \\[0.2cm]
+$f_t$ & Forget gate activation at time $t$ \\[0.2cm]
+$i_t$ & Input gate activation at time $t$ \\[0.2cm]
+$o_t$ & Output gate activation at time $t$ \\[0.2cm]
+$\tilde{C}_t$ & Candidate cell state at time $t$ \\[0.2cm]
+$W_f, W_i, W_o, W_C$ & Weight matrices for gates \\[0.2cm]
+$b_f, b_i, b_o, b_C$ & Bias vectors for gates \\[0.2cm]
+$\sigma$ & Sigmoid activation function \\[0.2cm]
+$\tanh$ & Hyperbolic tangent activation function \\[0.2cm]
+$\odot$ & Element-wise (Hadamard) product \\[0.2cm]
+\end{tabular}
+
+\section*{Multi-Task Learning}
+
+\begin{tabular}{ll}
+$\mathcal{T}_s$ & Task for species $s$ \\[0.2cm]
+$\lambda_s$ & Task weight for species $s$ \\[0.2cm]
+$\text{Enc}(\cdot)$ & Shared encoder function \\[0.2cm]
+$f_s(\cdot)$ & Species-specific prediction head \\[0.2cm]
+\end{tabular}
+
+\section*{Evaluation Metrics}
+
+\begin{tabular}{ll}
+TP & True Positives \\[0.2cm]
+FP & False Positives \\[0.2cm]
+TN & True Negatives \\[0.2cm]
+FN & False Negatives \\[0.2cm]
+$P$ & Precision = TP / (TP + FP) \\[0.2cm]
+$R$ & Recall = TP / (TP + FN) \\[0.2cm]
+$F1$ & F1 Score = $2 \times \frac{P \times R}{P + R}$ \\[0.2cm]
+\end{tabular}

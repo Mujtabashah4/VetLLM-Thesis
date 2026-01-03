@@ -1,0 +1,131 @@
+\chapter*{Abstract}
+
+This thesis is focussed on the development of new signal processing
+techniques to analyse signals defined on the sphere. Analysis
+and processing of signals defined on the sphere find applications in
+various fields of science and engineering, such as cosmology,
+geophysics and medical imaging. The objective to develop new signal
+processing methods is served by formulating, extending and tailoring
+existing Euclidean domain signal processing theories in ways
+that they become suitable for analysis of signals defined on the
+sphere.
+
+The first part of this thesis develops a new type of convolution
+between two signals on the sphere. This is the first type of
+convolution on the sphere which is commutative. Two other
+advantages, in comparison with existing definitions in the
+literature, are that the new convolution admits anisotropic filters
+and signals and the domain of the output remains on the sphere. The
+spectral analysis of the convolution is provided and a fast
+algorithm for efficient computation of convolution output is
+developed.
+
+The second part of the thesis is focused on the development of
+signal processing techniques to analyse signals on the sphere in
+joint spatio-spectral~(spatial-spectral) domain. A transform
+analogous to short-time Fourier transform~(STFT) in time-frequency
+analysis is formulated for signals defined on the sphere, in order
+to devise a spatio-spectral representation of a signal. The proposed
+transform is referred as the spatially localized spherical harmonic
+transform~(SLSHT) and is defined as windowed spherical harmonic
+transform, resulting in the SLSHT distribution. The properties of
+the SLSHT distribution and its analysis in the spherical harmonic domain are
+also provided. Furthermore, examples are provided to demonstrate
+the capability of SLSHT to reveal spatially localized spectral
+contents in a signal that were not obtainable from traditional
+spherical harmonics analysis. With the consideration that data-sets
+on the sphere can be of considerable size and the SLSHT is
+intrinsically computationally demanding depending on the band-limits
+of the signal and window, a fast algorithm for the efficient
+computation of the transform is developed.  The floating point
+precision numerical accuracy of the fast algorithm is demonstrated
+and a full numerical complexity analysis is presented.
+
+A general framework for spatially-varying spectral filtering of
+signals defined on the unit sphere is also developed, as an analogy
+to joint time-frequency filtering. For spatio-spectral filtering,
+the spherical signals are first mapped from the spatial domain into
+a joint spatio-spectral domain using SLSHT, where a spatio-spectral
+signal transformation or modification is introduced. Next, a
+suitable scheme to transform the modified signal from the
+spatio-spectral domain back to an admissible signal in the spatial
+domain using the least squares approach is proposed. It is shown
+that the overall action of the SLSHT and spatio-spectral signal
+modification can be described through a single transformation
+matrix, which is useful in practice. Finally, two specific and
+useful instances of spatially-varying spectral filtering are
+presented, defined through multiplicative and convolutive
+modification of the SLSHT distribution. The proposed framework
+enables filtering or modification in the spatio-spectral domain
+which cannot be carried out in either the spatial or spectral domain.
+
+
+
+
+
+%
+%This thesis is focussed on the development of new signal processing
+%techniques to analyse the signals defined on the sphere. Analysis
+%and processing of signals defined on the sphere find applications in
+%various fields of science and engineering, such as cosmology,
+%geophysics and medical imaging, where the signals are inherently
+%defined on the sphere. The objective to develop new signal
+%processing methods is served by formulating, extending and tailoring
+%the existing Euclidean domain signal processing theories in a way
+%that they become suitable for analysis of signals defined on the
+%sphere.
+%
+%The first part of this thesis develops a new type of convolution
+%between two signals on the sphere. This is the first type of
+%convolution on the sphere which is commutative. Two other
+%advantages, in comparison with existing definitions in the
+%literature, are that the new convolution admits anisotropic filters
+%and signals and the domain of the output remains on the sphere. The
+%spectral analysis of the convolution is provided and a fast
+%algorithm for efficient computation of convolution output is
+%developed.
+%
+%The second part of the thesis is focused on the development of
+%signal processing techniques to analyse the signals on the sphere in
+%joint spatio-spectral~(spatial-spectral) domain. A transform
+%analogous to short-time Fourier transform~(STFT) in time-frequency
+%analysis is formulated for signals defined on the sphere, in order
+%to devise a spatio-spectral representation of a signal. The proposed
+%transform is referred as spatially localized spherical harmonic
+%transform~(SLSHT) and is defined as windowed spherical harmonic
+%transform, resulting in the SLSHT distribution. The properties of
+%SLSHT distribution and its analysis in spherical harmonic domain is
+%also provided. Furthermore, the examples are provided to demonstrate
+%the capability of SLSHT to reveal spatially localized spectral
+%contents in a signal, that were not obtainable from traditional
+%spherical harmonics analysis. For spatial localization, the use of
+%both azimuthally symmetric and asymmetric window function is
+%considered. It is shown that the use of symmetric window function
+%has an advantage that it provides mathematical simplifications,
+%whereas the use of asymmetric function enables the transform to also
+%reveal directional localization of spectral contents in the
+%spatio-spectral domain. With the consideration that data-sets on the
+%sphere are of considerable size and the SLSHT is intrinsically
+%computationally demanding depending on the band-limits of the signal
+%and window, a fast algorithm for the efficient computation of the
+%transform is developed.  The floating point precision numerical
+%accuracy of the fast algorithm is demonstrated and a full numerical
+%complexity analysis is presented.
+%
+%A general framework for spatially-varying spectral filtering of
+%signals defined on the unit sphere is also developed, as an analogy
+%to joint time-frequency filtering. For spatio-spectral filtering,
+%the spherical signals are first mapped from spatial domain into
+%joint spatio-spectral domain using SLSHT, where a spatio-spectral
+%signal transformation or modification is introduced. Next, a
+%suitable scheme to transform the modified signal from the
+%spatio-spectral domain back to an admissible signal in the spatial
+%domain using the least squares approach is proposed. It is shown
+%that the overall action of the SLSHT and spatio-spectral signal
+%modification can be described through a single transformation
+%matrix, which is useful in practice. Finally, the two specific and
+%useful instances of spatially-varying spectral filtering are
+%presented, defined through multiplicative and convolutive
+%modification of the SLSHT distribution. The proposed framework
+%enables the filtering or modification in the spatio-spectral domain
+%which cannot be carried out in either spatial or spectral domain.
