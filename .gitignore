@@ -26,6 +26,10 @@ cache/
 *.pth
 
 # Large data files
+# Allow essential processed data files for fine-tuning
+!processed_data/Verified_DLO_data_-_(Cow_Buffalo)_processed.json
+!processed_data/Verified_DLO_data_(Sheep_Goat)_processed.json
+!processed_data/all_processed_data.json
 processed_data/*.json
 data/processed/*.json
 data/veterinary_notes/*.json
