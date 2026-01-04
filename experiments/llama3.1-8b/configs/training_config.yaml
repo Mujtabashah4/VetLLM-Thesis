@@ -1,0 +1,145 @@
+# VetLLM Training Configuration - Llama 3.1 8B Instruct
+# Primary baseline model for veterinary diagnosis
+
+# ==============================================
+# Model Configuration
+# ==============================================
+model:
+  name: "meta-llama/Llama-3.1-8B-Instruct"
+  # Alternative: "meta-llama/Meta-Llama-3.1-8B-Instruct" (HuggingFace naming)
+  revision: "main"
+  trust_remote_code: true
+  torch_dtype: "bfloat16"  # Use bfloat16 for better numerical stability
+
+# ==============================================
+# Quantization Configuration (QLoRA)
+# ==============================================
+quantization:
+  enabled: true
+  load_in_4bit: true
+  bnb_4bit_quant_type: "nf4"  # Normal Float 4-bit
+  bnb_4bit_compute_dtype: "bfloat16"
+  bnb_4bit_use_double_quant: true  # Nested quantization for memory savings
+
+# ==============================================
+# LoRA Configuration
+# ==============================================
+lora:
+  r: 16  # Rank of update matrices
+  lora_alpha: 32  # Scaling factor (usually 2x r)
+  lora_dropout: 0.05
+  bias: "none"
+  task_type: "CAUSAL_LM"
+  # Target modules for Llama 3.1
+  target_modules:
+    - "q_proj"
+    - "k_proj"
+    - "v_proj"
+    - "o_proj"
+    - "gate_proj"
+    - "up_proj"
+    - "down_proj"
+
+# ==============================================
+# Training Arguments
+# ==============================================
+training:
+  output_dir: "../checkpoints"
+  num_train_epochs: 3
+  
+  # Batch size configuration
+  per_device_train_batch_size: 4
+  per_device_eval_batch_size: 4
+  gradient_accumulation_steps: 4  # Effective batch size: 4 * 4 = 16
+  
+  # Learning rate configuration
+  learning_rate: 1.0e-4
+  weight_decay: 0.01
+  warmup_ratio: 0.03
+  lr_scheduler_type: "cosine"
+  
+  # Sequence length
+  max_seq_length: 512
+  
+  # Gradient handling
+  gradient_checkpointing: true
+  gradient_checkpointing_kwargs:
+    use_reentrant: false
+  max_grad_norm: 1.0
+  
+  # Evaluation and saving
+  evaluation_strategy: "steps"
+  eval_steps: 100
+  save_strategy: "steps"
+  save_steps: 100
+  save_total_limit: 3
+  load_best_model_at_end: true
+  metric_for_best_model: "eval_loss"
+  greater_is_better: false
+  
+  # Logging
+  logging_strategy: "steps"
+  logging_steps: 10
+  logging_first_step: true
+  report_to: "wandb"  # Options: "wandb", "tensorboard", "none"
+  
+  # Optimization
+  optim: "paged_adamw_8bit"  # Memory-efficient optimizer
+  fp16: false
+  bf16: true
+  
+  # Misc
+  seed: 42
+  data_seed: 42
+  remove_unused_columns: false
+  dataloader_num_workers: 4
+  group_by_length: true  # Group samples by length for efficiency
+
+# ==============================================
+# Data Configuration
+# ==============================================
+data:
+  train_file: "../data/train.json"
+  validation_file: "../data/validation.json"
+  test_file: "../data/test.json"
+  text_field: "text"  # Field containing formatted conversation
+  
+  # Preprocessing
+  preprocessing_num_workers: 4
+  
+# ==============================================
+# Wandb Configuration
+# ==============================================
+wandb:
+  project: "vetllm-experiments"
+  entity: null  # Set your wandb entity/username
+  name: "llama3.1-8b-vetllm"
+  tags:
+    - "llama3.1"
+    - "8b"
+    - "lora"
+    - "veterinary"
+    - "diagnosis"
+
+# ==============================================
+# Hardware Configuration
+# ==============================================
+hardware:
+  # Set based on your available GPUs
+  # For single GPU (e.g., A100 40GB, RTX 4090 24GB)
+  device_map: "auto"
+  
+  # For multi-GPU (adjust as needed)
+  # local_rank: -1
+  # deepspeed: null
+
+# ==============================================
+# Experiment Metadata
+# ==============================================
+experiment:
+  name: "llama3.1-8b-vetllm-baseline"
+  description: "Fine-tuning Llama 3.1 8B Instruct for veterinary diagnosis prediction"
+  version: "1.0"
+  author: "VetLLM Research Team"
+  date: "2026-01"
+
