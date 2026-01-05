@@ -1,0 +1,1419 @@
+[
+  {
+    "text": "<|im_start|>system\nYou are VetLLM, a veterinary clinical assistant specialized in livestock diseases. \nGiven a clinical case presentation, you will:\n1. Analyze the clinical signs and symptoms\n2. Provide the most likely diagnosis with SNOMED-CT codes when available\n3. List differential diagnoses to consider\n4. Recommend appropriate treatment and management steps\n5. Explain your clinical reasoning<|im_end|>\n<|im_start|>user\nAnalyze this veterinary case:\n\n**Species**: Sheep\n**Clinical Signs**: coughing and severe coughing\n\nProvide your diagnosis, differentials, treatment plan, and reasoning.<|im_end|>\n<|im_start|>assistant\n1. **Primary Diagnosis**: **Peste des Petits Ruminants** (SNOMED-CT: 1679004)\n\n2. **Differential Diagnoses**:\n   - Goat Pox\n   - Contagious Ecthyma\n   - Bluetongue\n\n3. **Recommended Treatment**:\nSupportive care, antibiotics for secondary infections. Vaccination of herd.\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Cough, Sever cough), the pattern is consistent with Peste des Petits Ruminants. The combination of symptoms and species-specific epidemiology supports this diagnosis.<|im_end|>",
+    "input": "Analyze this veterinary case:\n\n**Species**: Sheep\n**Clinical Signs**: coughing and severe coughing\n\nProvide your diagnosis, differentials, treatment plan, and reasoning.",
+    "output": "1. **Primary Diagnosis**: **Peste des Petits Ruminants** (SNOMED-CT: 1679004)\n\n2. **Differential Diagnoses**:\n   - Goat Pox\n   - Contagious Ecthyma\n   - Bluetongue\n\n3. **Recommended Treatment**:\nSupportive care, antibiotics for secondary infections. Vaccination of herd.\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Cough, Sever cough), the pattern is consistent with Peste des Petits Ruminants. The combination of symptoms and species-specific epidemiology supports this diagnosis.",
+    "metadata": {
+      "animal": "Sheep",
+      "disease": "P.P.R",
+      "disease_normalized": "Peste des Petits Ruminants",
+      "snomed_codes": [
+        "1679004"
+      ],
+      "symptoms": [
+        "Cough",
+        "Sever cough"
+      ]
+    }
+  },
+  {
+    "text": "<|im_start|>system\nYou are VetLLM, a veterinary clinical assistant specialized in livestock diseases. \nGiven a clinical case presentation, you will:\n1. Analyze the clinical signs and symptoms\n2. Provide the most likely diagnosis with SNOMED-CT codes when available\n3. List differential diagnoses to consider\n4. Recommend appropriate treatment and management steps\n5. Explain your clinical reasoning<|im_end|>\n<|im_start|>user\nAnalyze this veterinary case:\n\n**Species**: Cow\n**Clinical Signs**: high fever and limb muscle discoloration\n\nProvide your diagnosis, differentials, treatment plan, and reasoning.<|im_end|>\n<|im_start|>assistant\n1. **Primary Diagnosis**: **Black Quarter** (SNOMED-CT: 29600000)\n\n2. **Differential Diagnoses**:\n   - Anthrax\n   - Malignant Edema\n   - Bacillary Hemoglobinuria\n\n3. **Recommended Treatment**:\nHigh-dose penicillin G, anti-inflammatory therapy. Surgical debridement if localized.\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Very High Fever, Color Change Of Muscles of limb), the pattern is consistent with Black Quarter. The combination of symptoms and species-specific epidemiology supports this diagnosis.<|im_end|>",
+    "input": "Analyze this veterinary case:\n\n**Species**: Cow\n**Clinical Signs**: high fever and limb muscle discoloration\n\nProvide your diagnosis, differentials, treatment plan, and reasoning.",
+    "output": "1. **Primary Diagnosis**: **Black Quarter** (SNOMED-CT: 29600000)\n\n2. **Differential Diagnoses**:\n   - Anthrax\n   - Malignant Edema\n   - Bacillary Hemoglobinuria\n\n3. **Recommended Treatment**:\nHigh-dose penicillin G, anti-inflammatory therapy. Surgical debridement if localized.\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Very High Fever, Color Change Of Muscles of limb), the pattern is consistent with Black Quarter. The combination of symptoms and species-specific epidemiology supports this diagnosis.",
+    "metadata": {
+      "animal": "Cow",
+      "disease": "B.Q",
+      "disease_normalized": "Black Quarter",
+      "snomed_codes": [
+        "29600000"
+      ],
+      "symptoms": [
+        "Very High Fever",
+        "Color Change Of Muscles of limb"
+      ]
+    }
+  },
+  {
+    "text": "<|im_start|>system\nYou are VetLLM, a veterinary clinical assistant specialized in livestock diseases. \nGiven a clinical case presentation, you will:\n1. Analyze the clinical signs and symptoms\n2. Provide the most likely diagnosis with SNOMED-CT codes when available\n3. List differential diagnoses to consider\n4. Recommend appropriate treatment and management steps\n5. Explain your clinical reasoning<|im_end|>\n<|im_start|>user\nAnalyze this veterinary case:\n\n**Species**: Sheep\n**Clinical Signs**: fever and lameness\n\nProvide your diagnosis, differentials, treatment plan, and reasoning.<|im_end|>\n<|im_start|>assistant\n1. **Primary Diagnosis**: **Foot and Mouth Disease** (SNOMED-CT: 3974005)\n\n2. **Differential Diagnoses**:\n   - Vesicular Stomatitis\n   - Bluetongue\n   - Bovine Viral Diarrhea\n\n3. **Recommended Treatment**:\nSupportive care, isolation, wound care for lesions. Notify authorities (notifiable disease).\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Fever(F), Lameness), the pattern is consistent with Foot and Mouth Disease. The combination of symptoms and species-specific epidemiology supports this diagnosis.<|im_end|>",
+    "input": "Analyze this veterinary case:\n\n**Species**: Sheep\n**Clinical Signs**: fever and lameness\n\nProvide your diagnosis, differentials, treatment plan, and reasoning.",
+    "output": "1. **Primary Diagnosis**: **Foot and Mouth Disease** (SNOMED-CT: 3974005)\n\n2. **Differential Diagnoses**:\n   - Vesicular Stomatitis\n   - Bluetongue\n   - Bovine Viral Diarrhea\n\n3. **Recommended Treatment**:\nSupportive care, isolation, wound care for lesions. Notify authorities (notifiable disease).\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Fever(F), Lameness), the pattern is consistent with Foot and Mouth Disease. The combination of symptoms and species-specific epidemiology supports this diagnosis.",
+    "metadata": {
+      "animal": "Sheep",
+      "disease": "FMD",
+      "disease_normalized": "Foot and Mouth Disease",
+      "snomed_codes": [
+        "3974005"
+      ],
+      "symptoms": [
+        "Fever(F)",
+        "Lameness"
+      ]
+    }
+  },
+  {
+    "text": "<|im_start|>system\nYou are VetLLM, a veterinary clinical assistant specialized in livestock diseases. \nGiven a clinical case presentation, you will:\n1. Analyze the clinical signs and symptoms\n2. Provide the most likely diagnosis with SNOMED-CT codes when available\n3. List differential diagnoses to consider\n4. Recommend appropriate treatment and management steps\n5. Explain your clinical reasoning<|im_end|>\n<|im_start|>user\nAnalyze this veterinary case:\n\n**Species**: Sheep\n**Clinical Signs**: fever, muscle rigidity/tetany, nasal discharge, and severe coughing\n\nProvide your diagnosis, differentials, treatment plan, and reasoning.<|im_end|>\n<|im_start|>assistant\n1. **Primary Diagnosis**: **Peste des Petits Ruminants** (SNOMED-CT: 1679004)\n\n2. **Differential Diagnoses**:\n   - Goat Pox\n   - Contagious Ecthyma\n   - Bluetongue\n\n3. **Recommended Treatment**:\nSupportive care, antibiotics for secondary infections. Vaccination of herd.\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Fever(F), Stiffening of body, Fluid leakage from nose...), the pattern is consistent with Peste des Petits Ruminants. The combination of symptoms and species-specific epidemiology supports this diagnosis.<|im_end|>",
+    "input": "Analyze this veterinary case:\n\n**Species**: Sheep\n**Clinical Signs**: fever, muscle rigidity/tetany, nasal discharge, and severe coughing\n\nProvide your diagnosis, differentials, treatment plan, and reasoning.",
+    "output": "1. **Primary Diagnosis**: **Peste des Petits Ruminants** (SNOMED-CT: 1679004)\n\n2. **Differential Diagnoses**:\n   - Goat Pox\n   - Contagious Ecthyma\n   - Bluetongue\n\n3. **Recommended Treatment**:\nSupportive care, antibiotics for secondary infections. Vaccination of herd.\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Fever(F), Stiffening of body, Fluid leakage from nose...), the pattern is consistent with Peste des Petits Ruminants. The combination of symptoms and species-specific epidemiology supports this diagnosis.",
+    "metadata": {
+      "animal": "Sheep",
+      "disease": "P.P.R",
+      "disease_normalized": "Peste des Petits Ruminants",
+      "snomed_codes": [
+        "1679004"
+      ],
+      "symptoms": [
+        "Fever(F)",
+        "Stiffening of body",
+        "Fluid leakage from nose",
+        "Sever cough"
+      ]
+    }
+  },
+  {
+    "text": "<|im_start|>system\nYou are VetLLM, a veterinary clinical assistant specialized in livestock diseases. \nGiven a clinical case presentation, you will:\n1. Analyze the clinical signs and symptoms\n2. Provide the most likely diagnosis with SNOMED-CT codes when available\n3. List differential diagnoses to consider\n4. Recommend appropriate treatment and management steps\n5. Explain your clinical reasoning<|im_end|>\n<|im_start|>user\nAnalyze this veterinary case:\n\n**Species**: Sheep\n**Clinical Signs**: fever, nasal discharge, and severe coughing\n\nProvide your diagnosis, differentials, treatment plan, and reasoning.<|im_end|>\n<|im_start|>assistant\n1. **Primary Diagnosis**: **Peste des Petits Ruminants** (SNOMED-CT: 1679004)\n\n2. **Differential Diagnoses**:\n   - Goat Pox\n   - Contagious Ecthyma\n   - Bluetongue\n\n3. **Recommended Treatment**:\nSupportive care, antibiotics for secondary infections. Vaccination of herd.\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Fever(F), Fluid leakage from nose, Sever cough), the pattern is consistent with Peste des Petits Ruminants. The combination of symptoms and species-specific epidemiology supports this diagnosis.<|im_end|>",
+    "input": "Analyze this veterinary case:\n\n**Species**: Sheep\n**Clinical Signs**: fever, nasal discharge, and severe coughing\n\nProvide your diagnosis, differentials, treatment plan, and reasoning.",
+    "output": "1. **Primary Diagnosis**: **Peste des Petits Ruminants** (SNOMED-CT: 1679004)\n\n2. **Differential Diagnoses**:\n   - Goat Pox\n   - Contagious Ecthyma\n   - Bluetongue\n\n3. **Recommended Treatment**:\nSupportive care, antibiotics for secondary infections. Vaccination of herd.\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Fever(F), Fluid leakage from nose, Sever cough), the pattern is consistent with Peste des Petits Ruminants. The combination of symptoms and species-specific epidemiology supports this diagnosis.",
+    "metadata": {
+      "animal": "Sheep",
+      "disease": "P.P.R",
+      "disease_normalized": "Peste des Petits Ruminants",
+      "snomed_codes": [
+        "1679004"
+      ],
+      "symptoms": [
+        "Fever(F)",
+        "Fluid leakage from nose",
+        "Sever cough"
+      ]
+    }
+  },
+  {
+    "text": "<|im_start|>system\nYou are VetLLM, a veterinary clinical assistant specialized in livestock diseases. \nGiven a clinical case presentation, you will:\n1. Analyze the clinical signs and symptoms\n2. Provide the most likely diagnosis with SNOMED-CT codes when available\n3. List differential diagnoses to consider\n4. Recommend appropriate treatment and management steps\n5. Explain your clinical reasoning<|im_end|>\n<|im_start|>user\nAnalyze this veterinary case:\n\n**Species**: Cow\n**Clinical Signs**: sudden death (peracute)\n\nProvide your diagnosis, differentials, treatment plan, and reasoning.<|im_end|>\n<|im_start|>assistant\n1. **Primary Diagnosis**: **Black Quarter** (SNOMED-CT: 29600000)\n\n2. **Differential Diagnoses**:\n   - Anthrax\n   - Malignant Edema\n   - Bacillary Hemoglobinuria\n\n3. **Recommended Treatment**:\nHigh-dose penicillin G, anti-inflammatory therapy. Surgical debridement if localized.\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Sudden Death), the pattern is consistent with Black Quarter. The combination of symptoms and species-specific epidemiology supports this diagnosis.<|im_end|>",
+    "input": "Analyze this veterinary case:\n\n**Species**: Cow\n**Clinical Signs**: sudden death (peracute)\n\nProvide your diagnosis, differentials, treatment plan, and reasoning.",
+    "output": "1. **Primary Diagnosis**: **Black Quarter** (SNOMED-CT: 29600000)\n\n2. **Differential Diagnoses**:\n   - Anthrax\n   - Malignant Edema\n   - Bacillary Hemoglobinuria\n\n3. **Recommended Treatment**:\nHigh-dose penicillin G, anti-inflammatory therapy. Surgical debridement if localized.\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Sudden Death), the pattern is consistent with Black Quarter. The combination of symptoms and species-specific epidemiology supports this diagnosis.",
+    "metadata": {
+      "animal": "Cow",
+      "disease": "B.Q",
+      "disease_normalized": "Black Quarter",
+      "snomed_codes": [
+        "29600000"
+      ],
+      "symptoms": [
+        "Sudden Death"
+      ]
+    }
+  },
+  {
+    "text": "<|im_start|>system\nYou are VetLLM, a veterinary clinical assistant specialized in livestock diseases. \nGiven a clinical case presentation, you will:\n1. Analyze the clinical signs and symptoms\n2. Provide the most likely diagnosis with SNOMED-CT codes when available\n3. List differential diagnoses to consider\n4. Recommend appropriate treatment and management steps\n5. Explain your clinical reasoning<|im_end|>\n<|im_start|>user\nAnalyze this veterinary case:\n\n**Species**: Sheep\n**Clinical Signs**: fever and nasal discharge\n\nProvide your diagnosis, differentials, treatment plan, and reasoning.<|im_end|>\n<|im_start|>assistant\n1. **Primary Diagnosis**: **Peste des Petits Ruminants** (SNOMED-CT: 1679004)\n\n2. **Differential Diagnoses**:\n   - Goat Pox\n   - Contagious Ecthyma\n   - Bluetongue\n\n3. **Recommended Treatment**:\nSupportive care, antibiotics for secondary infections. Vaccination of herd.\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Fever(F), Fluid leakage from nose), the pattern is consistent with Peste des Petits Ruminants. The combination of symptoms and species-specific epidemiology supports this diagnosis.<|im_end|>",
+    "input": "Analyze this veterinary case:\n\n**Species**: Sheep\n**Clinical Signs**: fever and nasal discharge\n\nProvide your diagnosis, differentials, treatment plan, and reasoning.",
+    "output": "1. **Primary Diagnosis**: **Peste des Petits Ruminants** (SNOMED-CT: 1679004)\n\n2. **Differential Diagnoses**:\n   - Goat Pox\n   - Contagious Ecthyma\n   - Bluetongue\n\n3. **Recommended Treatment**:\nSupportive care, antibiotics for secondary infections. Vaccination of herd.\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Fever(F), Fluid leakage from nose), the pattern is consistent with Peste des Petits Ruminants. The combination of symptoms and species-specific epidemiology supports this diagnosis.",
+    "metadata": {
+      "animal": "Sheep",
+      "disease": "P.P.R",
+      "disease_normalized": "Peste des Petits Ruminants",
+      "snomed_codes": [
+        "1679004"
+      ],
+      "symptoms": [
+        "Fever(F)",
+        "Fluid leakage from nose"
+      ]
+    }
+  },
+  {
+    "text": "<|im_start|>system\nYou are VetLLM, a veterinary clinical assistant specialized in livestock diseases. \nGiven a clinical case presentation, you will:\n1. Analyze the clinical signs and symptoms\n2. Provide the most likely diagnosis with SNOMED-CT codes when available\n3. List differential diagnoses to consider\n4. Recommend appropriate treatment and management steps\n5. Explain your clinical reasoning<|im_end|>\n<|im_start|>user\nAnalyze this veterinary case:\n\n**Species**: Buffalo\n**Clinical Signs**: abortion/pregnancy loss\n\nProvide your diagnosis, differentials, treatment plan, and reasoning.<|im_end|>\n<|im_start|>assistant\n1. **Primary Diagnosis**: **Mastitis** (SNOMED-CT: 72934000)\n\n2. **Differential Diagnoses**:\n   - Udder edema\n   - Teat injury\n   - Mammary abscess\n\n3. **Recommended Treatment**:\nIntramammary antibiotics, systemic antibiotics if systemic signs. Frequent milking.\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Abortion), the pattern is consistent with Mastitis. The combination of symptoms and species-specific epidemiology supports this diagnosis.<|im_end|>",
+    "input": "Analyze this veterinary case:\n\n**Species**: Buffalo\n**Clinical Signs**: abortion/pregnancy loss\n\nProvide your diagnosis, differentials, treatment plan, and reasoning.",
+    "output": "1. **Primary Diagnosis**: **Mastitis** (SNOMED-CT: 72934000)\n\n2. **Differential Diagnoses**:\n   - Udder edema\n   - Teat injury\n   - Mammary abscess\n\n3. **Recommended Treatment**:\nIntramammary antibiotics, systemic antibiotics if systemic signs. Frequent milking.\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Abortion), the pattern is consistent with Mastitis. The combination of symptoms and species-specific epidemiology supports this diagnosis.",
+    "metadata": {
+      "animal": "Buffalo",
+      "disease": "Mastits",
+      "disease_normalized": "Mastitis",
+      "snomed_codes": [
+        "72934000"
+      ],
+      "symptoms": [
+        "Abortion"
+      ]
+    }
+  },
+  {
+    "text": "<|im_start|>system\nYou are VetLLM, a veterinary clinical assistant specialized in livestock diseases. \nGiven a clinical case presentation, you will:\n1. Analyze the clinical signs and symptoms\n2. Provide the most likely diagnosis with SNOMED-CT codes when available\n3. List differential diagnoses to consider\n4. Recommend appropriate treatment and management steps\n5. Explain your clinical reasoning<|im_end|>\n<|im_start|>user\nAnalyze this veterinary case:\n\n**Species**: Goat\n**Clinical Signs**: fever, labial vesicles, severe abdominal pain (colic), and bloody diarrhea (dysentery)\n\nProvide your diagnosis, differentials, treatment plan, and reasoning.<|im_end|>\n<|im_start|>assistant\n1. **Primary Diagnosis**: **Peste des Petits Ruminants** (SNOMED-CT: 1679004)\n\n2. **Differential Diagnoses**:\n   - Goat Pox\n   - Contagious Ecthyma\n   - Bluetongue\n\n3. **Recommended Treatment**:\nSupportive care, antibiotics for secondary infections. Vaccination of herd.\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Fever(F), blisters on lips, Pain in stomach and screams...), the pattern is consistent with Peste des Petits Ruminants. The combination of symptoms and species-specific epidemiology supports this diagnosis.<|im_end|>",
+    "input": "Analyze this veterinary case:\n\n**Species**: Goat\n**Clinical Signs**: fever, labial vesicles, severe abdominal pain (colic), and bloody diarrhea (dysentery)\n\nProvide your diagnosis, differentials, treatment plan, and reasoning.",
+    "output": "1. **Primary Diagnosis**: **Peste des Petits Ruminants** (SNOMED-CT: 1679004)\n\n2. **Differential Diagnoses**:\n   - Goat Pox\n   - Contagious Ecthyma\n   - Bluetongue\n\n3. **Recommended Treatment**:\nSupportive care, antibiotics for secondary infections. Vaccination of herd.\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Fever(F), blisters on lips, Pain in stomach and screams...), the pattern is consistent with Peste des Petits Ruminants. The combination of symptoms and species-specific epidemiology supports this diagnosis.",
+    "metadata": {
+      "animal": "Goat",
+      "disease": "PPR",
+      "disease_normalized": "Peste des Petits Ruminants",
+      "snomed_codes": [
+        "1679004"
+      ],
+      "symptoms": [
+        "Fever(F)",
+        "blisters on lips",
+        "Pain in stomach and screams",
+        "Loose motions with blood"
+      ]
+    }
+  },
+  {
+    "text": "<|im_start|>system\nYou are VetLLM, a veterinary clinical assistant specialized in livestock diseases. \nGiven a clinical case presentation, you will:\n1. Analyze the clinical signs and symptoms\n2. Provide the most likely diagnosis with SNOMED-CT codes when available\n3. List differential diagnoses to consider\n4. Recommend appropriate treatment and management steps\n5. Explain your clinical reasoning<|im_end|>\n<|im_start|>user\nAnalyze this veterinary case:\n\n**Species**: Goat\n**Clinical Signs**: diarrhea and lameness\n\nProvide your diagnosis, differentials, treatment plan, and reasoning.<|im_end|>\n<|im_start|>assistant\n1. **Primary Diagnosis**: **Liver Fluke** (SNOMED-CT: 4764006)\n\n2. **Differential Diagnoses**:\n   - Infectious disease\n   - Metabolic disorder\n   - Toxicosis\n\n3. **Recommended Treatment**:\nSymptomatic treatment, supportive care, and appropriate antimicrobials based on clinical presentation.\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Loose motions, Lameness), the pattern is consistent with Liver Fluke. The combination of symptoms and species-specific epidemiology supports this diagnosis.<|im_end|>",
+    "input": "Analyze this veterinary case:\n\n**Species**: Goat\n**Clinical Signs**: diarrhea and lameness\n\nProvide your diagnosis, differentials, treatment plan, and reasoning.",
+    "output": "1. **Primary Diagnosis**: **Liver Fluke** (SNOMED-CT: 4764006)\n\n2. **Differential Diagnoses**:\n   - Infectious disease\n   - Metabolic disorder\n   - Toxicosis\n\n3. **Recommended Treatment**:\nSymptomatic treatment, supportive care, and appropriate antimicrobials based on clinical presentation.\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Loose motions, Lameness), the pattern is consistent with Liver Fluke. The combination of symptoms and species-specific epidemiology supports this diagnosis.",
+    "metadata": {
+      "animal": "Goat",
+      "disease": "Liver Fluke",
+      "disease_normalized": "Liver Fluke",
+      "snomed_codes": [
+        "4764006"
+      ],
+      "symptoms": [
+        "Loose motions",
+        "Lameness"
+      ]
+    }
+  },
+  {
+    "text": "<|im_start|>system\nYou are VetLLM, a veterinary clinical assistant specialized in livestock diseases. \nGiven a clinical case presentation, you will:\n1. Analyze the clinical signs and symptoms\n2. Provide the most likely diagnosis with SNOMED-CT codes when available\n3. List differential diagnoses to consider\n4. Recommend appropriate treatment and management steps\n5. Explain your clinical reasoning<|im_end|>\n<|im_start|>user\nAnalyze this veterinary case:\n\n**Species**: Sheep\n**Clinical Signs**: fever, coughing, and severe coughing\n\nProvide your diagnosis, differentials, treatment plan, and reasoning.<|im_end|>\n<|im_start|>assistant\n1. **Primary Diagnosis**: **Peste des Petits Ruminants** (SNOMED-CT: 1679004)\n\n2. **Differential Diagnoses**:\n   - Goat Pox\n   - Contagious Ecthyma\n   - Bluetongue\n\n3. **Recommended Treatment**:\nSupportive care, antibiotics for secondary infections. Vaccination of herd.\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Fever(F), Cough, Sever cough), the pattern is consistent with Peste des Petits Ruminants. The combination of symptoms and species-specific epidemiology supports this diagnosis.<|im_end|>",
+    "input": "Analyze this veterinary case:\n\n**Species**: Sheep\n**Clinical Signs**: fever, coughing, and severe coughing\n\nProvide your diagnosis, differentials, treatment plan, and reasoning.",
+    "output": "1. **Primary Diagnosis**: **Peste des Petits Ruminants** (SNOMED-CT: 1679004)\n\n2. **Differential Diagnoses**:\n   - Goat Pox\n   - Contagious Ecthyma\n   - Bluetongue\n\n3. **Recommended Treatment**:\nSupportive care, antibiotics for secondary infections. Vaccination of herd.\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Fever(F), Cough, Sever cough), the pattern is consistent with Peste des Petits Ruminants. The combination of symptoms and species-specific epidemiology supports this diagnosis.",
+    "metadata": {
+      "animal": "Sheep",
+      "disease": "P.P.R",
+      "disease_normalized": "Peste des Petits Ruminants",
+      "snomed_codes": [
+        "1679004"
+      ],
+      "symptoms": [
+        "Fever(F)",
+        "Cough",
+        "Sever cough"
+      ]
+    }
+  },
+  {
+    "text": "<|im_start|>system\nYou are VetLLM, a veterinary clinical assistant specialized in livestock diseases. \nGiven a clinical case presentation, you will:\n1. Analyze the clinical signs and symptoms\n2. Provide the most likely diagnosis with SNOMED-CT codes when available\n3. List differential diagnoses to consider\n4. Recommend appropriate treatment and management steps\n5. Explain your clinical reasoning<|im_end|>\n<|im_start|>user\nAnalyze this veterinary case:\n\n**Species**: Goat\n**Clinical Signs**: fever and lameness\n\nProvide your diagnosis, differentials, treatment plan, and reasoning.<|im_end|>\n<|im_start|>assistant\n1. **Primary Diagnosis**: **Foot and Mouth Disease** (SNOMED-CT: 3974005)\n\n2. **Differential Diagnoses**:\n   - Vesicular Stomatitis\n   - Bluetongue\n   - Bovine Viral Diarrhea\n\n3. **Recommended Treatment**:\nSupportive care, isolation, wound care for lesions. Notify authorities (notifiable disease).\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Fever(F), Lameness), the pattern is consistent with Foot and Mouth Disease. The combination of symptoms and species-specific epidemiology supports this diagnosis.<|im_end|>",
+    "input": "Analyze this veterinary case:\n\n**Species**: Goat\n**Clinical Signs**: fever and lameness\n\nProvide your diagnosis, differentials, treatment plan, and reasoning.",
+    "output": "1. **Primary Diagnosis**: **Foot and Mouth Disease** (SNOMED-CT: 3974005)\n\n2. **Differential Diagnoses**:\n   - Vesicular Stomatitis\n   - Bluetongue\n   - Bovine Viral Diarrhea\n\n3. **Recommended Treatment**:\nSupportive care, isolation, wound care for lesions. Notify authorities (notifiable disease).\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Fever(F), Lameness), the pattern is consistent with Foot and Mouth Disease. The combination of symptoms and species-specific epidemiology supports this diagnosis.",
+    "metadata": {
+      "animal": "Goat",
+      "disease": "FMD",
+      "disease_normalized": "Foot and Mouth Disease",
+      "snomed_codes": [
+        "3974005"
+      ],
+      "symptoms": [
+        "Fever(F)",
+        "Lameness"
+      ]
+    }
+  },
+  {
+    "text": "<|im_start|>system\nYou are VetLLM, a veterinary clinical assistant specialized in livestock diseases. \nGiven a clinical case presentation, you will:\n1. Analyze the clinical signs and symptoms\n2. Provide the most likely diagnosis with SNOMED-CT codes when available\n3. List differential diagnoses to consider\n4. Recommend appropriate treatment and management steps\n5. Explain your clinical reasoning<|im_end|>\n<|im_start|>user\nAnalyze this veterinary case:\n\n**Species**: Cow\n**Clinical Signs**: decreased milk production and fever\n\nProvide your diagnosis, differentials, treatment plan, and reasoning.<|im_end|>\n<|im_start|>assistant\n1. **Primary Diagnosis**: **Babesiosis** (SNOMED-CT: 24026003)\n\n2. **Differential Diagnoses**:\n   - Anaplasmosis\n   - Theileriosis\n   - Trypanosomiasis\n\n3. **Recommended Treatment**:\nDiminazene aceturate or imidocarb dipropionate. Supportive fluid therapy.\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Drop In Milk Production, Fever), the pattern is consistent with Babesiosis. The combination of symptoms and species-specific epidemiology supports this diagnosis.<|im_end|>",
+    "input": "Analyze this veterinary case:\n\n**Species**: Cow\n**Clinical Signs**: decreased milk production and fever\n\nProvide your diagnosis, differentials, treatment plan, and reasoning.",
+    "output": "1. **Primary Diagnosis**: **Babesiosis** (SNOMED-CT: 24026003)\n\n2. **Differential Diagnoses**:\n   - Anaplasmosis\n   - Theileriosis\n   - Trypanosomiasis\n\n3. **Recommended Treatment**:\nDiminazene aceturate or imidocarb dipropionate. Supportive fluid therapy.\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Drop In Milk Production, Fever), the pattern is consistent with Babesiosis. The combination of symptoms and species-specific epidemiology supports this diagnosis.",
+    "metadata": {
+      "animal": "Cow",
+      "disease": "BABESIOSIS",
+      "disease_normalized": "Babesiosis",
+      "snomed_codes": [
+        "24026003"
+      ],
+      "symptoms": [
+        "Drop In Milk Production",
+        "Fever"
+      ]
+    }
+  },
+  {
+    "text": "<|im_start|>system\nYou are VetLLM, a veterinary clinical assistant specialized in livestock diseases. \nGiven a clinical case presentation, you will:\n1. Analyze the clinical signs and symptoms\n2. Provide the most likely diagnosis with SNOMED-CT codes when available\n3. List differential diagnoses to consider\n4. Recommend appropriate treatment and management steps\n5. Explain your clinical reasoning<|im_end|>\n<|im_start|>user\nAnalyze this veterinary case:\n\n**Species**: Buffalo\n**Clinical Signs**: open-mouth breathing, epistaxis (nasal bleeding), and sudden death (peracute)\n\nProvide your diagnosis, differentials, treatment plan, and reasoning.<|im_end|>\n<|im_start|>assistant\n1. **Primary Diagnosis**: **Anthrax** (SNOMED-CT: 40214000)\n\n2. **Differential Diagnoses**:\n   - Blackleg\n   - Hemorrhagic Septicemia\n   - Clostridial diseases\n\n3. **Recommended Treatment**:\nHigh-dose penicillin, oxytetracycline. Carcass disposal protocols. Vaccination of contacts.\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Breathing While Mouth Open, Blood Leakage From Nose, Sudden Death), the pattern is consistent with Anthrax. The combination of symptoms and species-specific epidemiology supports this diagnosis.<|im_end|>",
+    "input": "Analyze this veterinary case:\n\n**Species**: Buffalo\n**Clinical Signs**: open-mouth breathing, epistaxis (nasal bleeding), and sudden death (peracute)\n\nProvide your diagnosis, differentials, treatment plan, and reasoning.",
+    "output": "1. **Primary Diagnosis**: **Anthrax** (SNOMED-CT: 40214000)\n\n2. **Differential Diagnoses**:\n   - Blackleg\n   - Hemorrhagic Septicemia\n   - Clostridial diseases\n\n3. **Recommended Treatment**:\nHigh-dose penicillin, oxytetracycline. Carcass disposal protocols. Vaccination of contacts.\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Breathing While Mouth Open, Blood Leakage From Nose, Sudden Death), the pattern is consistent with Anthrax. The combination of symptoms and species-specific epidemiology supports this diagnosis.",
+    "metadata": {
+      "animal": "Buffalo",
+      "disease": "Anthrax",
+      "disease_normalized": "Anthrax",
+      "snomed_codes": [
+        "40214000"
+      ],
+      "symptoms": [
+        "Breathing While Mouth Open",
+        "Blood Leakage From Nose",
+        "Sudden Death"
+      ]
+    }
+  },
+  {
+    "text": "<|im_start|>system\nYou are VetLLM, a veterinary clinical assistant specialized in livestock diseases. \nGiven a clinical case presentation, you will:\n1. Analyze the clinical signs and symptoms\n2. Provide the most likely diagnosis with SNOMED-CT codes when available\n3. List differential diagnoses to consider\n4. Recommend appropriate treatment and management steps\n5. Explain your clinical reasoning<|im_end|>\n<|im_start|>user\nAnalyze this veterinary case:\n\n**Species**: Sheep\n**Clinical Signs**: fever, labial vesicles, severe coughing, and bloody diarrhea (dysentery)\n\nProvide your diagnosis, differentials, treatment plan, and reasoning.<|im_end|>\n<|im_start|>assistant\n1. **Primary Diagnosis**: **Peste des Petits Ruminants** (SNOMED-CT: 1679004)\n\n2. **Differential Diagnoses**:\n   - Goat Pox\n   - Contagious Ecthyma\n   - Bluetongue\n\n3. **Recommended Treatment**:\nSupportive care, antibiotics for secondary infections. Vaccination of herd.\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Fever(F), blisters on lips, Sever cough...), the pattern is consistent with Peste des Petits Ruminants. The combination of symptoms and species-specific epidemiology supports this diagnosis.<|im_end|>",
+    "input": "Analyze this veterinary case:\n\n**Species**: Sheep\n**Clinical Signs**: fever, labial vesicles, severe coughing, and bloody diarrhea (dysentery)\n\nProvide your diagnosis, differentials, treatment plan, and reasoning.",
+    "output": "1. **Primary Diagnosis**: **Peste des Petits Ruminants** (SNOMED-CT: 1679004)\n\n2. **Differential Diagnoses**:\n   - Goat Pox\n   - Contagious Ecthyma\n   - Bluetongue\n\n3. **Recommended Treatment**:\nSupportive care, antibiotics for secondary infections. Vaccination of herd.\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Fever(F), blisters on lips, Sever cough...), the pattern is consistent with Peste des Petits Ruminants. The combination of symptoms and species-specific epidemiology supports this diagnosis.",
+    "metadata": {
+      "animal": "Sheep",
+      "disease": "PPR",
+      "disease_normalized": "Peste des Petits Ruminants",
+      "snomed_codes": [
+        "1679004"
+      ],
+      "symptoms": [
+        "Fever(F)",
+        "blisters on lips",
+        "Sever cough",
+        "Loose motions with blood"
+      ]
+    }
+  },
+  {
+    "text": "<|im_start|>system\nYou are VetLLM, a veterinary clinical assistant specialized in livestock diseases. \nGiven a clinical case presentation, you will:\n1. Analyze the clinical signs and symptoms\n2. Provide the most likely diagnosis with SNOMED-CT codes when available\n3. List differential diagnoses to consider\n4. Recommend appropriate treatment and management steps\n5. Explain your clinical reasoning<|im_end|>\n<|im_start|>user\nAnalyze this veterinary case:\n\n**Species**: Cow\n**Clinical Signs**: decreased milk production, abnormal milk consistency (clotted), teat lesions/nodules, fever, and abortion/pregnancy loss\n\nProvide your diagnosis, differentials, treatment plan, and reasoning.<|im_end|>\n<|im_start|>assistant\n1. **Primary Diagnosis**: **Mastitis** (SNOMED-CT: 72934000)\n\n2. **Differential Diagnoses**:\n   - Udder edema\n   - Teat injury\n   - Mammary abscess\n\n3. **Recommended Treatment**:\nIntramammary antibiotics, systemic antibiotics if systemic signs. Frequent milking.\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Drop In Milk Production, Milk In Semi Solid Form, Teat Gnarls...), the pattern is consistent with Mastitis. The combination of symptoms and species-specific epidemiology supports this diagnosis.<|im_end|>",
+    "input": "Analyze this veterinary case:\n\n**Species**: Cow\n**Clinical Signs**: decreased milk production, abnormal milk consistency (clotted), teat lesions/nodules, fever, and abortion/pregnancy loss\n\nProvide your diagnosis, differentials, treatment plan, and reasoning.",
+    "output": "1. **Primary Diagnosis**: **Mastitis** (SNOMED-CT: 72934000)\n\n2. **Differential Diagnoses**:\n   - Udder edema\n   - Teat injury\n   - Mammary abscess\n\n3. **Recommended Treatment**:\nIntramammary antibiotics, systemic antibiotics if systemic signs. Frequent milking.\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Drop In Milk Production, Milk In Semi Solid Form, Teat Gnarls...), the pattern is consistent with Mastitis. The combination of symptoms and species-specific epidemiology supports this diagnosis.",
+    "metadata": {
+      "animal": "Cow",
+      "disease": "Mastits",
+      "disease_normalized": "Mastitis",
+      "snomed_codes": [
+        "72934000"
+      ],
+      "symptoms": [
+        "Drop In Milk Production",
+        "Milk In Semi Solid Form",
+        "Teat Gnarls",
+        "Fever",
+        "Abortion"
+      ]
+    }
+  },
+  {
+    "text": "<|im_start|>system\nYou are VetLLM, a veterinary clinical assistant specialized in livestock diseases. \nGiven a clinical case presentation, you will:\n1. Analyze the clinical signs and symptoms\n2. Provide the most likely diagnosis with SNOMED-CT codes when available\n3. List differential diagnoses to consider\n4. Recommend appropriate treatment and management steps\n5. Explain your clinical reasoning<|im_end|>\n<|im_start|>user\nAnalyze this veterinary case:\n\n**Species**: Buffalo\n**Clinical Signs**: oral frothing (salivation), decreased milk production, and oral vesicles/ulcers\n\nProvide your diagnosis, differentials, treatment plan, and reasoning.<|im_end|>\n<|im_start|>assistant\n1. **Primary Diagnosis**: **Foot and Mouth Disease** (SNOMED-CT: 3974005)\n\n2. **Differential Diagnoses**:\n   - Vesicular Stomatitis\n   - Bluetongue\n   - Bovine Viral Diarrhea\n\n3. **Recommended Treatment**:\nSupportive care, isolation, wound care for lesions. Notify authorities (notifiable disease).\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Mouth Frothing, Drop In Milk Production, Blisters In Mouth), the pattern is consistent with Foot and Mouth Disease. The combination of symptoms and species-specific epidemiology supports this diagnosis.<|im_end|>",
+    "input": "Analyze this veterinary case:\n\n**Species**: Buffalo\n**Clinical Signs**: oral frothing (salivation), decreased milk production, and oral vesicles/ulcers\n\nProvide your diagnosis, differentials, treatment plan, and reasoning.",
+    "output": "1. **Primary Diagnosis**: **Foot and Mouth Disease** (SNOMED-CT: 3974005)\n\n2. **Differential Diagnoses**:\n   - Vesicular Stomatitis\n   - Bluetongue\n   - Bovine Viral Diarrhea\n\n3. **Recommended Treatment**:\nSupportive care, isolation, wound care for lesions. Notify authorities (notifiable disease).\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Mouth Frothing, Drop In Milk Production, Blisters In Mouth), the pattern is consistent with Foot and Mouth Disease. The combination of symptoms and species-specific epidemiology supports this diagnosis.",
+    "metadata": {
+      "animal": "Buffalo",
+      "disease": "FMD",
+      "disease_normalized": "Foot and Mouth Disease",
+      "snomed_codes": [
+        "3974005"
+      ],
+      "symptoms": [
+        "Mouth Frothing",
+        "Drop In Milk Production",
+        "Blisters In Mouth"
+      ]
+    }
+  },
+  {
+    "text": "<|im_start|>system\nYou are VetLLM, a veterinary clinical assistant specialized in livestock diseases. \nGiven a clinical case presentation, you will:\n1. Analyze the clinical signs and symptoms\n2. Provide the most likely diagnosis with SNOMED-CT codes when available\n3. List differential diagnoses to consider\n4. Recommend appropriate treatment and management steps\n5. Explain your clinical reasoning<|im_end|>\n<|im_start|>user\nAnalyze this veterinary case:\n\n**Species**: Goat\n**Clinical Signs**: severe coughing and severe abdominal pain (colic)\n\nProvide your diagnosis, differentials, treatment plan, and reasoning.<|im_end|>\n<|im_start|>assistant\n1. **Primary Diagnosis**: **Peste des Petits Ruminants** (SNOMED-CT: 1679004)\n\n2. **Differential Diagnoses**:\n   - Goat Pox\n   - Contagious Ecthyma\n   - Bluetongue\n\n3. **Recommended Treatment**:\nSupportive care, antibiotics for secondary infections. Vaccination of herd.\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Sever cough, Pain in stomach and screams), the pattern is consistent with Peste des Petits Ruminants. The combination of symptoms and species-specific epidemiology supports this diagnosis.<|im_end|>",
+    "input": "Analyze this veterinary case:\n\n**Species**: Goat\n**Clinical Signs**: severe coughing and severe abdominal pain (colic)\n\nProvide your diagnosis, differentials, treatment plan, and reasoning.",
+    "output": "1. **Primary Diagnosis**: **Peste des Petits Ruminants** (SNOMED-CT: 1679004)\n\n2. **Differential Diagnoses**:\n   - Goat Pox\n   - Contagious Ecthyma\n   - Bluetongue\n\n3. **Recommended Treatment**:\nSupportive care, antibiotics for secondary infections. Vaccination of herd.\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Sever cough, Pain in stomach and screams), the pattern is consistent with Peste des Petits Ruminants. The combination of symptoms and species-specific epidemiology supports this diagnosis.",
+    "metadata": {
+      "animal": "Goat",
+      "disease": "Kataa",
+      "disease_normalized": "Peste des Petits Ruminants",
+      "snomed_codes": [
+        "1679004"
+      ],
+      "symptoms": [
+        "Sever cough",
+        "Pain in stomach and screams"
+      ]
+    }
+  },
+  {
+    "text": "<|im_start|>system\nYou are VetLLM, a veterinary clinical assistant specialized in livestock diseases. \nGiven a clinical case presentation, you will:\n1. Analyze the clinical signs and symptoms\n2. Provide the most likely diagnosis with SNOMED-CT codes when available\n3. List differential diagnoses to consider\n4. Recommend appropriate treatment and management steps\n5. Explain your clinical reasoning<|im_end|>\n<|im_start|>user\nAnalyze this veterinary case:\n\n**Species**: Buffalo\n**Clinical Signs**: cervical edema\n\nProvide your diagnosis, differentials, treatment plan, and reasoning.<|im_end|>\n<|im_start|>assistant\n1. **Primary Diagnosis**: **Hemorrhagic Septicemia** (SNOMED-CT: 198462004)\n\n2. **Differential Diagnoses**:\n   - Infectious disease\n   - Metabolic disorder\n   - Toxicosis\n\n3. **Recommended Treatment**:\nSymptomatic treatment, supportive care, and appropriate antimicrobials based on clinical presentation.\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Neck Swelling), the pattern is consistent with Hemorrhagic Septicemia. The combination of symptoms and species-specific epidemiology supports this diagnosis.<|im_end|>",
+    "input": "Analyze this veterinary case:\n\n**Species**: Buffalo\n**Clinical Signs**: cervical edema\n\nProvide your diagnosis, differentials, treatment plan, and reasoning.",
+    "output": "1. **Primary Diagnosis**: **Hemorrhagic Septicemia** (SNOMED-CT: 198462004)\n\n2. **Differential Diagnoses**:\n   - Infectious disease\n   - Metabolic disorder\n   - Toxicosis\n\n3. **Recommended Treatment**:\nSymptomatic treatment, supportive care, and appropriate antimicrobials based on clinical presentation.\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Neck Swelling), the pattern is consistent with Hemorrhagic Septicemia. The combination of symptoms and species-specific epidemiology supports this diagnosis.",
+    "metadata": {
+      "animal": "Buffalo",
+      "disease": "H.S",
+      "disease_normalized": "Hemorrhagic Septicemia",
+      "snomed_codes": [
+        "198462004"
+      ],
+      "symptoms": [
+        "Neck Swelling"
+      ]
+    }
+  },
+  {
+    "text": "<|im_start|>system\nYou are VetLLM, a veterinary clinical assistant specialized in livestock diseases. \nGiven a clinical case presentation, you will:\n1. Analyze the clinical signs and symptoms\n2. Provide the most likely diagnosis with SNOMED-CT codes when available\n3. List differential diagnoses to consider\n4. Recommend appropriate treatment and management steps\n5. Explain your clinical reasoning<|im_end|>\n<|im_start|>user\nAnalyze this veterinary case:\n\n**Species**: Goat\n**Clinical Signs**: fever, labial vesicles, and severe coughing\n\nProvide your diagnosis, differentials, treatment plan, and reasoning.<|im_end|>\n<|im_start|>assistant\n1. **Primary Diagnosis**: **Peste des Petits Ruminants** (SNOMED-CT: 1679004)\n\n2. **Differential Diagnoses**:\n   - Goat Pox\n   - Contagious Ecthyma\n   - Bluetongue\n\n3. **Recommended Treatment**:\nSupportive care, antibiotics for secondary infections. Vaccination of herd.\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Fever(F), blisters on lips, Sever cough), the pattern is consistent with Peste des Petits Ruminants. The combination of symptoms and species-specific epidemiology supports this diagnosis.<|im_end|>",
+    "input": "Analyze this veterinary case:\n\n**Species**: Goat\n**Clinical Signs**: fever, labial vesicles, and severe coughing\n\nProvide your diagnosis, differentials, treatment plan, and reasoning.",
+    "output": "1. **Primary Diagnosis**: **Peste des Petits Ruminants** (SNOMED-CT: 1679004)\n\n2. **Differential Diagnoses**:\n   - Goat Pox\n   - Contagious Ecthyma\n   - Bluetongue\n\n3. **Recommended Treatment**:\nSupportive care, antibiotics for secondary infections. Vaccination of herd.\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Fever(F), blisters on lips, Sever cough), the pattern is consistent with Peste des Petits Ruminants. The combination of symptoms and species-specific epidemiology supports this diagnosis.",
+    "metadata": {
+      "animal": "Goat",
+      "disease": "PPR",
+      "disease_normalized": "Peste des Petits Ruminants",
+      "snomed_codes": [
+        "1679004"
+      ],
+      "symptoms": [
+        "Fever(F)",
+        "blisters on lips",
+        "Sever cough"
+      ]
+    }
+  },
+  {
+    "text": "<|im_start|>system\nYou are VetLLM, a veterinary clinical assistant specialized in livestock diseases. \nGiven a clinical case presentation, you will:\n1. Analyze the clinical signs and symptoms\n2. Provide the most likely diagnosis with SNOMED-CT codes when available\n3. List differential diagnoses to consider\n4. Recommend appropriate treatment and management steps\n5. Explain your clinical reasoning<|im_end|>\n<|im_start|>user\nAnalyze this veterinary case:\n\n**Species**: Buffalo\n**Clinical Signs**: cervical edema, dyspnea (respiratory distress), and open-mouth breathing\n\nProvide your diagnosis, differentials, treatment plan, and reasoning.<|im_end|>\n<|im_start|>assistant\n1. **Primary Diagnosis**: **Hemorrhagic Septicemia** (SNOMED-CT: 198462004)\n\n2. **Differential Diagnoses**:\n   - Infectious disease\n   - Metabolic disorder\n   - Toxicosis\n\n3. **Recommended Treatment**:\nSymptomatic treatment, supportive care, and appropriate antimicrobials based on clinical presentation.\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Neck Swelling, Difficulty In Breathing, Breathing While Mouth Open), the pattern is consistent with Hemorrhagic Septicemia. The combination of symptoms and species-specific epidemiology supports this diagnosis.<|im_end|>",
+    "input": "Analyze this veterinary case:\n\n**Species**: Buffalo\n**Clinical Signs**: cervical edema, dyspnea (respiratory distress), and open-mouth breathing\n\nProvide your diagnosis, differentials, treatment plan, and reasoning.",
+    "output": "1. **Primary Diagnosis**: **Hemorrhagic Septicemia** (SNOMED-CT: 198462004)\n\n2. **Differential Diagnoses**:\n   - Infectious disease\n   - Metabolic disorder\n   - Toxicosis\n\n3. **Recommended Treatment**:\nSymptomatic treatment, supportive care, and appropriate antimicrobials based on clinical presentation.\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Neck Swelling, Difficulty In Breathing, Breathing While Mouth Open), the pattern is consistent with Hemorrhagic Septicemia. The combination of symptoms and species-specific epidemiology supports this diagnosis.",
+    "metadata": {
+      "animal": "Buffalo",
+      "disease": "H.S",
+      "disease_normalized": "Hemorrhagic Septicemia",
+      "snomed_codes": [
+        "198462004"
+      ],
+      "symptoms": [
+        "Neck Swelling",
+        "Difficulty In Breathing",
+        "Breathing While Mouth Open"
+      ]
+    }
+  },
+  {
+    "text": "<|im_start|>system\nYou are VetLLM, a veterinary clinical assistant specialized in livestock diseases. \nGiven a clinical case presentation, you will:\n1. Analyze the clinical signs and symptoms\n2. Provide the most likely diagnosis with SNOMED-CT codes when available\n3. List differential diagnoses to consider\n4. Recommend appropriate treatment and management steps\n5. Explain your clinical reasoning<|im_end|>\n<|im_start|>user\nAnalyze this veterinary case:\n\n**Species**: Sheep\n**Clinical Signs**: fever and severe coughing\n\nProvide your diagnosis, differentials, treatment plan, and reasoning.<|im_end|>\n<|im_start|>assistant\n1. **Primary Diagnosis**: **Peste des Petits Ruminants** (SNOMED-CT: 1679004)\n\n2. **Differential Diagnoses**:\n   - Goat Pox\n   - Contagious Ecthyma\n   - Bluetongue\n\n3. **Recommended Treatment**:\nSupportive care, antibiotics for secondary infections. Vaccination of herd.\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Fever(F), Sever cough), the pattern is consistent with Peste des Petits Ruminants. The combination of symptoms and species-specific epidemiology supports this diagnosis.<|im_end|>",
+    "input": "Analyze this veterinary case:\n\n**Species**: Sheep\n**Clinical Signs**: fever and severe coughing\n\nProvide your diagnosis, differentials, treatment plan, and reasoning.",
+    "output": "1. **Primary Diagnosis**: **Peste des Petits Ruminants** (SNOMED-CT: 1679004)\n\n2. **Differential Diagnoses**:\n   - Goat Pox\n   - Contagious Ecthyma\n   - Bluetongue\n\n3. **Recommended Treatment**:\nSupportive care, antibiotics for secondary infections. Vaccination of herd.\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Fever(F), Sever cough), the pattern is consistent with Peste des Petits Ruminants. The combination of symptoms and species-specific epidemiology supports this diagnosis.",
+    "metadata": {
+      "animal": "Sheep",
+      "disease": "P.P.R",
+      "disease_normalized": "Peste des Petits Ruminants",
+      "snomed_codes": [
+        "1679004"
+      ],
+      "symptoms": [
+        "Fever(F)",
+        "Sever cough"
+      ]
+    }
+  },
+  {
+    "text": "<|im_start|>system\nYou are VetLLM, a veterinary clinical assistant specialized in livestock diseases. \nGiven a clinical case presentation, you will:\n1. Analyze the clinical signs and symptoms\n2. Provide the most likely diagnosis with SNOMED-CT codes when available\n3. List differential diagnoses to consider\n4. Recommend appropriate treatment and management steps\n5. Explain your clinical reasoning<|im_end|>\n<|im_start|>user\nAnalyze this veterinary case:\n\n**Species**: Sheep\n**Clinical Signs**: fever, coughing, and labial vesicles\n\nProvide your diagnosis, differentials, treatment plan, and reasoning.<|im_end|>\n<|im_start|>assistant\n1. **Primary Diagnosis**: **Peste des Petits Ruminants** (SNOMED-CT: 1679004)\n\n2. **Differential Diagnoses**:\n   - Goat Pox\n   - Contagious Ecthyma\n   - Bluetongue\n\n3. **Recommended Treatment**:\nSupportive care, antibiotics for secondary infections. Vaccination of herd.\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Fever(F), Cough, blisters on lips), the pattern is consistent with Peste des Petits Ruminants. The combination of symptoms and species-specific epidemiology supports this diagnosis.<|im_end|>",
+    "input": "Analyze this veterinary case:\n\n**Species**: Sheep\n**Clinical Signs**: fever, coughing, and labial vesicles\n\nProvide your diagnosis, differentials, treatment plan, and reasoning.",
+    "output": "1. **Primary Diagnosis**: **Peste des Petits Ruminants** (SNOMED-CT: 1679004)\n\n2. **Differential Diagnoses**:\n   - Goat Pox\n   - Contagious Ecthyma\n   - Bluetongue\n\n3. **Recommended Treatment**:\nSupportive care, antibiotics for secondary infections. Vaccination of herd.\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Fever(F), Cough, blisters on lips), the pattern is consistent with Peste des Petits Ruminants. The combination of symptoms and species-specific epidemiology supports this diagnosis.",
+    "metadata": {
+      "animal": "Sheep",
+      "disease": "P.P.R",
+      "disease_normalized": "Peste des Petits Ruminants",
+      "snomed_codes": [
+        "1679004"
+      ],
+      "symptoms": [
+        "Fever(F)",
+        "Cough",
+        "blisters on lips"
+      ]
+    }
+  },
+  {
+    "text": "<|im_start|>system\nYou are VetLLM, a veterinary clinical assistant specialized in livestock diseases. \nGiven a clinical case presentation, you will:\n1. Analyze the clinical signs and symptoms\n2. Provide the most likely diagnosis with SNOMED-CT codes when available\n3. List differential diagnoses to consider\n4. Recommend appropriate treatment and management steps\n5. Explain your clinical reasoning<|im_end|>\n<|im_start|>user\nAnalyze this veterinary case:\n\n**Species**: Sheep\n**Clinical Signs**: fever, mucopurulent discharge, diarrhea, coughing, nasal discharge, and severe coughing\n\nProvide your diagnosis, differentials, treatment plan, and reasoning.<|im_end|>\n<|im_start|>assistant\n1. **Primary Diagnosis**: **Peste des Petits Ruminants** (SNOMED-CT: 1679004)\n\n2. **Differential Diagnoses**:\n   - Goat Pox\n   - Contagious Ecthyma\n   - Bluetongue\n\n3. **Recommended Treatment**:\nSupportive care, antibiotics for secondary infections. Vaccination of herd.\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Fever(F), Water or fluid leakage from eyes,nose or mouth, Loose motions...), the pattern is consistent with Peste des Petits Ruminants. The combination of symptoms and species-specific epidemiology supports this diagnosis.<|im_end|>",
+    "input": "Analyze this veterinary case:\n\n**Species**: Sheep\n**Clinical Signs**: fever, mucopurulent discharge, diarrhea, coughing, nasal discharge, and severe coughing\n\nProvide your diagnosis, differentials, treatment plan, and reasoning.",
+    "output": "1. **Primary Diagnosis**: **Peste des Petits Ruminants** (SNOMED-CT: 1679004)\n\n2. **Differential Diagnoses**:\n   - Goat Pox\n   - Contagious Ecthyma\n   - Bluetongue\n\n3. **Recommended Treatment**:\nSupportive care, antibiotics for secondary infections. Vaccination of herd.\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Fever(F), Water or fluid leakage from eyes,nose or mouth, Loose motions...), the pattern is consistent with Peste des Petits Ruminants. The combination of symptoms and species-specific epidemiology supports this diagnosis.",
+    "metadata": {
+      "animal": "Sheep",
+      "disease": "P.P.R",
+      "disease_normalized": "Peste des Petits Ruminants",
+      "snomed_codes": [
+        "1679004"
+      ],
+      "symptoms": [
+        "Fever(F)",
+        "Water or fluid leakage from eyes,nose or mouth",
+        "Loose motions",
+        "Cough",
+        "Fluid leakage from nose",
+        "Sever cough"
+      ]
+    }
+  },
+  {
+    "text": "<|im_start|>system\nYou are VetLLM, a veterinary clinical assistant specialized in livestock diseases. \nGiven a clinical case presentation, you will:\n1. Analyze the clinical signs and symptoms\n2. Provide the most likely diagnosis with SNOMED-CT codes when available\n3. List differential diagnoses to consider\n4. Recommend appropriate treatment and management steps\n5. Explain your clinical reasoning<|im_end|>\n<|im_start|>user\nAnalyze this veterinary case:\n\n**Species**: Sheep\n**Clinical Signs**: nasal discharge and severe abdominal pain (colic)\n\nProvide your diagnosis, differentials, treatment plan, and reasoning.<|im_end|>\n<|im_start|>assistant\n1. **Primary Diagnosis**: **Peste des Petits Ruminants** (SNOMED-CT: 1679004)\n\n2. **Differential Diagnoses**:\n   - Goat Pox\n   - Contagious Ecthyma\n   - Bluetongue\n\n3. **Recommended Treatment**:\nSupportive care, antibiotics for secondary infections. Vaccination of herd.\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Fluid leakage from nose, Pain in stomach and screams), the pattern is consistent with Peste des Petits Ruminants. The combination of symptoms and species-specific epidemiology supports this diagnosis.<|im_end|>",
+    "input": "Analyze this veterinary case:\n\n**Species**: Sheep\n**Clinical Signs**: nasal discharge and severe abdominal pain (colic)\n\nProvide your diagnosis, differentials, treatment plan, and reasoning.",
+    "output": "1. **Primary Diagnosis**: **Peste des Petits Ruminants** (SNOMED-CT: 1679004)\n\n2. **Differential Diagnoses**:\n   - Goat Pox\n   - Contagious Ecthyma\n   - Bluetongue\n\n3. **Recommended Treatment**:\nSupportive care, antibiotics for secondary infections. Vaccination of herd.\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Fluid leakage from nose, Pain in stomach and screams), the pattern is consistent with Peste des Petits Ruminants. The combination of symptoms and species-specific epidemiology supports this diagnosis.",
+    "metadata": {
+      "animal": "Sheep",
+      "disease": "PPR",
+      "disease_normalized": "Peste des Petits Ruminants",
+      "snomed_codes": [
+        "1679004"
+      ],
+      "symptoms": [
+        "Fluid leakage from nose",
+        "Pain in stomach and screams"
+      ]
+    }
+  },
+  {
+    "text": "<|im_start|>system\nYou are VetLLM, a veterinary clinical assistant specialized in livestock diseases. \nGiven a clinical case presentation, you will:\n1. Analyze the clinical signs and symptoms\n2. Provide the most likely diagnosis with SNOMED-CT codes when available\n3. List differential diagnoses to consider\n4. Recommend appropriate treatment and management steps\n5. Explain your clinical reasoning<|im_end|>\n<|im_start|>user\nAnalyze this veterinary case:\n\n**Species**: Buffalo\n**Clinical Signs**: decreased milk production and fever\n\nProvide your diagnosis, differentials, treatment plan, and reasoning.<|im_end|>\n<|im_start|>assistant\n1. **Primary Diagnosis**: **Tuberculosis** (SNOMED-CT: 56717001)\n\n2. **Differential Diagnoses**:\n   - Infectious disease\n   - Metabolic disorder\n   - Toxicosis\n\n3. **Recommended Treatment**:\nSymptomatic treatment, supportive care, and appropriate antimicrobials based on clinical presentation.\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Drop In Milk Production, Fever), the pattern is consistent with Tuberculosis. The combination of symptoms and species-specific epidemiology supports this diagnosis.<|im_end|>",
+    "input": "Analyze this veterinary case:\n\n**Species**: Buffalo\n**Clinical Signs**: decreased milk production and fever\n\nProvide your diagnosis, differentials, treatment plan, and reasoning.",
+    "output": "1. **Primary Diagnosis**: **Tuberculosis** (SNOMED-CT: 56717001)\n\n2. **Differential Diagnoses**:\n   - Infectious disease\n   - Metabolic disorder\n   - Toxicosis\n\n3. **Recommended Treatment**:\nSymptomatic treatment, supportive care, and appropriate antimicrobials based on clinical presentation.\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Drop In Milk Production, Fever), the pattern is consistent with Tuberculosis. The combination of symptoms and species-specific epidemiology supports this diagnosis.",
+    "metadata": {
+      "animal": "Buffalo",
+      "disease": "T.B",
+      "disease_normalized": "Tuberculosis",
+      "snomed_codes": [
+        "56717001"
+      ],
+      "symptoms": [
+        "Drop In Milk Production",
+        "Fever"
+      ]
+    }
+  },
+  {
+    "text": "<|im_start|>system\nYou are VetLLM, a veterinary clinical assistant specialized in livestock diseases. \nGiven a clinical case presentation, you will:\n1. Analyze the clinical signs and symptoms\n2. Provide the most likely diagnosis with SNOMED-CT codes when available\n3. List differential diagnoses to consider\n4. Recommend appropriate treatment and management steps\n5. Explain your clinical reasoning<|im_end|>\n<|im_start|>user\nAnalyze this veterinary case:\n\n**Species**: Sheep\n**Clinical Signs**: severe abdominal pain (colic)\n\nProvide your diagnosis, differentials, treatment plan, and reasoning.<|im_end|>\n<|im_start|>assistant\n1. **Primary Diagnosis**: **Foot and Mouth Disease** (SNOMED-CT: 3974005)\n\n2. **Differential Diagnoses**:\n   - Vesicular Stomatitis\n   - Bluetongue\n   - Bovine Viral Diarrhea\n\n3. **Recommended Treatment**:\nSupportive care, isolation, wound care for lesions. Notify authorities (notifiable disease).\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Pain in stomach and screams), the pattern is consistent with Foot and Mouth Disease. The combination of symptoms and species-specific epidemiology supports this diagnosis.<|im_end|>",
+    "input": "Analyze this veterinary case:\n\n**Species**: Sheep\n**Clinical Signs**: severe abdominal pain (colic)\n\nProvide your diagnosis, differentials, treatment plan, and reasoning.",
+    "output": "1. **Primary Diagnosis**: **Foot and Mouth Disease** (SNOMED-CT: 3974005)\n\n2. **Differential Diagnoses**:\n   - Vesicular Stomatitis\n   - Bluetongue\n   - Bovine Viral Diarrhea\n\n3. **Recommended Treatment**:\nSupportive care, isolation, wound care for lesions. Notify authorities (notifiable disease).\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Pain in stomach and screams), the pattern is consistent with Foot and Mouth Disease. The combination of symptoms and species-specific epidemiology supports this diagnosis.",
+    "metadata": {
+      "animal": "Sheep",
+      "disease": "Foot and mouth",
+      "disease_normalized": "Foot and Mouth Disease",
+      "snomed_codes": [
+        "3974005"
+      ],
+      "symptoms": [
+        "Pain in stomach and screams"
+      ]
+    }
+  },
+  {
+    "text": "<|im_start|>system\nYou are VetLLM, a veterinary clinical assistant specialized in livestock diseases. \nGiven a clinical case presentation, you will:\n1. Analyze the clinical signs and symptoms\n2. Provide the most likely diagnosis with SNOMED-CT codes when available\n3. List differential diagnoses to consider\n4. Recommend appropriate treatment and management steps\n5. Explain your clinical reasoning<|im_end|>\n<|im_start|>user\nAnalyze this veterinary case:\n\n**Species**: Goat\n**Clinical Signs**: fever, diarrhea, coughing, nasal discharge, and severe coughing\n\nProvide your diagnosis, differentials, treatment plan, and reasoning.<|im_end|>\n<|im_start|>assistant\n1. **Primary Diagnosis**: **Peste des Petits Ruminants** (SNOMED-CT: 1679004)\n\n2. **Differential Diagnoses**:\n   - Goat Pox\n   - Contagious Ecthyma\n   - Bluetongue\n\n3. **Recommended Treatment**:\nSupportive care, antibiotics for secondary infections. Vaccination of herd.\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Fever(F), Loose motions, Cough...), the pattern is consistent with Peste des Petits Ruminants. The combination of symptoms and species-specific epidemiology supports this diagnosis.<|im_end|>",
+    "input": "Analyze this veterinary case:\n\n**Species**: Goat\n**Clinical Signs**: fever, diarrhea, coughing, nasal discharge, and severe coughing\n\nProvide your diagnosis, differentials, treatment plan, and reasoning.",
+    "output": "1. **Primary Diagnosis**: **Peste des Petits Ruminants** (SNOMED-CT: 1679004)\n\n2. **Differential Diagnoses**:\n   - Goat Pox\n   - Contagious Ecthyma\n   - Bluetongue\n\n3. **Recommended Treatment**:\nSupportive care, antibiotics for secondary infections. Vaccination of herd.\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Fever(F), Loose motions, Cough...), the pattern is consistent with Peste des Petits Ruminants. The combination of symptoms and species-specific epidemiology supports this diagnosis.",
+    "metadata": {
+      "animal": "Goat",
+      "disease": "P.P.R",
+      "disease_normalized": "Peste des Petits Ruminants",
+      "snomed_codes": [
+        "1679004"
+      ],
+      "symptoms": [
+        "Fever(F)",
+        "Loose motions",
+        "Cough",
+        "Fluid leakage from nose",
+        "Sever cough"
+      ]
+    }
+  },
+  {
+    "text": "<|im_start|>system\nYou are VetLLM, a veterinary clinical assistant specialized in livestock diseases. \nGiven a clinical case presentation, you will:\n1. Analyze the clinical signs and symptoms\n2. Provide the most likely diagnosis with SNOMED-CT codes when available\n3. List differential diagnoses to consider\n4. Recommend appropriate treatment and management steps\n5. Explain your clinical reasoning<|im_end|>\n<|im_start|>user\nAnalyze this veterinary case:\n\n**Species**: Goat\n**Clinical Signs**: fever, mucopurulent discharge, diarrhea, labial vesicles, and nasal discharge\n\nProvide your diagnosis, differentials, treatment plan, and reasoning.<|im_end|>\n<|im_start|>assistant\n1. **Primary Diagnosis**: **Peste des Petits Ruminants** (SNOMED-CT: 1679004)\n\n2. **Differential Diagnoses**:\n   - Goat Pox\n   - Contagious Ecthyma\n   - Bluetongue\n\n3. **Recommended Treatment**:\nSupportive care, antibiotics for secondary infections. Vaccination of herd.\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Fever(F), Water or fluid leakage from eyes,nose or mouth, Loose motions...), the pattern is consistent with Peste des Petits Ruminants. The combination of symptoms and species-specific epidemiology supports this diagnosis.<|im_end|>",
+    "input": "Analyze this veterinary case:\n\n**Species**: Goat\n**Clinical Signs**: fever, mucopurulent discharge, diarrhea, labial vesicles, and nasal discharge\n\nProvide your diagnosis, differentials, treatment plan, and reasoning.",
+    "output": "1. **Primary Diagnosis**: **Peste des Petits Ruminants** (SNOMED-CT: 1679004)\n\n2. **Differential Diagnoses**:\n   - Goat Pox\n   - Contagious Ecthyma\n   - Bluetongue\n\n3. **Recommended Treatment**:\nSupportive care, antibiotics for secondary infections. Vaccination of herd.\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Fever(F), Water or fluid leakage from eyes,nose or mouth, Loose motions...), the pattern is consistent with Peste des Petits Ruminants. The combination of symptoms and species-specific epidemiology supports this diagnosis.",
+    "metadata": {
+      "animal": "Goat",
+      "disease": "PPR",
+      "disease_normalized": "Peste des Petits Ruminants",
+      "snomed_codes": [
+        "1679004"
+      ],
+      "symptoms": [
+        "Fever(F)",
+        "Water or fluid leakage from eyes,nose or mouth",
+        "Loose motions",
+        "blisters on lips",
+        "Fluid leakage from nose"
+      ]
+    }
+  },
+  {
+    "text": "<|im_start|>system\nYou are VetLLM, a veterinary clinical assistant specialized in livestock diseases. \nGiven a clinical case presentation, you will:\n1. Analyze the clinical signs and symptoms\n2. Provide the most likely diagnosis with SNOMED-CT codes when available\n3. List differential diagnoses to consider\n4. Recommend appropriate treatment and management steps\n5. Explain your clinical reasoning<|im_end|>\n<|im_start|>user\nAnalyze this veterinary case:\n\n**Species**: Buffalo\n**Clinical Signs**: decreased milk production, cervical edema, and dyspnea (respiratory distress)\n\nProvide your diagnosis, differentials, treatment plan, and reasoning.<|im_end|>\n<|im_start|>assistant\n1. **Primary Diagnosis**: **Hemorrhagic Septicemia** (SNOMED-CT: 198462004)\n\n2. **Differential Diagnoses**:\n   - Infectious disease\n   - Metabolic disorder\n   - Toxicosis\n\n3. **Recommended Treatment**:\nSymptomatic treatment, supportive care, and appropriate antimicrobials based on clinical presentation.\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Drop In Milk Production, Neck Swelling, Difficulty In Breathing), the pattern is consistent with Hemorrhagic Septicemia. The combination of symptoms and species-specific epidemiology supports this diagnosis.<|im_end|>",
+    "input": "Analyze this veterinary case:\n\n**Species**: Buffalo\n**Clinical Signs**: decreased milk production, cervical edema, and dyspnea (respiratory distress)\n\nProvide your diagnosis, differentials, treatment plan, and reasoning.",
+    "output": "1. **Primary Diagnosis**: **Hemorrhagic Septicemia** (SNOMED-CT: 198462004)\n\n2. **Differential Diagnoses**:\n   - Infectious disease\n   - Metabolic disorder\n   - Toxicosis\n\n3. **Recommended Treatment**:\nSymptomatic treatment, supportive care, and appropriate antimicrobials based on clinical presentation.\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Drop In Milk Production, Neck Swelling, Difficulty In Breathing), the pattern is consistent with Hemorrhagic Septicemia. The combination of symptoms and species-specific epidemiology supports this diagnosis.",
+    "metadata": {
+      "animal": "Buffalo",
+      "disease": "H.S",
+      "disease_normalized": "Hemorrhagic Septicemia",
+      "snomed_codes": [
+        "198462004"
+      ],
+      "symptoms": [
+        "Drop In Milk Production",
+        "Neck Swelling",
+        "Difficulty In Breathing"
+      ]
+    }
+  },
+  {
+    "text": "<|im_start|>system\nYou are VetLLM, a veterinary clinical assistant specialized in livestock diseases. \nGiven a clinical case presentation, you will:\n1. Analyze the clinical signs and symptoms\n2. Provide the most likely diagnosis with SNOMED-CT codes when available\n3. List differential diagnoses to consider\n4. Recommend appropriate treatment and management steps\n5. Explain your clinical reasoning<|im_end|>\n<|im_start|>user\nAnalyze this veterinary case:\n\n**Species**: Cow\n**Clinical Signs**: decreased milk production, abnormal milk consistency (clotted), high fever, and abortion/pregnancy loss\n\nProvide your diagnosis, differentials, treatment plan, and reasoning.<|im_end|>\n<|im_start|>assistant\n1. **Primary Diagnosis**: **Mastitis** (SNOMED-CT: 72934000)\n\n2. **Differential Diagnoses**:\n   - Udder edema\n   - Teat injury\n   - Mammary abscess\n\n3. **Recommended Treatment**:\nIntramammary antibiotics, systemic antibiotics if systemic signs. Frequent milking.\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Drop In Milk Production, Milk In Semi Solid Form, Very High Fever...), the pattern is consistent with Mastitis. The combination of symptoms and species-specific epidemiology supports this diagnosis.<|im_end|>",
+    "input": "Analyze this veterinary case:\n\n**Species**: Cow\n**Clinical Signs**: decreased milk production, abnormal milk consistency (clotted), high fever, and abortion/pregnancy loss\n\nProvide your diagnosis, differentials, treatment plan, and reasoning.",
+    "output": "1. **Primary Diagnosis**: **Mastitis** (SNOMED-CT: 72934000)\n\n2. **Differential Diagnoses**:\n   - Udder edema\n   - Teat injury\n   - Mammary abscess\n\n3. **Recommended Treatment**:\nIntramammary antibiotics, systemic antibiotics if systemic signs. Frequent milking.\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Drop In Milk Production, Milk In Semi Solid Form, Very High Fever...), the pattern is consistent with Mastitis. The combination of symptoms and species-specific epidemiology supports this diagnosis.",
+    "metadata": {
+      "animal": "Cow",
+      "disease": "Mastits",
+      "disease_normalized": "Mastitis",
+      "snomed_codes": [
+        "72934000"
+      ],
+      "symptoms": [
+        "Drop In Milk Production",
+        "Milk In Semi Solid Form",
+        "Very High Fever",
+        "Abortion"
+      ]
+    }
+  },
+  {
+    "text": "<|im_start|>system\nYou are VetLLM, a veterinary clinical assistant specialized in livestock diseases. \nGiven a clinical case presentation, you will:\n1. Analyze the clinical signs and symptoms\n2. Provide the most likely diagnosis with SNOMED-CT codes when available\n3. List differential diagnoses to consider\n4. Recommend appropriate treatment and management steps\n5. Explain your clinical reasoning<|im_end|>\n<|im_start|>user\nAnalyze this veterinary case:\n\n**Species**: Cow\n**Clinical Signs**: lameness and subcutaneous emphysema (crepitus)\n\nProvide your diagnosis, differentials, treatment plan, and reasoning.<|im_end|>\n<|im_start|>assistant\n1. **Primary Diagnosis**: **Black Quarter** (SNOMED-CT: 29600000)\n\n2. **Differential Diagnoses**:\n   - Anthrax\n   - Malignant Edema\n   - Bacillary Hemoglobinuria\n\n3. **Recommended Treatment**:\nHigh-dose penicillin G, anti-inflammatory therapy. Surgical debridement if localized.\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Lameness, Air/ crapitatifeelings at surface of any Body part), the pattern is consistent with Black Quarter. The combination of symptoms and species-specific epidemiology supports this diagnosis.<|im_end|>",
+    "input": "Analyze this veterinary case:\n\n**Species**: Cow\n**Clinical Signs**: lameness and subcutaneous emphysema (crepitus)\n\nProvide your diagnosis, differentials, treatment plan, and reasoning.",
+    "output": "1. **Primary Diagnosis**: **Black Quarter** (SNOMED-CT: 29600000)\n\n2. **Differential Diagnoses**:\n   - Anthrax\n   - Malignant Edema\n   - Bacillary Hemoglobinuria\n\n3. **Recommended Treatment**:\nHigh-dose penicillin G, anti-inflammatory therapy. Surgical debridement if localized.\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Lameness, Air/ crapitatifeelings at surface of any Body part), the pattern is consistent with Black Quarter. The combination of symptoms and species-specific epidemiology supports this diagnosis.",
+    "metadata": {
+      "animal": "Cow",
+      "disease": "B.Q",
+      "disease_normalized": "Black Quarter",
+      "snomed_codes": [
+        "29600000"
+      ],
+      "symptoms": [
+        "Lameness",
+        "Air/ crapitatifeelings at surface of any Body part"
+      ]
+    }
+  },
+  {
+    "text": "<|im_start|>system\nYou are VetLLM, a veterinary clinical assistant specialized in livestock diseases. \nGiven a clinical case presentation, you will:\n1. Analyze the clinical signs and symptoms\n2. Provide the most likely diagnosis with SNOMED-CT codes when available\n3. List differential diagnoses to consider\n4. Recommend appropriate treatment and management steps\n5. Explain your clinical reasoning<|im_end|>\n<|im_start|>user\nAnalyze this veterinary case:\n\n**Species**: Goat\n**Clinical Signs**: fever, nasal discharge, and severe coughing\n\nProvide your diagnosis, differentials, treatment plan, and reasoning.<|im_end|>\n<|im_start|>assistant\n1. **Primary Diagnosis**: **Contagious Caprine Pleuropneumonia** (SNOMED-CT: 2260006)\n\n2. **Differential Diagnoses**:\n   - Infectious disease\n   - Metabolic disorder\n   - Toxicosis\n\n3. **Recommended Treatment**:\nSymptomatic treatment, supportive care, and appropriate antimicrobials based on clinical presentation.\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Fever(F), Fluid leakage from nose, Sever cough), the pattern is consistent with Contagious Caprine Pleuropneumonia. The combination of symptoms and species-specific epidemiology supports this diagnosis.<|im_end|>",
+    "input": "Analyze this veterinary case:\n\n**Species**: Goat\n**Clinical Signs**: fever, nasal discharge, and severe coughing\n\nProvide your diagnosis, differentials, treatment plan, and reasoning.",
+    "output": "1. **Primary Diagnosis**: **Contagious Caprine Pleuropneumonia** (SNOMED-CT: 2260006)\n\n2. **Differential Diagnoses**:\n   - Infectious disease\n   - Metabolic disorder\n   - Toxicosis\n\n3. **Recommended Treatment**:\nSymptomatic treatment, supportive care, and appropriate antimicrobials based on clinical presentation.\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Fever(F), Fluid leakage from nose, Sever cough), the pattern is consistent with Contagious Caprine Pleuropneumonia. The combination of symptoms and species-specific epidemiology supports this diagnosis.",
+    "metadata": {
+      "animal": "Goat",
+      "disease": "CCPP",
+      "disease_normalized": "Contagious Caprine Pleuropneumonia",
+      "snomed_codes": [
+        "2260006"
+      ],
+      "symptoms": [
+        "Fever(F)",
+        "Fluid leakage from nose",
+        "Sever cough"
+      ]
+    }
+  },
+  {
+    "text": "<|im_start|>system\nYou are VetLLM, a veterinary clinical assistant specialized in livestock diseases. \nGiven a clinical case presentation, you will:\n1. Analyze the clinical signs and symptoms\n2. Provide the most likely diagnosis with SNOMED-CT codes when available\n3. List differential diagnoses to consider\n4. Recommend appropriate treatment and management steps\n5. Explain your clinical reasoning<|im_end|>\n<|im_start|>user\nAnalyze this veterinary case:\n\n**Species**: Sheep\n**Clinical Signs**: fever, diarrhea, and labial vesicles\n\nProvide your diagnosis, differentials, treatment plan, and reasoning.<|im_end|>\n<|im_start|>assistant\n1. **Primary Diagnosis**: **Peste des Petits Ruminants** (SNOMED-CT: 1679004)\n\n2. **Differential Diagnoses**:\n   - Goat Pox\n   - Contagious Ecthyma\n   - Bluetongue\n\n3. **Recommended Treatment**:\nSupportive care, antibiotics for secondary infections. Vaccination of herd.\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Fever(F), Loose motions, blisters on lips), the pattern is consistent with Peste des Petits Ruminants. The combination of symptoms and species-specific epidemiology supports this diagnosis.<|im_end|>",
+    "input": "Analyze this veterinary case:\n\n**Species**: Sheep\n**Clinical Signs**: fever, diarrhea, and labial vesicles\n\nProvide your diagnosis, differentials, treatment plan, and reasoning.",
+    "output": "1. **Primary Diagnosis**: **Peste des Petits Ruminants** (SNOMED-CT: 1679004)\n\n2. **Differential Diagnoses**:\n   - Goat Pox\n   - Contagious Ecthyma\n   - Bluetongue\n\n3. **Recommended Treatment**:\nSupportive care, antibiotics for secondary infections. Vaccination of herd.\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Fever(F), Loose motions, blisters on lips), the pattern is consistent with Peste des Petits Ruminants. The combination of symptoms and species-specific epidemiology supports this diagnosis.",
+    "metadata": {
+      "animal": "Sheep",
+      "disease": "PPR",
+      "disease_normalized": "Peste des Petits Ruminants",
+      "snomed_codes": [
+        "1679004"
+      ],
+      "symptoms": [
+        "Fever(F)",
+        "Loose motions",
+        "blisters on lips"
+      ]
+    }
+  },
+  {
+    "text": "<|im_start|>system\nYou are VetLLM, a veterinary clinical assistant specialized in livestock diseases. \nGiven a clinical case presentation, you will:\n1. Analyze the clinical signs and symptoms\n2. Provide the most likely diagnosis with SNOMED-CT codes when available\n3. List differential diagnoses to consider\n4. Recommend appropriate treatment and management steps\n5. Explain your clinical reasoning<|im_end|>\n<|im_start|>user\nAnalyze this veterinary case:\n\n**Species**: Cow\n**Clinical Signs**: lameness, oral frothing (salivation), and foot vesicles/lesions\n\nProvide your diagnosis, differentials, treatment plan, and reasoning.<|im_end|>\n<|im_start|>assistant\n1. **Primary Diagnosis**: **Foot and Mouth Disease** (SNOMED-CT: 3974005)\n\n2. **Differential Diagnoses**:\n   - Vesicular Stomatitis\n   - Bluetongue\n   - Bovine Viral Diarrhea\n\n3. **Recommended Treatment**:\nSupportive care, isolation, wound care for lesions. Notify authorities (notifiable disease).\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Lameness, Mouth Frothing, Blisters On Feet), the pattern is consistent with Foot and Mouth Disease. The combination of symptoms and species-specific epidemiology supports this diagnosis.<|im_end|>",
+    "input": "Analyze this veterinary case:\n\n**Species**: Cow\n**Clinical Signs**: lameness, oral frothing (salivation), and foot vesicles/lesions\n\nProvide your diagnosis, differentials, treatment plan, and reasoning.",
+    "output": "1. **Primary Diagnosis**: **Foot and Mouth Disease** (SNOMED-CT: 3974005)\n\n2. **Differential Diagnoses**:\n   - Vesicular Stomatitis\n   - Bluetongue\n   - Bovine Viral Diarrhea\n\n3. **Recommended Treatment**:\nSupportive care, isolation, wound care for lesions. Notify authorities (notifiable disease).\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Lameness, Mouth Frothing, Blisters On Feet), the pattern is consistent with Foot and Mouth Disease. The combination of symptoms and species-specific epidemiology supports this diagnosis.",
+    "metadata": {
+      "animal": "Cow",
+      "disease": "FMD",
+      "disease_normalized": "Foot and Mouth Disease",
+      "snomed_codes": [
+        "3974005"
+      ],
+      "symptoms": [
+        "Lameness",
+        "Mouth Frothing",
+        "Blisters On Feet"
+      ]
+    }
+  },
+  {
+    "text": "<|im_start|>system\nYou are VetLLM, a veterinary clinical assistant specialized in livestock diseases. \nGiven a clinical case presentation, you will:\n1. Analyze the clinical signs and symptoms\n2. Provide the most likely diagnosis with SNOMED-CT codes when available\n3. List differential diagnoses to consider\n4. Recommend appropriate treatment and management steps\n5. Explain your clinical reasoning<|im_end|>\n<|im_start|>user\nAnalyze this veterinary case:\n\n**Species**: Cow\n**Clinical Signs**: lameness, tongue protrusion, high fever, and sudden death (peracute)\n\nProvide your diagnosis, differentials, treatment plan, and reasoning.<|im_end|>\n<|im_start|>assistant\n1. **Primary Diagnosis**: **Black Quarter** (SNOMED-CT: 29600000)\n\n2. **Differential Diagnoses**:\n   - Anthrax\n   - Malignant Edema\n   - Bacillary Hemoglobinuria\n\n3. **Recommended Treatment**:\nHigh-dose penicillin G, anti-inflammatory therapy. Surgical debridement if localized.\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Lameness, Tongue Coming Out Of Mouth, Very High Fever...), the pattern is consistent with Black Quarter. The combination of symptoms and species-specific epidemiology supports this diagnosis.<|im_end|>",
+    "input": "Analyze this veterinary case:\n\n**Species**: Cow\n**Clinical Signs**: lameness, tongue protrusion, high fever, and sudden death (peracute)\n\nProvide your diagnosis, differentials, treatment plan, and reasoning.",
+    "output": "1. **Primary Diagnosis**: **Black Quarter** (SNOMED-CT: 29600000)\n\n2. **Differential Diagnoses**:\n   - Anthrax\n   - Malignant Edema\n   - Bacillary Hemoglobinuria\n\n3. **Recommended Treatment**:\nHigh-dose penicillin G, anti-inflammatory therapy. Surgical debridement if localized.\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Lameness, Tongue Coming Out Of Mouth, Very High Fever...), the pattern is consistent with Black Quarter. The combination of symptoms and species-specific epidemiology supports this diagnosis.",
+    "metadata": {
+      "animal": "Cow",
+      "disease": "B.Q",
+      "disease_normalized": "Black Quarter",
+      "snomed_codes": [
+        "29600000"
+      ],
+      "symptoms": [
+        "Lameness",
+        "Tongue Coming Out Of Mouth",
+        "Very High Fever",
+        "Sudden Death"
+      ]
+    }
+  },
+  {
+    "text": "<|im_start|>system\nYou are VetLLM, a veterinary clinical assistant specialized in livestock diseases. \nGiven a clinical case presentation, you will:\n1. Analyze the clinical signs and symptoms\n2. Provide the most likely diagnosis with SNOMED-CT codes when available\n3. List differential diagnoses to consider\n4. Recommend appropriate treatment and management steps\n5. Explain your clinical reasoning<|im_end|>\n<|im_start|>user\nAnalyze this veterinary case:\n\n**Species**: Buffalo\n**Clinical Signs**: decreased milk production and fever\n\nProvide your diagnosis, differentials, treatment plan, and reasoning.<|im_end|>\n<|im_start|>assistant\n1. **Primary Diagnosis**: **Babesiosis** (SNOMED-CT: 24026003)\n\n2. **Differential Diagnoses**:\n   - Anaplasmosis\n   - Theileriosis\n   - Trypanosomiasis\n\n3. **Recommended Treatment**:\nDiminazene aceturate or imidocarb dipropionate. Supportive fluid therapy.\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Drop In Milk Production, Fever), the pattern is consistent with Babesiosis. The combination of symptoms and species-specific epidemiology supports this diagnosis.<|im_end|>",
+    "input": "Analyze this veterinary case:\n\n**Species**: Buffalo\n**Clinical Signs**: decreased milk production and fever\n\nProvide your diagnosis, differentials, treatment plan, and reasoning.",
+    "output": "1. **Primary Diagnosis**: **Babesiosis** (SNOMED-CT: 24026003)\n\n2. **Differential Diagnoses**:\n   - Anaplasmosis\n   - Theileriosis\n   - Trypanosomiasis\n\n3. **Recommended Treatment**:\nDiminazene aceturate or imidocarb dipropionate. Supportive fluid therapy.\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Drop In Milk Production, Fever), the pattern is consistent with Babesiosis. The combination of symptoms and species-specific epidemiology supports this diagnosis.",
+    "metadata": {
+      "animal": "Buffalo",
+      "disease": "BABESIOSIS",
+      "disease_normalized": "Babesiosis",
+      "snomed_codes": [
+        "24026003"
+      ],
+      "symptoms": [
+        "Drop In Milk Production",
+        "Fever"
+      ]
+    }
+  },
+  {
+    "text": "<|im_start|>system\nYou are VetLLM, a veterinary clinical assistant specialized in livestock diseases. \nGiven a clinical case presentation, you will:\n1. Analyze the clinical signs and symptoms\n2. Provide the most likely diagnosis with SNOMED-CT codes when available\n3. List differential diagnoses to consider\n4. Recommend appropriate treatment and management steps\n5. Explain your clinical reasoning<|im_end|>\n<|im_start|>user\nAnalyze this veterinary case:\n\n**Species**: Sheep\n**Clinical Signs**: coughing\n\nProvide your diagnosis, differentials, treatment plan, and reasoning.<|im_end|>\n<|im_start|>assistant\n1. **Primary Diagnosis**: **Peste des Petits Ruminants** (SNOMED-CT: 1679004)\n\n2. **Differential Diagnoses**:\n   - Goat Pox\n   - Contagious Ecthyma\n   - Bluetongue\n\n3. **Recommended Treatment**:\nSupportive care, antibiotics for secondary infections. Vaccination of herd.\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Cough), the pattern is consistent with Peste des Petits Ruminants. The combination of symptoms and species-specific epidemiology supports this diagnosis.<|im_end|>",
+    "input": "Analyze this veterinary case:\n\n**Species**: Sheep\n**Clinical Signs**: coughing\n\nProvide your diagnosis, differentials, treatment plan, and reasoning.",
+    "output": "1. **Primary Diagnosis**: **Peste des Petits Ruminants** (SNOMED-CT: 1679004)\n\n2. **Differential Diagnoses**:\n   - Goat Pox\n   - Contagious Ecthyma\n   - Bluetongue\n\n3. **Recommended Treatment**:\nSupportive care, antibiotics for secondary infections. Vaccination of herd.\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Cough), the pattern is consistent with Peste des Petits Ruminants. The combination of symptoms and species-specific epidemiology supports this diagnosis.",
+    "metadata": {
+      "animal": "Sheep",
+      "disease": "PPR",
+      "disease_normalized": "Peste des Petits Ruminants",
+      "snomed_codes": [
+        "1679004"
+      ],
+      "symptoms": [
+        "Cough"
+      ]
+    }
+  },
+  {
+    "text": "<|im_start|>system\nYou are VetLLM, a veterinary clinical assistant specialized in livestock diseases. \nGiven a clinical case presentation, you will:\n1. Analyze the clinical signs and symptoms\n2. Provide the most likely diagnosis with SNOMED-CT codes when available\n3. List differential diagnoses to consider\n4. Recommend appropriate treatment and management steps\n5. Explain your clinical reasoning<|im_end|>\n<|im_start|>user\nAnalyze this veterinary case:\n\n**Species**: Sheep\n**Clinical Signs**: fever and muscle rigidity/tetany\n\nProvide your diagnosis, differentials, treatment plan, and reasoning.<|im_end|>\n<|im_start|>assistant\n1. **Primary Diagnosis**: **Anthrax** (SNOMED-CT: 40214000)\n\n2. **Differential Diagnoses**:\n   - Blackleg\n   - Hemorrhagic Septicemia\n   - Clostridial diseases\n\n3. **Recommended Treatment**:\nHigh-dose penicillin, oxytetracycline. Carcass disposal protocols. Vaccination of contacts.\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Fever(F), Stiffening of body), the pattern is consistent with Anthrax. The combination of symptoms and species-specific epidemiology supports this diagnosis.<|im_end|>",
+    "input": "Analyze this veterinary case:\n\n**Species**: Sheep\n**Clinical Signs**: fever and muscle rigidity/tetany\n\nProvide your diagnosis, differentials, treatment plan, and reasoning.",
+    "output": "1. **Primary Diagnosis**: **Anthrax** (SNOMED-CT: 40214000)\n\n2. **Differential Diagnoses**:\n   - Blackleg\n   - Hemorrhagic Septicemia\n   - Clostridial diseases\n\n3. **Recommended Treatment**:\nHigh-dose penicillin, oxytetracycline. Carcass disposal protocols. Vaccination of contacts.\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Fever(F), Stiffening of body), the pattern is consistent with Anthrax. The combination of symptoms and species-specific epidemiology supports this diagnosis.",
+    "metadata": {
+      "animal": "Sheep",
+      "disease": "Anthrax",
+      "disease_normalized": "Anthrax",
+      "snomed_codes": [
+        "40214000"
+      ],
+      "symptoms": [
+        "Fever(F)",
+        "Stiffening of body"
+      ]
+    }
+  },
+  {
+    "text": "<|im_start|>system\nYou are VetLLM, a veterinary clinical assistant specialized in livestock diseases. \nGiven a clinical case presentation, you will:\n1. Analyze the clinical signs and symptoms\n2. Provide the most likely diagnosis with SNOMED-CT codes when available\n3. List differential diagnoses to consider\n4. Recommend appropriate treatment and management steps\n5. Explain your clinical reasoning<|im_end|>\n<|im_start|>user\nAnalyze this veterinary case:\n\n**Species**: Goat\n**Clinical Signs**: fever and generalized weakness\n\nProvide your diagnosis, differentials, treatment plan, and reasoning.<|im_end|>\n<|im_start|>assistant\n1. **Primary Diagnosis**: **Internal Worms** (SNOMED-CT: VET_WORMS_001)\n\n2. **Differential Diagnoses**:\n   - Infectious disease\n   - Metabolic disorder\n   - Toxicosis\n\n3. **Recommended Treatment**:\nSymptomatic treatment, supportive care, and appropriate antimicrobials based on clinical presentation.\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Fever(F), Weakness), the pattern is consistent with Internal Worms. The combination of symptoms and species-specific epidemiology supports this diagnosis.<|im_end|>",
+    "input": "Analyze this veterinary case:\n\n**Species**: Goat\n**Clinical Signs**: fever and generalized weakness\n\nProvide your diagnosis, differentials, treatment plan, and reasoning.",
+    "output": "1. **Primary Diagnosis**: **Internal Worms** (SNOMED-CT: VET_WORMS_001)\n\n2. **Differential Diagnoses**:\n   - Infectious disease\n   - Metabolic disorder\n   - Toxicosis\n\n3. **Recommended Treatment**:\nSymptomatic treatment, supportive care, and appropriate antimicrobials based on clinical presentation.\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Fever(F), Weakness), the pattern is consistent with Internal Worms. The combination of symptoms and species-specific epidemiology supports this diagnosis.",
+    "metadata": {
+      "animal": "Goat",
+      "disease": "Internal Worms",
+      "disease_normalized": "Internal Worms",
+      "snomed_codes": [
+        "VET_WORMS_001"
+      ],
+      "symptoms": [
+        "Fever(F)",
+        "Weakness"
+      ]
+    }
+  },
+  {
+    "text": "<|im_start|>system\nYou are VetLLM, a veterinary clinical assistant specialized in livestock diseases. \nGiven a clinical case presentation, you will:\n1. Analyze the clinical signs and symptoms\n2. Provide the most likely diagnosis with SNOMED-CT codes when available\n3. List differential diagnoses to consider\n4. Recommend appropriate treatment and management steps\n5. Explain your clinical reasoning<|im_end|>\n<|im_start|>user\nAnalyze this veterinary case:\n\n**Species**: Sheep\n**Clinical Signs**: lameness\n\nProvide your diagnosis, differentials, treatment plan, and reasoning.<|im_end|>\n<|im_start|>assistant\n1. **Primary Diagnosis**: **Foot Rot** (SNOMED-CT: VET_FOOTROT_001)\n\n2. **Differential Diagnoses**:\n   - Infectious disease\n   - Metabolic disorder\n   - Toxicosis\n\n3. **Recommended Treatment**:\nSymptomatic treatment, supportive care, and appropriate antimicrobials based on clinical presentation.\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Lameness), the pattern is consistent with Foot Rot. The combination of symptoms and species-specific epidemiology supports this diagnosis.<|im_end|>",
+    "input": "Analyze this veterinary case:\n\n**Species**: Sheep\n**Clinical Signs**: lameness\n\nProvide your diagnosis, differentials, treatment plan, and reasoning.",
+    "output": "1. **Primary Diagnosis**: **Foot Rot** (SNOMED-CT: VET_FOOTROT_001)\n\n2. **Differential Diagnoses**:\n   - Infectious disease\n   - Metabolic disorder\n   - Toxicosis\n\n3. **Recommended Treatment**:\nSymptomatic treatment, supportive care, and appropriate antimicrobials based on clinical presentation.\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Lameness), the pattern is consistent with Foot Rot. The combination of symptoms and species-specific epidemiology supports this diagnosis.",
+    "metadata": {
+      "animal": "Sheep",
+      "disease": "Foot Rot",
+      "disease_normalized": "Foot Rot",
+      "snomed_codes": [
+        "VET_FOOTROT_001"
+      ],
+      "symptoms": [
+        "Lameness"
+      ]
+    }
+  },
+  {
+    "text": "<|im_start|>system\nYou are VetLLM, a veterinary clinical assistant specialized in livestock diseases. \nGiven a clinical case presentation, you will:\n1. Analyze the clinical signs and symptoms\n2. Provide the most likely diagnosis with SNOMED-CT codes when available\n3. List differential diagnoses to consider\n4. Recommend appropriate treatment and management steps\n5. Explain your clinical reasoning<|im_end|>\n<|im_start|>user\nAnalyze this veterinary case:\n\n**Species**: Cow\n**Clinical Signs**: lameness, oral frothing (salivation), decreased milk production, oral vesicles/ulcers, high fever, and sudden death (peracute)\n\nProvide your diagnosis, differentials, treatment plan, and reasoning.<|im_end|>\n<|im_start|>assistant\n1. **Primary Diagnosis**: **Foot and Mouth Disease** (SNOMED-CT: 3974005)\n\n2. **Differential Diagnoses**:\n   - Vesicular Stomatitis\n   - Bluetongue\n   - Bovine Viral Diarrhea\n\n3. **Recommended Treatment**:\nSupportive care, isolation, wound care for lesions. Notify authorities (notifiable disease).\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Lameness, Mouth Frothing, Drop In Milk Production...), the pattern is consistent with Foot and Mouth Disease. The combination of symptoms and species-specific epidemiology supports this diagnosis.<|im_end|>",
+    "input": "Analyze this veterinary case:\n\n**Species**: Cow\n**Clinical Signs**: lameness, oral frothing (salivation), decreased milk production, oral vesicles/ulcers, high fever, and sudden death (peracute)\n\nProvide your diagnosis, differentials, treatment plan, and reasoning.",
+    "output": "1. **Primary Diagnosis**: **Foot and Mouth Disease** (SNOMED-CT: 3974005)\n\n2. **Differential Diagnoses**:\n   - Vesicular Stomatitis\n   - Bluetongue\n   - Bovine Viral Diarrhea\n\n3. **Recommended Treatment**:\nSupportive care, isolation, wound care for lesions. Notify authorities (notifiable disease).\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Lameness, Mouth Frothing, Drop In Milk Production...), the pattern is consistent with Foot and Mouth Disease. The combination of symptoms and species-specific epidemiology supports this diagnosis.",
+    "metadata": {
+      "animal": "Cow",
+      "disease": "FMD",
+      "disease_normalized": "Foot and Mouth Disease",
+      "snomed_codes": [
+        "3974005"
+      ],
+      "symptoms": [
+        "Lameness",
+        "Mouth Frothing",
+        "Drop In Milk Production",
+        "Blisters In Mouth",
+        "Very High Fever",
+        "Sudden Death"
+      ]
+    }
+  },
+  {
+    "text": "<|im_start|>system\nYou are VetLLM, a veterinary clinical assistant specialized in livestock diseases. \nGiven a clinical case presentation, you will:\n1. Analyze the clinical signs and symptoms\n2. Provide the most likely diagnosis with SNOMED-CT codes when available\n3. List differential diagnoses to consider\n4. Recommend appropriate treatment and management steps\n5. Explain your clinical reasoning<|im_end|>\n<|im_start|>user\nAnalyze this veterinary case:\n\n**Species**: Cow\n**Clinical Signs**: cervical edema\n\nProvide your diagnosis, differentials, treatment plan, and reasoning.<|im_end|>\n<|im_start|>assistant\n1. **Primary Diagnosis**: **Hemorrhagic Septicemia** (SNOMED-CT: 198462004)\n\n2. **Differential Diagnoses**:\n   - Infectious disease\n   - Metabolic disorder\n   - Toxicosis\n\n3. **Recommended Treatment**:\nSymptomatic treatment, supportive care, and appropriate antimicrobials based on clinical presentation.\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Neck Swelling), the pattern is consistent with Hemorrhagic Septicemia. The combination of symptoms and species-specific epidemiology supports this diagnosis.<|im_end|>",
+    "input": "Analyze this veterinary case:\n\n**Species**: Cow\n**Clinical Signs**: cervical edema\n\nProvide your diagnosis, differentials, treatment plan, and reasoning.",
+    "output": "1. **Primary Diagnosis**: **Hemorrhagic Septicemia** (SNOMED-CT: 198462004)\n\n2. **Differential Diagnoses**:\n   - Infectious disease\n   - Metabolic disorder\n   - Toxicosis\n\n3. **Recommended Treatment**:\nSymptomatic treatment, supportive care, and appropriate antimicrobials based on clinical presentation.\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Neck Swelling), the pattern is consistent with Hemorrhagic Septicemia. The combination of symptoms and species-specific epidemiology supports this diagnosis.",
+    "metadata": {
+      "animal": "Cow",
+      "disease": "H.S",
+      "disease_normalized": "Hemorrhagic Septicemia",
+      "snomed_codes": [
+        "198462004"
+      ],
+      "symptoms": [
+        "Neck Swelling"
+      ]
+    }
+  },
+  {
+    "text": "<|im_start|>system\nYou are VetLLM, a veterinary clinical assistant specialized in livestock diseases. \nGiven a clinical case presentation, you will:\n1. Analyze the clinical signs and symptoms\n2. Provide the most likely diagnosis with SNOMED-CT codes when available\n3. List differential diagnoses to consider\n4. Recommend appropriate treatment and management steps\n5. Explain your clinical reasoning<|im_end|>\n<|im_start|>user\nAnalyze this veterinary case:\n\n**Species**: Buffalo\n**Clinical Signs**: cervical edema and tongue protrusion\n\nProvide your diagnosis, differentials, treatment plan, and reasoning.<|im_end|>\n<|im_start|>assistant\n1. **Primary Diagnosis**: **Hemorrhagic Septicemia** (SNOMED-CT: 198462004)\n\n2. **Differential Diagnoses**:\n   - Infectious disease\n   - Metabolic disorder\n   - Toxicosis\n\n3. **Recommended Treatment**:\nSymptomatic treatment, supportive care, and appropriate antimicrobials based on clinical presentation.\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Neck Swelling, Tongue Coming Out Of Mouth), the pattern is consistent with Hemorrhagic Septicemia. The combination of symptoms and species-specific epidemiology supports this diagnosis.<|im_end|>",
+    "input": "Analyze this veterinary case:\n\n**Species**: Buffalo\n**Clinical Signs**: cervical edema and tongue protrusion\n\nProvide your diagnosis, differentials, treatment plan, and reasoning.",
+    "output": "1. **Primary Diagnosis**: **Hemorrhagic Septicemia** (SNOMED-CT: 198462004)\n\n2. **Differential Diagnoses**:\n   - Infectious disease\n   - Metabolic disorder\n   - Toxicosis\n\n3. **Recommended Treatment**:\nSymptomatic treatment, supportive care, and appropriate antimicrobials based on clinical presentation.\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Neck Swelling, Tongue Coming Out Of Mouth), the pattern is consistent with Hemorrhagic Septicemia. The combination of symptoms and species-specific epidemiology supports this diagnosis.",
+    "metadata": {
+      "animal": "Buffalo",
+      "disease": "H.S",
+      "disease_normalized": "Hemorrhagic Septicemia",
+      "snomed_codes": [
+        "198462004"
+      ],
+      "symptoms": [
+        "Neck Swelling",
+        "Tongue Coming Out Of Mouth"
+      ]
+    }
+  },
+  {
+    "text": "<|im_start|>system\nYou are VetLLM, a veterinary clinical assistant specialized in livestock diseases. \nGiven a clinical case presentation, you will:\n1. Analyze the clinical signs and symptoms\n2. Provide the most likely diagnosis with SNOMED-CT codes when available\n3. List differential diagnoses to consider\n4. Recommend appropriate treatment and management steps\n5. Explain your clinical reasoning<|im_end|>\n<|im_start|>user\nAnalyze this veterinary case:\n\n**Species**: Goat\n**Clinical Signs**: fever, nasal discharge, and severe coughing\n\nProvide your diagnosis, differentials, treatment plan, and reasoning.<|im_end|>\n<|im_start|>assistant\n1. **Primary Diagnosis**: **Peste des Petits Ruminants** (SNOMED-CT: 1679004)\n\n2. **Differential Diagnoses**:\n   - Goat Pox\n   - Contagious Ecthyma\n   - Bluetongue\n\n3. **Recommended Treatment**:\nSupportive care, antibiotics for secondary infections. Vaccination of herd.\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Fever(F), Fluid leakage from nose, Sever cough), the pattern is consistent with Peste des Petits Ruminants. The combination of symptoms and species-specific epidemiology supports this diagnosis.<|im_end|>",
+    "input": "Analyze this veterinary case:\n\n**Species**: Goat\n**Clinical Signs**: fever, nasal discharge, and severe coughing\n\nProvide your diagnosis, differentials, treatment plan, and reasoning.",
+    "output": "1. **Primary Diagnosis**: **Peste des Petits Ruminants** (SNOMED-CT: 1679004)\n\n2. **Differential Diagnoses**:\n   - Goat Pox\n   - Contagious Ecthyma\n   - Bluetongue\n\n3. **Recommended Treatment**:\nSupportive care, antibiotics for secondary infections. Vaccination of herd.\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Fever(F), Fluid leakage from nose, Sever cough), the pattern is consistent with Peste des Petits Ruminants. The combination of symptoms and species-specific epidemiology supports this diagnosis.",
+    "metadata": {
+      "animal": "Goat",
+      "disease": "P.P.R",
+      "disease_normalized": "Peste des Petits Ruminants",
+      "snomed_codes": [
+        "1679004"
+      ],
+      "symptoms": [
+        "Fever(F)",
+        "Fluid leakage from nose",
+        "Sever cough"
+      ]
+    }
+  },
+  {
+    "text": "<|im_start|>system\nYou are VetLLM, a veterinary clinical assistant specialized in livestock diseases. \nGiven a clinical case presentation, you will:\n1. Analyze the clinical signs and symptoms\n2. Provide the most likely diagnosis with SNOMED-CT codes when available\n3. List differential diagnoses to consider\n4. Recommend appropriate treatment and management steps\n5. Explain your clinical reasoning<|im_end|>\n<|im_start|>user\nAnalyze this veterinary case:\n\n**Species**: Cow\n**Clinical Signs**: decreased milk production, abnormal milk consistency (clotted), teat lesions/nodules, high fever, and abortion/pregnancy loss\n\nProvide your diagnosis, differentials, treatment plan, and reasoning.<|im_end|>\n<|im_start|>assistant\n1. **Primary Diagnosis**: **Mastitis** (SNOMED-CT: 72934000)\n\n2. **Differential Diagnoses**:\n   - Udder edema\n   - Teat injury\n   - Mammary abscess\n\n3. **Recommended Treatment**:\nIntramammary antibiotics, systemic antibiotics if systemic signs. Frequent milking.\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Drop In Milk Production, Milk In Semi Solid Form, Teat Gnarls...), the pattern is consistent with Mastitis. The combination of symptoms and species-specific epidemiology supports this diagnosis.<|im_end|>",
+    "input": "Analyze this veterinary case:\n\n**Species**: Cow\n**Clinical Signs**: decreased milk production, abnormal milk consistency (clotted), teat lesions/nodules, high fever, and abortion/pregnancy loss\n\nProvide your diagnosis, differentials, treatment plan, and reasoning.",
+    "output": "1. **Primary Diagnosis**: **Mastitis** (SNOMED-CT: 72934000)\n\n2. **Differential Diagnoses**:\n   - Udder edema\n   - Teat injury\n   - Mammary abscess\n\n3. **Recommended Treatment**:\nIntramammary antibiotics, systemic antibiotics if systemic signs. Frequent milking.\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Drop In Milk Production, Milk In Semi Solid Form, Teat Gnarls...), the pattern is consistent with Mastitis. The combination of symptoms and species-specific epidemiology supports this diagnosis.",
+    "metadata": {
+      "animal": "Cow",
+      "disease": "Mastits",
+      "disease_normalized": "Mastitis",
+      "snomed_codes": [
+        "72934000"
+      ],
+      "symptoms": [
+        "Drop In Milk Production",
+        "Milk In Semi Solid Form",
+        "Teat Gnarls",
+        "Very High Fever",
+        "Abortion"
+      ]
+    }
+  },
+  {
+    "text": "<|im_start|>system\nYou are VetLLM, a veterinary clinical assistant specialized in livestock diseases. \nGiven a clinical case presentation, you will:\n1. Analyze the clinical signs and symptoms\n2. Provide the most likely diagnosis with SNOMED-CT codes when available\n3. List differential diagnoses to consider\n4. Recommend appropriate treatment and management steps\n5. Explain your clinical reasoning<|im_end|>\n<|im_start|>user\nAnalyze this veterinary case:\n\n**Species**: Goat\n**Clinical Signs**: lameness\n\nProvide your diagnosis, differentials, treatment plan, and reasoning.<|im_end|>\n<|im_start|>assistant\n1. **Primary Diagnosis**: **Foot and Mouth Disease** (SNOMED-CT: 3974005)\n\n2. **Differential Diagnoses**:\n   - Vesicular Stomatitis\n   - Bluetongue\n   - Bovine Viral Diarrhea\n\n3. **Recommended Treatment**:\nSupportive care, isolation, wound care for lesions. Notify authorities (notifiable disease).\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Lameness), the pattern is consistent with Foot and Mouth Disease. The combination of symptoms and species-specific epidemiology supports this diagnosis.<|im_end|>",
+    "input": "Analyze this veterinary case:\n\n**Species**: Goat\n**Clinical Signs**: lameness\n\nProvide your diagnosis, differentials, treatment plan, and reasoning.",
+    "output": "1. **Primary Diagnosis**: **Foot and Mouth Disease** (SNOMED-CT: 3974005)\n\n2. **Differential Diagnoses**:\n   - Vesicular Stomatitis\n   - Bluetongue\n   - Bovine Viral Diarrhea\n\n3. **Recommended Treatment**:\nSupportive care, isolation, wound care for lesions. Notify authorities (notifiable disease).\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Lameness), the pattern is consistent with Foot and Mouth Disease. The combination of symptoms and species-specific epidemiology supports this diagnosis.",
+    "metadata": {
+      "animal": "Goat",
+      "disease": "FMD",
+      "disease_normalized": "Foot and Mouth Disease",
+      "snomed_codes": [
+        "3974005"
+      ],
+      "symptoms": [
+        "Lameness"
+      ]
+    }
+  },
+  {
+    "text": "<|im_start|>system\nYou are VetLLM, a veterinary clinical assistant specialized in livestock diseases. \nGiven a clinical case presentation, you will:\n1. Analyze the clinical signs and symptoms\n2. Provide the most likely diagnosis with SNOMED-CT codes when available\n3. List differential diagnoses to consider\n4. Recommend appropriate treatment and management steps\n5. Explain your clinical reasoning<|im_end|>\n<|im_start|>user\nAnalyze this veterinary case:\n\n**Species**: Cow\n**Clinical Signs**: abnormal milk consistency (clotted) and sudden death (peracute)\n\nProvide your diagnosis, differentials, treatment plan, and reasoning.<|im_end|>\n<|im_start|>assistant\n1. **Primary Diagnosis**: **Mastitis** (SNOMED-CT: 72934000)\n\n2. **Differential Diagnoses**:\n   - Udder edema\n   - Teat injury\n   - Mammary abscess\n\n3. **Recommended Treatment**:\nIntramammary antibiotics, systemic antibiotics if systemic signs. Frequent milking.\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Milk In Semi Solid Form, Sudden Death), the pattern is consistent with Mastitis. The combination of symptoms and species-specific epidemiology supports this diagnosis.<|im_end|>",
+    "input": "Analyze this veterinary case:\n\n**Species**: Cow\n**Clinical Signs**: abnormal milk consistency (clotted) and sudden death (peracute)\n\nProvide your diagnosis, differentials, treatment plan, and reasoning.",
+    "output": "1. **Primary Diagnosis**: **Mastitis** (SNOMED-CT: 72934000)\n\n2. **Differential Diagnoses**:\n   - Udder edema\n   - Teat injury\n   - Mammary abscess\n\n3. **Recommended Treatment**:\nIntramammary antibiotics, systemic antibiotics if systemic signs. Frequent milking.\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Milk In Semi Solid Form, Sudden Death), the pattern is consistent with Mastitis. The combination of symptoms and species-specific epidemiology supports this diagnosis.",
+    "metadata": {
+      "animal": "Cow",
+      "disease": "Mastits",
+      "disease_normalized": "Mastitis",
+      "snomed_codes": [
+        "72934000"
+      ],
+      "symptoms": [
+        "Milk In Semi Solid Form",
+        "Sudden Death"
+      ]
+    }
+  },
+  {
+    "text": "<|im_start|>system\nYou are VetLLM, a veterinary clinical assistant specialized in livestock diseases. \nGiven a clinical case presentation, you will:\n1. Analyze the clinical signs and symptoms\n2. Provide the most likely diagnosis with SNOMED-CT codes when available\n3. List differential diagnoses to consider\n4. Recommend appropriate treatment and management steps\n5. Explain your clinical reasoning<|im_end|>\n<|im_start|>user\nAnalyze this veterinary case:\n\n**Species**: Cow\n**Clinical Signs**: decreased milk production and abnormal milk consistency (clotted)\n\nProvide your diagnosis, differentials, treatment plan, and reasoning.<|im_end|>\n<|im_start|>assistant\n1. **Primary Diagnosis**: **Mastitis** (SNOMED-CT: 72934000)\n\n2. **Differential Diagnoses**:\n   - Udder edema\n   - Teat injury\n   - Mammary abscess\n\n3. **Recommended Treatment**:\nIntramammary antibiotics, systemic antibiotics if systemic signs. Frequent milking.\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Drop In Milk Production, Milk In Semi Solid Form), the pattern is consistent with Mastitis. The combination of symptoms and species-specific epidemiology supports this diagnosis.<|im_end|>",
+    "input": "Analyze this veterinary case:\n\n**Species**: Cow\n**Clinical Signs**: decreased milk production and abnormal milk consistency (clotted)\n\nProvide your diagnosis, differentials, treatment plan, and reasoning.",
+    "output": "1. **Primary Diagnosis**: **Mastitis** (SNOMED-CT: 72934000)\n\n2. **Differential Diagnoses**:\n   - Udder edema\n   - Teat injury\n   - Mammary abscess\n\n3. **Recommended Treatment**:\nIntramammary antibiotics, systemic antibiotics if systemic signs. Frequent milking.\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Drop In Milk Production, Milk In Semi Solid Form), the pattern is consistent with Mastitis. The combination of symptoms and species-specific epidemiology supports this diagnosis.",
+    "metadata": {
+      "animal": "Cow",
+      "disease": "Mastits",
+      "disease_normalized": "Mastitis",
+      "snomed_codes": [
+        "72934000"
+      ],
+      "symptoms": [
+        "Drop In Milk Production",
+        "Milk In Semi Solid Form"
+      ]
+    }
+  },
+  {
+    "text": "<|im_start|>system\nYou are VetLLM, a veterinary clinical assistant specialized in livestock diseases. \nGiven a clinical case presentation, you will:\n1. Analyze the clinical signs and symptoms\n2. Provide the most likely diagnosis with SNOMED-CT codes when available\n3. List differential diagnoses to consider\n4. Recommend appropriate treatment and management steps\n5. Explain your clinical reasoning<|im_end|>\n<|im_start|>user\nAnalyze this veterinary case:\n\n**Species**: Goat\n**Clinical Signs**: fever, mucopurulent discharge, coughing, and severe coughing\n\nProvide your diagnosis, differentials, treatment plan, and reasoning.<|im_end|>\n<|im_start|>assistant\n1. **Primary Diagnosis**: **Contagious Caprine Pleuropneumonia** (SNOMED-CT: 2260006)\n\n2. **Differential Diagnoses**:\n   - Infectious disease\n   - Metabolic disorder\n   - Toxicosis\n\n3. **Recommended Treatment**:\nSymptomatic treatment, supportive care, and appropriate antimicrobials based on clinical presentation.\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Fever(F), Water or fluid leakage from eyes,nose or mouth, Cough...), the pattern is consistent with Contagious Caprine Pleuropneumonia. The combination of symptoms and species-specific epidemiology supports this diagnosis.<|im_end|>",
+    "input": "Analyze this veterinary case:\n\n**Species**: Goat\n**Clinical Signs**: fever, mucopurulent discharge, coughing, and severe coughing\n\nProvide your diagnosis, differentials, treatment plan, and reasoning.",
+    "output": "1. **Primary Diagnosis**: **Contagious Caprine Pleuropneumonia** (SNOMED-CT: 2260006)\n\n2. **Differential Diagnoses**:\n   - Infectious disease\n   - Metabolic disorder\n   - Toxicosis\n\n3. **Recommended Treatment**:\nSymptomatic treatment, supportive care, and appropriate antimicrobials based on clinical presentation.\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Fever(F), Water or fluid leakage from eyes,nose or mouth, Cough...), the pattern is consistent with Contagious Caprine Pleuropneumonia. The combination of symptoms and species-specific epidemiology supports this diagnosis.",
+    "metadata": {
+      "animal": "Goat",
+      "disease": "CCPP",
+      "disease_normalized": "Contagious Caprine Pleuropneumonia",
+      "snomed_codes": [
+        "2260006"
+      ],
+      "symptoms": [
+        "Fever(F)",
+        "Water or fluid leakage from eyes,nose or mouth",
+        "Cough",
+        "Sever cough"
+      ]
+    }
+  },
+  {
+    "text": "<|im_start|>system\nYou are VetLLM, a veterinary clinical assistant specialized in livestock diseases. \nGiven a clinical case presentation, you will:\n1. Analyze the clinical signs and symptoms\n2. Provide the most likely diagnosis with SNOMED-CT codes when available\n3. List differential diagnoses to consider\n4. Recommend appropriate treatment and management steps\n5. Explain your clinical reasoning<|im_end|>\n<|im_start|>user\nAnalyze this veterinary case:\n\n**Species**: Goat\n**Clinical Signs**: fever, coughing, nasal discharge, and severe coughing\n\nProvide your diagnosis, differentials, treatment plan, and reasoning.<|im_end|>\n<|im_start|>assistant\n1. **Primary Diagnosis**: **Peste des Petits Ruminants** (SNOMED-CT: 1679004)\n\n2. **Differential Diagnoses**:\n   - Goat Pox\n   - Contagious Ecthyma\n   - Bluetongue\n\n3. **Recommended Treatment**:\nSupportive care, antibiotics for secondary infections. Vaccination of herd.\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Fever(F), Cough, Fluid leakage from nose...), the pattern is consistent with Peste des Petits Ruminants. The combination of symptoms and species-specific epidemiology supports this diagnosis.<|im_end|>",
+    "input": "Analyze this veterinary case:\n\n**Species**: Goat\n**Clinical Signs**: fever, coughing, nasal discharge, and severe coughing\n\nProvide your diagnosis, differentials, treatment plan, and reasoning.",
+    "output": "1. **Primary Diagnosis**: **Peste des Petits Ruminants** (SNOMED-CT: 1679004)\n\n2. **Differential Diagnoses**:\n   - Goat Pox\n   - Contagious Ecthyma\n   - Bluetongue\n\n3. **Recommended Treatment**:\nSupportive care, antibiotics for secondary infections. Vaccination of herd.\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Fever(F), Cough, Fluid leakage from nose...), the pattern is consistent with Peste des Petits Ruminants. The combination of symptoms and species-specific epidemiology supports this diagnosis.",
+    "metadata": {
+      "animal": "Goat",
+      "disease": "P.P.R",
+      "disease_normalized": "Peste des Petits Ruminants",
+      "snomed_codes": [
+        "1679004"
+      ],
+      "symptoms": [
+        "Fever(F)",
+        "Cough",
+        "Fluid leakage from nose",
+        "Sever cough"
+      ]
+    }
+  },
+  {
+    "text": "<|im_start|>system\nYou are VetLLM, a veterinary clinical assistant specialized in livestock diseases. \nGiven a clinical case presentation, you will:\n1. Analyze the clinical signs and symptoms\n2. Provide the most likely diagnosis with SNOMED-CT codes when available\n3. List differential diagnoses to consider\n4. Recommend appropriate treatment and management steps\n5. Explain your clinical reasoning<|im_end|>\n<|im_start|>user\nAnalyze this veterinary case:\n\n**Species**: Cow\n**Clinical Signs**: high fever and sudden death (peracute)\n\nProvide your diagnosis, differentials, treatment plan, and reasoning.<|im_end|>\n<|im_start|>assistant\n1. **Primary Diagnosis**: **Black Quarter** (SNOMED-CT: 29600000)\n\n2. **Differential Diagnoses**:\n   - Anthrax\n   - Malignant Edema\n   - Bacillary Hemoglobinuria\n\n3. **Recommended Treatment**:\nHigh-dose penicillin G, anti-inflammatory therapy. Surgical debridement if localized.\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Very High Fever, Sudden Death), the pattern is consistent with Black Quarter. The combination of symptoms and species-specific epidemiology supports this diagnosis.<|im_end|>",
+    "input": "Analyze this veterinary case:\n\n**Species**: Cow\n**Clinical Signs**: high fever and sudden death (peracute)\n\nProvide your diagnosis, differentials, treatment plan, and reasoning.",
+    "output": "1. **Primary Diagnosis**: **Black Quarter** (SNOMED-CT: 29600000)\n\n2. **Differential Diagnoses**:\n   - Anthrax\n   - Malignant Edema\n   - Bacillary Hemoglobinuria\n\n3. **Recommended Treatment**:\nHigh-dose penicillin G, anti-inflammatory therapy. Surgical debridement if localized.\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Very High Fever, Sudden Death), the pattern is consistent with Black Quarter. The combination of symptoms and species-specific epidemiology supports this diagnosis.",
+    "metadata": {
+      "animal": "Cow",
+      "disease": "B.Q",
+      "disease_normalized": "Black Quarter",
+      "snomed_codes": [
+        "29600000"
+      ],
+      "symptoms": [
+        "Very High Fever",
+        "Sudden Death"
+      ]
+    }
+  },
+  {
+    "text": "<|im_start|>system\nYou are VetLLM, a veterinary clinical assistant specialized in livestock diseases. \nGiven a clinical case presentation, you will:\n1. Analyze the clinical signs and symptoms\n2. Provide the most likely diagnosis with SNOMED-CT codes when available\n3. List differential diagnoses to consider\n4. Recommend appropriate treatment and management steps\n5. Explain your clinical reasoning<|im_end|>\n<|im_start|>user\nAnalyze this veterinary case:\n\n**Species**: Buffalo\n**Clinical Signs**: teat lesions/nodules and high fever\n\nProvide your diagnosis, differentials, treatment plan, and reasoning.<|im_end|>\n<|im_start|>assistant\n1. **Primary Diagnosis**: **Mastitis** (SNOMED-CT: 72934000)\n\n2. **Differential Diagnoses**:\n   - Udder edema\n   - Teat injury\n   - Mammary abscess\n\n3. **Recommended Treatment**:\nIntramammary antibiotics, systemic antibiotics if systemic signs. Frequent milking.\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Teat Gnarls, Very High Fever), the pattern is consistent with Mastitis. The combination of symptoms and species-specific epidemiology supports this diagnosis.<|im_end|>",
+    "input": "Analyze this veterinary case:\n\n**Species**: Buffalo\n**Clinical Signs**: teat lesions/nodules and high fever\n\nProvide your diagnosis, differentials, treatment plan, and reasoning.",
+    "output": "1. **Primary Diagnosis**: **Mastitis** (SNOMED-CT: 72934000)\n\n2. **Differential Diagnoses**:\n   - Udder edema\n   - Teat injury\n   - Mammary abscess\n\n3. **Recommended Treatment**:\nIntramammary antibiotics, systemic antibiotics if systemic signs. Frequent milking.\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Teat Gnarls, Very High Fever), the pattern is consistent with Mastitis. The combination of symptoms and species-specific epidemiology supports this diagnosis.",
+    "metadata": {
+      "animal": "Buffalo",
+      "disease": "Mastits",
+      "disease_normalized": "Mastitis",
+      "snomed_codes": [
+        "72934000"
+      ],
+      "symptoms": [
+        "Teat Gnarls",
+        "Very High Fever"
+      ]
+    }
+  },
+  {
+    "text": "<|im_start|>system\nYou are VetLLM, a veterinary clinical assistant specialized in livestock diseases. \nGiven a clinical case presentation, you will:\n1. Analyze the clinical signs and symptoms\n2. Provide the most likely diagnosis with SNOMED-CT codes when available\n3. List differential diagnoses to consider\n4. Recommend appropriate treatment and management steps\n5. Explain your clinical reasoning<|im_end|>\n<|im_start|>user\nAnalyze this veterinary case:\n\n**Species**: Goat\n**Clinical Signs**: fever, mucopurulent discharge, and severe coughing\n\nProvide your diagnosis, differentials, treatment plan, and reasoning.<|im_end|>\n<|im_start|>assistant\n1. **Primary Diagnosis**: **Contagious Caprine Pleuropneumonia** (SNOMED-CT: 2260006)\n\n2. **Differential Diagnoses**:\n   - Infectious disease\n   - Metabolic disorder\n   - Toxicosis\n\n3. **Recommended Treatment**:\nSymptomatic treatment, supportive care, and appropriate antimicrobials based on clinical presentation.\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Fever(F), Water or fluid leakage from eyes,nose or mouth, Sever cough), the pattern is consistent with Contagious Caprine Pleuropneumonia. The combination of symptoms and species-specific epidemiology supports this diagnosis.<|im_end|>",
+    "input": "Analyze this veterinary case:\n\n**Species**: Goat\n**Clinical Signs**: fever, mucopurulent discharge, and severe coughing\n\nProvide your diagnosis, differentials, treatment plan, and reasoning.",
+    "output": "1. **Primary Diagnosis**: **Contagious Caprine Pleuropneumonia** (SNOMED-CT: 2260006)\n\n2. **Differential Diagnoses**:\n   - Infectious disease\n   - Metabolic disorder\n   - Toxicosis\n\n3. **Recommended Treatment**:\nSymptomatic treatment, supportive care, and appropriate antimicrobials based on clinical presentation.\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Fever(F), Water or fluid leakage from eyes,nose or mouth, Sever cough), the pattern is consistent with Contagious Caprine Pleuropneumonia. The combination of symptoms and species-specific epidemiology supports this diagnosis.",
+    "metadata": {
+      "animal": "Goat",
+      "disease": "CCPP",
+      "disease_normalized": "Contagious Caprine Pleuropneumonia",
+      "snomed_codes": [
+        "2260006"
+      ],
+      "symptoms": [
+        "Fever(F)",
+        "Water or fluid leakage from eyes,nose or mouth",
+        "Sever cough"
+      ]
+    }
+  },
+  {
+    "text": "<|im_start|>system\nYou are VetLLM, a veterinary clinical assistant specialized in livestock diseases. \nGiven a clinical case presentation, you will:\n1. Analyze the clinical signs and symptoms\n2. Provide the most likely diagnosis with SNOMED-CT codes when available\n3. List differential diagnoses to consider\n4. Recommend appropriate treatment and management steps\n5. Explain your clinical reasoning<|im_end|>\n<|im_start|>user\nAnalyze this veterinary case:\n\n**Species**: Sheep\n**Clinical Signs**: fever, mucopurulent discharge, diarrhea, and coughing\n\nProvide your diagnosis, differentials, treatment plan, and reasoning.<|im_end|>\n<|im_start|>assistant\n1. **Primary Diagnosis**: **Contagious Caprine Pleuropneumonia** (SNOMED-CT: 2260006)\n\n2. **Differential Diagnoses**:\n   - Infectious disease\n   - Metabolic disorder\n   - Toxicosis\n\n3. **Recommended Treatment**:\nSymptomatic treatment, supportive care, and appropriate antimicrobials based on clinical presentation.\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Fever(F), Water or fluid leakage from eyes,nose or mouth, Loose motions...), the pattern is consistent with Contagious Caprine Pleuropneumonia. The combination of symptoms and species-specific epidemiology supports this diagnosis.<|im_end|>",
+    "input": "Analyze this veterinary case:\n\n**Species**: Sheep\n**Clinical Signs**: fever, mucopurulent discharge, diarrhea, and coughing\n\nProvide your diagnosis, differentials, treatment plan, and reasoning.",
+    "output": "1. **Primary Diagnosis**: **Contagious Caprine Pleuropneumonia** (SNOMED-CT: 2260006)\n\n2. **Differential Diagnoses**:\n   - Infectious disease\n   - Metabolic disorder\n   - Toxicosis\n\n3. **Recommended Treatment**:\nSymptomatic treatment, supportive care, and appropriate antimicrobials based on clinical presentation.\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Fever(F), Water or fluid leakage from eyes,nose or mouth, Loose motions...), the pattern is consistent with Contagious Caprine Pleuropneumonia. The combination of symptoms and species-specific epidemiology supports this diagnosis.",
+    "metadata": {
+      "animal": "Sheep",
+      "disease": "CCPP",
+      "disease_normalized": "Contagious Caprine Pleuropneumonia",
+      "snomed_codes": [
+        "2260006"
+      ],
+      "symptoms": [
+        "Fever(F)",
+        "Water or fluid leakage from eyes,nose or mouth",
+        "Loose motions",
+        "Cough"
+      ]
+    }
+  },
+  {
+    "text": "<|im_start|>system\nYou are VetLLM, a veterinary clinical assistant specialized in livestock diseases. \nGiven a clinical case presentation, you will:\n1. Analyze the clinical signs and symptoms\n2. Provide the most likely diagnosis with SNOMED-CT codes when available\n3. List differential diagnoses to consider\n4. Recommend appropriate treatment and management steps\n5. Explain your clinical reasoning<|im_end|>\n<|im_start|>user\nAnalyze this veterinary case:\n\n**Species**: Sheep\n**Clinical Signs**: coughing\n\nProvide your diagnosis, differentials, treatment plan, and reasoning.<|im_end|>\n<|im_start|>assistant\n1. **Primary Diagnosis**: **Peste des Petits Ruminants** (SNOMED-CT: 1679004)\n\n2. **Differential Diagnoses**:\n   - Goat Pox\n   - Contagious Ecthyma\n   - Bluetongue\n\n3. **Recommended Treatment**:\nSupportive care, antibiotics for secondary infections. Vaccination of herd.\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Cough), the pattern is consistent with Peste des Petits Ruminants. The combination of symptoms and species-specific epidemiology supports this diagnosis.<|im_end|>",
+    "input": "Analyze this veterinary case:\n\n**Species**: Sheep\n**Clinical Signs**: coughing\n\nProvide your diagnosis, differentials, treatment plan, and reasoning.",
+    "output": "1. **Primary Diagnosis**: **Peste des Petits Ruminants** (SNOMED-CT: 1679004)\n\n2. **Differential Diagnoses**:\n   - Goat Pox\n   - Contagious Ecthyma\n   - Bluetongue\n\n3. **Recommended Treatment**:\nSupportive care, antibiotics for secondary infections. Vaccination of herd.\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Cough), the pattern is consistent with Peste des Petits Ruminants. The combination of symptoms and species-specific epidemiology supports this diagnosis.",
+    "metadata": {
+      "animal": "Sheep",
+      "disease": "P.P.R",
+      "disease_normalized": "Peste des Petits Ruminants",
+      "snomed_codes": [
+        "1679004"
+      ],
+      "symptoms": [
+        "Cough"
+      ]
+    }
+  },
+  {
+    "text": "<|im_start|>system\nYou are VetLLM, a veterinary clinical assistant specialized in livestock diseases. \nGiven a clinical case presentation, you will:\n1. Analyze the clinical signs and symptoms\n2. Provide the most likely diagnosis with SNOMED-CT codes when available\n3. List differential diagnoses to consider\n4. Recommend appropriate treatment and management steps\n5. Explain your clinical reasoning<|im_end|>\n<|im_start|>user\nAnalyze this veterinary case:\n\n**Species**: Cow\n**Clinical Signs**: oral vesicles/ulcers\n\nProvide your diagnosis, differentials, treatment plan, and reasoning.<|im_end|>\n<|im_start|>assistant\n1. **Primary Diagnosis**: **Foot and Mouth Disease** (SNOMED-CT: 3974005)\n\n2. **Differential Diagnoses**:\n   - Vesicular Stomatitis\n   - Bluetongue\n   - Bovine Viral Diarrhea\n\n3. **Recommended Treatment**:\nSupportive care, isolation, wound care for lesions. Notify authorities (notifiable disease).\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Blisters In Mouth), the pattern is consistent with Foot and Mouth Disease. The combination of symptoms and species-specific epidemiology supports this diagnosis.<|im_end|>",
+    "input": "Analyze this veterinary case:\n\n**Species**: Cow\n**Clinical Signs**: oral vesicles/ulcers\n\nProvide your diagnosis, differentials, treatment plan, and reasoning.",
+    "output": "1. **Primary Diagnosis**: **Foot and Mouth Disease** (SNOMED-CT: 3974005)\n\n2. **Differential Diagnoses**:\n   - Vesicular Stomatitis\n   - Bluetongue\n   - Bovine Viral Diarrhea\n\n3. **Recommended Treatment**:\nSupportive care, isolation, wound care for lesions. Notify authorities (notifiable disease).\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Blisters In Mouth), the pattern is consistent with Foot and Mouth Disease. The combination of symptoms and species-specific epidemiology supports this diagnosis.",
+    "metadata": {
+      "animal": "Cow",
+      "disease": "FMD",
+      "disease_normalized": "Foot and Mouth Disease",
+      "snomed_codes": [
+        "3974005"
+      ],
+      "symptoms": [
+        "Blisters In Mouth"
+      ]
+    }
+  },
+  {
+    "text": "<|im_start|>system\nYou are VetLLM, a veterinary clinical assistant specialized in livestock diseases. \nGiven a clinical case presentation, you will:\n1. Analyze the clinical signs and symptoms\n2. Provide the most likely diagnosis with SNOMED-CT codes when available\n3. List differential diagnoses to consider\n4. Recommend appropriate treatment and management steps\n5. Explain your clinical reasoning<|im_end|>\n<|im_start|>user\nAnalyze this veterinary case:\n\n**Species**: Goat\n**Clinical Signs**: diarrhea and labial vesicles\n\nProvide your diagnosis, differentials, treatment plan, and reasoning.<|im_end|>\n<|im_start|>assistant\n1. **Primary Diagnosis**: **Peste des Petits Ruminants** (SNOMED-CT: 1679004)\n\n2. **Differential Diagnoses**:\n   - Goat Pox\n   - Contagious Ecthyma\n   - Bluetongue\n\n3. **Recommended Treatment**:\nSupportive care, antibiotics for secondary infections. Vaccination of herd.\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Loose motions, blisters on lips), the pattern is consistent with Peste des Petits Ruminants. The combination of symptoms and species-specific epidemiology supports this diagnosis.<|im_end|>",
+    "input": "Analyze this veterinary case:\n\n**Species**: Goat\n**Clinical Signs**: diarrhea and labial vesicles\n\nProvide your diagnosis, differentials, treatment plan, and reasoning.",
+    "output": "1. **Primary Diagnosis**: **Peste des Petits Ruminants** (SNOMED-CT: 1679004)\n\n2. **Differential Diagnoses**:\n   - Goat Pox\n   - Contagious Ecthyma\n   - Bluetongue\n\n3. **Recommended Treatment**:\nSupportive care, antibiotics for secondary infections. Vaccination of herd.\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Loose motions, blisters on lips), the pattern is consistent with Peste des Petits Ruminants. The combination of symptoms and species-specific epidemiology supports this diagnosis.",
+    "metadata": {
+      "animal": "Goat",
+      "disease": "PPR",
+      "disease_normalized": "Peste des Petits Ruminants",
+      "snomed_codes": [
+        "1679004"
+      ],
+      "symptoms": [
+        "Loose motions",
+        "blisters on lips"
+      ]
+    }
+  },
+  {
+    "text": "<|im_start|>system\nYou are VetLLM, a veterinary clinical assistant specialized in livestock diseases. \nGiven a clinical case presentation, you will:\n1. Analyze the clinical signs and symptoms\n2. Provide the most likely diagnosis with SNOMED-CT codes when available\n3. List differential diagnoses to consider\n4. Recommend appropriate treatment and management steps\n5. Explain your clinical reasoning<|im_end|>\n<|im_start|>user\nAnalyze this veterinary case:\n\n**Species**: Buffalo\n**Clinical Signs**: lameness, oral frothing (salivation), decreased milk production, subcutaneous emphysema (crepitus), and limb muscle discoloration\n\nProvide your diagnosis, differentials, treatment plan, and reasoning.<|im_end|>\n<|im_start|>assistant\n1. **Primary Diagnosis**: **Black Quarter** (SNOMED-CT: 29600000)\n\n2. **Differential Diagnoses**:\n   - Anthrax\n   - Malignant Edema\n   - Bacillary Hemoglobinuria\n\n3. **Recommended Treatment**:\nHigh-dose penicillin G, anti-inflammatory therapy. Surgical debridement if localized.\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Lameness, Mouth Frothing, Drop In Milk Production...), the pattern is consistent with Black Quarter. The combination of symptoms and species-specific epidemiology supports this diagnosis.<|im_end|>",
+    "input": "Analyze this veterinary case:\n\n**Species**: Buffalo\n**Clinical Signs**: lameness, oral frothing (salivation), decreased milk production, subcutaneous emphysema (crepitus), and limb muscle discoloration\n\nProvide your diagnosis, differentials, treatment plan, and reasoning.",
+    "output": "1. **Primary Diagnosis**: **Black Quarter** (SNOMED-CT: 29600000)\n\n2. **Differential Diagnoses**:\n   - Anthrax\n   - Malignant Edema\n   - Bacillary Hemoglobinuria\n\n3. **Recommended Treatment**:\nHigh-dose penicillin G, anti-inflammatory therapy. Surgical debridement if localized.\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Lameness, Mouth Frothing, Drop In Milk Production...), the pattern is consistent with Black Quarter. The combination of symptoms and species-specific epidemiology supports this diagnosis.",
+    "metadata": {
+      "animal": "Buffalo",
+      "disease": "B.Q",
+      "disease_normalized": "Black Quarter",
+      "snomed_codes": [
+        "29600000"
+      ],
+      "symptoms": [
+        "Lameness",
+        "Mouth Frothing",
+        "Drop In Milk Production",
+        "Air/ crapitatifeelings at surface of any Body part",
+        "Color Change Of Muscles of limb"
+      ]
+    }
+  },
+  {
+    "text": "<|im_start|>system\nYou are VetLLM, a veterinary clinical assistant specialized in livestock diseases. \nGiven a clinical case presentation, you will:\n1. Analyze the clinical signs and symptoms\n2. Provide the most likely diagnosis with SNOMED-CT codes when available\n3. List differential diagnoses to consider\n4. Recommend appropriate treatment and management steps\n5. Explain your clinical reasoning<|im_end|>\n<|im_start|>user\nAnalyze this veterinary case:\n\n**Species**: Buffalo\n**Clinical Signs**: subcutaneous emphysema (crepitus) and high fever\n\nProvide your diagnosis, differentials, treatment plan, and reasoning.<|im_end|>\n<|im_start|>assistant\n1. **Primary Diagnosis**: **Black Quarter** (SNOMED-CT: 29600000)\n\n2. **Differential Diagnoses**:\n   - Anthrax\n   - Malignant Edema\n   - Bacillary Hemoglobinuria\n\n3. **Recommended Treatment**:\nHigh-dose penicillin G, anti-inflammatory therapy. Surgical debridement if localized.\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Air/ crapitatifeelings at surface of any Body part, Very High Fever), the pattern is consistent with Black Quarter. The combination of symptoms and species-specific epidemiology supports this diagnosis.<|im_end|>",
+    "input": "Analyze this veterinary case:\n\n**Species**: Buffalo\n**Clinical Signs**: subcutaneous emphysema (crepitus) and high fever\n\nProvide your diagnosis, differentials, treatment plan, and reasoning.",
+    "output": "1. **Primary Diagnosis**: **Black Quarter** (SNOMED-CT: 29600000)\n\n2. **Differential Diagnoses**:\n   - Anthrax\n   - Malignant Edema\n   - Bacillary Hemoglobinuria\n\n3. **Recommended Treatment**:\nHigh-dose penicillin G, anti-inflammatory therapy. Surgical debridement if localized.\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Air/ crapitatifeelings at surface of any Body part, Very High Fever), the pattern is consistent with Black Quarter. The combination of symptoms and species-specific epidemiology supports this diagnosis.",
+    "metadata": {
+      "animal": "Buffalo",
+      "disease": "B.Q",
+      "disease_normalized": "Black Quarter",
+      "snomed_codes": [
+        "29600000"
+      ],
+      "symptoms": [
+        "Air/ crapitatifeelings at surface of any Body part",
+        "Very High Fever"
+      ]
+    }
+  },
+  {
+    "text": "<|im_start|>system\nYou are VetLLM, a veterinary clinical assistant specialized in livestock diseases. \nGiven a clinical case presentation, you will:\n1. Analyze the clinical signs and symptoms\n2. Provide the most likely diagnosis with SNOMED-CT codes when available\n3. List differential diagnoses to consider\n4. Recommend appropriate treatment and management steps\n5. Explain your clinical reasoning<|im_end|>\n<|im_start|>user\nAnalyze this veterinary case:\n\n**Species**: Buffalo\n**Clinical Signs**: decreased milk production\n\nProvide your diagnosis, differentials, treatment plan, and reasoning.<|im_end|>\n<|im_start|>assistant\n1. **Primary Diagnosis**: **Rabies** (SNOMED-CT: 14146002)\n\n2. **Differential Diagnoses**:\n   - Infectious disease\n   - Metabolic disorder\n   - Toxicosis\n\n3. **Recommended Treatment**:\nSymptomatic treatment, supportive care, and appropriate antimicrobials based on clinical presentation.\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Drop In Milk Production), the pattern is consistent with Rabies. The combination of symptoms and species-specific epidemiology supports this diagnosis.<|im_end|>",
+    "input": "Analyze this veterinary case:\n\n**Species**: Buffalo\n**Clinical Signs**: decreased milk production\n\nProvide your diagnosis, differentials, treatment plan, and reasoning.",
+    "output": "1. **Primary Diagnosis**: **Rabies** (SNOMED-CT: 14146002)\n\n2. **Differential Diagnoses**:\n   - Infectious disease\n   - Metabolic disorder\n   - Toxicosis\n\n3. **Recommended Treatment**:\nSymptomatic treatment, supportive care, and appropriate antimicrobials based on clinical presentation.\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Drop In Milk Production), the pattern is consistent with Rabies. The combination of symptoms and species-specific epidemiology supports this diagnosis.",
+    "metadata": {
+      "animal": "Buffalo",
+      "disease": "Rabbies",
+      "disease_normalized": "Rabies",
+      "snomed_codes": [
+        "14146002"
+      ],
+      "symptoms": [
+        "Drop In Milk Production"
+      ]
+    }
+  },
+  {
+    "text": "<|im_start|>system\nYou are VetLLM, a veterinary clinical assistant specialized in livestock diseases. \nGiven a clinical case presentation, you will:\n1. Analyze the clinical signs and symptoms\n2. Provide the most likely diagnosis with SNOMED-CT codes when available\n3. List differential diagnoses to consider\n4. Recommend appropriate treatment and management steps\n5. Explain your clinical reasoning<|im_end|>\n<|im_start|>user\nAnalyze this veterinary case:\n\n**Species**: Buffalo\n**Clinical Signs**: persistent diarrhea\n\nProvide your diagnosis, differentials, treatment plan, and reasoning.<|im_end|>\n<|im_start|>assistant\n1. **Primary Diagnosis**: **Anthrax** (SNOMED-CT: 40214000)\n\n2. **Differential Diagnoses**:\n   - Blackleg\n   - Hemorrhagic Septicemia\n   - Clostridial diseases\n\n3. **Recommended Treatment**:\nHigh-dose penicillin, oxytetracycline. Carcass disposal protocols. Vaccination of contacts.\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Continuous Loose Motions), the pattern is consistent with Anthrax. The combination of symptoms and species-specific epidemiology supports this diagnosis.<|im_end|>",
+    "input": "Analyze this veterinary case:\n\n**Species**: Buffalo\n**Clinical Signs**: persistent diarrhea\n\nProvide your diagnosis, differentials, treatment plan, and reasoning.",
+    "output": "1. **Primary Diagnosis**: **Anthrax** (SNOMED-CT: 40214000)\n\n2. **Differential Diagnoses**:\n   - Blackleg\n   - Hemorrhagic Septicemia\n   - Clostridial diseases\n\n3. **Recommended Treatment**:\nHigh-dose penicillin, oxytetracycline. Carcass disposal protocols. Vaccination of contacts.\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Continuous Loose Motions), the pattern is consistent with Anthrax. The combination of symptoms and species-specific epidemiology supports this diagnosis.",
+    "metadata": {
+      "animal": "Buffalo",
+      "disease": "Anthrax",
+      "disease_normalized": "Anthrax",
+      "snomed_codes": [
+        "40214000"
+      ],
+      "symptoms": [
+        "Continuous Loose Motions"
+      ]
+    }
+  },
+  {
+    "text": "<|im_start|>system\nYou are VetLLM, a veterinary clinical assistant specialized in livestock diseases. \nGiven a clinical case presentation, you will:\n1. Analyze the clinical signs and symptoms\n2. Provide the most likely diagnosis with SNOMED-CT codes when available\n3. List differential diagnoses to consider\n4. Recommend appropriate treatment and management steps\n5. Explain your clinical reasoning<|im_end|>\n<|im_start|>user\nAnalyze this veterinary case:\n\n**Species**: Cow\n**Clinical Signs**: decreased milk production, teat lesions/nodules, and abortion/pregnancy loss\n\nProvide your diagnosis, differentials, treatment plan, and reasoning.<|im_end|>\n<|im_start|>assistant\n1. **Primary Diagnosis**: **Brucellosis** (SNOMED-CT: 75702008)\n\n2. **Differential Diagnoses**:\n   - Trichomoniasis\n   - Campylobacteriosis\n   - Leptospirosis\n\n3. **Recommended Treatment**:\nTest and cull policy (no treatment in animals). Notify authorities.\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Drop In Milk Production, Teat Gnarls, Abortion), the pattern is consistent with Brucellosis. The combination of symptoms and species-specific epidemiology supports this diagnosis.<|im_end|>",
+    "input": "Analyze this veterinary case:\n\n**Species**: Cow\n**Clinical Signs**: decreased milk production, teat lesions/nodules, and abortion/pregnancy loss\n\nProvide your diagnosis, differentials, treatment plan, and reasoning.",
+    "output": "1. **Primary Diagnosis**: **Brucellosis** (SNOMED-CT: 75702008)\n\n2. **Differential Diagnoses**:\n   - Trichomoniasis\n   - Campylobacteriosis\n   - Leptospirosis\n\n3. **Recommended Treatment**:\nTest and cull policy (no treatment in animals). Notify authorities.\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Drop In Milk Production, Teat Gnarls, Abortion), the pattern is consistent with Brucellosis. The combination of symptoms and species-specific epidemiology supports this diagnosis.",
+    "metadata": {
+      "animal": "Cow",
+      "disease": "Brucellosis",
+      "disease_normalized": "Brucellosis",
+      "snomed_codes": [
+        "75702008"
+      ],
+      "symptoms": [
+        "Drop In Milk Production",
+        "Teat Gnarls",
+        "Abortion"
+      ]
+    }
+  },
+  {
+    "text": "<|im_start|>system\nYou are VetLLM, a veterinary clinical assistant specialized in livestock diseases. \nGiven a clinical case presentation, you will:\n1. Analyze the clinical signs and symptoms\n2. Provide the most likely diagnosis with SNOMED-CT codes when available\n3. List differential diagnoses to consider\n4. Recommend appropriate treatment and management steps\n5. Explain your clinical reasoning<|im_end|>\n<|im_start|>user\nAnalyze this veterinary case:\n\n**Species**: Goat\n**Clinical Signs**: fever, mucopurulent discharge, diarrhea, and coughing\n\nProvide your diagnosis, differentials, treatment plan, and reasoning.<|im_end|>\n<|im_start|>assistant\n1. **Primary Diagnosis**: **Peste des Petits Ruminants** (SNOMED-CT: 1679004)\n\n2. **Differential Diagnoses**:\n   - Goat Pox\n   - Contagious Ecthyma\n   - Bluetongue\n\n3. **Recommended Treatment**:\nSupportive care, antibiotics for secondary infections. Vaccination of herd.\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Fever(F), Water or fluid leakage from eyes,nose or mouth, Loose motions...), the pattern is consistent with Peste des Petits Ruminants. The combination of symptoms and species-specific epidemiology supports this diagnosis.<|im_end|>",
+    "input": "Analyze this veterinary case:\n\n**Species**: Goat\n**Clinical Signs**: fever, mucopurulent discharge, diarrhea, and coughing\n\nProvide your diagnosis, differentials, treatment plan, and reasoning.",
+    "output": "1. **Primary Diagnosis**: **Peste des Petits Ruminants** (SNOMED-CT: 1679004)\n\n2. **Differential Diagnoses**:\n   - Goat Pox\n   - Contagious Ecthyma\n   - Bluetongue\n\n3. **Recommended Treatment**:\nSupportive care, antibiotics for secondary infections. Vaccination of herd.\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Fever(F), Water or fluid leakage from eyes,nose or mouth, Loose motions...), the pattern is consistent with Peste des Petits Ruminants. The combination of symptoms and species-specific epidemiology supports this diagnosis.",
+    "metadata": {
+      "animal": "Goat",
+      "disease": "P.P.R",
+      "disease_normalized": "Peste des Petits Ruminants",
+      "snomed_codes": [
+        "1679004"
+      ],
+      "symptoms": [
+        "Fever(F)",
+        "Water or fluid leakage from eyes,nose or mouth",
+        "Loose motions",
+        "Cough"
+      ]
+    }
+  },
+  {
+    "text": "<|im_start|>system\nYou are VetLLM, a veterinary clinical assistant specialized in livestock diseases. \nGiven a clinical case presentation, you will:\n1. Analyze the clinical signs and symptoms\n2. Provide the most likely diagnosis with SNOMED-CT codes when available\n3. List differential diagnoses to consider\n4. Recommend appropriate treatment and management steps\n5. Explain your clinical reasoning<|im_end|>\n<|im_start|>user\nAnalyze this veterinary case:\n\n**Species**: Cow\n**Clinical Signs**: decreased milk production, oral vesicles/ulcers, fever, and abortion/pregnancy loss\n\nProvide your diagnosis, differentials, treatment plan, and reasoning.<|im_end|>\n<|im_start|>assistant\n1. **Primary Diagnosis**: **Mastitis** (SNOMED-CT: 72934000)\n\n2. **Differential Diagnoses**:\n   - Udder edema\n   - Teat injury\n   - Mammary abscess\n\n3. **Recommended Treatment**:\nIntramammary antibiotics, systemic antibiotics if systemic signs. Frequent milking.\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Drop In Milk Production, Blisters In Mouth, Fever...), the pattern is consistent with Mastitis. The combination of symptoms and species-specific epidemiology supports this diagnosis.<|im_end|>",
+    "input": "Analyze this veterinary case:\n\n**Species**: Cow\n**Clinical Signs**: decreased milk production, oral vesicles/ulcers, fever, and abortion/pregnancy loss\n\nProvide your diagnosis, differentials, treatment plan, and reasoning.",
+    "output": "1. **Primary Diagnosis**: **Mastitis** (SNOMED-CT: 72934000)\n\n2. **Differential Diagnoses**:\n   - Udder edema\n   - Teat injury\n   - Mammary abscess\n\n3. **Recommended Treatment**:\nIntramammary antibiotics, systemic antibiotics if systemic signs. Frequent milking.\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Drop In Milk Production, Blisters In Mouth, Fever...), the pattern is consistent with Mastitis. The combination of symptoms and species-specific epidemiology supports this diagnosis.",
+    "metadata": {
+      "animal": "Cow",
+      "disease": "Mastits",
+      "disease_normalized": "Mastitis",
+      "snomed_codes": [
+        "72934000"
+      ],
+      "symptoms": [
+        "Drop In Milk Production",
+        "Blisters In Mouth",
+        "Fever",
+        "Abortion"
+      ]
+    }
+  },
+  {
+    "text": "<|im_start|>system\nYou are VetLLM, a veterinary clinical assistant specialized in livestock diseases. \nGiven a clinical case presentation, you will:\n1. Analyze the clinical signs and symptoms\n2. Provide the most likely diagnosis with SNOMED-CT codes when available\n3. List differential diagnoses to consider\n4. Recommend appropriate treatment and management steps\n5. Explain your clinical reasoning<|im_end|>\n<|im_start|>user\nAnalyze this veterinary case:\n\n**Species**: Cow\n**Clinical Signs**: decreased milk production, dyspnea (respiratory distress), and open-mouth breathing\n\nProvide your diagnosis, differentials, treatment plan, and reasoning.<|im_end|>\n<|im_start|>assistant\n1. **Primary Diagnosis**: **Hemorrhagic Septicemia** (SNOMED-CT: 198462004)\n\n2. **Differential Diagnoses**:\n   - Infectious disease\n   - Metabolic disorder\n   - Toxicosis\n\n3. **Recommended Treatment**:\nSymptomatic treatment, supportive care, and appropriate antimicrobials based on clinical presentation.\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Drop In Milk Production, Difficulty In Breathing, Breathing While Mouth Open), the pattern is consistent with Hemorrhagic Septicemia. The combination of symptoms and species-specific epidemiology supports this diagnosis.<|im_end|>",
+    "input": "Analyze this veterinary case:\n\n**Species**: Cow\n**Clinical Signs**: decreased milk production, dyspnea (respiratory distress), and open-mouth breathing\n\nProvide your diagnosis, differentials, treatment plan, and reasoning.",
+    "output": "1. **Primary Diagnosis**: **Hemorrhagic Septicemia** (SNOMED-CT: 198462004)\n\n2. **Differential Diagnoses**:\n   - Infectious disease\n   - Metabolic disorder\n   - Toxicosis\n\n3. **Recommended Treatment**:\nSymptomatic treatment, supportive care, and appropriate antimicrobials based on clinical presentation.\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Drop In Milk Production, Difficulty In Breathing, Breathing While Mouth Open), the pattern is consistent with Hemorrhagic Septicemia. The combination of symptoms and species-specific epidemiology supports this diagnosis.",
+    "metadata": {
+      "animal": "Cow",
+      "disease": "H.S",
+      "disease_normalized": "Hemorrhagic Septicemia",
+      "snomed_codes": [
+        "198462004"
+      ],
+      "symptoms": [
+        "Drop In Milk Production",
+        "Difficulty In Breathing",
+        "Breathing While Mouth Open"
+      ]
+    }
+  },
+  {
+    "text": "<|im_start|>system\nYou are VetLLM, a veterinary clinical assistant specialized in livestock diseases. \nGiven a clinical case presentation, you will:\n1. Analyze the clinical signs and symptoms\n2. Provide the most likely diagnosis with SNOMED-CT codes when available\n3. List differential diagnoses to consider\n4. Recommend appropriate treatment and management steps\n5. Explain your clinical reasoning<|im_end|>\n<|im_start|>user\nAnalyze this veterinary case:\n\n**Species**: Sheep\n**Clinical Signs**: nasal discharge, severe coughing, and bloody diarrhea (dysentery)\n\nProvide your diagnosis, differentials, treatment plan, and reasoning.<|im_end|>\n<|im_start|>assistant\n1. **Primary Diagnosis**: **Peste des Petits Ruminants** (SNOMED-CT: 1679004)\n\n2. **Differential Diagnoses**:\n   - Goat Pox\n   - Contagious Ecthyma\n   - Bluetongue\n\n3. **Recommended Treatment**:\nSupportive care, antibiotics for secondary infections. Vaccination of herd.\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Fluid leakage from nose, Sever cough, Loose motions with blood), the pattern is consistent with Peste des Petits Ruminants. The combination of symptoms and species-specific epidemiology supports this diagnosis.<|im_end|>",
+    "input": "Analyze this veterinary case:\n\n**Species**: Sheep\n**Clinical Signs**: nasal discharge, severe coughing, and bloody diarrhea (dysentery)\n\nProvide your diagnosis, differentials, treatment plan, and reasoning.",
+    "output": "1. **Primary Diagnosis**: **Peste des Petits Ruminants** (SNOMED-CT: 1679004)\n\n2. **Differential Diagnoses**:\n   - Goat Pox\n   - Contagious Ecthyma\n   - Bluetongue\n\n3. **Recommended Treatment**:\nSupportive care, antibiotics for secondary infections. Vaccination of herd.\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Fluid leakage from nose, Sever cough, Loose motions with blood), the pattern is consistent with Peste des Petits Ruminants. The combination of symptoms and species-specific epidemiology supports this diagnosis.",
+    "metadata": {
+      "animal": "Sheep",
+      "disease": "P.P.R",
+      "disease_normalized": "Peste des Petits Ruminants",
+      "snomed_codes": [
+        "1679004"
+      ],
+      "symptoms": [
+        "Fluid leakage from nose",
+        "Sever cough",
+        "Loose motions with blood"
+      ]
+    }
+  },
+  {
+    "text": "<|im_start|>system\nYou are VetLLM, a veterinary clinical assistant specialized in livestock diseases. \nGiven a clinical case presentation, you will:\n1. Analyze the clinical signs and symptoms\n2. Provide the most likely diagnosis with SNOMED-CT codes when available\n3. List differential diagnoses to consider\n4. Recommend appropriate treatment and management steps\n5. Explain your clinical reasoning<|im_end|>\n<|im_start|>user\nAnalyze this veterinary case:\n\n**Species**: Goat\n**Clinical Signs**: fever, labial vesicles, nasal discharge, and bloody diarrhea (dysentery)\n\nProvide your diagnosis, differentials, treatment plan, and reasoning.<|im_end|>\n<|im_start|>assistant\n1. **Primary Diagnosis**: **Peste des Petits Ruminants** (SNOMED-CT: 1679004)\n\n2. **Differential Diagnoses**:\n   - Goat Pox\n   - Contagious Ecthyma\n   - Bluetongue\n\n3. **Recommended Treatment**:\nSupportive care, antibiotics for secondary infections. Vaccination of herd.\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Fever(F), blisters on lips, Fluid leakage from nose...), the pattern is consistent with Peste des Petits Ruminants. The combination of symptoms and species-specific epidemiology supports this diagnosis.<|im_end|>",
+    "input": "Analyze this veterinary case:\n\n**Species**: Goat\n**Clinical Signs**: fever, labial vesicles, nasal discharge, and bloody diarrhea (dysentery)\n\nProvide your diagnosis, differentials, treatment plan, and reasoning.",
+    "output": "1. **Primary Diagnosis**: **Peste des Petits Ruminants** (SNOMED-CT: 1679004)\n\n2. **Differential Diagnoses**:\n   - Goat Pox\n   - Contagious Ecthyma\n   - Bluetongue\n\n3. **Recommended Treatment**:\nSupportive care, antibiotics for secondary infections. Vaccination of herd.\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Fever(F), blisters on lips, Fluid leakage from nose...), the pattern is consistent with Peste des Petits Ruminants. The combination of symptoms and species-specific epidemiology supports this diagnosis.",
+    "metadata": {
+      "animal": "Goat",
+      "disease": "PPR",
+      "disease_normalized": "Peste des Petits Ruminants",
+      "snomed_codes": [
+        "1679004"
+      ],
+      "symptoms": [
+        "Fever(F)",
+        "blisters on lips",
+        "Fluid leakage from nose",
+        "Loose motions with blood"
+      ]
+    }
+  },
+  {
+    "text": "<|im_start|>system\nYou are VetLLM, a veterinary clinical assistant specialized in livestock diseases. \nGiven a clinical case presentation, you will:\n1. Analyze the clinical signs and symptoms\n2. Provide the most likely diagnosis with SNOMED-CT codes when available\n3. List differential diagnoses to consider\n4. Recommend appropriate treatment and management steps\n5. Explain your clinical reasoning<|im_end|>\n<|im_start|>user\nAnalyze this veterinary case:\n\n**Species**: Sheep\n**Clinical Signs**: muscle rigidity/tetany and severe abdominal pain (colic)\n\nProvide your diagnosis, differentials, treatment plan, and reasoning.<|im_end|>\n<|im_start|>assistant\n1. **Primary Diagnosis**: **Tympany** (SNOMED-CT: VET_TYMPANY_001)\n\n2. **Differential Diagnoses**:\n   - Infectious disease\n   - Metabolic disorder\n   - Toxicosis\n\n3. **Recommended Treatment**:\nSymptomatic treatment, supportive care, and appropriate antimicrobials based on clinical presentation.\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Stiffening of body, Pain in stomach and screams), the pattern is consistent with Tympany. The combination of symptoms and species-specific epidemiology supports this diagnosis.<|im_end|>",
+    "input": "Analyze this veterinary case:\n\n**Species**: Sheep\n**Clinical Signs**: muscle rigidity/tetany and severe abdominal pain (colic)\n\nProvide your diagnosis, differentials, treatment plan, and reasoning.",
+    "output": "1. **Primary Diagnosis**: **Tympany** (SNOMED-CT: VET_TYMPANY_001)\n\n2. **Differential Diagnoses**:\n   - Infectious disease\n   - Metabolic disorder\n   - Toxicosis\n\n3. **Recommended Treatment**:\nSymptomatic treatment, supportive care, and appropriate antimicrobials based on clinical presentation.\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Stiffening of body, Pain in stomach and screams), the pattern is consistent with Tympany. The combination of symptoms and species-specific epidemiology supports this diagnosis.",
+    "metadata": {
+      "animal": "Sheep",
+      "disease": "Tympany",
+      "disease_normalized": "Tympany",
+      "snomed_codes": [
+        "VET_TYMPANY_001"
+      ],
+      "symptoms": [
+        "Stiffening of body",
+        "Pain in stomach and screams"
+      ]
+    }
+  },
+  {
+    "text": "<|im_start|>system\nYou are VetLLM, a veterinary clinical assistant specialized in livestock diseases. \nGiven a clinical case presentation, you will:\n1. Analyze the clinical signs and symptoms\n2. Provide the most likely diagnosis with SNOMED-CT codes when available\n3. List differential diagnoses to consider\n4. Recommend appropriate treatment and management steps\n5. Explain your clinical reasoning<|im_end|>\n<|im_start|>user\nAnalyze this veterinary case:\n\n**Species**: Sheep\n**Clinical Signs**: mucopurulent discharge and coughing\n\nProvide your diagnosis, differentials, treatment plan, and reasoning.<|im_end|>\n<|im_start|>assistant\n1. **Primary Diagnosis**: **Contagious Caprine Pleuropneumonia** (SNOMED-CT: 2260006)\n\n2. **Differential Diagnoses**:\n   - Infectious disease\n   - Metabolic disorder\n   - Toxicosis\n\n3. **Recommended Treatment**:\nSymptomatic treatment, supportive care, and appropriate antimicrobials based on clinical presentation.\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Water or fluid leakage from eyes,nose or mouth, Cough), the pattern is consistent with Contagious Caprine Pleuropneumonia. The combination of symptoms and species-specific epidemiology supports this diagnosis.<|im_end|>",
+    "input": "Analyze this veterinary case:\n\n**Species**: Sheep\n**Clinical Signs**: mucopurulent discharge and coughing\n\nProvide your diagnosis, differentials, treatment plan, and reasoning.",
+    "output": "1. **Primary Diagnosis**: **Contagious Caprine Pleuropneumonia** (SNOMED-CT: 2260006)\n\n2. **Differential Diagnoses**:\n   - Infectious disease\n   - Metabolic disorder\n   - Toxicosis\n\n3. **Recommended Treatment**:\nSymptomatic treatment, supportive care, and appropriate antimicrobials based on clinical presentation.\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Water or fluid leakage from eyes,nose or mouth, Cough), the pattern is consistent with Contagious Caprine Pleuropneumonia. The combination of symptoms and species-specific epidemiology supports this diagnosis.",
+    "metadata": {
+      "animal": "Sheep",
+      "disease": "CCPP",
+      "disease_normalized": "Contagious Caprine Pleuropneumonia",
+      "snomed_codes": [
+        "2260006"
+      ],
+      "symptoms": [
+        "Water or fluid leakage from eyes,nose or mouth",
+        "Cough"
+      ]
+    }
+  },
+  {
+    "text": "<|im_start|>system\nYou are VetLLM, a veterinary clinical assistant specialized in livestock diseases. \nGiven a clinical case presentation, you will:\n1. Analyze the clinical signs and symptoms\n2. Provide the most likely diagnosis with SNOMED-CT codes when available\n3. List differential diagnoses to consider\n4. Recommend appropriate treatment and management steps\n5. Explain your clinical reasoning<|im_end|>\n<|im_start|>user\nAnalyze this veterinary case:\n\n**Species**: Cow\n**Clinical Signs**: decreased milk production, high fever, and abortion/pregnancy loss\n\nProvide your diagnosis, differentials, treatment plan, and reasoning.<|im_end|>\n<|im_start|>assistant\n1. **Primary Diagnosis**: **Mastitis** (SNOMED-CT: 72934000)\n\n2. **Differential Diagnoses**:\n   - Udder edema\n   - Teat injury\n   - Mammary abscess\n\n3. **Recommended Treatment**:\nIntramammary antibiotics, systemic antibiotics if systemic signs. Frequent milking.\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Drop In Milk Production, Very High Fever, Abortion), the pattern is consistent with Mastitis. The combination of symptoms and species-specific epidemiology supports this diagnosis.<|im_end|>",
+    "input": "Analyze this veterinary case:\n\n**Species**: Cow\n**Clinical Signs**: decreased milk production, high fever, and abortion/pregnancy loss\n\nProvide your diagnosis, differentials, treatment plan, and reasoning.",
+    "output": "1. **Primary Diagnosis**: **Mastitis** (SNOMED-CT: 72934000)\n\n2. **Differential Diagnoses**:\n   - Udder edema\n   - Teat injury\n   - Mammary abscess\n\n3. **Recommended Treatment**:\nIntramammary antibiotics, systemic antibiotics if systemic signs. Frequent milking.\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Drop In Milk Production, Very High Fever, Abortion), the pattern is consistent with Mastitis. The combination of symptoms and species-specific epidemiology supports this diagnosis.",
+    "metadata": {
+      "animal": "Cow",
+      "disease": "Mastits",
+      "disease_normalized": "Mastitis",
+      "snomed_codes": [
+        "72934000"
+      ],
+      "symptoms": [
+        "Drop In Milk Production",
+        "Very High Fever",
+        "Abortion"
+      ]
+    }
+  },
+  {
+    "text": "<|im_start|>system\nYou are VetLLM, a veterinary clinical assistant specialized in livestock diseases. \nGiven a clinical case presentation, you will:\n1. Analyze the clinical signs and symptoms\n2. Provide the most likely diagnosis with SNOMED-CT codes when available\n3. List differential diagnoses to consider\n4. Recommend appropriate treatment and management steps\n5. Explain your clinical reasoning<|im_end|>\n<|im_start|>user\nAnalyze this veterinary case:\n\n**Species**: Sheep\n**Clinical Signs**: fever, labial vesicles, and nasal discharge\n\nProvide your diagnosis, differentials, treatment plan, and reasoning.<|im_end|>\n<|im_start|>assistant\n1. **Primary Diagnosis**: **Peste des Petits Ruminants** (SNOMED-CT: 1679004)\n\n2. **Differential Diagnoses**:\n   - Goat Pox\n   - Contagious Ecthyma\n   - Bluetongue\n\n3. **Recommended Treatment**:\nSupportive care, antibiotics for secondary infections. Vaccination of herd.\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Fever(F), blisters on lips, Fluid leakage from nose), the pattern is consistent with Peste des Petits Ruminants. The combination of symptoms and species-specific epidemiology supports this diagnosis.<|im_end|>",
+    "input": "Analyze this veterinary case:\n\n**Species**: Sheep\n**Clinical Signs**: fever, labial vesicles, and nasal discharge\n\nProvide your diagnosis, differentials, treatment plan, and reasoning.",
+    "output": "1. **Primary Diagnosis**: **Peste des Petits Ruminants** (SNOMED-CT: 1679004)\n\n2. **Differential Diagnoses**:\n   - Goat Pox\n   - Contagious Ecthyma\n   - Bluetongue\n\n3. **Recommended Treatment**:\nSupportive care, antibiotics for secondary infections. Vaccination of herd.\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Fever(F), blisters on lips, Fluid leakage from nose), the pattern is consistent with Peste des Petits Ruminants. The combination of symptoms and species-specific epidemiology supports this diagnosis.",
+    "metadata": {
+      "animal": "Sheep",
+      "disease": "P.P.R",
+      "disease_normalized": "Peste des Petits Ruminants",
+      "snomed_codes": [
+        "1679004"
+      ],
+      "symptoms": [
+        "Fever(F)",
+        "blisters on lips",
+        "Fluid leakage from nose"
+      ]
+    }
+  },
+  {
+    "text": "<|im_start|>system\nYou are VetLLM, a veterinary clinical assistant specialized in livestock diseases. \nGiven a clinical case presentation, you will:\n1. Analyze the clinical signs and symptoms\n2. Provide the most likely diagnosis with SNOMED-CT codes when available\n3. List differential diagnoses to consider\n4. Recommend appropriate treatment and management steps\n5. Explain your clinical reasoning<|im_end|>\n<|im_start|>user\nAnalyze this veterinary case:\n\n**Species**: Cow\n**Clinical Signs**: decreased milk production, oral vesicles/ulcers, foot vesicles/lesions, and high fever\n\nProvide your diagnosis, differentials, treatment plan, and reasoning.<|im_end|>\n<|im_start|>assistant\n1. **Primary Diagnosis**: **Foot and Mouth Disease** (SNOMED-CT: 3974005)\n\n2. **Differential Diagnoses**:\n   - Vesicular Stomatitis\n   - Bluetongue\n   - Bovine Viral Diarrhea\n\n3. **Recommended Treatment**:\nSupportive care, isolation, wound care for lesions. Notify authorities (notifiable disease).\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Drop In Milk Production, Blisters In Mouth, Blisters On Feet...), the pattern is consistent with Foot and Mouth Disease. The combination of symptoms and species-specific epidemiology supports this diagnosis.<|im_end|>",
+    "input": "Analyze this veterinary case:\n\n**Species**: Cow\n**Clinical Signs**: decreased milk production, oral vesicles/ulcers, foot vesicles/lesions, and high fever\n\nProvide your diagnosis, differentials, treatment plan, and reasoning.",
+    "output": "1. **Primary Diagnosis**: **Foot and Mouth Disease** (SNOMED-CT: 3974005)\n\n2. **Differential Diagnoses**:\n   - Vesicular Stomatitis\n   - Bluetongue\n   - Bovine Viral Diarrhea\n\n3. **Recommended Treatment**:\nSupportive care, isolation, wound care for lesions. Notify authorities (notifiable disease).\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Drop In Milk Production, Blisters In Mouth, Blisters On Feet...), the pattern is consistent with Foot and Mouth Disease. The combination of symptoms and species-specific epidemiology supports this diagnosis.",
+    "metadata": {
+      "animal": "Cow",
+      "disease": "FMD",
+      "disease_normalized": "Foot and Mouth Disease",
+      "snomed_codes": [
+        "3974005"
+      ],
+      "symptoms": [
+        "Drop In Milk Production",
+        "Blisters In Mouth",
+        "Blisters On Feet",
+        "Very High Fever"
+      ]
+    }
+  },
+  {
+    "text": "<|im_start|>system\nYou are VetLLM, a veterinary clinical assistant specialized in livestock diseases. \nGiven a clinical case presentation, you will:\n1. Analyze the clinical signs and symptoms\n2. Provide the most likely diagnosis with SNOMED-CT codes when available\n3. List differential diagnoses to consider\n4. Recommend appropriate treatment and management steps\n5. Explain your clinical reasoning<|im_end|>\n<|im_start|>user\nAnalyze this veterinary case:\n\n**Species**: Sheep\n**Clinical Signs**: fever, nasal discharge, severe coughing, and severe abdominal pain (colic)\n\nProvide your diagnosis, differentials, treatment plan, and reasoning.<|im_end|>\n<|im_start|>assistant\n1. **Primary Diagnosis**: **Peste des Petits Ruminants** (SNOMED-CT: 1679004)\n\n2. **Differential Diagnoses**:\n   - Goat Pox\n   - Contagious Ecthyma\n   - Bluetongue\n\n3. **Recommended Treatment**:\nSupportive care, antibiotics for secondary infections. Vaccination of herd.\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Fever(F), Fluid leakage from nose, Sever cough...), the pattern is consistent with Peste des Petits Ruminants. The combination of symptoms and species-specific epidemiology supports this diagnosis.<|im_end|>",
+    "input": "Analyze this veterinary case:\n\n**Species**: Sheep\n**Clinical Signs**: fever, nasal discharge, severe coughing, and severe abdominal pain (colic)\n\nProvide your diagnosis, differentials, treatment plan, and reasoning.",
+    "output": "1. **Primary Diagnosis**: **Peste des Petits Ruminants** (SNOMED-CT: 1679004)\n\n2. **Differential Diagnoses**:\n   - Goat Pox\n   - Contagious Ecthyma\n   - Bluetongue\n\n3. **Recommended Treatment**:\nSupportive care, antibiotics for secondary infections. Vaccination of herd.\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Fever(F), Fluid leakage from nose, Sever cough...), the pattern is consistent with Peste des Petits Ruminants. The combination of symptoms and species-specific epidemiology supports this diagnosis.",
+    "metadata": {
+      "animal": "Sheep",
+      "disease": "PPR",
+      "disease_normalized": "Peste des Petits Ruminants",
+      "snomed_codes": [
+        "1679004"
+      ],
+      "symptoms": [
+        "Fever(F)",
+        "Fluid leakage from nose",
+        "Sever cough",
+        "Pain in stomach and screams"
+      ]
+    }
+  },
+  {
+    "text": "<|im_start|>system\nYou are VetLLM, a veterinary clinical assistant specialized in livestock diseases. \nGiven a clinical case presentation, you will:\n1. Analyze the clinical signs and symptoms\n2. Provide the most likely diagnosis with SNOMED-CT codes when available\n3. List differential diagnoses to consider\n4. Recommend appropriate treatment and management steps\n5. Explain your clinical reasoning<|im_end|>\n<|im_start|>user\nAnalyze this veterinary case:\n\n**Species**: Goat\n**Clinical Signs**: fever and coughing\n\nProvide your diagnosis, differentials, treatment plan, and reasoning.<|im_end|>\n<|im_start|>assistant\n1. **Primary Diagnosis**: **Peste des Petits Ruminants** (SNOMED-CT: 1679004)\n\n2. **Differential Diagnoses**:\n   - Goat Pox\n   - Contagious Ecthyma\n   - Bluetongue\n\n3. **Recommended Treatment**:\nSupportive care, antibiotics for secondary infections. Vaccination of herd.\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Fever(F), Cough), the pattern is consistent with Peste des Petits Ruminants. The combination of symptoms and species-specific epidemiology supports this diagnosis.<|im_end|>",
+    "input": "Analyze this veterinary case:\n\n**Species**: Goat\n**Clinical Signs**: fever and coughing\n\nProvide your diagnosis, differentials, treatment plan, and reasoning.",
+    "output": "1. **Primary Diagnosis**: **Peste des Petits Ruminants** (SNOMED-CT: 1679004)\n\n2. **Differential Diagnoses**:\n   - Goat Pox\n   - Contagious Ecthyma\n   - Bluetongue\n\n3. **Recommended Treatment**:\nSupportive care, antibiotics for secondary infections. Vaccination of herd.\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Fever(F), Cough), the pattern is consistent with Peste des Petits Ruminants. The combination of symptoms and species-specific epidemiology supports this diagnosis.",
+    "metadata": {
+      "animal": "Goat",
+      "disease": "P.P.R",
+      "disease_normalized": "Peste des Petits Ruminants",
+      "snomed_codes": [
+        "1679004"
+      ],
+      "symptoms": [
+        "Fever(F)",
+        "Cough"
+      ]
+    }
+  },
+  {
+    "text": "<|im_start|>system\nYou are VetLLM, a veterinary clinical assistant specialized in livestock diseases. \nGiven a clinical case presentation, you will:\n1. Analyze the clinical signs and symptoms\n2. Provide the most likely diagnosis with SNOMED-CT codes when available\n3. List differential diagnoses to consider\n4. Recommend appropriate treatment and management steps\n5. Explain your clinical reasoning<|im_end|>\n<|im_start|>user\nAnalyze this veterinary case:\n\n**Species**: Buffalo\n**Clinical Signs**: oral vesicles/ulcers, foot vesicles/lesions, and persistent diarrhea\n\nProvide your diagnosis, differentials, treatment plan, and reasoning.<|im_end|>\n<|im_start|>assistant\n1. **Primary Diagnosis**: **Foot and Mouth Disease** (SNOMED-CT: 3974005)\n\n2. **Differential Diagnoses**:\n   - Vesicular Stomatitis\n   - Bluetongue\n   - Bovine Viral Diarrhea\n\n3. **Recommended Treatment**:\nSupportive care, isolation, wound care for lesions. Notify authorities (notifiable disease).\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Blisters In Mouth, Blisters On Feet, Continuous Loose Motions), the pattern is consistent with Foot and Mouth Disease. The combination of symptoms and species-specific epidemiology supports this diagnosis.<|im_end|>",
+    "input": "Analyze this veterinary case:\n\n**Species**: Buffalo\n**Clinical Signs**: oral vesicles/ulcers, foot vesicles/lesions, and persistent diarrhea\n\nProvide your diagnosis, differentials, treatment plan, and reasoning.",
+    "output": "1. **Primary Diagnosis**: **Foot and Mouth Disease** (SNOMED-CT: 3974005)\n\n2. **Differential Diagnoses**:\n   - Vesicular Stomatitis\n   - Bluetongue\n   - Bovine Viral Diarrhea\n\n3. **Recommended Treatment**:\nSupportive care, isolation, wound care for lesions. Notify authorities (notifiable disease).\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Blisters In Mouth, Blisters On Feet, Continuous Loose Motions), the pattern is consistent with Foot and Mouth Disease. The combination of symptoms and species-specific epidemiology supports this diagnosis.",
+    "metadata": {
+      "animal": "Buffalo",
+      "disease": "FMD",
+      "disease_normalized": "Foot and Mouth Disease",
+      "snomed_codes": [
+        "3974005"
+      ],
+      "symptoms": [
+        "Blisters In Mouth",
+        "Blisters On Feet",
+        "Continuous Loose Motions"
+      ]
+    }
+  },
+  {
+    "text": "<|im_start|>system\nYou are VetLLM, a veterinary clinical assistant specialized in livestock diseases. \nGiven a clinical case presentation, you will:\n1. Analyze the clinical signs and symptoms\n2. Provide the most likely diagnosis with SNOMED-CT codes when available\n3. List differential diagnoses to consider\n4. Recommend appropriate treatment and management steps\n5. Explain your clinical reasoning<|im_end|>\n<|im_start|>user\nAnalyze this veterinary case:\n\n**Species**: Sheep\n**Clinical Signs**: fever, nasal discharge, and severe coughing\n\nProvide your diagnosis, differentials, treatment plan, and reasoning.<|im_end|>\n<|im_start|>assistant\n1. **Primary Diagnosis**: **Peste des Petits Ruminants** (SNOMED-CT: 1679004)\n\n2. **Differential Diagnoses**:\n   - Goat Pox\n   - Contagious Ecthyma\n   - Bluetongue\n\n3. **Recommended Treatment**:\nSupportive care, antibiotics for secondary infections. Vaccination of herd.\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Fever(F), Fluid leakage from nose, Sever cough), the pattern is consistent with Peste des Petits Ruminants. The combination of symptoms and species-specific epidemiology supports this diagnosis.<|im_end|>",
+    "input": "Analyze this veterinary case:\n\n**Species**: Sheep\n**Clinical Signs**: fever, nasal discharge, and severe coughing\n\nProvide your diagnosis, differentials, treatment plan, and reasoning.",
+    "output": "1. **Primary Diagnosis**: **Peste des Petits Ruminants** (SNOMED-CT: 1679004)\n\n2. **Differential Diagnoses**:\n   - Goat Pox\n   - Contagious Ecthyma\n   - Bluetongue\n\n3. **Recommended Treatment**:\nSupportive care, antibiotics for secondary infections. Vaccination of herd.\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Fever(F), Fluid leakage from nose, Sever cough), the pattern is consistent with Peste des Petits Ruminants. The combination of symptoms and species-specific epidemiology supports this diagnosis.",
+    "metadata": {
+      "animal": "Sheep",
+      "disease": "PPR",
+      "disease_normalized": "Peste des Petits Ruminants",
+      "snomed_codes": [
+        "1679004"
+      ],
+      "symptoms": [
+        "Fever(F)",
+        "Fluid leakage from nose",
+        "Sever cough"
+      ]
+    }
+  },
+  {
+    "text": "<|im_start|>system\nYou are VetLLM, a veterinary clinical assistant specialized in livestock diseases. \nGiven a clinical case presentation, you will:\n1. Analyze the clinical signs and symptoms\n2. Provide the most likely diagnosis with SNOMED-CT codes when available\n3. List differential diagnoses to consider\n4. Recommend appropriate treatment and management steps\n5. Explain your clinical reasoning<|im_end|>\n<|im_start|>user\nAnalyze this veterinary case:\n\n**Species**: Sheep\n**Clinical Signs**: mucopurulent discharge, coughing, and muscle rigidity/tetany\n\nProvide your diagnosis, differentials, treatment plan, and reasoning.<|im_end|>\n<|im_start|>assistant\n1. **Primary Diagnosis**: **Contagious Caprine Pleuropneumonia** (SNOMED-CT: 2260006)\n\n2. **Differential Diagnoses**:\n   - Infectious disease\n   - Metabolic disorder\n   - Toxicosis\n\n3. **Recommended Treatment**:\nSymptomatic treatment, supportive care, and appropriate antimicrobials based on clinical presentation.\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Water or fluid leakage from eyes,nose or mouth, Cough, Stiffening of body), the pattern is consistent with Contagious Caprine Pleuropneumonia. The combination of symptoms and species-specific epidemiology supports this diagnosis.<|im_end|>",
+    "input": "Analyze this veterinary case:\n\n**Species**: Sheep\n**Clinical Signs**: mucopurulent discharge, coughing, and muscle rigidity/tetany\n\nProvide your diagnosis, differentials, treatment plan, and reasoning.",
+    "output": "1. **Primary Diagnosis**: **Contagious Caprine Pleuropneumonia** (SNOMED-CT: 2260006)\n\n2. **Differential Diagnoses**:\n   - Infectious disease\n   - Metabolic disorder\n   - Toxicosis\n\n3. **Recommended Treatment**:\nSymptomatic treatment, supportive care, and appropriate antimicrobials based on clinical presentation.\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Water or fluid leakage from eyes,nose or mouth, Cough, Stiffening of body), the pattern is consistent with Contagious Caprine Pleuropneumonia. The combination of symptoms and species-specific epidemiology supports this diagnosis.",
+    "metadata": {
+      "animal": "Sheep",
+      "disease": "CCPP",
+      "disease_normalized": "Contagious Caprine Pleuropneumonia",
+      "snomed_codes": [
+        "2260006"
+      ],
+      "symptoms": [
+        "Water or fluid leakage from eyes,nose or mouth",
+        "Cough",
+        "Stiffening of body"
+      ]
+    }
+  },
+  {
+    "text": "<|im_start|>system\nYou are VetLLM, a veterinary clinical assistant specialized in livestock diseases. \nGiven a clinical case presentation, you will:\n1. Analyze the clinical signs and symptoms\n2. Provide the most likely diagnosis with SNOMED-CT codes when available\n3. List differential diagnoses to consider\n4. Recommend appropriate treatment and management steps\n5. Explain your clinical reasoning<|im_end|>\n<|im_start|>user\nAnalyze this veterinary case:\n\n**Species**: Goat\n**Clinical Signs**: severe abdominal pain (colic)\n\nProvide your diagnosis, differentials, treatment plan, and reasoning.<|im_end|>\n<|im_start|>assistant\n1. **Primary Diagnosis**: **Peste des Petits Ruminants** (SNOMED-CT: 1679004)\n\n2. **Differential Diagnoses**:\n   - Goat Pox\n   - Contagious Ecthyma\n   - Bluetongue\n\n3. **Recommended Treatment**:\nSupportive care, antibiotics for secondary infections. Vaccination of herd.\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Pain in stomach and screams), the pattern is consistent with Peste des Petits Ruminants. The combination of symptoms and species-specific epidemiology supports this diagnosis.<|im_end|>",
+    "input": "Analyze this veterinary case:\n\n**Species**: Goat\n**Clinical Signs**: severe abdominal pain (colic)\n\nProvide your diagnosis, differentials, treatment plan, and reasoning.",
+    "output": "1. **Primary Diagnosis**: **Peste des Petits Ruminants** (SNOMED-CT: 1679004)\n\n2. **Differential Diagnoses**:\n   - Goat Pox\n   - Contagious Ecthyma\n   - Bluetongue\n\n3. **Recommended Treatment**:\nSupportive care, antibiotics for secondary infections. Vaccination of herd.\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Pain in stomach and screams), the pattern is consistent with Peste des Petits Ruminants. The combination of symptoms and species-specific epidemiology supports this diagnosis.",
+    "metadata": {
+      "animal": "Goat",
+      "disease": "P.P.R",
+      "disease_normalized": "Peste des Petits Ruminants",
+      "snomed_codes": [
+        "1679004"
+      ],
+      "symptoms": [
+        "Pain in stomach and screams"
+      ]
+    }
+  },
+  {
+    "text": "<|im_start|>system\nYou are VetLLM, a veterinary clinical assistant specialized in livestock diseases. \nGiven a clinical case presentation, you will:\n1. Analyze the clinical signs and symptoms\n2. Provide the most likely diagnosis with SNOMED-CT codes when available\n3. List differential diagnoses to consider\n4. Recommend appropriate treatment and management steps\n5. Explain your clinical reasoning<|im_end|>\n<|im_start|>user\nAnalyze this veterinary case:\n\n**Species**: Sheep\n**Clinical Signs**: coughing and labial vesicles\n\nProvide your diagnosis, differentials, treatment plan, and reasoning.<|im_end|>\n<|im_start|>assistant\n1. **Primary Diagnosis**: **Peste des Petits Ruminants** (SNOMED-CT: 1679004)\n\n2. **Differential Diagnoses**:\n   - Goat Pox\n   - Contagious Ecthyma\n   - Bluetongue\n\n3. **Recommended Treatment**:\nSupportive care, antibiotics for secondary infections. Vaccination of herd.\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Cough, blisters on lips), the pattern is consistent with Peste des Petits Ruminants. The combination of symptoms and species-specific epidemiology supports this diagnosis.<|im_end|>",
+    "input": "Analyze this veterinary case:\n\n**Species**: Sheep\n**Clinical Signs**: coughing and labial vesicles\n\nProvide your diagnosis, differentials, treatment plan, and reasoning.",
+    "output": "1. **Primary Diagnosis**: **Peste des Petits Ruminants** (SNOMED-CT: 1679004)\n\n2. **Differential Diagnoses**:\n   - Goat Pox\n   - Contagious Ecthyma\n   - Bluetongue\n\n3. **Recommended Treatment**:\nSupportive care, antibiotics for secondary infections. Vaccination of herd.\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Cough, blisters on lips), the pattern is consistent with Peste des Petits Ruminants. The combination of symptoms and species-specific epidemiology supports this diagnosis.",
+    "metadata": {
+      "animal": "Sheep",
+      "disease": "PPR",
+      "disease_normalized": "Peste des Petits Ruminants",
+      "snomed_codes": [
+        "1679004"
+      ],
+      "symptoms": [
+        "Cough",
+        "blisters on lips"
+      ]
+    }
+  }
+]

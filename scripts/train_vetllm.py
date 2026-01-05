@@ -67,8 +67,8 @@ class VetLLMConfig:
     # Training configuration
     num_epochs: int = 3
     batch_size: int = 128
-    per_device_batch_size: int = 4
-    gradient_accumulation_steps: int = 4  # Effective batch = 4 * 4 = 16 (matches notebook)
+    per_device_batch_size: int = 6  # Increased for RTX 4090 (24GB VRAM can handle more)
+    gradient_accumulation_steps: int = 4  # Effective batch = 6 * 4 = 24 (optimized for RTX 4090)
     learning_rate: float = 2e-4  # Higher LR for LoRA (matches notebook)
     weight_decay: float = 0.01  # Matches notebook
     warmup_ratio: float = 0.03
@@ -77,13 +77,14 @@ class VetLLMConfig:
     # Optimization
     bf16: bool = False  # Disabled by default for MPS compatibility
     fp16: bool = True  # Use FP16 mixed precision for CUDA (faster training)
-    use_8bit: bool = False  # Use 8-bit quantization (disabled by default for full precision)
+    use_8bit: bool = True  # Use 4-bit quantization (QLoRA) for memory efficiency
     tf32: bool = True  # Enable TF32 for Ampere+ GPUs (faster)
-    gradient_checkpointing: bool = True
+    gradient_checkpointing: bool = False  # Disable for device_map="auto" compatibility
+    per_device_batch_size: int = 2  # Reduced for memory efficiency
     deepspeed_config: Optional[str] = None
 
     # Evaluation and saving
-    eval_strategy: str = "steps"
+    eval_strategy: str = "no"  # No eval dataset, train only
     eval_steps: int = 50  # More frequent evaluation (matches notebook)
     save_strategy: str = "steps"
     save_steps: int = 100  # More frequent saving (matches notebook)
@@ -210,6 +211,41 @@ class VetLLMTrainer:
     def load_model_and_tokenizer(self):
         """Load and configure model and tokenizer"""
         logger.info(f"Loading model: {self.config.model_name}")
+        
+        # Enable verbose logging and progress bars for downloads
+        import os
+        os.environ["TRANSFORMERS_VERBOSITY"] = "info"
+        os.environ["HF_HUB_ENABLE_HF_TRANSFER"] = "1"  # Faster downloads
+        
+        # Check for local cache first (only use if model files exist)
+        from pathlib import Path
+        
+        # Try local cache directory
+        local_cache = Path(self.config.cache_dir) / f"models--{self.config.model_name.replace('/', '--')}"
+        if local_cache.exists():
+            # Find the actual model directory in cache
+            snapshots = list(local_cache.glob("snapshots/*"))
+            if snapshots:
+                model_path = Path(snapshots[0])
+                # Check if model files actually exist
+                model_files = list(model_path.glob("*.safetensors")) + list(model_path.glob("*.bin")) + list(model_path.glob("model*.index"))
+                if model_files:
+                    logger.info(f"Found complete model in local cache: {model_path}")
+                    self.config.model_name = str(model_path)
+                else:
+                    logger.info(f"Cache directory exists but incomplete, will download model")
+        
+        # Also check HuggingFace default cache
+        if self.config.model_name == "wxjiao/alpaca-7b":  # Only check if still using original name
+            hf_cache = Path.home() / ".cache" / "huggingface" / "hub" / f"models--{self.config.model_name.replace('/', '--')}"
+            if hf_cache.exists():
+                snapshots = list(hf_cache.glob("snapshots/*"))
+                if snapshots:
+                    model_path = Path(snapshots[0])
+                    model_files = list(model_path.glob("*.safetensors")) + list(model_path.glob("*.bin")) + list(model_path.glob("model*.index"))
+                    if model_files:
+                        logger.info(f"Found complete model in HuggingFace cache: {model_path}")
+                        self.config.model_name = str(model_path)
 
         # Load tokenizer with explicit handling for LLaMA models
         try:
@@ -224,6 +260,7 @@ class VetLLMTrainer:
                 cache_dir=self.config.cache_dir,
                 trust_remote_code=True,
                 use_fast=False,  # Force slow tokenizer to avoid conversion issues
+                local_files_only=False,  # Allow fallback to download if needed
             )
         except ImportError as e:
             logger.error(f"SentencePiece not available: {e}")
@@ -253,15 +290,17 @@ class VetLLMTrainer:
             device = torch.device("mps")
         self.device = device
 
-        # Load model with 8-bit quantization if enabled and CUDA available
+        # Load model with 4-bit quantization (QLoRA) if enabled and CUDA available
         if self.config.use_8bit and torch.cuda.is_available():
             try:
                 from transformers import BitsAndBytesConfig
                 
-                logger.info("Loading model with 8-bit quantization for memory efficiency...")
+                logger.info("Loading model with 4-bit quantization (QLoRA) for memory efficiency...")
                 bnb_config = BitsAndBytesConfig(
-                    load_in_8bit=True,
-                    llm_int8_threshold=6.0,
+                    load_in_4bit=True,
+                    bnb_4bit_compute_dtype=torch.bfloat16,
+                    bnb_4bit_use_double_quant=True,
+                    bnb_4bit_quant_type="nf4",
                 )
                 
                 self.model = AutoModelForCausalLM.from_pretrained(
@@ -273,12 +312,12 @@ class VetLLMTrainer:
                     low_cpu_mem_usage=True,
                 )
                 
-                logger.info("Model loaded with 8-bit quantization")
+                logger.info("Model loaded with 4-bit quantization (QLoRA)")
                 
-                # Prepare model for k-bit training (CRITICAL for 8-bit)
+                # Prepare model for k-bit training (CRITICAL for QLoRA)
                 from peft import prepare_model_for_kbit_training
-                self.model = prepare_model_for_kbit_training(self.model)
-                logger.info("Model prepared for k-bit training")
+                self.model = prepare_model_for_kbit_training(self.model, use_gradient_checkpointing=True)
+                logger.info("Model prepared for k-bit training with gradient checkpointing")
                 
             except ImportError:
                 logger.warning("bitsandbytes not available. Falling back to standard loading.")
@@ -301,15 +340,35 @@ class VetLLMTrainer:
                 model_dtype = torch.float16 if self.config.bf16 else torch.float32
                 device_map = "auto" if torch.cuda.is_available() else None
 
-            self.model = AutoModelForCausalLM.from_pretrained(
-                self.config.model_name,
-                cache_dir=self.config.cache_dir,
-                torch_dtype=model_dtype,
-                device_map=device_map,
-                trust_remote_code=True,
-                offload_folder=offload_folder if device_map else None,
-                low_cpu_mem_usage=True,
-            )
+            logger.info(f"Downloading/loading model (this may take 10-20 minutes)...")
+            logger.info(f"Model size: ~13-14GB")
+            logger.info(f"Download progress will be shown below:")
+            logger.info("="*70)
+            
+            # Enable tqdm progress bars
+            import sys
+            from tqdm import tqdm
+            
+            # Redirect stdout to show progress bars
+            original_stdout = sys.stdout
+            sys.stdout = sys.stderr  # Progress bars go to stderr
+            
+            try:
+                self.model = AutoModelForCausalLM.from_pretrained(
+                    self.config.model_name,
+                    cache_dir=self.config.cache_dir,
+                    torch_dtype=model_dtype,
+                    device_map=device_map,
+                    trust_remote_code=True,
+                    offload_folder=offload_folder if device_map else None,
+                    low_cpu_mem_usage=True,
+                    local_files_only=False,  # Allow fallback to download if cache incomplete
+                )
+            finally:
+                sys.stdout = original_stdout
+            
+            logger.info("="*70)
+            logger.info("✅ Model loaded successfully!")
 
             # Move model to device if not using device_map
             if device_map is None:
@@ -351,7 +410,7 @@ class VetLLMTrainer:
             if 'lora_' in name:
                 param.requires_grad = True
                 # Ensure parameter is on the correct device and dtype
-                if hasattr(self, 'device'):
+                if hasattr(self, 'device') and not param.is_meta:
                     param.data = param.data.to(self.device)
         
         # Verify trainable parameters
@@ -386,11 +445,20 @@ class VetLLMTrainer:
         # Adjust settings based on device
         use_bf16 = self.config.bf16
         use_mps_device = torch.backends.mps.is_available() and torch.backends.mps.is_built()
+        use_cuda_device = torch.cuda.is_available()
         
         if use_mps_device:
             # Disable bf16 on MPS for stability
             use_bf16 = False
             logger.info("Disabling bf16 for MPS compatibility")
+        elif use_cuda_device:
+            # Enable BF16 for RTX 4090 (native support, faster than FP16)
+            if torch.cuda.is_bf16_supported():
+                use_bf16 = True
+                logger.info("Enabling BF16 for CUDA (RTX 4090 optimized)")
+            else:
+                use_bf16 = False
+                logger.info("BF16 not supported on this CUDA device, using FP16")
 
         args = TrainingArguments(
             output_dir=self.config.output_dir,
@@ -404,8 +472,8 @@ class VetLLMTrainer:
             lr_scheduler_type=self.config.lr_scheduler_type,
             # Optimization settings
             bf16=use_bf16,
-            fp16=self.config.fp16 and not self.config.use_8bit and torch.cuda.is_available(),  # FP16 for CUDA (matches notebook)
-            tf32=self.config.tf32 and not use_mps_device,  # Disable TF32 on MPS
+            fp16=self.config.fp16 and not use_bf16 and not self.config.use_8bit and torch.cuda.is_available(),  # FP16 only if BF16 not available
+            tf32=self.config.tf32 and not use_mps_device and use_cuda_device,  # Enable TF32 for CUDA (RTX 4090)
             gradient_checkpointing=self.config.gradient_checkpointing and not self.config.use_8bit,  # Disable for 8-bit
             # Evaluation and saving
             eval_strategy=self.config.eval_strategy,
@@ -420,7 +488,7 @@ class VetLLMTrainer:
             # Other settings
             dataloader_drop_last=True,
             remove_unused_columns=False,
-            load_best_model_at_end=True,
+            load_best_model_at_end=False,  # No eval dataset, so can't load best model
             # MPS specific optimizations
             use_cpu=(not torch.cuda.is_available() and not use_mps_device),
             metric_for_best_model="eval_loss",
@@ -484,9 +552,10 @@ class VetLLMTrainer:
         for name in requires_grad_params[:5]:
             logger.info(f"  {name} requires grad: {self.model.get_parameter(name).requires_grad}")
         
-        # Ensure model is prepared for training on the correct device
-        if hasattr(self, 'device'):
-            self.model = self.model.to(self.device)
+        # Model device placement is already handled by device_map="auto"
+        # Skip manual device move to avoid meta tensor issues
+        # if hasattr(self, 'device'):
+        #     self.model = self.model.to(self.device)
         
         # Force enable training mode for all trainable modules
         for name, module in self.model.named_modules():

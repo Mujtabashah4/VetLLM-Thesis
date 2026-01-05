@@ -85,6 +85,8 @@ VetLLM_Thesis.zip
 # OS
 .DS_Store
 Thumbs.db
+._*
+.AppleDouble
 
 # Logs
 *.log

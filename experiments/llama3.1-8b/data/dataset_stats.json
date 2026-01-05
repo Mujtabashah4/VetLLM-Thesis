@@ -1,0 +1,103 @@
+{
+  "train": {
+    "num_samples": 373,
+    "disease_distribution": {
+      "Peste des Petits Ruminants": 122,
+      "Anthrax": 15,
+      "Mastitis": 48,
+      "Black Quarter": 29,
+      "Foot and Mouth Disease": 56,
+      "Hemorrhagic Septicemia": 42,
+      "Contagious Caprine Pleuropneumonia": 29,
+      "Flue": 1,
+      "Foot Rot": 6,
+      "Ketosis": 1,
+      "Babesiosis": 3,
+      "Liver Fluke": 3,
+      "Infection": 1,
+      "Brucellosis": 2,
+      "Theileriosis": 3,
+      "Rabies": 2,
+      "Tympany": 1,
+      "Goat Pox": 1,
+      "Internal Worms": 3,
+      "Abortion": 1,
+      "Fracture of the Leg": 3,
+      "Laminitis": 1
+    },
+    "animal_distribution": {
+      "Sheep": 100,
+      "Buffalo": 80,
+      "Cow": 90,
+      "Goat": 103
+    },
+    "avg_symptoms": 2.7184986595174263,
+    "min_symptoms": 1,
+    "max_symptoms": 7
+  },
+  "validation": {
+    "num_samples": 80,
+    "disease_distribution": {
+      "Peste des Petits Ruminants": 30,
+      "Black Quarter": 7,
+      "Foot and Mouth Disease": 10,
+      "Mastitis": 9,
+      "Liver Fluke": 1,
+      "Babesiosis": 2,
+      "Anthrax": 3,
+      "Hemorrhagic Septicemia": 6,
+      "Tuberculosis": 1,
+      "Contagious Caprine Pleuropneumonia": 6,
+      "Internal Worms": 1,
+      "Foot Rot": 1,
+      "Rabies": 1,
+      "Brucellosis": 1,
+      "Tympany": 1
+    },
+    "animal_distribution": {
+      "Sheep": 26,
+      "Cow": 20,
+      "Buffalo": 15,
+      "Goat": 19
+    },
+    "avg_symptoms": 2.7125,
+    "min_symptoms": 1,
+    "max_symptoms": 6
+  },
+  "test": {
+    "num_samples": 80,
+    "disease_distribution": {
+      "Peste des Petits Ruminants": 22,
+      "Laminitis": 1,
+      "Foot and Mouth Disease": 14,
+      "Hemorrhagic Septicemia": 12,
+      "Mastitis": 11,
+      "Foot Rot": 2,
+      "Ketosis": 1,
+      "Black Quarter": 5,
+      "Anthrax": 3,
+      "Infection": 1,
+      "Theileriosis": 1,
+      "Contagious Caprine Pleuropneumonia": 6,
+      "Fracture of the Leg": 1
+    },
+    "animal_distribution": {
+      "Sheep": 14,
+      "Buffalo": 17,
+      "Goat": 24,
+      "Cow": 25
+    },
+    "avg_symptoms": 2.95,
+    "min_symptoms": 1,
+    "max_symptoms": 7
+  },
+  "total_samples": 533,
+  "config": {
+    "model_type": "llama3.1",
+    "max_length": 512,
+    "train_ratio": 0.7,
+    "val_ratio": 0.15,
+    "test_ratio": 0.15,
+    "seed": 42
+  }
+}
