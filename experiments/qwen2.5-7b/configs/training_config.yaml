@@ -5,7 +5,7 @@
 # Model Configuration
 # ==============================================
 model:
-  name: "Qwen/Qwen2.5-7B-Instruct"
+  name: "/home/iml_admin/Desktop/VetLLM/VetLLM-Thesis/models/qwen2.5-7b-instruct"
   # Alternatives:
   # - "HPAI-BSC/Qwen2.5-Aloe-Beta-7B" (Medical variant)
   # - "Lightblue/Meditron3-Qwen2.5-7B" (Medical variant)
@@ -16,8 +16,9 @@ model:
 # ==============================================
 # Quantization Configuration (QLoRA)
 # ==============================================
+# Disabled initially - will enable if OOM occurs
 quantization:
-  enabled: true
+  enabled: false
   load_in_4bit: true
   bnb_4bit_quant_type: "nf4"
   bnb_4bit_compute_dtype: "bfloat16"
@@ -47,12 +48,13 @@ lora:
 # ==============================================
 training:
   output_dir: "../checkpoints"
-  num_train_epochs: 3
+  num_train_epochs: 7  # Optimal: 6-7 epochs with early stopping
   
   # Batch size configuration
-  per_device_train_batch_size: 4
-  per_device_eval_batch_size: 4
-  gradient_accumulation_steps: 4
+  # Reduced for full precision training (increase if using quantization)
+  per_device_train_batch_size: 2
+  per_device_eval_batch_size: 2
+  gradient_accumulation_steps: 8  # Increased to maintain effective batch size
   
   # Learning rate configuration
   learning_rate: 1.0e-4
@@ -71,24 +73,29 @@ training:
   
   # Evaluation and saving
   evaluation_strategy: "steps"
-  eval_steps: 100
+  eval_steps: 24  # Evaluate every epoch (24 steps per epoch = 373 samples / 16 batch)
   save_strategy: "steps"
-  save_steps: 100
-  save_total_limit: 3
-  load_best_model_at_end: true
-  metric_for_best_model: "eval_loss"
-  greater_is_better: false
+  save_steps: 24  # Save checkpoint every epoch
+  save_total_limit: 5  # Keep 5 best checkpoints
+  load_best_model_at_end: true  # ✅ Load best model based on validation loss
+  metric_for_best_model: "eval_loss"  # ✅ Use validation loss to determine best
+  greater_is_better: false  # Lower validation loss is better
   
   # Logging
   logging_strategy: "steps"
   logging_steps: 10
   logging_first_step: true
-  report_to: "wandb"
+  report_to: "none"
   
   # Optimization
-  optim: "paged_adamw_8bit"
+  # Using adamw_torch for full precision (change to paged_adamw_8bit if using quantization)
+  optim: "adamw_torch"
   fp16: false
   bf16: true
+  
+  # Early stopping (prevents overfitting)
+  early_stopping_patience: 3  # Stop if no improvement for 3 evaluations
+  early_stopping_threshold: 0.001  # Minimum improvement threshold
   
   # Misc
   seed: 42
@@ -101,9 +108,9 @@ training:
 # Data Configuration
 # ==============================================
 data:
-  train_file: "../data/train.json"
-  validation_file: "../data/validation.json"
-  test_file: "../data/test.json"
+  train_file: "data/train.json"
+  validation_file: "data/validation.json"
+  test_file: "data/test.json"
   text_field: "text"
   preprocessing_num_workers: 4
 

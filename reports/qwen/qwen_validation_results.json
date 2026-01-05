@@ -1,0 +1,763 @@
+{
+  "summary": {
+    "total_tests": 30,
+    "metrics": {
+      "accuracy": 10.0,
+      "partial_accuracy": 56.666666666666664,
+      "precision": 18.75,
+      "recall": 18.75,
+      "f1_score": 18.75,
+      "precision_lenient": 56.666666666666664,
+      "recall_lenient": 56.666666666666664,
+      "f1_lenient": 56.666666666666664,
+      "correct": 3,
+      "partial": 14,
+      "failed": 13,
+      "total": 30
+    },
+    "timestamp": null
+  },
+  "by_disease": {
+    "Anthrax": {
+      "total": 3,
+      "correct": 0,
+      "partial": 0,
+      "failed": 3
+    },
+    "P.P.R": {
+      "total": 1,
+      "correct": 1,
+      "partial": 0,
+      "failed": 0
+    },
+    "PPR": {
+      "total": 2,
+      "correct": 1,
+      "partial": 1,
+      "failed": 0
+    },
+    "Kataa": {
+      "total": 1,
+      "correct": 0,
+      "partial": 0,
+      "failed": 1
+    },
+    "FMD": {
+      "total": 1,
+      "correct": 0,
+      "partial": 1,
+      "failed": 0
+    },
+    "Foot and Mouth": {
+      "total": 1,
+      "correct": 0,
+      "partial": 0,
+      "failed": 1
+    },
+    "H.S": {
+      "total": 4,
+      "correct": 0,
+      "partial": 1,
+      "failed": 3
+    },
+    "Mastitis": {
+      "total": 1,
+      "correct": 1,
+      "partial": 0,
+      "failed": 0
+    },
+    "Mastits": {
+      "total": 1,
+      "correct": 0,
+      "partial": 1,
+      "failed": 0
+    },
+    "B.Q": {
+      "total": 1,
+      "correct": 0,
+      "partial": 1,
+      "failed": 0
+    },
+    "Black Quarter": {
+      "total": 1,
+      "correct": 0,
+      "partial": 0,
+      "failed": 1
+    },
+    "CCPP": {
+      "total": 2,
+      "correct": 0,
+      "partial": 0,
+      "failed": 2
+    },
+    "Brucellosis": {
+      "total": 1,
+      "correct": 0,
+      "partial": 0,
+      "failed": 1
+    },
+    "Babesiosis": {
+      "total": 1,
+      "correct": 0,
+      "partial": 1,
+      "failed": 0
+    },
+    "Theileriosis": {
+      "total": 1,
+      "correct": 0,
+      "partial": 1,
+      "failed": 0
+    },
+    "Rabies": {
+      "total": 1,
+      "correct": 0,
+      "partial": 0,
+      "failed": 1
+    },
+    "Foot Rot": {
+      "total": 1,
+      "correct": 0,
+      "partial": 1,
+      "failed": 0
+    },
+    "Liver Fluke": {
+      "total": 1,
+      "correct": 0,
+      "partial": 1,
+      "failed": 0
+    },
+    "Internal Worms": {
+      "total": 1,
+      "correct": 0,
+      "partial": 1,
+      "failed": 0
+    },
+    "Tympany": {
+      "total": 1,
+      "correct": 0,
+      "partial": 1,
+      "failed": 0
+    },
+    "Mites": {
+      "total": 1,
+      "correct": 0,
+      "partial": 1,
+      "failed": 0
+    },
+    "Ketosis": {
+      "total": 1,
+      "correct": 0,
+      "partial": 1,
+      "failed": 0
+    },
+    "Fracture of the Leg": {
+      "total": 1,
+      "correct": 0,
+      "partial": 1,
+      "failed": 0
+    }
+  },
+  "by_animal": {
+    "Cow": {
+      "total": 12,
+      "correct": 1,
+      "partial": 8,
+      "failed": 3
+    },
+    "Buffalo": {
+      "total": 5,
+      "correct": 0,
+      "partial": 0,
+      "failed": 5
+    },
+    "Goat": {
+      "total": 8,
+      "correct": 1,
+      "partial": 2,
+      "failed": 5
+    },
+    "Sheep": {
+      "total": 5,
+      "correct": 1,
+      "partial": 4,
+      "failed": 0
+    }
+  },
+  "confusion_matrix": {
+    "Anthrax": {
+      "PPR": 1,
+      "H.S": 1,
+      "Unknown": 1
+    },
+    "P.P.R": {
+      "FMD": 1
+    },
+    "PPR": {
+      "PPR": 2
+    },
+    "Kataa": {
+      "FMD": 1
+    },
+    "FMD": {
+      "FMD": 1
+    },
+    "Foot and Mouth": {
+      "Babesiosis": 1
+    },
+    "H.S": {
+      "Anthrax": 1,
+      "Unknown": 3
+    },
+    "Mastitis": {
+      "Mastitis": 1
+    },
+    "Mastits": {
+      "Unknown": 1
+    },
+    "B.Q": {
+      "Anthrax": 1
+    },
+    "Black Quarter": {
+      "Babesiosis": 1
+    },
+    "CCPP": {
+      "PPR": 2
+    },
+    "Brucellosis": {
+      "Unknown": 1
+    },
+    "Babesiosis": {
+      "Babesiosis": 1
+    },
+    "Theileriosis": {
+      "PPR": 1
+    },
+    "Rabies": {
+      "Unknown": 1
+    },
+    "Foot Rot": {
+      "Foot Rot": 1
+    },
+    "Liver Fluke": {
+      "Anthrax": 1
+    },
+    "Internal Worms": {
+      "Unknown": 1
+    },
+    "Tympany": {
+      "Unknown": 1
+    },
+    "Mites": {
+      "Unknown": 1
+    },
+    "Ketosis": {
+      "PPR": 1
+    },
+    "Fracture of the Leg": {
+      "PPR": 1
+    }
+  },
+  "detailed_predictions": [
+    {
+      "test_id": 1,
+      "animal": "Cow",
+      "symptoms": "Cow with high fever, nasal discharge (epistaxis), and sudden death",
+      "expected_disease": "Anthrax",
+      "expected_codes": [
+        "40214000"
+      ],
+      "predicted_response": "**Foot and Mouth Disease** Based on the presenting clinical signs (High Fever, Nasal Discharge, Sudden Death), the pattern is consistent with this disease. \n\n**Infection And Infestation Category** is the most appropriate high-level group for this clinical case. The specific SNOMED-CT codes that fit this pattern are:\n\n1. **Foot and Mouth Disease** (SNOMED-CT Code: 14146003)\n\nThis is the primary diagnosis based on the clinical signs. There were no secondary or additional clinical signs to suggest other diseases. The pattern is specific to Foot and Mouth Disease. Please review for any additional symptoms or consider other diseases with the same presenting signs. Based on the clinical signs, the primary SNOMED-CT code is 14146003. If you need codes for the presenting signs (Fever(F)) and associated symptoms (Runny Nose), please request separately. \n\nThe final answer is:\n**Primary Diagnosis**: 14146003 (Foot and Mouth Disease) from the Infection And Infestation clinical category.",
+      "predicted_codes": [
+        "1414600",
+        "14146003"
+      ],
+      "predicted_disease": "PPR",
+      "result": "failed",
+      "status": "\u274c FAILED"
+    },
+    {
+      "test_id": 2,
+      "animal": "Buffalo",
+      "symptoms": "Buffalo showing blood leakage from nose and very high fever",
+      "expected_disease": "Anthrax",
+      "expected_codes": [
+        "40214000"
+      ],
+      "predicted_response": "**Hemorrhagic Septicemia** Based on the presenting clinical signs (Blood Leakage From Nose, Very High Fever), the pattern is consistent with this diagnosis. \n\nThe SNOMED-CT codes for this would be:\n1. *Hemorrhagic Septicemia* (SNOMED-CT: 29600003) - Primary diagnosis based on the clinical picture. \n\nThis code is the most specific to the pattern of symptoms (Blood Leakage From Nose, Very High Fever). The combination is characteristic of Hemorrhagic Septicemia. No other codes are necessary as this is the most likely diagnosis given the clinical signs. The presenting complaint and physical exam findings are most consistent with this primary diagnosis. Let me know if you need any other SNOMED-CT codes!",
+      "predicted_codes": [
+        "29600003",
+        "2960000"
+      ],
+      "predicted_disease": "H.S",
+      "result": "failed",
+      "status": "\u274c FAILED"
+    },
+    {
+      "test_id": 3,
+      "animal": "Goat",
+      "symptoms": "Goat with high fever, nasal discharge, difficulty breathing, and mouth frothing",
+      "expected_disease": "P.P.R",
+      "expected_codes": [
+        "1679004"
+      ],
+      "predicted_response": "**Foot and Mouth Disease** (FMD), **Contagious Caprine Pleuropneumonia** (CCPP)\n\nSNOMED-CT Codes:\n1. *Foot and Mouth Disease* (SNOMED-CT: 1679004)\n2. *Contagious Caprine Pleuropneumonia* (SNOMED-CT: 4764006) Based on the presenting clinical signs (High Fever, Fluid leakage from nose, Difficulty in breathing...), the pattern is consistent with the above diagnoses. The combination of symptoms and species-specific epidemiology supports this classification.",
+      "predicted_codes": [
+        "1679004",
+        "4764006"
+      ],
+      "predicted_disease": "FMD",
+      "result": "correct",
+      "status": "\u2705 CORRECT"
+    },
+    {
+      "test_id": 4,
+      "animal": "Sheep",
+      "symptoms": "Sheep showing fever, nasal discharge, coughing, and diarrhea",
+      "expected_disease": "PPR",
+      "expected_codes": [
+        "1679004"
+      ],
+      "predicted_response": "**Foot and Mouth Disease** (when appropriate based on clinical signs) , **Contagious Caprine Pleuropneumonia** (if species is Goat), **Contagious Caprine Pleuropneumonia** (if species is Goat)\n\nBased on the presenting clinical signs (Fever(F), Fluid leakage from nose, Cough, Loose motions), the pattern is consistent with these diseases. The species (Sheep) helps narrow the likely diagnoses. \n\nGiven the information provided, the primary SNOMED-CT code is:\n**Infection** (SNOMED-CT Code: 198645004)\n\nThis is a broad, accurate representation of the clinical picture shown. The combination of symptoms and species-specific epidemiology supports this primary diagnosis. If you need more specific codes for the underlying disease, please provide additional context or check the patterns for each of the diseases mentioned. In many cases, the presenting clinical signs are consistent with multiple diseases (e.g., Flu, Infectious disease). The actual diagnosis would be determined by the veterinarian based on the clinical presentation and appropriate testing. \n\nPlease verify the clinical signs and symptoms to ensure accuracy. In some cases, the pattern may also include other diseases with similar symptoms. The",
+      "predicted_codes": [
+        "1986450",
+        "19864500"
+      ],
+      "predicted_disease": "PPR",
+      "result": "partial",
+      "status": "\u26a0\ufe0f  PARTIAL"
+    },
+    {
+      "test_id": 5,
+      "animal": "Goat",
+      "symptoms": "Goat with severe respiratory distress, fever, and continuous loose motions",
+      "expected_disease": "Kataa",
+      "expected_codes": [
+        "1679004"
+      ],
+      "predicted_response": "**Foot and Mouth Disease** (FMD), based on the presenting clinical signs (High Fever, Fluid leakage from mouth, Breathing difficulty). \n\n1. **Primary Diagnosis**: *Foot and Mouth Disease* (SNOMED-CT Code: 14146003)\n2. **Secondary Diagnosis**: *Respiratory Distress* (SNOMED-CT Code: 29814001) \n3. **Mastitis** (SNOMED-CT Code: 73911009) - This is a likely secondary finding based on the clinical presentation.",
+      "predicted_codes": [
+        "2981400",
+        "7391100",
+        "29814001",
+        "1414600",
+        "73911009"
+      ],
+      "predicted_disease": "FMD",
+      "result": "failed",
+      "status": "\u274c FAILED"
+    },
+    {
+      "test_id": 6,
+      "animal": "Cow",
+      "symptoms": "Cow with blisters in mouth, blisters on feet, lameness, and excessive salivation",
+      "expected_disease": "FMD",
+      "expected_codes": [
+        "3974005"
+      ],
+      "predicted_response": "**Foot and Mouth Disease** (SNOMED-CT: 3974006), **Blisters** on lips (SNOMED-CT: 24026003), **Blisters** on feet (SNOMED-CT: 24026003) Based on the presenting clinical signs (blisters in the mouth, blisters on feet, lameness, excess salivation), the pattern is consistent with Foot and Mouth Disease. The combination of symptoms and species-specific epidemiology supports this diagnosis.",
+      "predicted_codes": [
+        "24026003"
+      ],
+      "predicted_disease": "FMD",
+      "result": "partial",
+      "status": "\u26a0\ufe0f  PARTIAL"
+    },
+    {
+      "test_id": 7,
+      "animal": "Buffalo",
+      "symptoms": "Buffalo calf with blisters on lips and feet, difficulty walking, and mouth frothing",
+      "expected_disease": "Foot and Mouth",
+      "expected_codes": [
+        "3974005"
+      ],
+      "predicted_response": "**Babesiosis** (SNOMED-CT: 1679004), **Anaplasmosis** (SNOMED-CT: 24052003) Based on the presenting clinical signs (Blisters on lips and feet, Difficulty walking, Mouth frothing), the pattern is consistent with these diagnoses. However, please note that this is an initial assessment and the final diagnosis should be confirmed by the veterinarian. The SNOMED-CT codes provided are for reference.",
+      "predicted_codes": [
+        "1679004"
+      ],
+      "predicted_disease": "Babesiosis",
+      "result": "failed",
+      "status": "\u274c FAILED"
+    },
+    {
+      "test_id": 8,
+      "animal": "Buffalo",
+      "symptoms": "Buffalo with high fever, neck swelling, difficulty breathing, and sudden death",
+      "expected_disease": "H.S",
+      "expected_codes": [
+        "198462004"
+      ],
+      "predicted_response": "**Babesiosis** (SNOMED-CT: 1679004), **Anthrax** (SNOMED-CT: 4764003), **Blackleg** (SNOMED-CT: 24026003) Based on the clinical signs (High fever(F), Neck swelling, Difficulty in breathing, Sudden death), the pattern is consistent with these diagnoses. \n\nThe presenting clinical signs and symptoms are the typical pattern for these diseases. The combination of symptoms and species-specific epidemiology supports this diagnosis. The SNOMED-CT codes provided correspond to the clinical picture. If you need more detailed information or another diagnosis, please let me know! \n*Note: This answer is formatted based on the given question structure.*",
+      "predicted_codes": [
+        "1679004",
+        "24026003"
+      ],
+      "predicted_disease": "Anthrax",
+      "result": "failed",
+      "status": "\u274c FAILED"
+    },
+    {
+      "test_id": 9,
+      "animal": "Cow",
+      "symptoms": "Cow showing neck swelling, rapid breathing, fever, and tongue coming out of mouth",
+      "expected_disease": "H.S",
+      "expected_codes": [
+        "198462004"
+      ],
+      "predicted_response": "**The most likely diagnosis is**:\n\nInfection of the head (SNOMED-CT: 19846004), based on the presenting clinical signs. The pattern is consistent with this disease.",
+      "predicted_codes": [
+        "19846004",
+        "1984600"
+      ],
+      "predicted_disease": "Unknown",
+      "result": "partial",
+      "status": "\u26a0\ufe0f  PARTIAL"
+    },
+    {
+      "test_id": 10,
+      "animal": "Cow",
+      "symptoms": "Cow with swollen udder, drop in milk production, milk in semi-solid form, and blood in milk",
+      "expected_disease": "Mastitis",
+      "expected_codes": [
+        "72934000"
+      ],
+      "predicted_response": "**Mastitis** (SNOMED-CT: 72934000), **Infection** (SNOMED-CT: 73944000), **Abortion** (SNOMED-CT: 15566003) [Note: This code is provided for the secondary condition] Based on the presenting clinical signs (i.e., Infection of Udder, Drop In Milk Production, Semi solid Milk, Blood In Milk), the pattern is consistent with the primary diagnosis of Mastitis. The combination of symptoms and species-specific epidemiology supports this diagnosis. The drop in milk production is a common clinical sign for this presenting pattern. Abortion is listed as a secondary diagnosis based on the clinical signs. Given the presenting clinical signs, the primary diagnosis is consistent with Mastitis. \n\nThe SNOMED-CT codes provided are:\n1. **Mastitis** (Main diagnosis)\n2. **Infection** (Associated finding)\n3. **Abortion** (Secondary diagnosis) [Note: This is an additional code for the secondary condition indicated in the clinical note] \n\nThis pattern is typical for the given clinical case.",
+      "predicted_codes": [
+        "72934000"
+      ],
+      "predicted_disease": "Mastitis",
+      "result": "correct",
+      "status": "\u2705 CORRECT"
+    },
+    {
+      "test_id": 11,
+      "animal": "Cow",
+      "symptoms": "Cow with teat gnarls, udder swelling, and shortage of milk",
+      "expected_disease": "Mastits",
+      "expected_codes": [
+        "72934000"
+      ],
+      "predicted_response": "**Teat Gnarls** (SNOMED-CT: 24026001), **Udder edema** (SNOMED-CT: 73941008), **Drop in Milk Production** (SNOMED-CT: 72932002) \n\nBased on the clinical signs, the pattern is consistent with:\n1. Teat Gnarls\n2. Udder Swelling\n3. Reduced Milk Output. The presenting clinical signs and symptoms are characteristic of this disease. Therefore, the primary SNOMED-CT code is for Teat Gnarls. The associated findings (Udder Swelling and Drop in Milk Production) support this diagnosis. If you need the SNOMED-CT codes for those secondary conditions, please let me know. \nFor this pattern, the SNOMED-CT codes are:\n1. Teat Gnarls: 24026001\n2. Udder Edema: 73941008\n3. Drop In Milk Production: 72932002. Please verify based on the clinical context. This pattern is commonly seen in",
+      "predicted_codes": [
+        "7293200",
+        "73941008",
+        "72932002",
+        "2402600",
+        "7394100"
+      ],
+      "predicted_disease": "Unknown",
+      "result": "partial",
+      "status": "\u26a0\ufe0f  PARTIAL"
+    },
+    {
+      "test_id": 12,
+      "animal": "Cow",
+      "symptoms": "Cow with color change of muscles of limb, lameness, and sudden death",
+      "expected_disease": "B.Q",
+      "expected_codes": [
+        "29600000"
+      ],
+      "predicted_response": "**1) Anadyomene** (SNOMED-CT: 24026001), **2) Black Quarter** (SNOMED-CT: 3974006), **3) Anthrax** (SNOMED-CT: 15496003). Given the presenting clinical signs (Color Change Of Muscles Of Limb, Lameness, Sudden Death), the pattern is consistent with Anadyomene. The combination of symptoms and clinical presentation is characteristic.",
+      "predicted_codes": [
+        "2402600",
+        "15496003",
+        "1549600",
+        "3974006",
+        "24026001"
+      ],
+      "predicted_disease": "Anthrax",
+      "result": "partial",
+      "status": "\u26a0\ufe0f  PARTIAL"
+    },
+    {
+      "test_id": 13,
+      "animal": "Buffalo",
+      "symptoms": "Buffalo showing stiffening of body, lameness, and muscle discoloration",
+      "expected_disease": "Black Quarter",
+      "expected_codes": [
+        "29600000"
+      ],
+      "predicted_response": "**Babesiosis** (SNOMED-CT: 1679004), **Theileriosis** (SNOMED-CT: 32600000), **Anaplasmosis** (SNOMED-CT: 24052003) (Based on the clinical signs, pattern, and species-specific epidemiology) \n\nProvide your diagnosis, SNOMED-CT codes when available, and SNOMED-CT codes for each disease manifestation. If you're not sure, provide the most likely diagnosis based on the clinical signs. In this case, the presenting clinical signs are consistent with the pattern. Please verify the species-specific epidemiology and symptoms in SNOMED-CT. Do not provide a human diagnosis. Based on the clinical signs, the pattern is consistent with:\n\n**Babesiosis** (SNOMED-CT: 1679004), **Theileriosis** (SNOMED-CT: 32600000), **Anaplasmosis** (SNOMED-CT: 24052003). The combination of symptoms and species-specific epidemiology supports these diagnoses.",
+      "predicted_codes": [
+        "1679004"
+      ],
+      "predicted_disease": "Babesiosis",
+      "result": "failed",
+      "status": "\u274c FAILED"
+    },
+    {
+      "test_id": 14,
+      "animal": "Goat",
+      "symptoms": "Goat with severe cough, difficulty breathing, rapid breathing, and fever",
+      "expected_disease": "CCPP",
+      "expected_codes": [
+        "2260006"
+      ],
+      "predicted_response": "**Foot and Mouth Disease** (when appropriate based on presenting symptoms) Based on the clinical signs (Sever cough, High fever, Fast breathing), and species (Goat), this pattern is consistent with Infectious disease. The specific combination of symptoms is characteristic. \n\nSNOMED-CT Code: *To be determined based on the clinical presentation* (Note: For educational purposes, the exact code requires verification by a clinical veterinarian) \n\nICD-10 Code: *Not applicable for animal diseases* (ICD-10 is used for human health care) \nThis SNOMED-CT structure is designed for veterinary medicine. It follows the template: [Primary Clinical Sign][Species][Presenting Clinical Signs]. This pattern is intended to:\n1. Capture the clinical presentation (e.g., Sever cough)\n2. Specify the species (e.g., Goat)\n3. Indicate the most likely diagnosis based on the pattern of symptoms (e.g., Infectious disease) Given the information provided, the clinical reasoning is consistent with:\nInfectious disease based on the presenting clinical signs. However, the exact diagnosis should be established by a veterinarian. The SNOMED-CT codes should be verified by a veterinary clinical assistant or specialist. The ICD-",
+      "predicted_codes": [],
+      "predicted_disease": "PPR",
+      "result": "failed",
+      "status": "\u274c FAILED"
+    },
+    {
+      "test_id": 15,
+      "animal": "Goat",
+      "symptoms": "Goat showing persistent cough, breathing while mouth open, and nasal discharge",
+      "expected_disease": "CCPP",
+      "expected_codes": [
+        "2260006"
+      ],
+      "predicted_response": "**Peste des Petits Ruminants** (SNOMED-CT: 1679004)\n\nBased on the presenting clinical signs (Persistent Cough, Breathing While Mouth Open, Nasal Discharge), the pattern is consistent with Peste des Petits Ruminants. The combination of symptoms and species-specific epidemiology supports this diagnosis. No other diseases have been coded. 1 codes indicate the primary diagnosis. 2 codes would indicate co-morbidities if present. 3 codes are not used in this case. 4 codes would include related findings but are not applicable here. 5 codes are for quantitative modifiers but are not needed for this clinical scenario. The SNOMED-CT codes reflect the primary diagnosis based on the clinical presentation. 6 codes, if applicable, would provide additional qualified clinical interpretations but are not required for this clinical note. 7 codes would include information about treatment or interventions, but they are not indicated in this clinical scenario. 8 codes are for complications, which are not mentioned in this case. 9 codes would include patient background information (e.g., breed), but it is not provided in this clinical note. 10 codes are for epidemiological data, which is not relevant for",
+      "predicted_codes": [
+        "1679004"
+      ],
+      "predicted_disease": "PPR",
+      "result": "failed",
+      "status": "\u274c FAILED"
+    },
+    {
+      "test_id": 16,
+      "animal": "Cow",
+      "symptoms": "Cow with abortion, vaginal gnarls, and drop in milk production",
+      "expected_disease": "Brucellosis",
+      "expected_codes": [
+        "75702008"
+      ],
+      "predicted_response": "Abortion, vaginal gnarls, Drop In Milk Production\n\nSNOMED-CT Codes:\n1. **Abortion** (SNOMED-CT: 1679004)\n2. **Vaginal Gnarls** (SNOMED-CT: 4764003)\n3. **Drop In Milk Production** (SNOMED-CT: 24056003) Based on the presenting clinical signs (Abortion, Vaginal gnarls, Drop in milk production), the pattern is consistent with the veterinary SNOMED-CT codes provided.",
+      "predicted_codes": [
+        "1679004"
+      ],
+      "predicted_disease": "Unknown",
+      "result": "failed",
+      "status": "\u274c FAILED"
+    },
+    {
+      "test_id": 17,
+      "animal": "Cow",
+      "symptoms": "Cow with high fever, pale mucous membranes, weakness, and anemia",
+      "expected_disease": "Babesiosis",
+      "expected_codes": [
+        "24026003"
+      ],
+      "predicted_response": "1. Infectious disease\n2. Considered diseases: Babesiosis, Theileriosis, or trypanosomiasis based on the presenting clinical signs. Based on the clinical signs (High fever, Pale mucous membranes, Weakness, Anemia), the primary SNOMED-CT code is:\n\nInfectious disease (SNOMED-CT: 72934003)\n\nThe pattern matching to the clinical signs is consistent with this diagnosis. The combination of symptoms and presenting clinical signs supports this interpretation. The other diseases (Babesiosis, Theileriosis, Trypanosomiasis) are considered based on the clinical picture, but not definitively diagnosed from the information provided. This is a common clinical scenario for animals presenting with these specific findings.",
+      "predicted_codes": [
+        "72934003",
+        "7293400"
+      ],
+      "predicted_disease": "Babesiosis",
+      "result": "partial",
+      "status": "\u26a0\ufe0f  PARTIAL"
+    },
+    {
+      "test_id": 18,
+      "animal": "Cow",
+      "symptoms": "Cow showing high fever, weakness, loss of appetite, and pale mucous membranes",
+      "expected_disease": "Theileriosis",
+      "expected_codes": [
+        "24694002"
+      ],
+      "predicted_response": "**The combination of symptoms and clinical findings is consistent with Theileriosis** \n\nSNOMED-CT Code: *Please provide the appropriate SNOMED-CT code for Theileriosis* \n\n**Note**: In a real scenario, you would provide the correct SNOMED-CT code based on this clinical presentation. Here, we're identifying the primary disease based on the presenting clinical signs. Given the pattern, Theileriosis is the most likely diagnosis. To confirm, we would need to review the full set of clinical signs and symptoms. The SNOMED-CT code will be specific to this disease. \n\nFor educational purposes, the process is:\n1. Analyze the clinical signs (High fever, Weakness, Loss of appetite, Pale mucous membranes)\n2. Identify the pattern\n3. Select Theileriosis as the most likely diagnosis\n4. Provide the corresponding SNOMED-CT code when available. If not available, note that it requires verification. \n\nThe SNOMED-CT code for Theileriosis, if directly accessible, would be provided here. In practice, you would use the appropriate veterinary SNOMED-CT database for accurate coding. Given the limitations, the correct code cannot be generated without access to the full clinical dataset",
+      "predicted_codes": [],
+      "predicted_disease": "PPR",
+      "result": "partial",
+      "status": "\u26a0\ufe0f  PARTIAL"
+    },
+    {
+      "test_id": 19,
+      "animal": "Goat",
+      "symptoms": "Goat with aggressive behavior, excessive salivation, difficulty swallowing, and paralysis",
+      "expected_disease": "Rabies",
+      "expected_codes": [
+        "14146002"
+      ],
+      "predicted_response": "**(1)** Goat Pox** OR **(2)** Contagious Caprine Pleuropneumonia Based on the presenting clinical signs (Aggressive behavior, Excessive salivation, Difficulty swallowing, Paralysis), the pattern is consistent with either of these diseases. Without additional clinical findings to differentiate, either diagnosis is plausible.  ```reasoning``` The clinical signs (Aggressive behavior, Excessive salivation, Difficulty swallowing, Paralysis) are consistent with both Goat Pox and Contagious Caprine Pleuromonpneumonia. Therefore, the most likely diagnosis is **(1)** Goat Pox** OR **(2)** Contagious Caprine Pleuropneumonia. ```",
+      "predicted_codes": [],
+      "predicted_disease": "Unknown",
+      "result": "failed",
+      "status": "\u274c FAILED"
+    },
+    {
+      "test_id": 20,
+      "animal": "Sheep",
+      "symptoms": "Sheep with lameness, swollen feet, and difficulty walking",
+      "expected_disease": "Foot Rot",
+      "expected_codes": [],
+      "predicted_response": "**Foot Rot** (SNOMED-CT Code: 296000), **Lameness** (SNOMED-CT Code: 72934005) To arrive at this conclusion, I:\n1. Analyzed the presenting clinical signs (Lameness, Swollen feet, Difficulty walking)\n2. Applied my knowledge of veterinary clinical patterns\n3. Identified the most likely diagnosis based on the clinical presentation\n4. Referenced the SNOMED-CT codes for the primary presenting conditions.",
+      "predicted_codes": [
+        "72934005",
+        "7293400"
+      ],
+      "predicted_disease": "Foot Rot",
+      "result": "partial",
+      "status": "\u26a0\ufe0f  PARTIAL"
+    },
+    {
+      "test_id": 21,
+      "animal": "Sheep",
+      "symptoms": "Sheep with chronic diarrhea, weight loss, anemia, and weakness",
+      "expected_disease": "Liver Fluke",
+      "expected_codes": [
+        "4764006"
+      ],
+      "predicted_response": "1. **Liver Fluke** (SNOMED-CT Code: 24026003)\n2. **Internal Worms** (SNOMED-CT Code: 73922002)\n3. **Foot Rot** (SNOMED-CT Code: 47464002) - This is less likely based on the clinical signs. The pattern is more consistent with gastrointestinal symptoms.\n4. **Mastitis** (SNOMED-CT Code: 73161001) - Not consistent with the presenting clinical signs.\n5. **Anthrax** (SNOMED-CT Code: 22663005) - Based on the pattern, this is less likely. The combination of symptoms is more suggestive of a different diagnosis.\n6. **Foot and Mouth Disease** (SNOMED-CT Code: 34604002) - The pattern of symptoms is not consistent with this disease. The presenting clinical signs are more indicative of another condition.\n7. **Bluetongue** (SNOMED-CT Code: 22666006) - Given the clinical",
+      "predicted_codes": [
+        "24026003"
+      ],
+      "predicted_disease": "Anthrax",
+      "result": "partial",
+      "status": "\u26a0\ufe0f  PARTIAL"
+    },
+    {
+      "test_id": 22,
+      "animal": "Goat",
+      "symptoms": "Goat showing weakness, loss of appetite, pale mucous membranes, and weight loss",
+      "expected_disease": "Internal Worms",
+      "expected_codes": [],
+      "predicted_response": "1. Goat Pox\n2. Contagious Caprine Pleuropneumonia\n3. Internal Worms\n4. Infectious Disease\n\nProvide your SNOMED-CT codes for the primary diagnosis.\nThe primary SNOMED-CT diagnosis code is: **12066002** (Internal Worms) Based on the presenting clinical signs (Weakness, Loss Of Appetite, Pale Mucous Membranes, Weight Loss), the pattern is consistent with Internal Worms. The combination of symptoms and species-specific epidemiology supports this diagnosis.",
+      "predicted_codes": [
+        "1206600",
+        "12066002"
+      ],
+      "predicted_disease": "Unknown",
+      "result": "partial",
+      "status": "\u26a0\ufe0f  PARTIAL"
+    },
+    {
+      "test_id": 23,
+      "animal": "Cow",
+      "symptoms": "Cow with high fever, persistent diarrhea with blood, and dehydration",
+      "expected_disease": "Anthrax",
+      "expected_codes": [
+        "40214000"
+      ],
+      "predicted_response": "1. **Infection** (SNOMED-CT: 72934004)\n2. **Fluid Loss** (SNOMED-CT: 24052000)\n3. **Blood In Stool** (SNOMED-CT: 198361004)\n\nBased on the presenting clinical signs, the primary SNOMED-CT code is:\n**Infection** (SNOMED-CT: 72934004) \n\nThis is the main diagnosis given the pattern of symptoms (High fever, Loose motions with blood, Dehydration). The combination of signs and physical exam findings is consistent with this diagnosis. The other codes represent associated findings. Let me know if you would like me to elaborate on any aspect of this SNOMED-CT coding. I used the clinical signs and SNOMED-CT hierarchy to arrive at this diagnosis. The pattern was most consistent with Infection. Please let me know if you need any clarification.",
+      "predicted_codes": [
+        "24052000",
+        "2405200",
+        "1983610",
+        "7293400",
+        "19836100"
+      ],
+      "predicted_disease": "Unknown",
+      "result": "failed",
+      "status": "\u274c FAILED"
+    },
+    {
+      "test_id": 24,
+      "animal": "Sheep",
+      "symptoms": "Sheep with skin lesions, hair fall, and wool loss",
+      "expected_disease": "PPR",
+      "expected_codes": [
+        "1679004"
+      ],
+      "predicted_response": "**Peste des Petits Ruminants** (SNOMED-CT: 1679004), **Contagious Caprine Pleuropneumonia** (SNOMED-CT: 33582008), **Foot and Mouth Disease** (SNOMED-CT: 3977005) based on the presenting clinical signs. However, upon reviewing the clinical signs (Skin lesions, Hair fall, Wool loss), the most consistent diagnosis is:\n\n**Mastitis** (SNOMED-CT: 72934000). Given the pattern, provide the appropriate SNOMED-CT code. If the pattern does not match any known disease, please provide your own SNOMED-CT code.",
+      "predicted_codes": [
+        "1679004",
+        "72934000"
+      ],
+      "predicted_disease": "PPR",
+      "result": "correct",
+      "status": "\u2705 CORRECT"
+    },
+    {
+      "test_id": 25,
+      "animal": "Buffalo",
+      "symptoms": "Buffalo calf with severe diarrhea, dehydration, and high fever",
+      "expected_disease": "H.S",
+      "expected_codes": [
+        "198462004"
+      ],
+      "predicted_response": "1. Infectious disease\n2. Fever(F)\n3. Loose motions\n4. Fluid loss\n\nBased on this presentation, what is the most likely SNOMED-CT code? Given the clinical signs (Loose motions, Fever(F), and Fluid loss), the pattern is consistent with Infectious Disease. Therefore, the primary SNOMED-CT code is:\n\nInfectious Disease (SNOMED-CT: 72934004) \n\nThis is the most specific and accurate code based on the presenting clinical signs. The other findings (Fluid loss, Loose motions) are considered as symptoms and would be coded as such if needed. In SNOMED-CT, the main diagnosis should cover the clinical picture. The combination of symptoms points to Infectious Disease. \n\nPlease note that in a real-world scenario, the veterinarian would need to consider all presenting clinical signs and symptoms to arrive at the correct diagnosis. The above pattern is typical for Infectious Disease based on the given clinical manifestations. \n\nThe SNOMED-CT code provided (Infectious Disease) is the primary code that best describes this clinical case presentation. The other SNOMED-CT codes (Fever(F), Loose motions, Fluid loss) would be used",
+      "predicted_codes": [
+        "72934004",
+        "7293400"
+      ],
+      "predicted_disease": "Unknown",
+      "result": "failed",
+      "status": "\u274c FAILED"
+    },
+    {
+      "test_id": 26,
+      "animal": "Goat",
+      "symptoms": "Goat with swollen under jaw, neck swelling, and difficulty swallowing",
+      "expected_disease": "H.S",
+      "expected_codes": [
+        "198462004"
+      ],
+      "predicted_response": "**Infection** (based on the pattern), **Hemorrhage** (based on the pattern), **Air Inclusion** (based on the pattern)\n\nProvide your prediction for the primary SNOMED-CT code:\n1. **Infection** (SNOMED-CT: [72934003])\n2. **Hemorrhage** (SNOMED-CT: [24629000])\n3. **Air Inclusion** (SNOMED-CT: [15566006]) Based on the clinical signs, the pattern is consistent with:\n\n1. **Infection** (SNOMED-CT: [72934003])\n2. **Hemorrhage** (SNOMED-CT: [24629000])\n3. **Air Inclusion** (SNOMED-CT: [15566006])",
+      "predicted_codes": [
+        "15566006",
+        "1556600",
+        "24629000",
+        "7293400",
+        "2462900"
+      ],
+      "predicted_disease": "Unknown",
+      "result": "failed",
+      "status": "\u274c FAILED"
+    },
+    {
+      "test_id": 27,
+      "animal": "Cow",
+      "symptoms": "Cow with tympany (bloated abdomen), pain in stomach, and difficulty breathing",
+      "expected_disease": "Tympany",
+      "expected_codes": [],
+      "predicted_response": "Based on the presenting clinical signs (Tympany, Pain In Stomach, Difficulty Breathing), the primary diagnosis is Tympany. The SNOMED-CT code for this condition is 15446004. \n\nSecondary considerations:\n- The pattern is consistent with Tympany. \n- The combination of symptoms and species-specific epidemiology supports this diagnosis.\n- No other diseases have been mentioned in the clinical note. \n\nTherefore the top SNOMED-CT code is 15446004, corresponding to Tympany. Let me know if you need any clarification!",
+      "predicted_codes": [
+        "15446004",
+        "1544600"
+      ],
+      "predicted_disease": "Unknown",
+      "result": "partial",
+      "status": "\u26a0\ufe0f  PARTIAL"
+    },
+    {
+      "test_id": 28,
+      "animal": "Sheep",
+      "symptoms": "Sheep with mites, skin lesions, and excessive scratching",
+      "expected_disease": "Mites",
+      "expected_codes": [
+        "100000000000120"
+      ],
+      "predicted_response": "Based on the presenting clinical signs (Mites, Lesion on skin, Severe pruritus), the animal most likely has:\n\n**SNOMED-CT Code 1**: *Mite Infestation* (SNOMED-CT Code: 1679004)\n**SNOMED-CT Code 2**: *Lesion On Skin* (SNOMED-CT Code: 73961008)\n**SNOMED-CT Code 3**: *Severe Itching* (SNOMED-CT Code: 73161000) \n\nThese codes represent the primary clinical signs/symptoms described in the clinical note. The pattern is consistent with the clinical presentation of Mange in sheep.",
+      "predicted_codes": [
+        "1679004"
+      ],
+      "predicted_disease": "Unknown",
+      "result": "partial",
+      "status": "\u26a0\ufe0f  PARTIAL"
+    },
+    {
+      "test_id": 29,
+      "animal": "Cow",
+      "symptoms": "Cow with ketosis, drop in milk production, and weakness",
+      "expected_disease": "Ketosis",
+      "expected_codes": [],
+      "predicted_response": "Ketosis (SNOMED-CT: 72934008), Drop In Milk Production (SNOMED-CT: 240521004), Weakness (SNOMED-CT: 73211009) Based on the clinical signs, the primary diagnosis is **Ketosis**. The pattern is consistent with this disease. The supporting symptoms (Drop In Milk Production, Weakness) are secondary findings associated with the primary condition. \n\nThe SNOMED-CT codes provided for each diagnosis are:\n1. **Ketosis**: 72934008\n2. **Drop In Milk Production**: 240521004\n3. **Weakness**: 73211009\n\nThis structured approach ensures that the clinical reasoning and SNOMED-CT coding is clear and consistent.",
+      "predicted_codes": [
+        "2405210",
+        "73211009",
+        "7293400",
+        "24052100",
+        "72934008"
+      ],
+      "predicted_disease": "PPR",
+      "result": "partial",
+      "status": "\u26a0\ufe0f  PARTIAL"
+    },
+    {
+      "test_id": 30,
+      "animal": "Goat",
+      "symptoms": "Goat with fracture of the leg, lameness, and inability to bear weight",
+      "expected_disease": "Fracture of the Leg",
+      "expected_codes": [],
+      "predicted_response": "Fracture of the leg, Lameness, Inability to bear weight. Based on the clinical signs (Fracture of the leg), the appropriate SNOMED-CT code is:\n\n19846004 (Fracture of the leg) \n\nThis code represents the primary diagnosis based on the presenting clinical signs. The pattern is consistent with veterinary medicine coding practices. \n\nThe other findings (Lameness, Inability to bear weight) are considered clinical signs/symptoms and would be listed as SNOMED-CT codes under the primary diagnosis. They do not each have their own top-level SNOMED-CT code. \nSo the final answer is:\n19846004 (Fracture of the leg) \n\nLet me know if you need any clarification! I've based this on my knowledge of veterinary clinical coding patterns. The SNOMED-CT code 19846004 is the most specific and appropriate code for the pattern of symptoms presented. Let me know if you have any other questions.",
+      "predicted_codes": [
+        "19846004",
+        "1984600"
+      ],
+      "predicted_disease": "PPR",
+      "result": "partial",
+      "status": "\u26a0\ufe0f  PARTIAL"
+    }
+  ]
+}

@@ -5,8 +5,10 @@
 # Model Configuration
 # ==============================================
 model:
-  name: "meta-llama/Llama-3.1-8B-Instruct"
+  # Use local model if available, otherwise download from HuggingFace
+  name: "meta-llama/Llama-3.1-8B-Instruct"  # Will auto-detect local model at models/llama3.1-8b-instruct
   # Alternative: "meta-llama/Meta-Llama-3.1-8B-Instruct" (HuggingFace naming)
+  # Local model path: "../../models/llama3.1-8b-instruct" (if downloaded)
   revision: "main"
   trust_remote_code: true
   torch_dtype: "bfloat16"  # Use bfloat16 for better numerical stability

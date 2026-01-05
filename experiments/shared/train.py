@@ -24,6 +24,7 @@ from transformers import (
     Trainer,
     DataCollatorForLanguageModeling,
     set_seed,
+    EarlyStoppingCallback,
 )
 from datasets import Dataset, load_dataset
 from peft import (
@@ -137,7 +138,15 @@ def load_model_and_tokenizer(config: TrainingConfig):
     model_cfg = config.model_config
     model_name = model_cfg.get('name')
     
-    logger.info(f"Loading model: {model_name}")
+    # Check for local model first (faster loading)
+    local_model_path = Path("models/llama3.1-8b-instruct")
+    if local_model_path.exists() and (local_model_path / "config.json").exists():
+        logger.info(f"Found local model at: {local_model_path}")
+        logger.info(f"Using local model instead of downloading from HuggingFace")
+        model_name = str(local_model_path.absolute())
+    else:
+        logger.info(f"Loading model from HuggingFace: {model_name}")
+        logger.info("(Tip: Download model first with 'python download_llama3.1.py' for faster startup)")
     
     # Get quantization config
     bnb_config = get_quantization_config(config)
@@ -150,6 +159,7 @@ def load_model_and_tokenizer(config: TrainingConfig):
         model_name,
         trust_remote_code=model_cfg.get('trust_remote_code', True),
         padding_side="right",
+        token=True,  # Use HuggingFace token if needed
     )
     
     # Set pad token if not set
@@ -158,13 +168,23 @@ def load_model_and_tokenizer(config: TrainingConfig):
         tokenizer.pad_token_id = tokenizer.eos_token_id
     
     # Load model
+    # Check if flash_attention_2 is available
+    attn_impl = None
+    if torch.cuda.is_available():
+        try:
+            import flash_attn
+            attn_impl = "flash_attention_2"
+        except ImportError:
+            logger.warning("flash_attention_2 not available, using default attention")
+    
     model = AutoModelForCausalLM.from_pretrained(
         model_name,
         quantization_config=bnb_config,
-        torch_dtype=torch_dtype,
+        dtype=torch_dtype,  # Use dtype instead of deprecated torch_dtype
         device_map=config._config.get('hardware', {}).get('device_map', 'auto'),
         trust_remote_code=model_cfg.get('trust_remote_code', True),
-        attn_implementation="flash_attention_2" if torch.cuda.is_available() else None,
+        attn_implementation=attn_impl,
+        token=True,  # Use HuggingFace token if needed
     )
     
     # Prepare model for k-bit training
@@ -271,7 +291,7 @@ def get_training_arguments(config: TrainingConfig) -> TrainingArguments:
         gradient_checkpointing=training_cfg.get('gradient_checkpointing', True),
         gradient_checkpointing_kwargs=gc_kwargs if gc_kwargs else None,
         max_grad_norm=training_cfg.get('max_grad_norm', 1.0),
-        evaluation_strategy=training_cfg.get('evaluation_strategy', 'steps'),
+        eval_strategy=training_cfg.get('evaluation_strategy', training_cfg.get('eval_strategy', 'steps')),
         eval_steps=training_cfg.get('eval_steps', 100),
         save_strategy=training_cfg.get('save_strategy', 'steps'),
         save_steps=training_cfg.get('save_steps', 100),
@@ -325,7 +345,19 @@ def train(config_path: str):
     # Get training arguments
     training_args = get_training_arguments(config)
     
-    # Create trainer
+    # Create trainer with early stopping if validation dataset exists
+    callbacks = []
+    if val_dataset is not None:
+        early_stopping_patience = config.training_config.get('early_stopping_patience', 3)
+        early_stopping_threshold = config.training_config.get('early_stopping_threshold', 0.001)
+        callbacks.append(
+            EarlyStoppingCallback(
+                early_stopping_patience=early_stopping_patience,
+                early_stopping_threshold=early_stopping_threshold,
+            )
+        )
+        logger.info(f"Early stopping enabled: patience={early_stopping_patience}, threshold={early_stopping_threshold}")
+    
     trainer = Trainer(
         model=model,
         args=training_args,
@@ -333,11 +365,18 @@ def train(config_path: str):
         eval_dataset=val_dataset,
         data_collator=data_collator,
         tokenizer=tokenizer,
+        callbacks=callbacks if callbacks else None,
     )
     
     # Train
     logger.info("Starting training...")
-    train_result = trainer.train()
+    # Check if we should resume from checkpoint
+    resume_from_checkpoint = config.training_config.get('resume_from_checkpoint', None)
+    if resume_from_checkpoint and Path(resume_from_checkpoint).exists():
+        logger.info(f"Resuming training from checkpoint: {resume_from_checkpoint}")
+        train_result = trainer.train(resume_from_checkpoint=resume_from_checkpoint)
+    else:
+        train_result = trainer.train()
     
     # Save final model
     logger.info("Saving final model...")

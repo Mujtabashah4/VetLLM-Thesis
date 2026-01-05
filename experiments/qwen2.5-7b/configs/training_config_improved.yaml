@@ -1,0 +1,149 @@
+# VetLLM Training Configuration - Qwen2.5 7B Instruct
+# IMPROVED VERSION: With data augmentation and class-weighted loss
+
+# ==============================================
+# Model Configuration
+# ==============================================
+model:
+  name: "/home/iml_admin/Desktop/VetLLM/VetLLM-Thesis/models/qwen2.5-7b-instruct"
+  revision: "main"
+  trust_remote_code: true
+  torch_dtype: "bfloat16"
+
+# ==============================================
+# Quantization Configuration (QLoRA)
+# ==============================================
+quantization:
+  enabled: false
+  load_in_4bit: true
+  bnb_4bit_quant_type: "nf4"
+  bnb_4bit_compute_dtype: "bfloat16"
+  bnb_4bit_use_double_quant: true
+
+# ==============================================
+# LoRA Configuration
+# ==============================================
+lora:
+  r: 16
+  lora_alpha: 32
+  lora_dropout: 0.05
+  bias: "none"
+  task_type: "CAUSAL_LM"
+  target_modules:
+    - "q_proj"
+    - "k_proj"
+    - "v_proj"
+    - "o_proj"
+    - "gate_proj"
+    - "up_proj"
+    - "down_proj"
+
+# ==============================================
+# Training Arguments
+# ==============================================
+training:
+  output_dir: "../checkpoints_improved"
+  num_train_epochs: 7  # With early stopping
+  
+  # Batch size configuration
+  per_device_train_batch_size: 2
+  per_device_eval_batch_size: 2
+  gradient_accumulation_steps: 8
+  
+  # Learning rate configuration
+  learning_rate: 1.0e-4
+  weight_decay: 0.01
+  warmup_ratio: 0.03
+  lr_scheduler_type: "cosine"
+  
+  # Sequence length
+  max_seq_length: 512
+  
+  # Gradient handling
+  gradient_checkpointing: true
+  gradient_checkpointing_kwargs:
+    use_reentrant: false
+  max_grad_norm: 1.0
+  
+  # Evaluation and saving
+  evaluation_strategy: "steps"
+  eval_steps: 30  # Adjust for augmented dataset (716 samples / 16 batch = ~45 steps/epoch)
+  save_strategy: "steps"
+  save_steps: 30
+  save_total_limit: 5
+  load_best_model_at_end: true
+  metric_for_best_model: "eval_loss"
+  greater_is_better: false
+  
+  # Logging
+  logging_strategy: "steps"
+  logging_steps: 10
+  logging_first_step: true
+  report_to: "none"
+  
+  # Optimization
+  optim: "adamw_torch"
+  fp16: false
+  bf16: true
+  
+  # Early stopping (prevents overfitting)
+  early_stopping_patience: 3
+  early_stopping_threshold: 0.001
+  
+  # Misc
+  seed: 42
+  data_seed: 42
+  remove_unused_columns: false
+  dataloader_num_workers: 4
+  group_by_length: true
+
+# ==============================================
+# Data Configuration
+# ==============================================
+data:
+  train_file: "data/train_balanced.json"  # ✅ Using balanced dataset (augmented + oversampled)
+  validation_file: "data/validation.json"
+  test_file: "data/test.json"
+  text_field: "text"
+  preprocessing_num_workers: 4
+
+# ==============================================
+# Improvement Settings
+# ==============================================
+improvements:
+  use_augmented_data: true  # ✅ Use augmented training data
+  use_class_weights: true   # ✅ Use class-weighted loss
+  class_weight_method: "inverse_frequency"  # Calculate weights from data
+
+# ==============================================
+# Wandb Configuration
+# ==============================================
+wandb:
+  project: "vetllm-experiments"
+  entity: null
+  name: "qwen2.5-7b-vetllm-improved"
+  tags:
+    - "qwen2.5"
+    - "7b"
+    - "lora"
+    - "veterinary"
+    - "diagnosis"
+    - "improved"
+    - "augmented"
+
+# ==============================================
+# Hardware Configuration
+# ==============================================
+hardware:
+  device_map: "auto"
+
+# ==============================================
+# Experiment Metadata
+# ==============================================
+experiment:
+  name: "qwen2.5-7b-vetllm-improved"
+  description: "Fine-tuning Qwen2.5 7B with data augmentation and class-weighted loss"
+  version: "2.0"
+  author: "VetLLM Research Team"
+  date: "2026-01"
+

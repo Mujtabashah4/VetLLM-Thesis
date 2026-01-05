@@ -1,0 +1,1572 @@
+{
+  "metrics": {
+    "disease_classification": {
+      "accuracy": 0.5,
+      "precision_macro": 0.15407188516432216,
+      "recall_macro": 0.1918081918081918,
+      "f1_macro": 0.16442875615978753,
+      "f1_micro": 0.5,
+      "f1_weighted": 0.40041344843253074
+    },
+    "snomed_code": {
+      "accuracy": 0.3375,
+      "correct": 27,
+      "total": 80
+    },
+    "per_disease": {
+      "Anthrax": {
+        "total": 3,
+        "correct": 0,
+        "accuracy": 0.0
+      },
+      "Black Quarter": {
+        "total": 5,
+        "correct": 0,
+        "accuracy": 0.0
+      },
+      "Contagious Caprine Pleuropneumonia": {
+        "total": 6,
+        "correct": 0,
+        "accuracy": 0.0
+      },
+      "Foot Rot": {
+        "total": 2,
+        "correct": 0,
+        "accuracy": 0.0
+      },
+      "Foot and Mouth Disease": {
+        "total": 14,
+        "correct": 12,
+        "accuracy": 0.8571428571428571
+      },
+      "Fracture of the Leg": {
+        "total": 1,
+        "correct": 0,
+        "accuracy": 0.0
+      },
+      "Hemorrhagic Septicemia": {
+        "total": 12,
+        "correct": 0,
+        "accuracy": 0.0
+      },
+      "Infection": {
+        "total": 1,
+        "correct": 0,
+        "accuracy": 0.0
+      },
+      "Ketosis": {
+        "total": 1,
+        "correct": 0,
+        "accuracy": 0.0
+      },
+      "Laminitis": {
+        "total": 1,
+        "correct": 0,
+        "accuracy": 0.0
+      },
+      "Mastitis": {
+        "total": 11,
+        "correct": 8,
+        "accuracy": 0.7272727272727273
+      },
+      "Peste des Petits Ruminants": {
+        "total": 22,
+        "correct": 20,
+        "accuracy": 0.9090909090909091
+      },
+      "Theileriosis": {
+        "total": 1,
+        "correct": 0,
+        "accuracy": 0.0
+      }
+    },
+    "total_samples": 80
+  },
+  "results": [
+    {
+      "sample_id": 1,
+      "species": "Sheep",
+      "symptoms": "fever, labial vesicles, and bloody diarrhea (dysentery)",
+      "expected_disease": "Peste des Petits Ruminants",
+      "predicted_disease": "Peste des Petits Ruminants",
+      "expected_snomed": [
+        "1679004"
+      ],
+      "predicted_snomed": [
+        "1679004",
+        "1679004"
+      ],
+      "response": "1. **Primary Diagnosis**: **Peste des Petits Ruminants** (SNOMED-CT: 1679004)\n\n2. **Differential Diagnoses**:\n   - Goat Pox\n   - Contagious Ecthyma\n   - Bluetongue\n\n3. **Recommended Treatment**:\nSupportive care, antibiotics for secondary infections. Vaccination of herd.\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Fever(F), blisters on lips, Loose motions with blood), the pattern is consistent with Peste des Petits Ruminants. The combination of symptoms and species-specific epidemiology supports this diagnosis.",
+      "correct_disease": true,
+      "correct_snomed": true
+    },
+    {
+      "sample_id": 2,
+      "species": "Sheep",
+      "symptoms": "lameness",
+      "expected_disease": "Laminitis",
+      "predicted_disease": "Peste des Petits Ruminants",
+      "expected_snomed": [
+        "VET_LAMINITIS_001"
+      ],
+      "predicted_snomed": [
+        "29600000",
+        "29600000"
+      ],
+      "response": "1. **Primary Diagnosis**: **Foot Rot** (SNOMED-CT: 29600000)\n\n2. **Differential Diagnoses**:\n   - Infectious disease\n   - Metabolic disorder\n   - Toxicosis\n\n3. **Recommended Treatment**:\nSymptomatic treatment, supportive care, and appropriate antimicrobials based on clinical presentation.\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Lameness), the pattern is consistent with Foot Rot. The combination of symptoms and species-specific epidemiology supports this diagnosis.",
+      "correct_disease": false,
+      "correct_snomed": false
+    },
+    {
+      "sample_id": 3,
+      "species": "Buffalo",
+      "symptoms": "oral frothing (salivation) and oral vesicles/ulcers",
+      "expected_disease": "Foot and Mouth Disease",
+      "predicted_disease": "Foot and Mouth Disease",
+      "expected_snomed": [
+        "3974005"
+      ],
+      "predicted_snomed": [
+        "3974002"
+      ],
+      "response": "1. **Primary Diagnosis**: **Foot and Mouth Disease** (SNOMED-CT: 3974002)\n\n2. **Differential Diagnoses**:\n   - Vesicular Stomatitis\n   - Bluetongue\n   - Bovine Viral Diarrhea\n\n3. **Recommended Treatment**:\nSupportive care, isolation, wound care for lesions. Notify authorities (notifiable disease). \n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Mouth Frothing, Blisters In Mouth), the pattern is consistent with Foot and Mouth Disease. The combination of symptoms and species-specific epidemiology supports this diagnosis.",
+      "correct_disease": true,
+      "correct_snomed": false
+    },
+    {
+      "sample_id": 4,
+      "species": "Buffalo",
+      "symptoms": "tongue protrusion, dyspnea (respiratory distress), open-mouth breathing, and high fever",
+      "expected_disease": "Hemorrhagic Septicemia",
+      "predicted_disease": "Peste des Petits Ruminants",
+      "expected_snomed": [
+        "198462004"
+      ],
+      "predicted_snomed": [
+        "19806200"
+      ],
+      "response": "1. **Primary Diagnosis**: **Hemorrhagic Septicemia** (SNOMED-CT: 198062004)\n\n2. **Differential Diagnoses**:\n   - Infectious disease\n   - Metabolic disorder\n   - Toxicosis\n\n3. **Recommended Treatment**:\nSymptomatic treatment, supportive care, and appropriate antimicrobials based on clinical presentation.\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Tongue Coming Out Of Mouth, Difficulty In Breathing, Breathing While Extended Neck...), the pattern is consistent with Hemorrhagic Septicemia. The combination of symptoms and species-specific epidemiology supports this diagnosis.",
+      "correct_disease": false,
+      "correct_snomed": false
+    },
+    {
+      "sample_id": 5,
+      "species": "Goat",
+      "symptoms": "mucopurulent discharge, diarrhea, labial vesicles, and nasal discharge",
+      "expected_disease": "Peste des Petits Ruminants",
+      "predicted_disease": "Peste des Petits Ruminants",
+      "expected_snomed": [
+        "1679004"
+      ],
+      "predicted_snomed": [
+        "2260006",
+        "2260006"
+      ],
+      "response": "1. **Primary Diagnosis**: **Contagious Caprine Pleuropneumonia** (SNOMED-CT: 2260006)\n\n2. **Differential Diagnoses**:\n   - Infectious disease\n   - Metabolic disorder\n   - Toxicosis\n\n3. **Recommended Treatment**:\nSymptomatic treatment, supportive care, and appropriate antimicrobials based on clinical presentation.\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Water or fluid leakage from eyes,nose or mouth, Loose motions...), the pattern is consistent with Contagious Caprine Pleuropneumonia. The combination of symptoms and species-specific epidemiology supports this diagnosis.",
+      "correct_disease": true,
+      "correct_snomed": false
+    },
+    {
+      "sample_id": 6,
+      "species": "Cow",
+      "symptoms": "oral frothing (salivation), decreased milk production, oral vesicles/ulcers, and foot vesicles/lesions",
+      "expected_disease": "Foot and Mouth Disease",
+      "predicted_disease": "Foot and Mouth Disease",
+      "expected_snomed": [
+        "3974005"
+      ],
+      "predicted_snomed": [
+        "3974006"
+      ],
+      "response": "1. **Primary Diagnosis**: **Foot and Mouth Disease** (SNOMED-CT: 3974006)\n\n2. **Differential Diagnoses**:\n   - Vesicular Stomatitis\n   - Bluetongue\n   - Bovine Viral Diarrhea\n\n3. **Recommended Treatment**:\nSupportive care, isolation, wound care for lesions. Notify authorities (notifiable disease).\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Mouth Frothing, Drop In Milk Production, Blisters In Mouth...), the pattern is consistent with Foot and Mouth Disease. The combination of symptoms and species-specific epidemiology supports this diagnosis.",
+      "correct_disease": true,
+      "correct_snomed": false
+    },
+    {
+      "sample_id": 7,
+      "species": "Cow",
+      "symptoms": "abnormal milk consistency (clotted)",
+      "expected_disease": "Mastitis",
+      "predicted_disease": "Mastitis",
+      "expected_snomed": [
+        "72934000"
+      ],
+      "predicted_snomed": [
+        "72934000",
+        "72934000"
+      ],
+      "response": "1. **Primary Diagnosis**: **Mastitis** (SNOMED-CT: 72934000)\n\n2. **Differential Diagnoses**:\n   - Udder edema\n   - Teat injury\n   - Mammary abscess\n\n3. **Recommended Treatment**:\nIntramammary antibiotics, systemic antibiotics if systemic signs. Frequent milking.\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Milk In Semi Solid Form), the pattern is consistent with Mastitis. The combination of symptoms and species-specific epidemiology supports this diagnosis.",
+      "correct_disease": true,
+      "correct_snomed": true
+    },
+    {
+      "sample_id": 8,
+      "species": "Goat",
+      "symptoms": "lameness",
+      "expected_disease": "Foot Rot",
+      "predicted_disease": "Peste des Petits Ruminants",
+      "expected_snomed": [
+        "VET_FOOTROT_001"
+      ],
+      "predicted_snomed": [],
+      "response": "1. **Primary Diagnosis**: **Foot Rot** (SNOMED-CT: VET_FOOTROT_001)\n\n2. **Differential Diagnoses**:\n   - Infectious disease\n   - Metabolic disorder\n   - Toxicosis\n\n3. **Recommended Treatment**:\nSymptomatic treatment, supportive care, and appropriate antimicrobials based on clinical presentation.\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Lameness), the pattern is consistent with Foot Rot. The combination of symptoms and species-specific epidemiology supports this diagnosis.",
+      "correct_disease": false,
+      "correct_snomed": false
+    },
+    {
+      "sample_id": 9,
+      "species": "Cow",
+      "symptoms": "lameness, oral frothing (salivation), oral vesicles/ulcers, foot vesicles/lesions, epistaxis (nasal bleeding), high fever, and abortion/pregnancy loss",
+      "expected_disease": "Foot and Mouth Disease",
+      "predicted_disease": "Foot and Mouth Disease",
+      "expected_snomed": [
+        "3974005"
+      ],
+      "predicted_snomed": [
+        "3974002"
+      ],
+      "response": "1. **Primary Diagnosis**: **Foot and Mouth Disease** (SNOMED-CT: 3974002)\n\n2. **Differential Diagnoses**:\n   - Vesicular Stomatitis\n   - Bluetongue\n   - Bovine Viral Diarrhea\n\n3. **Recommended Treatment**:\nSupportive care, isolation, wound care for lesions. Notify authorities (notifiable disease). \n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Lameness, Mouth Frothing, Blisters In Mouth...), the pattern is consistent with Foot and Mouth Disease. The combination of symptoms and species-specific epidemiology supports this diagnosis.",
+      "correct_disease": true,
+      "correct_snomed": false
+    },
+    {
+      "sample_id": 10,
+      "species": "Goat",
+      "symptoms": "muscle rigidity/tetany",
+      "expected_disease": "Ketosis",
+      "predicted_disease": "Foot and Mouth Disease",
+      "expected_snomed": [
+        "VET_KETOSIS_001"
+      ],
+      "predicted_snomed": [
+        "3974006"
+      ],
+      "response": "1. **Primary Diagnosis**: **Foot and Mouth Disease** (SNOMED-CT: 3974006)\n\n2. **Differential Diagnoses**:\n   - Vesicular Stomatitis\n   - Bluetongue\n   - Bovine Viral Diarrhea\n\n3. **Recommended Treatment**:\nSupportive care, isolation, wound care for lesions. Notify authorities (notifiable disease).\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Stiffening of body), the pattern is consistent with Foot and Mouth Disease. The combination of symptoms and species-specific epidemiology supports this diagnosis.",
+      "correct_disease": false,
+      "correct_snomed": false
+    },
+    {
+      "sample_id": 11,
+      "species": "Cow",
+      "symptoms": "oral frothing (salivation), dyspnea (respiratory distress), and open-mouth breathing",
+      "expected_disease": "Hemorrhagic Septicemia",
+      "predicted_disease": "Peste des Petits Ruminants",
+      "expected_snomed": [
+        "198462004"
+      ],
+      "predicted_snomed": [
+        "19806200"
+      ],
+      "response": "1. **Primary Diagnosis**: **Hemorrhagic Septicemia** (SNOMED-CT: 198062004)\n\n2. **Differential Diagnoses**:\n   - Infectious disease\n   - Metabolic disorder\n   - Toxicosis\n\n3. **Recommended Treatment**:\nSymptomatic treatment, supportive care, and appropriate antimicrobials based on clinical presentation.\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Mouth Frothing, Difficulty In Breathing, Breathing While Mouth Open), the pattern is consistent with Hemorrhagic Septicemia. The combination of symptoms and species-specific epidemiology supports this diagnosis.",
+      "correct_disease": false,
+      "correct_snomed": false
+    },
+    {
+      "sample_id": 12,
+      "species": "Goat",
+      "symptoms": "fever, labial vesicles, and nasal discharge",
+      "expected_disease": "Peste des Petits Ruminants",
+      "predicted_disease": "Peste des Petits Ruminants",
+      "expected_snomed": [
+        "1679004"
+      ],
+      "predicted_snomed": [
+        "1679004",
+        "1679004"
+      ],
+      "response": "1. **Primary Diagnosis**: **Peste des Petits Ruminants** (SNOMED-CT: 1679004)\n\n2. **Differential Diagnoses**:\n   - Goat Pox\n   - Contagious Ecthyma\n   - Bluetongue\n\n3. **Recommended Treatment**:\nSupportive care, antibiotics for secondary infections. Vaccination of herd.\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Fever(F), blisters on lips, Fluid leakage from nose), the pattern is consistent with Peste des Petits Ruminants. The combination of symptoms and species-specific epidemiology supports this diagnosis.",
+      "correct_disease": true,
+      "correct_snomed": true
+    },
+    {
+      "sample_id": 13,
+      "species": "Cow",
+      "symptoms": "subcutaneous emphysema (crepitus) and high fever",
+      "expected_disease": "Black Quarter",
+      "predicted_disease": "Anthrax",
+      "expected_snomed": [
+        "29600000"
+      ],
+      "predicted_snomed": [
+        "29600000",
+        "29600000"
+      ],
+      "response": "1. **Primary Diagnosis**: **Black Quarter** (SNOMED-CT: 29600000)\n\n2. **Differential Diagnoses**:\n   - Anthrax\n   - Malignant Edema\n   - Bacillary Hemoglobinuria\n\n3. **Recommended Treatment**:\nHigh-dose penicillin G, anti-inflammatory therapy. Surgical debridement if localized.\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Air/ crapitatifeelings at surface of any Body part, Very High Fever), the pattern is consistent with Black Quarter. The combination of symptoms and species-specific epidemiology supports this diagnosis.",
+      "correct_disease": false,
+      "correct_snomed": true
+    },
+    {
+      "sample_id": 14,
+      "species": "Sheep",
+      "symptoms": "fever and udder edema/mastitis",
+      "expected_disease": "Mastitis",
+      "predicted_disease": "Mastitis",
+      "expected_snomed": [
+        "72934000"
+      ],
+      "predicted_snomed": [
+        "72934000",
+        "72934000"
+      ],
+      "response": "1. **Primary Diagnosis**: **Mastitis** (SNOMED-CT: 72934000)\n\n2. **Differential Diagnoses**:\n   - Udder edema\n   - Teat injury\n   - Mammary abscess\n\n3. **Recommended Treatment**:\nIntramammary antibiotics, systemic antibiotics if systemic signs. Frequent milking.\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Fever(F), Udder become swollen), the pattern is consistent with Mastitis. The combination of symptoms and species-specific epidemiology supports this diagnosis.",
+      "correct_disease": true,
+      "correct_snomed": true
+    },
+    {
+      "sample_id": 15,
+      "species": "Goat",
+      "symptoms": "fever, diarrhea, and labial vesicles",
+      "expected_disease": "Peste des Petits Ruminants",
+      "predicted_disease": "Peste des Petits Ruminants",
+      "expected_snomed": [
+        "1679004"
+      ],
+      "predicted_snomed": [
+        "1679004",
+        "1679004"
+      ],
+      "response": "1. **Primary Diagnosis**: **Peste des Petits Ruminants** (SNOMED-CT: 1679004)\n\n2. **Differential Diagnoses**:\n   - Goat Pox\n   - Contagious Ecthyma\n   - Bluetongue\n\n3. **Recommended Treatment**:\nSupportive care, antibiotics for secondary infections. Vaccination of herd.\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Fever(F), Loose motions, blisters on lips), the pattern is consistent with Peste des Petits Ruminants. The combination of symptoms and species-specific epidemiology supports this diagnosis.",
+      "correct_disease": true,
+      "correct_snomed": true
+    },
+    {
+      "sample_id": 16,
+      "species": "Goat",
+      "symptoms": "fever, mucopurulent discharge, labial vesicles, and nasal discharge",
+      "expected_disease": "Peste des Petits Ruminants",
+      "predicted_disease": "Peste des Petits Ruminants",
+      "expected_snomed": [
+        "1679004"
+      ],
+      "predicted_snomed": [
+        "2260006",
+        "2260006"
+      ],
+      "response": "1. **Primary Diagnosis**: **Contagious Caprine Pleuropneumonia** (SNOMED-CT: 2260006)\n\n2. **Differential Diagnoses**:\n   - Infectious disease\n   - Metabolic disorder\n   - Toxicosis\n\n3. **Recommended Treatment**:\nSymptomatic treatment, supportive care, and appropriate antimicrobials based on clinical presentation.\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Fever(F), Water or fluid leakage from eyes,nose or mouth, blisters on lips...), the pattern is consistent with Contagious Caprine Pleuropneumonia. The combination of symptoms and species-specific epidemiology supports this diagnosis.",
+      "correct_disease": true,
+      "correct_snomed": false
+    },
+    {
+      "sample_id": 17,
+      "species": "Cow",
+      "symptoms": "lameness, decreased milk production, teat lesions/nodules, and limb muscle discoloration",
+      "expected_disease": "Mastitis",
+      "predicted_disease": "Mastitis",
+      "expected_snomed": [
+        "72934000"
+      ],
+      "predicted_snomed": [
+        "72934000",
+        "72934000"
+      ],
+      "response": "1. **Primary Diagnosis**: **Mastitis** (SNOMED-CT: 72934000)\n\n2. **Differential Diagnoses**:\n   - Udder edema\n   - Teat injury\n   - Mammary abscess\n\n3. **Recommended Treatment**:\nIntramammary antibiotics, systemic antibiotics if systemic signs. Frequent milking.\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Lameness, Drop In Milk Production, Teat Gnarls...), the pattern is consistent with Mastitis. The combination of symptoms and species-specific epidemiology supports this diagnosis.",
+      "correct_disease": true,
+      "correct_snomed": true
+    },
+    {
+      "sample_id": 18,
+      "species": "Sheep",
+      "symptoms": "severe abdominal pain (colic)",
+      "expected_disease": "Peste des Petits Ruminants",
+      "predicted_disease": "Peste des Petits Ruminants",
+      "expected_snomed": [
+        "1679004"
+      ],
+      "predicted_snomed": [
+        "1679004",
+        "1679004"
+      ],
+      "response": "1. **Primary Diagnosis**: **Peste des Petits Ruminants** (SNOMED-CT: 1679004)\n\n2. **Differential Diagnoses**:\n   - Goat Pox\n   - Contagious Ecthyma\n   - Bluetongue\n\n3. **Recommended Treatment**:\nSupportive care, antibiotics for secondary infections. Vaccination of herd.\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Pain in stomach), the pattern is consistent with Peste des Petits Ruminants. The combination of symptoms and species-specific epidemiology supports this diagnosis.",
+      "correct_disease": true,
+      "correct_snomed": true
+    },
+    {
+      "sample_id": 19,
+      "species": "Sheep",
+      "symptoms": "labial vesicles",
+      "expected_disease": "Foot and Mouth Disease",
+      "predicted_disease": "Peste des Petits Ruminants",
+      "expected_snomed": [
+        "3974005"
+      ],
+      "predicted_snomed": [
+        "1679004",
+        "1679004"
+      ],
+      "response": "1. **Primary Diagnosis**: **Peste des Petits Ruminants** (SNOMED-CT: 1679004)\n\n2. **Differential Diagnoses**:\n   - Goat Pox\n   - Contagious Ecthyma\n   - Bluetongue\n\n3. **Recommended Treatment**:\nSupportive care, antibiotics for secondary infections. Vaccination of herd.\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (blisters on lips), the pattern is consistent with Peste des Petits Ruminants. The combination of symptoms and species-specific epidemiology supports this diagnosis.",
+      "correct_disease": false,
+      "correct_snomed": false
+    },
+    {
+      "sample_id": 20,
+      "species": "Buffalo",
+      "symptoms": "decreased milk production, abnormal milk consistency (clotted), teat lesions/nodules, fever, limb muscle discoloration, and abortion/pregnancy loss",
+      "expected_disease": "Mastitis",
+      "predicted_disease": "Mastitis",
+      "expected_snomed": [
+        "72934000"
+      ],
+      "predicted_snomed": [
+        "72934000",
+        "72934000"
+      ],
+      "response": "1. **Primary Diagnosis**: **Mastitis** (SNOMED-CT: 72934000)\n\n2. **Differential Diagnoses**:\n   - Udder edema\n   - Teat injury\n   - Mammary abscess\n\n3. **Recommended Treatment**:\nIntramammary antibiotics, systemic antibiotics if systemic signs. Frequent milking.\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Drop In Milk Production, Milk In Semi Solid Form, Teat Gnarls...), the pattern is consistent with Mastitis. The combination of symptoms and species-specific epidemiology supports this diagnosis.",
+      "correct_disease": true,
+      "correct_snomed": true
+    },
+    {
+      "sample_id": 21,
+      "species": "Cow",
+      "symptoms": "lameness, dyspnea (respiratory distress), high fever, and sudden death (peracute)",
+      "expected_disease": "Black Quarter",
+      "predicted_disease": "Anthrax",
+      "expected_snomed": [
+        "29600000"
+      ],
+      "predicted_snomed": [
+        "29600000",
+        "29600000"
+      ],
+      "response": "1. **Primary Diagnosis**: **Black Quarter** (SNOMED-CT: 29600000)\n\n2. **Differential Diagnoses**:\n   - Anthrax\n   - Malignant Edema\n   - Bacillary Hemoglobinuria\n\n3. **Recommended Treatment**:\nHigh-dose penicillin G, anti-inflammatory therapy. Surgical debridement if localized.\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Lameness, Difficulty In Breathing, Very High Fever...), the pattern is consistent with Black Quarter. The combination of symptoms and species-specific epidemiology supports this diagnosis.",
+      "correct_disease": false,
+      "correct_snomed": true
+    },
+    {
+      "sample_id": 22,
+      "species": "Goat",
+      "symptoms": "fever, muscle rigidity/tetany, and tachypnea",
+      "expected_disease": "Anthrax",
+      "predicted_disease": "Peste des Petits Ruminants",
+      "expected_snomed": [
+        "40214000"
+      ],
+      "predicted_snomed": [
+        "1679004",
+        "1679004"
+      ],
+      "response": "1. **Primary Diagnosis**: **Peste des Petits Ruminants** (SNOMED-CT: 1679004)\n\n2. **Differential Diagnoses**:\n   - Goat Pox\n   - Contagious Ecthyma\n   - Bluetongue\n\n3. **Recommended Treatment**:\nSupportive care, antibiotics for secondary infections. Vaccination of herd.\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Fever(F), Stiffening of body, Rapid breathing), the pattern is consistent with Peste des Petits Ruminants. The combination of symptoms and species-specific epidemiology supports this diagnosis.",
+      "correct_disease": false,
+      "correct_snomed": false
+    },
+    {
+      "sample_id": 23,
+      "species": "Buffalo",
+      "symptoms": "lameness, cervical edema, dyspnea (respiratory distress), and sudden death (peracute)",
+      "expected_disease": "Hemorrhagic Septicemia",
+      "predicted_disease": "Peste des Petits Ruminants",
+      "expected_snomed": [
+        "198462004"
+      ],
+      "predicted_snomed": [
+        "19806200"
+      ],
+      "response": "1. **Primary Diagnosis**: **Hemorrhagic Septicemia** (SNOMED-CT: 198062004)\n\n2. **Differential Diagnoses**:\n   - Infectious disease\n   - Metabolic disorder\n   - Toxicosis\n\n3. **Recommended Treatment**:\nSymptomatic treatment, supportive care, and appropriate antimicrobials based on clinical presentation.\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Lameness, Neck Swelling, Difficulty In Breathing...), the pattern is consistent with Hemorrhagic Septicemia. The combination of symptoms and species-specific epidemiology supports this diagnosis.",
+      "correct_disease": false,
+      "correct_snomed": false
+    },
+    {
+      "sample_id": 24,
+      "species": "Goat",
+      "symptoms": "nasal discharge",
+      "expected_disease": "Peste des Petits Ruminants",
+      "predicted_disease": "Peste des Petits Ruminants",
+      "expected_snomed": [
+        "1679004"
+      ],
+      "predicted_snomed": [
+        "1679004",
+        "1679004"
+      ],
+      "response": "1. **Primary Diagnosis**: **Peste des Petits Ruminants** (SNOMED-CT: 1679004)\n\n2. **Differential Diagnoses**:\n   - Goat Pox\n   - Contagious Ecthyma\n   - Bluetongue\n\n3. **Recommended Treatment**:\nSupportive care, antibiotics for secondary infections. Vaccination of herd.\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Fluid leakage from nose), the pattern is consistent with Peste des Petits Ruminants. The combination of symptoms and species-specific epidemiology supports this diagnosis.",
+      "correct_disease": true,
+      "correct_snomed": true
+    },
+    {
+      "sample_id": 25,
+      "species": "Buffalo",
+      "symptoms": "decreased milk production, abnormal milk consistency (clotted), and abortion/pregnancy loss",
+      "expected_disease": "Mastitis",
+      "predicted_disease": "Peste des Petits Ruminants",
+      "expected_snomed": [
+        "72934000"
+      ],
+      "predicted_snomed": [
+        "29600000",
+        "29600000"
+      ],
+      "response": "1. **Primary Diagnosis**: **Theileriosis** (SNOMED-CT: 29600000)\n\n2. **Differential Diagnoses**:\n   - Infectious disease\n   - Metabolic disorder\n   - Toxicosis\n\n3. **Recommended Treatment**:\nSymptomatic treatment, supportive care, and appropriate antimicrobials based on clinical presentation.\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Drop In Milk Production, Milk In Semi Solid Form, Abortion), the pattern is consistent with Theileriosis. The combination of symptoms and species-specific epidemiology supports this diagnosis.",
+      "correct_disease": false,
+      "correct_snomed": false
+    },
+    {
+      "sample_id": 26,
+      "species": "Cow",
+      "symptoms": "oral frothing (salivation), decreased milk production, dyspnea (respiratory distress), high fever, and sudden death (peracute)",
+      "expected_disease": "Hemorrhagic Septicemia",
+      "predicted_disease": "Anthrax",
+      "expected_snomed": [
+        "198462004"
+      ],
+      "predicted_snomed": [
+        "3974002"
+      ],
+      "response": "1. **Primary Diagnosis**: **Anthrax** (SNOMED-CT: 3974002)\n\n2. **Differential Diagnoses**:\n   - Blackleg\n   - Hemorrhagic Septicemia\n   - Clostridial diseases\n\n3. **Recommended Treatment**:\nHigh-dose penicillin, oxytetracycline. Carcass disposal protocols. Vaccination of contacts. Notify authorities (notifiable disease).\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Mouth Frothing, Drop In Milk Production, Difficulty In Breathing...), the pattern is consistent with Anthrax. The combination of symptoms and species-specific epidemiology supports this diagnosis.",
+      "correct_disease": false,
+      "correct_snomed": false
+    },
+    {
+      "sample_id": 27,
+      "species": "Goat",
+      "symptoms": "labial vesicles and nasal discharge",
+      "expected_disease": "Peste des Petits Ruminants",
+      "predicted_disease": "Foot and Mouth Disease",
+      "expected_snomed": [
+        "1679004"
+      ],
+      "predicted_snomed": [
+        "3974006"
+      ],
+      "response": "1. **Primary Diagnosis**: **Foot and Mouth Disease** (SNOMED-CT: 3974006)\n\n2. **Differential Diagnoses**:\n   - Vesicular Stomatitis\n   - Bluetongue\n   - Bovine Viral Diarrhea\n\n3. **Recommended Treatment**:\nSupportive care, isolation, wound care for lesions. Notify authorities (notifiable disease). \n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Blisters On Lips, Fluid leakage from nose), the pattern is consistent with Foot and Mouth Disease. The combination of symptoms and species-specific epidemiology supports this diagnosis.",
+      "correct_disease": false,
+      "correct_snomed": false
+    },
+    {
+      "sample_id": 28,
+      "species": "Goat",
+      "symptoms": "fever, coughing, and dyspnea (respiratory distress)",
+      "expected_disease": "Peste des Petits Ruminants",
+      "predicted_disease": "Peste des Petits Ruminants",
+      "expected_snomed": [
+        "1679004"
+      ],
+      "predicted_snomed": [
+        "2260006",
+        "2260006"
+      ],
+      "response": "1. **Primary Diagnosis**: **Contagious Caprine Pleuropneumonia** (SNOMED-CT: 2260006)\n\n2. **Differential Diagnoses**:\n   - Infectious disease\n   - Metabolic disorder\n   - Toxicosis\n\n3. **Recommended Treatment**:\nSymptomatic treatment, supportive care, and appropriate antimicrobials based on clinical presentation.\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Fever(F), Cough, Difficulty In Breathing), the pattern is consistent with Contagious Caprine Pleuropneumonia. The combination of symptoms and species-specific epidemiology supports this diagnosis.",
+      "correct_disease": true,
+      "correct_snomed": false
+    },
+    {
+      "sample_id": 29,
+      "species": "Buffalo",
+      "symptoms": "cervical edema, tongue protrusion, and dyspnea (respiratory distress)",
+      "expected_disease": "Hemorrhagic Septicemia",
+      "predicted_disease": "Peste des Petits Ruminants",
+      "expected_snomed": [
+        "198462004"
+      ],
+      "predicted_snomed": [
+        "19806200"
+      ],
+      "response": "1. **Primary Diagnosis**: **Hemorrhagic Septicemia** (SNOMED-CT: 198062004)\n\n2. **Differential Diagnoses**:\n   - Infectious disease\n   - Metabolic disorder\n   - Toxicosis\n\n3. **Recommended Treatment**:\nSymptomatic treatment, supportive care, and appropriate antimicrobials based on clinical presentation.\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Neck Swelling, Tongue Coming Out Of Mouth, Difficulty In Breathing), the pattern is consistent with Hemorrhagic Septicemia. The combination of symptoms and species-specific epidemiology supports this diagnosis.",
+      "correct_disease": false,
+      "correct_snomed": false
+    },
+    {
+      "sample_id": 30,
+      "species": "Buffalo",
+      "symptoms": "dyspnea (respiratory distress) and open-mouth breathing",
+      "expected_disease": "Hemorrhagic Septicemia",
+      "predicted_disease": "Peste des Petits Ruminants",
+      "expected_snomed": [
+        "198462004"
+      ],
+      "predicted_snomed": [
+        "19806200"
+      ],
+      "response": "1. **Primary Diagnosis**: **Hemorrhagic Septicemia** (SNOMED-CT: 198062004)\n\n2. **Differential Diagnoses**:\n   - Infectious disease\n   - Metabolic disorder\n   - Toxicosis\n\n3. **Recommended Treatment**:\nSymptomatic treatment, supportive care, and appropriate antimicrobials based on clinical presentation.\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Difficulty In Breathing, Breathing While Mouth Open), the pattern is consistent with Hemorrhagic Septicemia. The combination of symptoms and species-specific epidemiology supports this diagnosis.",
+      "correct_disease": false,
+      "correct_snomed": false
+    },
+    {
+      "sample_id": 31,
+      "species": "Cow",
+      "symptoms": "oral frothing (salivation), decreased milk production, oral vesicles/ulcers, foot vesicles/lesions, and fever",
+      "expected_disease": "Foot and Mouth Disease",
+      "predicted_disease": "Foot and Mouth Disease",
+      "expected_snomed": [
+        "3974005"
+      ],
+      "predicted_snomed": [
+        "3974006"
+      ],
+      "response": "1. **Primary Diagnosis**: **Foot and Mouth Disease** (SNOMED-CT: 3974006)\n\n2. **Differential Diagnoses**:\n   - Vesicular Stomatitis\n   - Bluetongue\n   - Bovine Viral Diarrhea\n\n3. **Recommended Treatment**:\nSupportive care, isolation, wound care for lesions. Notify authorities (notifiable disease). \n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Mouth Frothing, Drop In Milk Production, Blisters In Mouth...), the pattern is consistent with Foot and Mouth Disease. The combination of symptoms and species-specific epidemiology supports this diagnosis.",
+      "correct_disease": true,
+      "correct_snomed": false
+    },
+    {
+      "sample_id": 32,
+      "species": "Sheep",
+      "symptoms": "fever, coughing, and dyspnea (respiratory distress)",
+      "expected_disease": "Peste des Petits Ruminants",
+      "predicted_disease": "Peste des Petits Ruminants",
+      "expected_snomed": [
+        "1679004"
+      ],
+      "predicted_snomed": [
+        "2260006",
+        "2260006"
+      ],
+      "response": "1. **Primary Diagnosis**: **Contagious Caprine Pleuropneumonia** (SNOMED-CT: 2260006)\n\n2. **Differential Diagnoses**:\n   - Infectious disease\n   - Metabolic disorder\n   - Toxicosis\n\n3. **Recommended Treatment**:\nSymptomatic treatment, supportive care, and appropriate antimicrobials based on clinical presentation.\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Fever(F), Cough, Difficulty In Breathing), the pattern is consistent with Contagious Caprine Pleuropneumonia. The combination of symptoms and species-specific epidemiology supports this diagnosis.",
+      "correct_disease": true,
+      "correct_snomed": false
+    },
+    {
+      "sample_id": 33,
+      "species": "Goat",
+      "symptoms": "fever and severe abdominal pain (colic)",
+      "expected_disease": "Infection",
+      "predicted_disease": "Peste des Petits Ruminants",
+      "expected_snomed": [
+        "VET_INFECT_001"
+      ],
+      "predicted_snomed": [
+        "1679004",
+        "1679004"
+      ],
+      "response": "1. **Primary Diagnosis**: **Peste des Petits Ruminants** (SNOMED-CT: 1679004)\n\n2. **Differential Diagnoses**:\n   - Goat Pox\n   - Contagious Ecthyma\n   - Bluetongue\n\n3. **Recommended Treatment**:\nSupportive care, antibiotics for secondary infections. Vaccination of herd.\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Fever(F), Pain in stomach and screams), the pattern is consistent with Peste des Petits Ruminants. The combination of symptoms and species-specific epidemiology supports this diagnosis.",
+      "correct_disease": false,
+      "correct_snomed": false
+    },
+    {
+      "sample_id": 34,
+      "species": "Cow",
+      "symptoms": "oral frothing (salivation), decreased milk production, and oral vesicles/ulcers",
+      "expected_disease": "Foot and Mouth Disease",
+      "predicted_disease": "Foot and Mouth Disease",
+      "expected_snomed": [
+        "3974005"
+      ],
+      "predicted_snomed": [
+        "3974002"
+      ],
+      "response": "1. **Primary Diagnosis**: **Foot and Mouth Disease** (SNOMED-CT: 3974002)\n\n2. **Differential Diagnoses**:\n   - Vesicular Stomatitis\n   - Bluetongue\n   - Bovine Viral Diarrhea\n\n3. **Recommended Treatment**:\nSupportive care, isolation, wound care for lesions. Notify authorities (notifiable disease). \n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Mouth Frothing, Drop In Milk Production, Blisters In Mouth), the pattern is consistent with Foot and Mouth Disease. The combination of symptoms and species-specific epidemiology supports this diagnosis.",
+      "correct_disease": true,
+      "correct_snomed": false
+    },
+    {
+      "sample_id": 35,
+      "species": "Goat",
+      "symptoms": "fever, coughing, and bloody diarrhea (dysentery)",
+      "expected_disease": "Peste des Petits Ruminants",
+      "predicted_disease": "Peste des Petits Ruminants",
+      "expected_snomed": [
+        "1679004"
+      ],
+      "predicted_snomed": [
+        "29600000",
+        "29600000"
+      ],
+      "response": "1. **Primary Diagnosis**: **Contagious Caprine Pleuropneumonia** (SNOMED-CT: 29600000)\n\n2. **Differential Diagnoses**:\n   - Infectious disease\n   - Metabolic disorder\n   - Toxicosis\n\n3. **Recommended Treatment**:\nSymptomatic treatment, supportive care, and appropriate antimicrobials based on clinical presentation.\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Fever(F), Cough, Loose motions with blood), the pattern is consistent with Contagious Caprine Pleuropneumonia. The combination of symptoms and species-specific epidemiology supports this diagnosis.",
+      "correct_disease": true,
+      "correct_snomed": false
+    },
+    {
+      "sample_id": 36,
+      "species": "Cow",
+      "symptoms": "abnormal milk consistency (clotted) and teat lesions/nodules",
+      "expected_disease": "Mastitis",
+      "predicted_disease": "Mastitis",
+      "expected_snomed": [
+        "72934000"
+      ],
+      "predicted_snomed": [
+        "72934000",
+        "72934000"
+      ],
+      "response": "1. **Primary Diagnosis**: **Mastitis** (SNOMED-CT: 72934000)\n\n2. **Differential Diagnoses**:\n   - Udder edema\n   - Teat injury\n   - Mammary abscess\n\n3. **Recommended Treatment**:\nIntramammary antibiotics, systemic antibiotics if systemic signs. Frequent milking.\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Milk In Semi Solid Form, Teat Gnarls), the pattern is consistent with Mastitis. The combination of symptoms and species-specific epidemiology supports this diagnosis.",
+      "correct_disease": true,
+      "correct_snomed": true
+    },
+    {
+      "sample_id": 37,
+      "species": "Cow",
+      "symptoms": "tongue protrusion, dyspnea (respiratory distress), and open-mouth breathing",
+      "expected_disease": "Hemorrhagic Septicemia",
+      "predicted_disease": "Peste des Petits Ruminants",
+      "expected_snomed": [
+        "198462004"
+      ],
+      "predicted_snomed": [
+        "19806200"
+      ],
+      "response": "1. **Primary Diagnosis**: **Hemorrhagic Septicemia** (SNOMED-CT: 198062004)\n\n2. **Differential Diagnoses**:\n   - Infectious disease\n   - Metabolic disorder\n   - Toxicosis\n\n3. **Recommended Treatment**:\nSymptomatic treatment, supportive care, and appropriate antimicrobials based on clinical presentation.\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Tongue Coming Out Of Mouth, Difficulty In Breathing, Breathing While Sticking Tongue Out), the pattern is consistent with Hemorrhagic Septicemia. The combination of symptoms and species-specific epidemiology supports this diagnosis.",
+      "correct_disease": false,
+      "correct_snomed": false
+    },
+    {
+      "sample_id": 38,
+      "species": "Sheep",
+      "symptoms": "fever, diarrhea, labial vesicles, muscle rigidity/tetany, and nasal discharge",
+      "expected_disease": "Peste des Petits Ruminants",
+      "predicted_disease": "Peste des Petits Ruminants",
+      "expected_snomed": [
+        "1679004"
+      ],
+      "predicted_snomed": [
+        "1679004",
+        "1679004"
+      ],
+      "response": "1. **Primary Diagnosis**: **Peste des Petits Ruminants** (SNOMED-CT: 1679004)\n\n2. **Differential Diagnoses**:\n   - Goat Pox\n   - Contagious Ecthyma\n   - Bluetongue\n\n3. **Recommended Treatment**:\nSupportive care, antibiotics for secondary infections. Vaccination of herd.\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Fever(F), Loose motions, blisters on lips...), the pattern is consistent with Peste des Petits Ruminants. The combination of symptoms and species-specific epidemiology supports this diagnosis.",
+      "correct_disease": true,
+      "correct_snomed": true
+    },
+    {
+      "sample_id": 39,
+      "species": "Cow",
+      "symptoms": "decreased milk production, abnormal milk consistency (clotted), and abortion/pregnancy loss",
+      "expected_disease": "Mastitis",
+      "predicted_disease": "Mastitis",
+      "expected_snomed": [
+        "72934000"
+      ],
+      "predicted_snomed": [
+        "72934000",
+        "72934000"
+      ],
+      "response": "1. **Primary Diagnosis**: **Mastitis** (SNOMED-CT: 72934000)\n\n2. **Differential Diagnoses**:\n   - Udder edema\n   - Teat injury\n   - Mammary abscess\n\n3. **Recommended Treatment**:\nIntramammary antibiotics, systemic antibiotics if systemic signs. Frequent milking.\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Drop In Milk Production, Milk In Semi Solid Form, Abortion), the pattern is consistent with Mastitis. The combination of symptoms and species-specific epidemiology supports this diagnosis.",
+      "correct_disease": true,
+      "correct_snomed": true
+    },
+    {
+      "sample_id": 40,
+      "species": "Cow",
+      "symptoms": "decreased milk production and high fever",
+      "expected_disease": "Theileriosis",
+      "predicted_disease": "Mastitis",
+      "expected_snomed": [
+        "24694002"
+      ],
+      "predicted_snomed": [
+        "72934000",
+        "72934000"
+      ],
+      "response": "1. **Primary Diagnosis**: **Mastitis** (SNOMED-CT: 72934000)\n\n2. **Differential Diagnoses**:\n   - Udder edema\n   - Teat injury\n   - Mammary abscess\n\n3. **Recommended Treatment**:\nIntramammary antibiotics, systemic antibiotics if systemic signs. Frequent milking.\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Drop In Milk Production, Very High Fever), the pattern is consistent with Mastitis. The combination of symptoms and species-specific epidemiology supports this diagnosis.",
+      "correct_disease": false,
+      "correct_snomed": false
+    },
+    {
+      "sample_id": 41,
+      "species": "Sheep",
+      "symptoms": "fever, mucopurulent discharge, coughing, and nasal discharge",
+      "expected_disease": "Contagious Caprine Pleuropneumonia",
+      "predicted_disease": "Peste des Petits Ruminants",
+      "expected_snomed": [
+        "2260006"
+      ],
+      "predicted_snomed": [
+        "2260006",
+        "2260006"
+      ],
+      "response": "1. **Primary Diagnosis**: **Contagious Caprine Pleuropneumonia** (SNOMED-CT: 2260006)\n\n2. **Differential Diagnoses**:\n   - Infectious disease\n   - Metabolic disorder\n   - Toxicosis\n\n3. **Recommended Treatment**:\nSymptomatic treatment, supportive care, and appropriate antimicrobials based on clinical presentation.\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Fever(F), Water or fluid leakage from eyes,nose or mouth, Cough...), the pattern is consistent with Contagious Caprine Pleuropneumonia. The combination of symptoms and species-specific epidemiology supports this diagnosis.",
+      "correct_disease": false,
+      "correct_snomed": true
+    },
+    {
+      "sample_id": 42,
+      "species": "Goat",
+      "symptoms": "mucopurulent discharge",
+      "expected_disease": "Contagious Caprine Pleuropneumonia",
+      "predicted_disease": "Peste des Petits Ruminants",
+      "expected_snomed": [
+        "2260006"
+      ],
+      "predicted_snomed": [
+        "2260006",
+        "2260006"
+      ],
+      "response": "1. **Primary Diagnosis**: **Contagious Caprine Pleuropneumonia** (SNOMED-CT: 2260006)\n\n2. **Differential Diagnoses**:\n   - Infectious disease\n   - Metabolic disorder\n   - Toxicosis\n\n3. **Recommended Treatment**:\nSymptomatic treatment, supportive care, and appropriate antimicrobials based on clinical presentation.\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Water or fluid leakage from eyes,nose or mouth), the pattern is consistent with Contagious Caprine Pleuropneumonia. The combination of symptoms and species-specific epidemiology supports this diagnosis.",
+      "correct_disease": false,
+      "correct_snomed": true
+    },
+    {
+      "sample_id": 43,
+      "species": "Cow",
+      "symptoms": "subcutaneous emphysema (crepitus), high fever, and limb muscle discoloration",
+      "expected_disease": "Black Quarter",
+      "predicted_disease": "Anthrax",
+      "expected_snomed": [
+        "29600000"
+      ],
+      "predicted_snomed": [
+        "29600007"
+      ],
+      "response": "1. **Primary Diagnosis**: **Black Quarter** (SNOMED-CT: 29600007)\n\n2. **Differential Diagnoses**:\n   - Anthrax\n   - Malignant Edema\n   - Bacillary Hemoglobinuria\n\n3. **Recommended Treatment**:\nHigh-dose penicillin G, anti-inflammatory therapy. Surgical debridement if localized.\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Air/ crapitatifeelings at surface of any Body part, Very High Fever, Color Change Of Muscles of limb), the pattern is consistent with Black Quarter. The combination of symptoms and species-specific epidemiology supports this diagnosis.",
+      "correct_disease": false,
+      "correct_snomed": false
+    },
+    {
+      "sample_id": 44,
+      "species": "Buffalo",
+      "symptoms": "decreased milk production",
+      "expected_disease": "Mastitis",
+      "predicted_disease": "Foot and Mouth Disease",
+      "expected_snomed": [
+        "72934000"
+      ],
+      "predicted_snomed": [
+        "3974006"
+      ],
+      "response": "1. **Primary Diagnosis**: **Foot and Mouth Disease** (SNOMED-CT: 3974006)\n\n2. **Differential Diagnoses**:\n   - Vesicular Stomatitis\n   - Bluetongue\n   - Bovine Viral Diarrhea\n\n3. **Recommended Treatment**:\nSupportive care, isolation, wound care for lesions. Notify authorities (notifiable disease). \n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Drop In Milk Production), the pattern is consistent with Foot and Mouth Disease. The combination of symptoms and species-specific epidemiology supports this diagnosis.",
+      "correct_disease": false,
+      "correct_snomed": false
+    },
+    {
+      "sample_id": 45,
+      "species": "Goat",
+      "symptoms": "diarrhea and coughing",
+      "expected_disease": "Contagious Caprine Pleuropneumonia",
+      "predicted_disease": "Peste des Petits Ruminants",
+      "expected_snomed": [
+        "2260006"
+      ],
+      "predicted_snomed": [
+        "1679004",
+        "1679004"
+      ],
+      "response": "1. **Primary Diagnosis**: **Peste des Petits Ruminants** (SNOMED-CT: 1679004)\n\n2. **Differential Diagnoses**:\n   - Goat Pox\n   - Contagious Ecthyma\n   - Bluetongue\n\n3. **Recommended Treatment**:\nSupportive care, antibiotics for secondary infections. Vaccination of herd.\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Loose motions, Cough), the pattern is consistent with Peste des Petits Ruminants. The combination of symptoms and species-specific epidemiology supports this diagnosis.",
+      "correct_disease": false,
+      "correct_snomed": false
+    },
+    {
+      "sample_id": 46,
+      "species": "Sheep",
+      "symptoms": "fever, coughing, labial vesicles, and severe abdominal pain (colic)",
+      "expected_disease": "Contagious Caprine Pleuropneumonia",
+      "predicted_disease": "Peste des Petits Ruminants",
+      "expected_snomed": [
+        "2260006"
+      ],
+      "predicted_snomed": [
+        "1679004",
+        "1679004"
+      ],
+      "response": "1. **Primary Diagnosis**: **Peste des Petits Ruminants** (SNOMED-CT: 1679004)\n\n2. **Differential Diagnoses**:\n   - Goat Pox\n   - Contagious Ecthyma\n   - Bluetongue\n\n3. **Recommended Treatment**:\nSupportive care, antibiotics for secondary infections. Vaccination of herd.\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Fever(F), Cough, blisters on lips...), the pattern is consistent with Peste des Petits Ruminants. The combination of symptoms and species-specific epidemiology supports this diagnosis.",
+      "correct_disease": false,
+      "correct_snomed": false
+    },
+    {
+      "sample_id": 47,
+      "species": "Buffalo",
+      "symptoms": "lameness, oral frothing (salivation), and oral vesicles/ulcers",
+      "expected_disease": "Foot and Mouth Disease",
+      "predicted_disease": "Foot and Mouth Disease",
+      "expected_snomed": [
+        "3974005"
+      ],
+      "predicted_snomed": [
+        "3974006"
+      ],
+      "response": "1. **Primary Diagnosis**: **Foot and Mouth Disease** (SNOMED-CT: 3974006)\n\n2. **Differential Diagnoses**:\n   - Vesicular Stomatitis\n   - Bluetongue\n   - Bovine Viral Diarrhea\n\n3. **Recommended Treatment**:\nSupportive care, isolation, wound care for lesions. Notify authorities (notifiable disease). \n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Lameness, Mouth Frothing, Blisters In Mouth), the pattern is consistent with Foot and Mouth Disease. The combination of symptoms and species-specific epidemiology supports this diagnosis.",
+      "correct_disease": true,
+      "correct_snomed": false
+    },
+    {
+      "sample_id": 48,
+      "species": "Buffalo",
+      "symptoms": "teat lesions/nodules, high fever, and abortion/pregnancy loss",
+      "expected_disease": "Mastitis",
+      "predicted_disease": "Foot and Mouth Disease",
+      "expected_snomed": [
+        "72934000"
+      ],
+      "predicted_snomed": [
+        "3974006"
+      ],
+      "response": "1. **Primary Diagnosis**: **Foot and Mouth Disease** (SNOMED-CT: 3974006)\n\n2. **Differential Diagnoses**:\n   - Vesicular Stomatitis\n   - Bluetongue\n   - Bovine Viral Diarrhea\n\n3. **Recommended Treatment**:\nSupportive care, isolation, wound care for lesions. Notify authorities (notifiable disease). \n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Teat Gnarls, Very High Fever, Abortion), the pattern is consistent with Foot and Mouth Disease. The combination of symptoms and species-specific epidemiology supports this diagnosis.",
+      "correct_disease": false,
+      "correct_snomed": false
+    },
+    {
+      "sample_id": 49,
+      "species": "Goat",
+      "symptoms": "fever, mucopurulent discharge, diarrhea, coughing, nasal discharge, and severe coughing",
+      "expected_disease": "Peste des Petits Ruminants",
+      "predicted_disease": "Peste des Petits Ruminants",
+      "expected_snomed": [
+        "1679004"
+      ],
+      "predicted_snomed": [
+        "1679004",
+        "1679004"
+      ],
+      "response": "1. **Primary Diagnosis**: **Peste des Petits Ruminants** (SNOMED-CT: 1679004)\n\n2. **Differential Diagnoses**:\n   - Goat Pox\n   - Contagious Ecthyma\n   - Bluetongue\n\n3. **Recommended Treatment**:\nSupportive care, antibiotics for secondary infections. Vaccination of herd.\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Fever(F), Water or fluid leakage from eyes,nose or mouth, Loose motions...), the pattern is consistent with Peste des Petits Ruminants. The combination of symptoms and species-specific epidemiology supports this diagnosis.",
+      "correct_disease": true,
+      "correct_snomed": true
+    },
+    {
+      "sample_id": 50,
+      "species": "Cow",
+      "symptoms": "cervical edema, tongue protrusion, dyspnea (respiratory distress), and high fever",
+      "expected_disease": "Hemorrhagic Septicemia",
+      "predicted_disease": "Peste des Petits Ruminants",
+      "expected_snomed": [
+        "198462004"
+      ],
+      "predicted_snomed": [
+        "19806200"
+      ],
+      "response": "1. **Primary Diagnosis**: **Hemorrhagic Septicemia** (SNOMED-CT: 198062004)\n\n2. **Differential Diagnoses**:\n   - Infectious disease\n   - Metabolic disorder\n   - Toxicosis\n\n3. **Recommended Treatment**:\nSymptomatic treatment, supportive care, and appropriate antimicrobials based on clinical presentation.\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Neck Swelling, Tongue Coming Out Of Mouth, Difficulty In Breathing...), the pattern is consistent with Hemorrhagic Septicemia. The combination of symptoms and species-specific epidemiology supports this diagnosis.",
+      "correct_disease": false,
+      "correct_snomed": false
+    },
+    {
+      "sample_id": 51,
+      "species": "Goat",
+      "symptoms": "fever and coughing",
+      "expected_disease": "Peste des Petits Ruminants",
+      "predicted_disease": "Peste des Petits Ruminants",
+      "expected_snomed": [
+        "1679004"
+      ],
+      "predicted_snomed": [
+        "1679004",
+        "1679004"
+      ],
+      "response": "1. **Primary Diagnosis**: **Peste des Petits Ruminants** (SNOMED-CT: 1679004)\n\n2. **Differential Diagnoses**:\n   - Goat Pox\n   - Contagious Ecthyma\n   - Bluetongue\n\n3. **Recommended Treatment**:\nSupportive care, antibiotics for secondary infections. Vaccination of herd.\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Fever(F), Cough), the pattern is consistent with Peste des Petits Ruminants. The combination of symptoms and species-specific epidemiology supports this diagnosis.",
+      "correct_disease": true,
+      "correct_snomed": true
+    },
+    {
+      "sample_id": 52,
+      "species": "Cow",
+      "symptoms": "lameness, decreased milk production, and foot vesicles/lesions",
+      "expected_disease": "Foot and Mouth Disease",
+      "predicted_disease": "Foot and Mouth Disease",
+      "expected_snomed": [
+        "3974005"
+      ],
+      "predicted_snomed": [
+        "3974006"
+      ],
+      "response": "1. **Primary Diagnosis**: **Foot and Mouth Disease** (SNOMED-CT: 3974006)\n\n2. **Differential Diagnoses**:\n   - Vesicular Stomatitis\n   - Bluetongue\n   - Bovine Viral Diarrhea\n\n3. **Recommended Treatment**:\nSupportive care, isolation, wound care for lesions. Notify authorities (notifiable disease).\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Lameness, Drop In Milk Production, Blisters On Feet), the pattern is consistent with Foot and Mouth Disease. The combination of symptoms and species-specific epidemiology supports this diagnosis.",
+      "correct_disease": true,
+      "correct_snomed": false
+    },
+    {
+      "sample_id": 53,
+      "species": "Goat",
+      "symptoms": "fever and oral frothing (salivation)",
+      "expected_disease": "Anthrax",
+      "predicted_disease": "Peste des Petits Ruminants",
+      "expected_snomed": [
+        "40214000"
+      ],
+      "predicted_snomed": [
+        "1679004",
+        "1679004"
+      ],
+      "response": "1. **Primary Diagnosis**: **Peste des Petits Ruminants** (SNOMED-CT: 1679004)\n\n2. **Differential Diagnoses**:\n   - Goat Pox\n   - Contagious Ecthyma\n   - Bluetongue\n\n3. **Recommended Treatment**:\nSupportive care, antibiotics for secondary infections. Vaccination of herd.\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Fever(F), Mouth frothing), the pattern is consistent with Peste des Petits Ruminants. The combination of symptoms and species-specific epidemiology supports this diagnosis.",
+      "correct_disease": false,
+      "correct_snomed": false
+    },
+    {
+      "sample_id": 54,
+      "species": "Buffalo",
+      "symptoms": "oral frothing (salivation), decreased milk production, subcutaneous emphysema (crepitus), and limb muscle discoloration",
+      "expected_disease": "Black Quarter",
+      "predicted_disease": "Anthrax",
+      "expected_snomed": [
+        "29600000"
+      ],
+      "predicted_snomed": [],
+      "response": "1. **Primary Diagnosis**: **Black Quarter** (SNOMED-CT: 397000)\n\n2. **Differential Diagnoses**:\n   - Anthrax\n   - Malignant Edema\n   - Bacillary Hemoglobinuria\n\n3. **Recommended Treatment**:\nHigh-dose penicillin G, anti-inflammatory therapy. Surgical debridement if localized.\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Mouth Frothing, Drop In Milk Production, Air/ crapitatifeelings at surface of any Muscle...), the pattern is consistent with Black Quarter. The combination of symptoms and species-specific epidemiology supports this diagnosis.",
+      "correct_disease": false,
+      "correct_snomed": false
+    },
+    {
+      "sample_id": 55,
+      "species": "Buffalo",
+      "symptoms": "decreased milk production, oral vesicles/ulcers, persistent diarrhea, and high fever",
+      "expected_disease": "Foot and Mouth Disease",
+      "predicted_disease": "Foot and Mouth Disease",
+      "expected_snomed": [
+        "3974005"
+      ],
+      "predicted_snomed": [
+        "3974002"
+      ],
+      "response": "1. **Primary Diagnosis**: **Foot and Mouth Disease** (SNOMED-CT: 3974002)\n\n2. **Differential Diagnoses**:\n   - Vesicular Stomatitis\n   - Bluetongue\n   - Bovine Viral Diarrhea\n\n3. **Recommended Treatment**:\nSupportive care, isolation, wound care for lesions. Notify authorities (notifiable disease). \n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Drop In Milk Production, Blisters In Mouth, Loose Motions...), the pattern is consistent with Foot and Mouth Disease. The combination of symptoms and species-specific epidemiology supports this diagnosis.",
+      "correct_disease": true,
+      "correct_snomed": false
+    },
+    {
+      "sample_id": 56,
+      "species": "Cow",
+      "symptoms": "abnormal milk consistency (clotted) and high fever",
+      "expected_disease": "Mastitis",
+      "predicted_disease": "Mastitis",
+      "expected_snomed": [
+        "72934000"
+      ],
+      "predicted_snomed": [
+        "72934000",
+        "72934000"
+      ],
+      "response": "1. **Primary Diagnosis**: **Mastitis** (SNOMED-CT: 72934000)\n\n2. **Differential Diagnoses**:\n   - Udder edema\n   - Teat injury\n   - Mammary abscess\n\n3. **Recommended Treatment**:\nIntramammary antibiotics, systemic antibiotics if systemic signs. Frequent milking.\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Milk In Semi Solid Form, Very High Fever), the pattern is consistent with Mastitis. The combination of symptoms and species-specific epidemiology supports this diagnosis.",
+      "correct_disease": true,
+      "correct_snomed": true
+    },
+    {
+      "sample_id": 57,
+      "species": "Goat",
+      "symptoms": "bloody diarrhea (dysentery)",
+      "expected_disease": "Foot Rot",
+      "predicted_disease": "Peste des Petits Ruminants",
+      "expected_snomed": [
+        "VET_FOOTROT_001"
+      ],
+      "predicted_snomed": [
+        "1679004",
+        "1679004"
+      ],
+      "response": "1. **Primary Diagnosis**: **Peste des Petits Ruminants** (SNOMED-CT: 1679004)\n\n2. **Differential Diagnoses**:\n   - Goat Pox\n   - Contagious Ecthyma\n   - Bluetongue\n\n3. **Recommended Treatment**:\nSupportive care, antibiotics for secondary infections. Vaccination of herd.\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Loose motions with blood), the pattern is consistent with Peste des Petits Ruminants. The combination of symptoms and species-specific epidemiology supports this diagnosis.",
+      "correct_disease": false,
+      "correct_snomed": false
+    },
+    {
+      "sample_id": 58,
+      "species": "Cow",
+      "symptoms": "oral frothing (salivation), decreased milk production, and epistaxis (nasal bleeding)",
+      "expected_disease": "Anthrax",
+      "predicted_disease": "Peste des Petits Ruminants",
+      "expected_snomed": [
+        "40214000"
+      ],
+      "predicted_snomed": [
+        "19806200"
+      ],
+      "response": "1. **Primary Diagnosis**: **Hemorrhagic Septicemia** (SNOMED-CT: 198062004)\n\n2. **Differential Diagnoses**:\n   - Infectious disease\n   - Metabolic disorder\n   - Toxicosis\n\n3. **Recommended Treatment**:\nSymptomatic treatment, supportive care, and appropriate antimicrobials based on clinical presentation.\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Mouth Frothing, Drop In Milk Production, Blood Leakage From Nose), the pattern is consistent with Hemorrhagic Septicemia. The combination of symptoms and species-specific epidemiology supports this diagnosis.",
+      "correct_disease": false,
+      "correct_snomed": false
+    },
+    {
+      "sample_id": 59,
+      "species": "Goat",
+      "symptoms": "muscle rigidity/tetany",
+      "expected_disease": "Fracture of the Leg",
+      "predicted_disease": "Peste des Petits Ruminants",
+      "expected_snomed": [
+        "VET_FRACTURE_001"
+      ],
+      "predicted_snomed": [
+        "72934000",
+        "72934000"
+      ],
+      "response": "1. **Primary Diagnosis**: **Abortion** (SNOMED-CT: 72934000)\n\n2. **Differential Diagnoses**:\n   - Infectious disease\n   - Metabolic disorder\n   - Toxicosis\n\n3. **Recommended Treatment**:\nSymptomatic treatment, supportive care, and appropriate antimicrobials based on clinical presentation.\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Stiffening of body), the pattern is consistent with Abortion. The combination of symptoms and species-specific epidemiology supports this diagnosis.",
+      "correct_disease": false,
+      "correct_snomed": false
+    },
+    {
+      "sample_id": 60,
+      "species": "Sheep",
+      "symptoms": "coughing, labial vesicles, and severe abdominal pain (colic)",
+      "expected_disease": "Peste des Petits Ruminants",
+      "predicted_disease": "Peste des Petits Ruminants",
+      "expected_snomed": [
+        "1679004"
+      ],
+      "predicted_snomed": [
+        "1679004",
+        "1679004"
+      ],
+      "response": "1. **Primary Diagnosis**: **Peste des Petits Ruminants** (SNOMED-CT: 1679004)\n\n2. **Differential Diagnoses**:\n   - Goat Pox\n   - Contagious Ecthyma\n   - Bluetongue\n\n3. **Recommended Treatment**:\nSupportive care, antibiotics for secondary infections. Vaccination of herd.\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Cough, blisters on lips, Pain in stomach and screams), the pattern is consistent with Peste des Petits Ruminants. The combination of symptoms and species-specific epidemiology supports this diagnosis.",
+      "correct_disease": true,
+      "correct_snomed": true
+    },
+    {
+      "sample_id": 61,
+      "species": "Buffalo",
+      "symptoms": "lameness, oral frothing (salivation), decreased milk production, oral vesicles/ulcers, and foot vesicles/lesions",
+      "expected_disease": "Foot and Mouth Disease",
+      "predicted_disease": "Foot and Mouth Disease",
+      "expected_snomed": [
+        "3974005"
+      ],
+      "predicted_snomed": [
+        "3974002"
+      ],
+      "response": "1. **Primary Diagnosis**: **Foot and Mouth Disease** (SNOMED-CT: 3974002)\n\n2. **Differential Diagnoses**:\n   - Vesicular Stomatitis\n   - Bluetongue\n   - Bovine Viral Diarrhea\n\n3. **Recommended Treatment**:\nSupportive care, isolation, wound care for lesions. Notify authorities (notifiable disease). \n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Lameness, Mouth Frothing, Drop In Milk Production...), the pattern is consistent with Foot and Mouth Disease. The combination of symptoms and species-specific epidemiology supports this diagnosis.",
+      "correct_disease": true,
+      "correct_snomed": false
+    },
+    {
+      "sample_id": 62,
+      "species": "Goat",
+      "symptoms": "severe coughing",
+      "expected_disease": "Peste des Petits Ruminants",
+      "predicted_disease": "Peste des Petits Ruminants",
+      "expected_snomed": [
+        "1679004"
+      ],
+      "predicted_snomed": [
+        "1679004",
+        "1679004"
+      ],
+      "response": "1. **Primary Diagnosis**: **Peste des Petits Ruminants** (SNOMED-CT: 1679004)\n\n2. **Differential Diagnoses**:\n   - Goat Pox\n   - Contagious Ecthyma\n   - Bluetongue\n\n3. **Recommended Treatment**:\nSupportive care, antibiotics for secondary infections. Vaccination of herd.\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Severe Cough), the pattern is consistent with Peste des Petits Ruminants. The combination of symptoms and species-specific epidemiology supports this diagnosis.",
+      "correct_disease": true,
+      "correct_snomed": true
+    },
+    {
+      "sample_id": 63,
+      "species": "Buffalo",
+      "symptoms": "decreased milk production, abnormal milk consistency (clotted), fever, and abortion/pregnancy loss",
+      "expected_disease": "Mastitis",
+      "predicted_disease": "Mastitis",
+      "expected_snomed": [
+        "72934000"
+      ],
+      "predicted_snomed": [
+        "72934000",
+        "72934000"
+      ],
+      "response": "1. **Primary Diagnosis**: **Mastitis** (SNOMED-CT: 72934000)\n\n2. **Differential Diagnoses**:\n   - Udder edema\n   - Teat injury\n   - Mammary abscess\n\n3. **Recommended Treatment**:\nIntramammary antibiotics, systemic antibiotics if systemic signs. Frequent milking.\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Drop In Milk Production, Milk In Semi Solid Form, Fever...), the pattern is consistent with Mastitis. The combination of symptoms and species-specific epidemiology supports this diagnosis.",
+      "correct_disease": true,
+      "correct_snomed": true
+    },
+    {
+      "sample_id": 64,
+      "species": "Buffalo",
+      "symptoms": "tongue protrusion",
+      "expected_disease": "Hemorrhagic Septicemia",
+      "predicted_disease": "Peste des Petits Ruminants",
+      "expected_snomed": [
+        "198462004"
+      ],
+      "predicted_snomed": [
+        "19806200"
+      ],
+      "response": "1. **Primary Diagnosis**: **Hemorrhagic Septicemia** (SNOMED-CT: 198062004)\n\n2. **Differential Diagnoses**:\n   - Infectious disease\n   - Metabolic disorder\n   - Toxicosis\n\n3. **Recommended Treatment**:\nSymptomatic treatment, supportive care, and appropriate antimicrobials based on clinical presentation.\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Tongue Coming Out Of Mouth), the pattern is consistent with Hemorrhagic Septicemia. The combination of symptoms and species-specific epidemiology supports this diagnosis.",
+      "correct_disease": false,
+      "correct_snomed": false
+    },
+    {
+      "sample_id": 65,
+      "species": "Cow",
+      "symptoms": "lameness, tongue protrusion, and high fever",
+      "expected_disease": "Black Quarter",
+      "predicted_disease": "Peste des Petits Ruminants",
+      "expected_snomed": [
+        "29600000"
+      ],
+      "predicted_snomed": [
+        "19806200"
+      ],
+      "response": "1. **Primary Diagnosis**: **Hemorrhagic Septicemia** (SNOMED-CT: 198062004)\n\n2. **Differential Diagnoses**:\n   - Infectious disease\n   - Metabolic disorder\n   - Toxicosis\n\n3. **Recommended Treatment**:\nSymptomatic treatment, supportive care, and appropriate antimicrobials based on clinical presentation.\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Lameness, Tongue Coming Out Of Mouth, Very High Fever), the pattern is consistent with Hemorrhagic Septicemia. The combination of symptoms and species-specific epidemiology supports this diagnosis.",
+      "correct_disease": false,
+      "correct_snomed": false
+    },
+    {
+      "sample_id": 66,
+      "species": "Sheep",
+      "symptoms": "mucopurulent discharge, nasal discharge, and severe coughing",
+      "expected_disease": "Contagious Caprine Pleuropneumonia",
+      "predicted_disease": "Peste des Petits Ruminants",
+      "expected_snomed": [
+        "2260006"
+      ],
+      "predicted_snomed": [
+        "29600000",
+        "29600000"
+      ],
+      "response": "1. **Primary Diagnosis**: **Contagious Caprine Pleuropneumonia** (SNOMED-CT: 29600000)\n\n2. **Differential Diagnoses**:\n   - Infectious disease\n   - Metabolic disorder\n   - Toxicosis\n\n3. **Recommended Treatment**:\nSymptomatic treatment, supportive care, and appropriate antimicrobials based on clinical presentation.\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Water or fluid leakage from eyes,nose or mouth, Fluid leakage from nose, Sever cough), the pattern is consistent with Contagious Caprine Pleuropneumonia. The combination of symptoms and species-specific epidemiology supports this diagnosis.",
+      "correct_disease": false,
+      "correct_snomed": false
+    },
+    {
+      "sample_id": 67,
+      "species": "Goat",
+      "symptoms": "mucopurulent discharge and coughing",
+      "expected_disease": "Contagious Caprine Pleuropneumonia",
+      "predicted_disease": "Peste des Petits Ruminants",
+      "expected_snomed": [
+        "2260006"
+      ],
+      "predicted_snomed": [
+        "2260006",
+        "2260006"
+      ],
+      "response": "1. **Primary Diagnosis**: **Contagious Caprine Pleuropneumonia** (SNOMED-CT: 2260006)\n\n2. **Differential Diagnoses**:\n   - Infectious disease\n   - Metabolic disorder\n   - Toxicosis\n\n3. **Recommended Treatment**:\nSymptomatic treatment, supportive care, and appropriate antimicrobials based on clinical presentation.\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Water or fluid leakage from eyes,nose or mouth, Cough), the pattern is consistent with Contagious Caprine Pleuropneumonia. The combination of symptoms and species-specific epidemiology supports this diagnosis.",
+      "correct_disease": false,
+      "correct_snomed": true
+    },
+    {
+      "sample_id": 68,
+      "species": "Sheep",
+      "symptoms": "fever, mucopurulent discharge, coughing, nasal discharge, severe coughing, and tachypnea",
+      "expected_disease": "Peste des Petits Ruminants",
+      "predicted_disease": "Peste des Petits Ruminants",
+      "expected_snomed": [
+        "1679004"
+      ],
+      "predicted_snomed": [
+        "2260006",
+        "2260006"
+      ],
+      "response": "1. **Primary Diagnosis**: **Contagious Caprine Pleuropneumonia** (SNOMED-CT: 2260006)\n\n2. **Differential Diagnoses**:\n   - Infectious disease\n   - Metabolic disorder\n   - Toxicosis\n\n3. **Recommended Treatment**:\nSymptomatic treatment, supportive care, and appropriate antimicrobials based on clinical presentation.\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Fever(F), Water or fluid leakage from eyes,nose or mouth, Cough...), the pattern is consistent with Contagious Caprine Pleuropneumonia. The combination of symptoms and species-specific epidemiology supports this diagnosis.",
+      "correct_disease": true,
+      "correct_snomed": false
+    },
+    {
+      "sample_id": 69,
+      "species": "Buffalo",
+      "symptoms": "oral frothing (salivation), decreased milk production, cervical edema, tongue protrusion, dyspnea (respiratory distress), open-mouth breathing, and persistent diarrhea",
+      "expected_disease": "Hemorrhagic Septicemia",
+      "predicted_disease": "Peste des Petits Ruminants",
+      "expected_snomed": [
+        "198462004"
+      ],
+      "predicted_snomed": [
+        "19806200"
+      ],
+      "response": "1. **Primary Diagnosis**: **Hemorrhagic Septicemia** (SNOMED-CT: 198062004)\n\n2. **Differential Diagnoses**:\n   - Infectious disease\n   - Metabolic disorder\n   - Toxicosis\n\n3. **Recommended Treatment**:\nSymptomatic treatment, supportive care, and appropriate antimicrobials based on clinical presentation.\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Mouth Frothing, Drop In Milk Production, Neck Swelling...), the pattern is consistent with Hemorrhagic Septicemia. The combination of symptoms and species-specific epidemiology supports this diagnosis.",
+      "correct_disease": false,
+      "correct_snomed": false
+    },
+    {
+      "sample_id": 70,
+      "species": "Cow",
+      "symptoms": "lameness, oral frothing (salivation), decreased milk production, oral vesicles/ulcers, and foot vesicles/lesions",
+      "expected_disease": "Foot and Mouth Disease",
+      "predicted_disease": "Foot and Mouth Disease",
+      "expected_snomed": [
+        "3974005"
+      ],
+      "predicted_snomed": [
+        "3974006"
+      ],
+      "response": "1. **Primary Diagnosis**: **Foot and Mouth Disease** (SNOMED-CT: 3974006)\n\n2. **Differential Diagnoses**:\n   - Vesicular Stomatitis\n   - Bluetongue\n   - Bovine Viral Diarrhea\n\n3. **Recommended Treatment**:\nSupportive care, isolation, wound care for lesions. Notify authorities (notifiable disease).\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Lameness, Mouth Frothing, Drop In Milk Production...), the pattern is consistent with Foot and Mouth Disease. The combination of symptoms and species-specific epidemiology supports this diagnosis.",
+      "correct_disease": true,
+      "correct_snomed": false
+    },
+    {
+      "sample_id": 71,
+      "species": "Goat",
+      "symptoms": "coughing and labial vesicles",
+      "expected_disease": "Peste des Petits Ruminants",
+      "predicted_disease": "Foot and Mouth Disease",
+      "expected_snomed": [
+        "1679004"
+      ],
+      "predicted_snomed": [
+        "3974006"
+      ],
+      "response": "1. **Primary Diagnosis**: **Foot and Mouth Disease** (SNOMED-CT: 3974006)\n\n2. **Differential Diagnoses**:\n   - Vesicular Stomatitis\n   - Bluetongue\n   - Bovine Viral Diarrhea\n\n3. **Recommended Treatment**:\nSupportive care, isolation, wound care for lesions. Notify authorities (notifiable disease). \n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Cough, blisters on lips), the pattern is consistent with Foot and Mouth Disease. The combination of symptoms and species-specific epidemiology supports this diagnosis.",
+      "correct_disease": false,
+      "correct_snomed": false
+    },
+    {
+      "sample_id": 72,
+      "species": "Goat",
+      "symptoms": "fever, diarrhea, labial vesicles, nasal discharge, and severe coughing",
+      "expected_disease": "Peste des Petits Ruminants",
+      "predicted_disease": "Peste des Petits Ruminants",
+      "expected_snomed": [
+        "1679004"
+      ],
+      "predicted_snomed": [
+        "1679004",
+        "1679004"
+      ],
+      "response": "1. **Primary Diagnosis**: **Peste des Petits Ruminants** (SNOMED-CT: 1679004)\n\n2. **Differential Diagnoses**:\n   - Goat Pox\n   - Contagious Ecthyma\n   - Bluetongue\n\n3. **Recommended Treatment**:\nSupportive care, antibiotics for secondary infections. Vaccination of herd.\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Fever(F), Loose motions, blisters on lips...), the pattern is consistent with Peste des Petits Ruminants. The combination of symptoms and species-specific epidemiology supports this diagnosis.",
+      "correct_disease": true,
+      "correct_snomed": true
+    },
+    {
+      "sample_id": 73,
+      "species": "Sheep",
+      "symptoms": "bloody diarrhea (dysentery)",
+      "expected_disease": "Peste des Petits Ruminants",
+      "predicted_disease": "Peste des Petits Ruminants",
+      "expected_snomed": [
+        "1679004"
+      ],
+      "predicted_snomed": [
+        "1679004",
+        "1679004"
+      ],
+      "response": "1. **Primary Diagnosis**: **Peste des Petits Ruminants** (SNOMED-CT: 1679004)\n\n2. **Differential Diagnoses**:\n   - Goat Pox\n   - Contagious Ecthyma\n   - Bluetongue\n\n3. **Recommended Treatment**:\nSupportive care, antibiotics for secondary infections. Vaccination of herd.\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Loose motions with blood), the pattern is consistent with Peste des Petits Ruminants. The combination of symptoms and species-specific epidemiology supports this diagnosis.",
+      "correct_disease": true,
+      "correct_snomed": true
+    },
+    {
+      "sample_id": 74,
+      "species": "Cow",
+      "symptoms": "lameness, oral frothing (salivation), oral vesicles/ulcers, and foot vesicles/lesions",
+      "expected_disease": "Foot and Mouth Disease",
+      "predicted_disease": "Foot and Mouth Disease",
+      "expected_snomed": [
+        "3974005"
+      ],
+      "predicted_snomed": [
+        "3974006"
+      ],
+      "response": "1. **Primary Diagnosis**: **Foot and Mouth Disease** (SNOMED-CT: 3974006)\n\n2. **Differential Diagnoses**:\n   - Vesicular Stomatitis\n   - Bluetongue\n   - Bovine Viral Diarrhea\n\n3. **Recommended Treatment**:\nSupportive care, isolation, wound care for lesions. Notify authorities (notifiable disease). \n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Lameness, Mouth Frothing, Blisters In Mouth...), the pattern is consistent with Foot and Mouth Disease. The combination of symptoms and species-specific epidemiology supports this diagnosis.",
+      "correct_disease": true,
+      "correct_snomed": false
+    },
+    {
+      "sample_id": 75,
+      "species": "Goat",
+      "symptoms": "nasal discharge",
+      "expected_disease": "Peste des Petits Ruminants",
+      "predicted_disease": "Peste des Petits Ruminants",
+      "expected_snomed": [
+        "1679004"
+      ],
+      "predicted_snomed": [
+        "1679004",
+        "1679004"
+      ],
+      "response": "1. **Primary Diagnosis**: **Peste des Petits Ruminants** (SNOMED-CT: 1679004)\n\n2. **Differential Diagnoses**:\n   - Goat Pox\n   - Contagious Ecthyma\n   - Bluetongue\n\n3. **Recommended Treatment**:\nSupportive care, antibiotics for secondary infections. Vaccination of herd.\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Fluid leakage from nose), the pattern is consistent with Peste des Petits Ruminants. The combination of symptoms and species-specific epidemiology supports this diagnosis.",
+      "correct_disease": true,
+      "correct_snomed": true
+    },
+    {
+      "sample_id": 76,
+      "species": "Cow",
+      "symptoms": "decreased milk production, cervical edema, dyspnea (respiratory distress), and high fever",
+      "expected_disease": "Hemorrhagic Septicemia",
+      "predicted_disease": "Peste des Petits Ruminants",
+      "expected_snomed": [
+        "198462004"
+      ],
+      "predicted_snomed": [
+        "19806200"
+      ],
+      "response": "1. **Primary Diagnosis**: **Hemorrhagic Septicemia** (SNOMED-CT: 198062004)\n\n2. **Differential Diagnoses**:\n   - Infectious disease\n   - Metabolic disorder\n   - Toxicosis\n\n3. **Recommended Treatment**:\nSymptomatic treatment, supportive care, and appropriate antimicrobials based on clinical presentation.\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Drop In Milk Production, Neck Swelling, Difficulty In Breathing...), the pattern is consistent with Hemorrhagic Septicemia. The combination of symptoms and species-specific epidemiology supports this diagnosis.",
+      "correct_disease": false,
+      "correct_snomed": false
+    },
+    {
+      "sample_id": 77,
+      "species": "Buffalo",
+      "symptoms": "oral frothing (salivation)",
+      "expected_disease": "Foot and Mouth Disease",
+      "predicted_disease": "Peste des Petits Ruminants",
+      "expected_snomed": [
+        "3974005"
+      ],
+      "predicted_snomed": [
+        "19806200"
+      ],
+      "response": "1. **Primary Diagnosis**: **Hemorrhagic Septicemia** (SNOMED-CT: 198062004)\n\n2. **Differential Diagnoses**:\n   - Infectious disease\n   - Metabolic disorder\n   - Toxicosis\n\n3. **Recommended Treatment**:\nSymptomatic treatment, supportive care, and appropriate antimicrobials based on clinical presentation.\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Mouth Frothing), the pattern is consistent with Hemorrhagic Septicemia. The combination of symptoms and species-specific epidemiology supports this diagnosis.",
+      "correct_disease": false,
+      "correct_snomed": false
+    },
+    {
+      "sample_id": 78,
+      "species": "Sheep",
+      "symptoms": "lameness, nasal discharge, and severe abdominal pain (colic)",
+      "expected_disease": "Peste des Petits Ruminants",
+      "predicted_disease": "Peste des Petits Ruminants",
+      "expected_snomed": [
+        "1679004"
+      ],
+      "predicted_snomed": [
+        "1679004",
+        "1679004"
+      ],
+      "response": "1. **Primary Diagnosis**: **Peste des Petits Ruminants** (SNOMED-CT: 1679004)\n\n2. **Differential Diagnoses**:\n   - Goat Pox\n   - Contagious Ecthyma\n   - Bluetongue\n\n3. **Recommended Treatment**:\nSupportive care, antibiotics for secondary infections. Vaccination of herd.\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Lameness, Fluid leakage from nose, Pain in stomach and screams), the pattern is consistent with Peste des Petits Ruminants. The combination of symptoms and species-specific epidemiology supports this diagnosis.",
+      "correct_disease": true,
+      "correct_snomed": true
+    },
+    {
+      "sample_id": 79,
+      "species": "Cow",
+      "symptoms": "oral frothing (salivation) and decreased milk production",
+      "expected_disease": "Foot and Mouth Disease",
+      "predicted_disease": "Foot and Mouth Disease",
+      "expected_snomed": [
+        "3974005"
+      ],
+      "predicted_snomed": [
+        "3974006"
+      ],
+      "response": "1. **Primary Diagnosis**: **Foot and Mouth Disease** (SNOMED-CT: 3974006)\n\n2. **Differential Diagnoses**:\n   - Vesicular Stomatitis\n   - Bluetongue\n   - Bovine Viral Diarrhea\n\n3. **Recommended Treatment**:\nSupportive care, isolation, wound care for lesions. Notify authorities (notifiable disease). \n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Mouth Frothing, Drop In Milk Production), the pattern is consistent with Foot and Mouth Disease. The combination of symptoms and species-specific epidemiology supports this diagnosis.",
+      "correct_disease": true,
+      "correct_snomed": false
+    },
+    {
+      "sample_id": 80,
+      "species": "Cow",
+      "symptoms": "tongue protrusion and dyspnea (respiratory distress)",
+      "expected_disease": "Hemorrhagic Septicemia",
+      "predicted_disease": "Peste des Petits Ruminants",
+      "expected_snomed": [
+        "198462004"
+      ],
+      "predicted_snomed": [
+        "19806200"
+      ],
+      "response": "1. **Primary Diagnosis**: **Hemorrhagic Septicemia** (SNOMED-CT: 198062004)\n\n2. **Differential Diagnoses**:\n   - Infectious disease\n   - Metabolic disorder\n   - Toxicosis\n\n3. **Recommended Treatment**:\nSymptomatic treatment, supportive care, and appropriate antimicrobials based on clinical presentation.\n\n4. **Clinical Reasoning**:\n   Based on the presenting clinical signs (Tongue Coming Out Of Mouth, Difficulty In Breathing), the pattern is consistent with Hemorrhagic Septicemia. The combination of symptoms and species-specific epidemiology supports this diagnosis.",
+      "correct_disease": false,
+      "correct_snomed": false
+    }
+  ],
+  "predictions": [
+    "Peste des Petits Ruminants",
+    "Peste des Petits Ruminants",
+    "Foot and Mouth Disease",
+    "Peste des Petits Ruminants",
+    "Peste des Petits Ruminants",
+    "Foot and Mouth Disease",
+    "Mastitis",
+    "Peste des Petits Ruminants",
+    "Foot and Mouth Disease",
+    "Foot and Mouth Disease",
+    "Peste des Petits Ruminants",
+    "Peste des Petits Ruminants",
+    "Anthrax",
+    "Mastitis",
+    "Peste des Petits Ruminants",
+    "Peste des Petits Ruminants",
+    "Mastitis",
+    "Peste des Petits Ruminants",
+    "Peste des Petits Ruminants",
+    "Mastitis",
+    "Anthrax",
+    "Peste des Petits Ruminants",
+    "Peste des Petits Ruminants",
+    "Peste des Petits Ruminants",
+    "Peste des Petits Ruminants",
+    "Anthrax",
+    "Foot and Mouth Disease",
+    "Peste des Petits Ruminants",
+    "Peste des Petits Ruminants",
+    "Peste des Petits Ruminants",
+    "Foot and Mouth Disease",
+    "Peste des Petits Ruminants",
+    "Peste des Petits Ruminants",
+    "Foot and Mouth Disease",
+    "Peste des Petits Ruminants",
+    "Mastitis",
+    "Peste des Petits Ruminants",
+    "Peste des Petits Ruminants",
+    "Mastitis",
+    "Mastitis",
+    "Peste des Petits Ruminants",
+    "Peste des Petits Ruminants",
+    "Anthrax",
+    "Foot and Mouth Disease",
+    "Peste des Petits Ruminants",
+    "Peste des Petits Ruminants",
+    "Foot and Mouth Disease",
+    "Foot and Mouth Disease",
+    "Peste des Petits Ruminants",
+    "Peste des Petits Ruminants",
+    "Peste des Petits Ruminants",
+    "Foot and Mouth Disease",
+    "Peste des Petits Ruminants",
+    "Anthrax",
+    "Foot and Mouth Disease",
+    "Mastitis",
+    "Peste des Petits Ruminants",
+    "Peste des Petits Ruminants",
+    "Peste des Petits Ruminants",
+    "Peste des Petits Ruminants",
+    "Foot and Mouth Disease",
+    "Peste des Petits Ruminants",
+    "Mastitis",
+    "Peste des Petits Ruminants",
+    "Peste des Petits Ruminants",
+    "Peste des Petits Ruminants",
+    "Peste des Petits Ruminants",
+    "Peste des Petits Ruminants",
+    "Peste des Petits Ruminants",
+    "Foot and Mouth Disease",
+    "Foot and Mouth Disease",
+    "Peste des Petits Ruminants",
+    "Peste des Petits Ruminants",
+    "Foot and Mouth Disease",
+    "Peste des Petits Ruminants",
+    "Peste des Petits Ruminants",
+    "Peste des Petits Ruminants",
+    "Peste des Petits Ruminants",
+    "Foot and Mouth Disease",
+    "Peste des Petits Ruminants"
+  ],
+  "references": [
+    "Peste des Petits Ruminants",
+    "Laminitis",
+    "Foot and Mouth Disease",
+    "Hemorrhagic Septicemia",
+    "Peste des Petits Ruminants",
+    "Foot and Mouth Disease",
+    "Mastitis",
+    "Foot Rot",
+    "Foot and Mouth Disease",
+    "Ketosis",
+    "Hemorrhagic Septicemia",
+    "Peste des Petits Ruminants",
+    "Black Quarter",
+    "Mastitis",
+    "Peste des Petits Ruminants",
+    "Peste des Petits Ruminants",
+    "Mastitis",
+    "Peste des Petits Ruminants",
+    "Foot and Mouth Disease",
+    "Mastitis",
+    "Black Quarter",
+    "Anthrax",
+    "Hemorrhagic Septicemia",
+    "Peste des Petits Ruminants",
+    "Mastitis",
+    "Hemorrhagic Septicemia",
+    "Peste des Petits Ruminants",
+    "Peste des Petits Ruminants",
+    "Hemorrhagic Septicemia",
+    "Hemorrhagic Septicemia",
+    "Foot and Mouth Disease",
+    "Peste des Petits Ruminants",
+    "Infection",
+    "Foot and Mouth Disease",
+    "Peste des Petits Ruminants",
+    "Mastitis",
+    "Hemorrhagic Septicemia",
+    "Peste des Petits Ruminants",
+    "Mastitis",
+    "Theileriosis",
+    "Contagious Caprine Pleuropneumonia",
+    "Contagious Caprine Pleuropneumonia",
+    "Black Quarter",
+    "Mastitis",
+    "Contagious Caprine Pleuropneumonia",
+    "Contagious Caprine Pleuropneumonia",
+    "Foot and Mouth Disease",
+    "Mastitis",
+    "Peste des Petits Ruminants",
+    "Hemorrhagic Septicemia",
+    "Peste des Petits Ruminants",
+    "Foot and Mouth Disease",
+    "Anthrax",
+    "Black Quarter",
+    "Foot and Mouth Disease",
+    "Mastitis",
+    "Foot Rot",
+    "Anthrax",
+    "Fracture of the Leg",
+    "Peste des Petits Ruminants",
+    "Foot and Mouth Disease",
+    "Peste des Petits Ruminants",
+    "Mastitis",
+    "Hemorrhagic Septicemia",
+    "Black Quarter",
+    "Contagious Caprine Pleuropneumonia",
+    "Contagious Caprine Pleuropneumonia",
+    "Peste des Petits Ruminants",
+    "Hemorrhagic Septicemia",
+    "Foot and Mouth Disease",
+    "Peste des Petits Ruminants",
+    "Peste des Petits Ruminants",
+    "Peste des Petits Ruminants",
+    "Foot and Mouth Disease",
+    "Peste des Petits Ruminants",
+    "Hemorrhagic Septicemia",
+    "Foot and Mouth Disease",
+    "Peste des Petits Ruminants",
+    "Foot and Mouth Disease",
+    "Hemorrhagic Septicemia"
+  ]
+}

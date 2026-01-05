@@ -4,76 +4,28 @@ __pycache__/
 *$py.class
 *.so
 .Python
-env/
-venv/
-*.egg-info/
-dist/
 build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
 
-# Models and Data (large files)
-models/*/
-!models/*/config.json
-!models/*/adapter_config.json
-!models/*/model_config.json
-!models/*/training_args.json
-!models/*/download_model.py
-!models/*/model_info.json
-!models/models_utils.py
-cache/
-*.safetensors
-*.bin
-*.pt
-*.pth
-
-# Large data files
-# Allow essential processed data files for fine-tuning
-!processed_data/Verified_DLO_data_-_(Cow_Buffalo)_processed.json
-!processed_data/Verified_DLO_data_(Sheep_Goat)_processed.json
-!processed_data/all_processed_data.json
-processed_data/*.json
-data/processed/*.json
-data/veterinary_notes/*.json
-data/veterinary_notes.json
-data/alpaca_data.json
-
-# Dataset files (large Excel/PDF)
-Dataset_UVAS/
-*.xlsx
-*.pdf
-
-# Archive and backup directories
-_backup_*/
-docs/archive/
-
-# LaTeX compiled files
-*.aux
-*.bak
-*.bbl
-*.blg
-*.fdb_latexmk
-*.fls
-*.idx
-*.ilg
-*.ind
-*.lof
-*.log
-*.lot
-*.out
-*.synctex
-*.synctex.gz
-*.toc
-*.thm
-*.zip
-latex_samples/
-
-# Large zip files
-thesis.zip
-VetLLM_Thesis.zip
-*.zip
-
-# Jupyter
-.ipynb_checkpoints/
-*.ipynb_checkpoints
+# Virtual Environment
+venv/
+env/
+ENV/
+.venv
 
 # IDE
 .vscode/
@@ -81,18 +33,61 @@ VetLLM_Thesis.zip
 *.swp
 *.swo
 *~
-
-# OS
 .DS_Store
-Thumbs.db
-._*
-.AppleDouble
+
+# Jupyter Notebook
+.ipynb_checkpoints
 
 # Logs
 *.log
-logs/
+logs/*.log
+!logs/.gitkeep
 
-# Status/cleanup files (temporary)
-CLEANUP_SUMMARY.md
-FINAL_STATUS.md
-DIRECTORY_STRUCTURE.md
+# Model files (too large for GitHub) - EXCLUDE ALL
+models/
+!models/.gitkeep
+!models/*.py
+
+# Checkpoints (too large)
+experiments/*/checkpoints/
+experiments/*/logs/
+experiments/*/results/
+
+# Cache
+cache/
+.cache/
+*.cache
+
+# Data files (if too large, uncomment)
+# processed_data/*.json
+# data/*.json
+
+# HuggingFace cache
+.cache/huggingface/
+.huggingface/
+
+# Temporary files
+*.tmp
+*.bak
+*.swp
+*.swo
+
+# OS files
+Thumbs.db
+.DS_Store
+
+# Training outputs
+*.pt
+*.pth
+*.safetensors
+*.bin
+*.index.json
+
+# Keep directory structure but ignore large files
+!models/*/
+!experiments/*/
+!logs/*/
+!reports/*/
+
+# Keep empty directories
+!**/.gitkeep

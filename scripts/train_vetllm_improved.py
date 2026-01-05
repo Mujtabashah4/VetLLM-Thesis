@@ -86,7 +86,7 @@ class ImprovedVetLLMConfig:
     test_ratio: float = 0.1
 
     # Paths
-    data_path: str = "processed_data/all_processed_data.json"
+    data_path: str = "processed_data/all_processed_data_augmented.json"  # Use augmented data with rare diseases
     output_dir: str = "models/vetllm-finetuned-continued"
     cache_dir: str = "cache"
     resume_from_checkpoint: Optional[str] = "models/vetllm-finetuned-correct/checkpoint-500"  # Resume from here
